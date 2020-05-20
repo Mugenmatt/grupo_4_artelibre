@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Anti-errors (don't touch) -->
+    <link rel="stylesheet" href="normalize.css">
+    <!-- CUstom Stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/register-style.css">
     <title>Register</title>
 </head>
+
 <body>
-    <h1>Register page</h1>
+    <div class="caja-header">
+        <header> Reservado para el header</header>
+    </div>
+
+    <h2>COMPLETÁ TUS DATOS</h2>
+
+    <form id="form" class="caja-form">
+
+        <input id="name" type="text" placeholder="NOMBRE">
+        <input id="lastname" type="text" placeholder="APELLIDO">
+
+        <input id="username" type="text" placeholder="NOMBRE DE USUARIO">
+        <input id="email" type="text" placeholder="E-MAIL">
+
+        <input id="password" type="password" placeholder="CONSTRASEÑA">
+        <input id="password2" type="password" placeholder="REPETÍ TU CONSTRASEÑA">
+
+        <span class="artist-form">
+            <input class="artist-btn" id="artist-btn" type="button" value="NO SOY ARTISTA">
+        </span>
+
+        <span class="check-btn">
+            <label><input type="checkbox" id="newsletter" value="newsletter" checked> Quiero recibir mails </label>
+            <label><input type="checkbox" id="terms" value="terms" checked> Entiendo los terminos y condiciones </label>
+        </span>
+
+        <span id="submit-btn" class="submit-btn">
+            <input id="submit" type="submit" value="REGISTRARME">
+        </span>
+
+    </form>
+
+    <div class="caja-footer">
+        <footer> Reservado para el footer </footer>
+    </div>
+
 </body>
+
 </html>
