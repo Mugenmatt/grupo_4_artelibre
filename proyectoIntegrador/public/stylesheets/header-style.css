@@ -65,23 +65,15 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
 }
 
 .container:after {
     content: "";
     display: table;
     clear: both;
-}
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-width: 1200px;
 }
 
 /* 
@@ -116,7 +108,7 @@ Making sure everything in .hero sits above our :after elements
 }
 
 #masthead {
-    padding: 2.5em 0;
+    padding: 1.5em 0;
     position: relative;
 }
 
@@ -265,17 +257,17 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 }
 
 #site-nav {
-    clear: both;
     display: flex;
-    flex-direction: column;
     height: 0;
     overflow: hidden;
-    padding-top: 2.5em;
+    padding-top: 0.5em;
+    justify-content: center;
 }
 
 #site-nav.is-active {
     height: auto;
     overflow: visible;
+    width: auto;
 }
 
 #site-nav .col {
@@ -314,9 +306,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 }
 
-#site-nav h4 {
+#site-nav a {
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    padding: 1%;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #b4b9ba;
+}
+
+#site-nav a:hover,
+#site-nav a:focus {
+    color: #686d6e;
 }
 
 #site-nav ul {
@@ -478,4 +479,35 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ===== Boton de carrito ===== */
+
+.hero .cart {
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 0.625em;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-box {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    margin: 0.8125em 0 0;
+    overflow: visible;
+    outline: none;
+    padding: 0;
+    text-transform: none;
+    transition: opacity 0.15s;
+    -webkit-appearance: none;
+}
+
+.cart-box:hover {
+    opacity: 0.7;
 }
