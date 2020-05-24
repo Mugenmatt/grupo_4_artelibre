@@ -4,8 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/gallery-style.css">
 </head>
 <body>
-    <h1>Gallery page</h1>
+    <div class="caja-header">
+        <header> Reservado para el header</header>
+    </div>
+
+    
+
+    <main class="main-gallery">
+        <aside class="main-aside">
+            <h2>ARTISTAS</h2>
+            
+            
+            <ul class="artists">
+                <!-- 42 -->
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+                <li>Miguel Angel</li>
+                <li>Picasso</li>
+                <li>Leonardo da vinci</li>
+                <li>Van Gogh</li>
+                <li>Dahlí</li>
+                <li>Gaugin</li>
+                <li>Velázquez</li>
+
+            </ul>
+
+        </aside>
+
+        <h1>GALERÍA</h1>
+
+        <section class="gallery-products">
+            <div class="category-search">
+
+                <form class="category-form" action="/gallery" method="get">
+                    <div class="search-bar">
+                        <input type="search" class="searcher" placeholder="Buscador">
+                        <button type="submit">Search</button>
+                    </div>
+        
+                    <div class="categories">
+            
+                        <label class="categories-label" for=>Categorias:</label>
+                        <select id="colors" name="colors">
+                            <option disabled selected>Color</option>
+                            <option value="amarillo">Amarillo</option>
+                            <option value="azul">Azul</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="naranja">Naranja</option>
+                            <option value="negro">Negro</option>
+                            <option value="rojo">Rojo</option>
+                            <option value="verde">Verde</option>
+                            <option value="violeta">Violeta</option>
+                        </select>
+        
+                        <select name="art-style" id="art-style">
+                            <option disabled selected>Estilo Artístico</option>
+                            <option value="cubismo">Cubismo</option>
+                            <option value="expresionismo">Expresionismo</option>
+                            <option value="impresionismo">Impresionismo</option>
+                            <option value="neoclasico">Neo clásico</option>
+                            <option value="realismo">Realismo</option>
+                            <option value="renacentismo">Renacestimo</option>
+                            <option value="romanticismo">Romanticismo</option>
+                            <option value="surrealismo">Surrealismo</option>
+                        </select>
+        
+                        <select name="size" id="size">
+                            <option disabled selected>Tamaño</option>
+                            <option value="enorme">Enorme +5m2</option>
+                            <option value="grande">Grande +1m2</option>
+                            <option value="medio">Medio +50cm2</option>
+                            <option value="pequeño">Pequeño +25cm2</option>
+                            <option value="diminuto">Diminuto +5cm2</option>
+                        </select>
+        
+                        <select name="sensation" id="sensation">
+                            <option disabled selected>Sensación</option>
+                            <option value="amor">Amor</option>
+                            <option value="depresion">Depresión</option>
+                            <option value="divertido">Diversión</option>
+                            <option value="felicidad">Felicidad</option>
+                            <option value="furia">Furia</option>
+                            <option value="gracioso">Gracioso</option>
+                            <option value="soledad">Soledad</option>
+                            <option value="tristeza">Tristeza</option>
+                        </select>
+        
+                        <select name="theme" id="theme">
+                            <option disabled selected >Temática</option>
+                            <option value="accion">Acción</option>
+                            <option value="autoretrato">Autoretrato</option>
+                            <option value="belleza">Belleza</option>
+                            <option value="ciencia-ficcion">Ciencia ficción</option>
+                            <option value="humanidad">Humanidad</option>
+                            <option value="muerte">Muerte</option>
+                            <option value="naturaleza">Naturaleza</option>
+                            <option value="relajante">Relajante</option>
+                            <option value="religion">Religión</option>
+                        </select>
+        
+                        <select name="technique" id="technique">
+                            <option disabled selected>Técnica</option>
+                            <option value="acuarela">Acuarela</option>
+                            <option value="brocha">Brocha</option>
+                            <option value="carbonilla">Carbonilla</option>
+                            <option value="graffiti">Graffiti</option>
+                            <option value="impresion">Impresión</option>
+                            <option value="oleo">Oleo</option>
+                            <option value="pastel">Pastel</option>
+                            <option value="puntillismo">Puntillismo</option>
+                            <option value="pincel">Pincel</option>
+                        </select>
+        
+                        <select name="price" id="price">
+                            <option disabled selected>Precio</option>
+                            <option value="mayor-a-menor">Mayor a menor</option>
+                            <option value="menor-a-mayor">Menor a mayor</option>
+                            <option value="limite">Limite</option>
+                        </select>
+        
+                    </div>        
+                </form>
+            </div>
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                    
+                </div>
+            </article>
+           
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                </div>
+            </article>
+           
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                </div>
+            </article>
+           
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                </div>
+            </article>
+           
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                </div>
+            </article>
+           
+            <article class="gallery-product">
+                <img src="/images/products/mona-lisa-with-face-mask-3957982.jpg" alt="mona lisa">
+                <div class="product-info">
+                    <p>Mona lisa</p>
+                    <p>$5000</p>
+                </div>
+            </article>
+           
+
+        </section>
+    </main>
+
+    <p>Reservado footer</p>
+
 </body>
 </html>
