@@ -13,6 +13,7 @@ const registerRouter = require('./routes/register')
 const galleryRouter = require('./routes/gallery')
 const productRouter = require('./routes/product')
 const cartRouter = require('./routes/cart')
+const loginRouter = require('./routes/login')
 
 
 
@@ -36,6 +37,7 @@ app.use('/register', registerRouter);
 app.use('/gallery', galleryRouter);
 app.use('/product', productRouter);
 app.use('/cart', cartRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

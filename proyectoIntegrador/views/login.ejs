@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión</title>
+    <!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,Bootstrap which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported, best quality world class designs. -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- LINK A INFO how-to-use MATERIALIZE ====>  https://materializecss.com   -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Hoja de estilo custom (propia)   -->
+    <link rel="stylesheet" href="/stylesheets/login-style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row card">
+            <div class="card-content ">
+                <!-- <h2 class="center blue-text">Login Form</h2> -->
+                <form method="POST" action="/login" class="row s12">
+                    <div class="col s12">
+                        <div class="input-field">
+                            <input class="center" type="text" name="username" id="username"
+                                placeholder="Nombre de usuario">
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field">
+                            <input class="center" type="password" name="password" id="password" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <label class="col s12 center">
+                        <input type="checkbox" />
+                        <span>Recordar mi usuario y contraseña</span>
+                    </label>
+                    <div class="col s12 center">
+                        <button type="submit" class="btn btn-large waves-effect waves-light blue">Inicia sesión</button>
+                    </div>
+                    <h5 class="center">¿No tenés usuario? <a href="/register">Registraté</a></h5>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

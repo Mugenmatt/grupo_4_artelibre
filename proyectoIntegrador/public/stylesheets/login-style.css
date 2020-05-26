@@ -1,0 +1,39 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: whitesmoke;
+}
+
+.container {
+    margin: 150px auto;
+    width: 30%;
+
+}
+
+.btn {
+    margin-top: 4%;
+    margin-bottom: 5%;
+
+}
+
+h5 {
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 0.5;
+    text-align: center;
+}
+
+@media(max-width: 952px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media(max-width: 475px) {
+    .container {
+        width: 80%;
+    }
+}
