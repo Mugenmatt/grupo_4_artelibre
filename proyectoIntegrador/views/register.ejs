@@ -18,26 +18,26 @@
 
     <h2>COMPLETÁ TUS DATOS</h2>
 
-    <form id="form" class="caja-form">
+    <form action="/users/register" id="form" class="caja-form" method="POST">
 
-        <input id="name" type="text" placeholder="NOMBRE">
-        <input id="lastname" type="text" placeholder="APELLIDO">
+        <input id="name" type="text" placeholder="NOMBRE" name="name" >
+        <input id="lastname" type="text" placeholder="APELLIDO" name="lastname" >
 
-        <input id="dni" type="number" placeholder="Número de documento (sin puntos)">
+        <input id="dni" type="number" placeholder="Número de documento (sin puntos)" name="dni">
 
-        <input id="username" type="text" placeholder="NOMBRE DE USUARIO">
-        <input id="email" type="text" placeholder="E-MAIL">
+        <input id="username" type="text" placeholder="NOMBRE DE USUARIO" name="username">
+        <input id="email" type="text" placeholder="E-MAIL" name="email">
 
-        <input id="password" type="password" placeholder="CONSTRASEÑA">
-        <input id="password2" type="password" placeholder="REPETÍ TU CONSTRASEÑA">
+        <input id="password" type="password" placeholder="CONSTRASEÑA" name="password">
+        <input id="password2" type="password" placeholder="REPETÍ TU CONSTRASEÑA" name="password2">
 
         <span class="artist-form">
-            <input class="artist-btn" id="artist-btn" type="button" value="NO SOY ARTISTA">
+            <input class="artist-btn" id="artist-btn" type="button" value="NO SOY ARTISTA" name="nosoyartista">
         </span>
 
         <span class="check-btn">
-            <label><input type="checkbox" id="newsletter" value="newsletter" checked> Quiero recibir mails </label>
-            <label><input type="checkbox" id="terms" value="terms" checked> Entiendo los terminos y condiciones </label>
+            <label><input type="checkbox" id="newsletter" checked name="recibirmails"> Quiero recibir mails </label>
+            <label><input type="checkbox" id="terms"checked> Entiendo los terminos y condiciones </label>
         </span>
 
         <span id="submit-btn" class="submit-btn">

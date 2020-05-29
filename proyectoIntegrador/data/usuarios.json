@@ -1,0 +1,21 @@
+[
+ {
+  "id": 2,
+  "name": "fa",
+  "lastname": "fa",
+  "dni": "23",
+  "username": "fafa",
+  "email": "facundo@hotmail.com",
+  "password": "$2a$10$ixA0KSRUV5F2QWGqMFvTEuS3En.K3.PxSWctgg3SGUUtm3NjYO04u",
+  "recibirmails": "on"
+ },
+ {
+  "id": 3,
+  "name": "fe",
+  "lastname": "fe",
+  "dni": "34",
+  "username": "fefe",
+  "email": "facundo@hotmail.com",
+  "password": "$2a$10$AXIZyqiL69Y72.BhM20r3ut.zWGtT.nXmGlTnTBOrW85iIdqBLDou"
+ }
+]

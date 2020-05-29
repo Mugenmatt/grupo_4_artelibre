@@ -9,12 +9,10 @@ const methodOverride = require("method-override")
 // Require routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const registerRouter = require('./routes/register')
 const specificRegisterRouter = require('./routes/specific-register')
 const galleryRouter = require('./routes/gallery')
 const productRouter = require('./routes/product')
 const cartRouter = require('./routes/cart')
-const loginRouter = require('./routes/login')
 
 
 
@@ -34,12 +32,11 @@ app.use(methodOverride('_method'))
 // use routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/register', registerRouter);
 app.use('/specific-register', specificRegisterRouter);
 app.use('/gallery', galleryRouter);
 app.use('/product', productRouter);
 app.use('/cart', cartRouter);
-app.use('/login', loginRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
