@@ -3,9 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>Producto</title>
+    <link rel="stylesheet" href="/stylesheets/product.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"
+    />
 </head>
 <body>
-    <h1>Product page</h1>
+    
+      <!-- El object promise es esto  -->
+    <%- import('/partials/header.ejs') %>
+    
+    <main>
+
+<!-- =========================================================================== -->
+<!------------------------- SLIDER --------------------------->
+<!-- =========================================================================== -->
+
+    <div class="caja-slider">
+
+        <ul class="ul-slider">
+            <li class="li-slider">
+                <input type="radio" id="sbutton1" class="input-radio-slider" name="slider-radio" checked>
+                <label class="label-slider" for="sbutton1"></label>
+                <img src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="" class="img-slider">
+            </li>
+            <li class="li-slider">
+                <input type="radio" id="sbutton2" class="input-radio-slider" name="slider-radio">
+                <label class="label-slider" for="sbutton2"></label>
+                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="" class="img-slider">
+            </li>
+            <li class="li-slider">
+                <input type="radio" id="sbutton3" class="input-radio-slider" name="slider-radio">
+                <label class="label-slider" for="sbutton3"></label>
+                <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80" alt="" class="img-slider">
+            </li>
+            <li class="li-slider">
+                <input type="radio" id="sbutton4" class="input-radio-slider" name="slider-radio">
+                <label class="label-slider" for="sbutton4"></label>
+                <img src="https://images.pexels.com/photos/595747/pexels-photo-595747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-slider">
+            </li>
+        </ul>
+
+    </div>
+
+<!-- =========================================================================== -->
+<!------------------- PRECIO + DESCRIPCION + DATOS DEL USUARIO -------------------->
+<!-- =========================================================================== -->
+
+        <section class="contenedor-precio-descrip-user">
+            
+            <div class="caja-precio">
+
+                <div class="precio-carrito">
+                    <h2 class="precio">$1200</h2>
+                    <button class="btn-agregarCarrito">Agregar al Carrito</button>
+                </div>
+
+                <div class="cartel-pop-up">
+                    <div class="pop-up-fondo">
+                        <p class="texto-pop-up">¡La pieza se ha agregado a tu carrito!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="caja-descripcion">
+                <div class="caja-descripcion-titulo">
+                    <h4 class="descripcion-titulo">Descripción</h4>
+                </div>
+
+                <div class="caja-texto-descriptivo">
+                    <p class="texto-descriptivo">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, adipisci quis aspernatur odio eveniet eaque at eligendi corporis molestias nostrum ab facere tenetur praesentium nihil, rerum blanditiis dicta suscipit. Illum iste enim architecto ratione exercitationem eum repellendus odit at eveniet repellat dignissimos doloremque veniam perferendis nemo dolores obcaecati, harum fuga!</p>
+                </div>
+            </div>
+
+                <div class="caja-datosUsuario">
+
+                    <div class="datosUsuario-titulo">
+                        <h3 class="datosUsuario">Datos del Usuario</h3>
+                    </div>
+
+                    <div class="caja-texto-users">
+                        <p class="texto-user1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores commodi odio ipsa vitae quidem harum?</p>
+                        <p class="texto-user2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores commodi odio ipsa vitae quidem harum?</p>
+                        <p class="texto-user3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores commodi odio ipsa vitae quidem harum?</p>
+                    </div>
+                </div>
+
+                <button class="btn-masCosasArtista">Más cosas del Artista</button>
+
+        </section>
+
+<!-- =========================================================================== -->
+<!---------------------------------- COMENTARIOS ---------------------------------->
+<!-- =========================================================================== -->
+
+        <section class="contenedor-comentarios">
+
+            <div class="caja-comentarios-titulo">
+                <h4 class="titulo-comentarios">Comentarios</h4>
+            </div>
+
+            <div class="caja-comentarios">
+                <p class="comentarioX">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas doloribus magni numquam architecto suscipit, laborum cumque beatae officiis modi eius.</p>
+                <p class="comentarioX">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, vitae.</p>
+                <p class="comentarioX">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis vel porro obcaecati placeat ratione. Mollitia quaerat saepe nisi reprehenderit quidem. Magnam numquam non aspernatur doloribus!</p>
+            </div>
+
+            <form class="formulario-comentario" action="">
+                
+                <textarea class="dejarComentario" placeholder="Escribí tu comentario aquí" name="comentario" id=""  rows="5" maxlength="30" ></textarea>
+                
+                <input class="enviarComentario" type="submit" value="Enviar">
+            
+            </form>
+
+        </section>
+
+<!-- =========================================================================== -->
+<!---------------------------------- SUGERENCIAS ---------------------------------->
+<!-- =========================================================================== -->
+
+        <section class="contenedor-sugerencias">
+
+            <div class="caja-titulo-sugerencias">
+                <h4 class="titulo-sugerencias">Sugerencias</h4>
+            </div>
+
+            <div class="caja-sugerencias-ventas">
+                <div class="caja-sugerencia caja-sugerencia1">
+                    <img class="img-sugerencia" src="https://images.pexels.com/photos/161154/stained-glass-spiral-circle-pattern-161154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Sugerencia">
+                    <div class="caja-cartel-vendido caja-cartel-vendido1">
+                        <p class="texto-vendido">Vendido</p>
+                    </div>
+                </div>
+                <div class="caja-sugerencia caja-sugerencia2">
+                    <img class="img-sugerencia" src="https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Sugerencia">
+                    <div class="caja-cartel-vendido caja-cartel-vendido2">
+                        <p class="texto-vendido">Vendido</p>
+                    </div>
+                </div>
+                <div class="caja-sugerencia caja-sugerencia3">
+                    <img class="img-sugerencia" src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Sugerencia">
+                    <div class="caja-cartel-vendido caja-cartel-vendido3">
+                        <p class="texto-vendido">Vendido</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
 </html>

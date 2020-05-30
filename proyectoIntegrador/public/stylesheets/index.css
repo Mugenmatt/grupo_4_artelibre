@@ -1,0 +1,457 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* ========================= MENU ========================= */
+
+.contenedor-lista {
+    opacity: 0.3;
+}
+
+.menu .fixed-top .collapse .lista-opciones {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu .fixed-top .collapse .lista-opciones .li-opcion {
+    list-style: none;
+}
+
+.menu .fixed-top .collapse .lista-opciones .li-opcion .a-opcion{
+
+    margin: 0 20px;
+
+}
+
+/* ========================= MAIN ========================= */
+
+.main {
+    width: 100%;
+}
+
+.contenedor {
+    width: 100%;
+    height: 95vh;
+}
+
+.centrador {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+}
+
+.contenedor .fondo-caja-titulo {
+    background-image: url("https://wallpaperaccess.com/full/53929.jpg");
+    background-position-x: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(50% 0, 100% 50%, 100% 50%, 50% 100%, 0 50%);
+    /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%); */
+    width: 30%;
+    /* height: 70%; */
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .fondo-caja-titulo .titulo {
+    /* este margin esta en reemplazo del heigth de fondo-caj-titulo que no se porque no me toma el heigth: 60% */
+    margin: 60% 0;
+    font-size: 3em;
+    color: #a30000;
+}
+
+/* ========================= SEPARADOR ========================= */
+
+.separador-textura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separador-textura .centrador .frase {
+    font-size: 2rem;
+    color: #fdfffc;
+    text-align: center;
+    line-height: 3em;
+}
+
+.antesDe-slider {
+    background-color: #2E0E02;
+    background-image: url('https://c.pxhere.com/photos/45/49/oil_paint_texture_painting_artistic_brush_colorful_paint_orange-773565.jpg!d');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 95vh;
+}
+
+/* ========================= SLIDER ========================= */
+
+.contenedor-fondo-slider {
+    background-color: gray;
+    height: 45vh;
+}
+
+.contenedor-fondo-slider .contenedor-slider {
+
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .caja-subt-destacados {
+
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .caja-subt-destacados .subt-destacados {
+    font-size: 1.9rem;
+    color: #fff;
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider {
+    width: 16%;
+    margin: auto;
+    perspective: 1000px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider {
+    width: 100%;
+    position: absolute;
+    animation: rotar 20s infinite linear;
+    transform-style: preserve-3d;
+    transition: all 300ms;
+
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider img {
+    width: 100%;
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider img:hover {
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure {
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+@keyframes rotar {
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg);
+    }
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+}
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(300px);
+}
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider figure:nth-child(10) {
+    transform: rotateY(360deg) translateZ(300px);
+}
+
+
+
+.contenedor-fondo-slider .contenedor-slider .centrador .contenedor-slider .subcontenedor-slider:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+/* ========================= SEPARADOR ========================= */
+
+.antesDe-comoFunciona {
+    background-color: #2E0E02;
+    background-image: url('https://c.pxhere.com/photos/73/53/painting_art_artwork_blue_yellow_creativity_backdrop_creative-1132791.jpg!d');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 95vh;
+}
+
+/* ========================= COMO FUNCIONA ========================= */
+
+.contenedor-comoFunciona {
+    background-color: #03045e;
+    color: white;
+}
+
+.centrador-comoFunciona {
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-subtitulo {
+   width: 100%;
+   text-align: center;
+   margin-top: 2%;
+}
+
+.caja-subtitulo .subtitulo {
+    font-size: 2rem;
+}
+
+.caja-comprar-vender {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.caja-comprar-vender .caja-comprar {
+    text-align: center;
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.caja-comprar-vender .caja-comprar .subcaja-subtitulo {
+    font-size: 2rem;
+}
+
+.caja-comprar-vender .caja-vender {
+    text-align: center;
+    width: 30%;
+    border: 2px solid white;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.caja-comprar-vender .caja-vender .subcaja-subtitulo {
+    font-size: 2rem;
+}
+
+/* .caja-comprar-vender .caja-comprar .texto-compraVenta {} */
+
+.centrador-comoFunciona .caja-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 8%;
+}
+
+.centrador-comoFunciona .caja-btn .fondo-btn {
+    width: 10%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.centrador-comoFunciona .caja-btn .fondo-btn:hover {
+    background-color: #a30000;
+    cursor: pointer;
+}
+
+.centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+}
+
+
+/* =================== ARTICULOS DE INTERES =================== */
+
+.contenedor-articulosInteres {
+    background-color: #160A54;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .centrador-articulosInteres {} */
+
+.caja-subtitulo .subt-articulos {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.caja-articulos {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.caja-articulos .articulo {
+    width: 30%;
+    margin: 0 30px;
+    /* border: 2px solid green; */
+    /* padding: 10px; */
+}
+
+.caja-articulos .articulo .a-img-articulo  {
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 5px;
+}
+
+.caja-articulos .articulo .a-img-articulo:hover {
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+.caja-articulos .articulo .a-img-articulo .img-1 {
+    width: 100%;
+    clip-path: polygon(0% 0%, 100% 0, 100% 87%, 0 87%);
+    overflow: hidden;
+}
+.caja-articulos .articulo .a-img-articulo .img-2 {
+    width: 100%;
+}
+.caja-articulos .articulo .a-img-articulo .img-3 {
+    width: 100%;
+}
+
+.ir-seccion {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4%;
+    margin-bottom: 5%;
+}
+
+.ir-seccion .a-ir-seccion {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* =================== NOSOTROS =================== */
+
+/* .contenedor-nosotros {} */
+
+.contenedor-nosotros .centrador-nosotros {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-texto-nosotros {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-texto-nosotros .nosotros-texto {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros {
+    display: flex;
+    justify-content: space-around;
+    margin: 4% 0;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona {
+    width: 20%;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona .img-persona {
+    width: 100%;
+}
+
+
+/* =================== SEPARADOR =================== */
+
+.antesDe-contactanos {
+    background-color: #2E0E02;
+    background-image: url('https://c.pxhere.com/photos/22/9b/painting_art_artwork_red_yellow_creativity_backdrop_creative-1132816.jpg!d');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 95vh;
+}
+
+/* =================== CONTACTANOS =================== */
+
+/* .contenedor-contactanos {} */
+
+.contenedor-contactanos .centrador-contactanos {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos {
+    background-color: #f2f2f2;
+    border: 2px solid firebrick;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 4%;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos .input-nombreApellido, .input-email, .input-celular, .input-mensaje {
+    padding: 20px;
+    margin-bottom: 1.6%;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos .label-nombreApellido, .label-email, .label-celular, .label-mensaje {
+    margin-bottom: 1.6%;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos .btn-contacto-enviar {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    color: #000;
+    background-color: #f2f2f2;
+}
+
+.contenedor-contactanos .centrador-contactanos .formulario-contactanos .btn-contacto-enviar:hover {
+    background-color: firebrick;
+}

@@ -1,0 +1,334 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+  }
+
+main {
+    background-color: #a2a2a2;
+}
+
+/* ============================ SLIDER ============================ */
+
+.caja-slider{
+    height: 70vh;
+    width: 100%;
+    /* ACA HAY UN PROBLEMA CON EL MARGIN PARA ALEJAR AL SLIDER DE ARRIBA SIN TOCAR EL COLOR DE FONDO */
+    margin-top: 20px;
+}
+
+.caja-slider .ul-slider {
+    width: 25%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.caja-slider .ul-slider .li-slider{
+    
+}
+
+.caja-slider .ul-slider .li-slider .img-slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.9s;
+    
+}
+
+.caja-slider .ul-slider .li-slider .input-radio-slider{
+    position: relative;
+    z-index: 50;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.caja-slider .ul-slider .li-slider .label-slider {
+    display: none;
+    width: 20px;
+    background: black;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.caja-slider .ul-slider .li-slider .input-radio-slider:checked ~ .img-slider {
+    opacity: 1;
+
+}
+
+.caja-slider .ul-slider .li-slider .input-radio-slider:checked ~ .label-slider {
+    background: #000;
+    border: #fff;
+
+}
+
+.caja-slider .ul-slider .li-slider .input-radio-slider + .label-slider {
+    position: relative;
+    z-index: 50;
+    margin: 10px;
+
+}
+
+.caja-slider .slider .li-slider .sbutton1{
+
+}
+
+
+
+
+/* ========================= PRECIO + DESCRIPCION + DATOS DEL USUARIO ========================= */
+
+.contenedor-precio-descrip-user {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-precio-descrip-user .caja-precio {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-precio-descrip-user .caja-precio .precio-carrito {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.contenedor-precio-descrip-user .caja-precio .precio-carrito .precio {
+    margin-bottom: 0.6%;
+}
+
+.contenedor-precio-descrip-user .caja-precio .precio-carrito .btn-agregarCarrito {
+    width: 5%;
+    height: 100%;
+    border: 1px solid #000;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.contenedor-precio-descrip-user .caja-precio .precio-carrito .btn-agregarCarrito:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.contenedor-precio-descrip-user .caja-descripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.contenedor-precio-descrip-user .caja-descripcion .caja-descripcion-titulo {
+    text-align: center;
+    width: 70%;
+}
+
+.contenedor-precio-descrip-user .caja-descripcion .caja-descripcion-titulo .descripcion-titulo {
+    font-size: 1.5rem;
+}
+
+.contenedor-precio-descrip-user .caja-descripcion .caja-texto-descriptivo {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.contenedor-precio-descrip-user .caja-descripcion .caja-texto-descriptivo .texto-descriptivo {
+    line-height: 1.9;
+}
+
+.contenedor-precio-descrip-user .caja-datosUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    margin-top: 50px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 50%;
+}
+
+.contenedor-precio-descrip-user .caja-datosUsuario .datosUsuario-titulo {
+    font-size: 1.3rem;
+}
+
+.contenedor-precio-descrip-user .caja-datosUsuario .caja-texto-users {
+    margin-top: 20px;
+}
+
+.contenedor-precio-descrip-user .caja-datosUsuario .caja-texto-users .texto-user1, .texto-user2, .texto-user3 {
+    line-height: 1.9;
+}
+
+.contenedor-precio-descrip-user .caja-precio .cartel-pop-up {
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+.contenedor-precio-descrip-user .caja-precio .cartel-pop-up .pop-up-fondo {
+    width: 15%;
+    background-color: red;
+    border-radius: 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor-precio-descrip-user .caja-precio .cartel-pop-up .pop-up-fondo .texto-pop-up {
+    margin: auto;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+.contenedor-precio-descrip-user .btn-masCosasArtista {
+    width: 20%;
+    margin: 3% auto;
+    font-size: 1.3rem;
+    padding: 20px;
+    border-radius: 50px;
+    border-style: none;
+    border: 1px solid black;
+}
+
+.contenedor-precio-descrip-user .btn-masCosasArtista:hover {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* ========================= COMENTARIOS ========================= */
+
+
+.contenedor-comentarios {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
+
+.contenedor-comentarios .caja-comentarios-titulo {
+    width: 100%;
+    margin: 0 auto 2% auto;
+}
+
+.contenedor-comentarios .caja-comentarios-titulo .titulo-comentarios {
+    font-size: 1.5rem;
+}
+
+.contenedor-comentarios .caja-comentarios {
+    width: 70%;
+    margin-left: 5%;
+}
+
+.contenedor-comentarios .caja-comentarios .comentarioX {
+    line-height: 1.5;
+}
+
+.contenedor-comentarios .formulario-comentario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.2%;
+}
+
+.contenedor-comentarios .formulario-comentario .dejarComentario {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.contenedor-comentarios .formulario-comentario .enviarComentario {
+    width: 15%;
+    padding: 15px;
+    border-radius: 20px;
+    border-style: none;
+    margin: 1% 83%;
+    background: #fff;
+    color: #000;
+    font-size: 1.2rem;
+}
+.contenedor-comentarios .formulario-comentario .enviarComentario:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* ========================= SUGERENCIAS ========================= */
+
+
+.contenedor-sugerencias {
+    width: 60%;
+    margin: auto;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-sugerencias .caja-titulo-sugerencias {
+    width: 100%;
+    margin-left: 3%;
+}
+
+.contenedor-sugerencias .caja-titulo-sugerencias .titulo-sugerencias {
+    font-size: 1.5rem;
+}
+
+.contenedor-sugerencias .caja-sugerencias-ventas {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 6%;
+    margin-top: 3%;
+}
+
+.contenedor-sugerencias .caja-sugerencia {
+    width: 30%;
+}
+
+.contenedor-sugerencias .caja-sugerencia .img-sugerencia {
+    width: 100%;
+}
+
+.contenedor-sugerencias .caja-sugerencia .caja-cartel-vendido {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    position: relative;
+    bottom: 60px;
+    color: red;
+}
+
+.contenedor-sugerencias .caja-sugerencia .caja-cartel-vendido2 {
+    display: none;
+}
+
+.contenedor-sugerencias .caja-sugerencia .caja-cartel-vendido3 {
+    display: none;
+}
