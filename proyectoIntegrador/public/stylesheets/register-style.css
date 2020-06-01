@@ -3,6 +3,8 @@
 
 main {
     width: 100%;
+        display: flex;
+        flex-direction: column;
 }
 
 /* on hover placeholder */
@@ -35,8 +37,7 @@ body {
     font-family: 'Lato', sans-serif;
     background: whitesmoke;
     color: #b3aca7;
-    display: flex;
-    flex-direction: column;
+
 }
 
 h2 {
@@ -168,7 +169,6 @@ span {
 
 #submit {
     box-sizing: border-box;
-    display: inline;
     position: relative;
     border: none;
     margin: auto;

@@ -1,5 +1,5 @@
 $(function () {
-    $('body').addClass('js');
+    /*$('body').addClass('js');*/
 
     var $hamburger = $('.hamburger'),
         $nav = $('#site-nav'),
