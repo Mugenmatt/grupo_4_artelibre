@@ -10,7 +10,7 @@ textarea::placeholder {
 }
 
 input:focus::placeholder,
-textarea::focus::placeholder {
+textarea:focus::placeholder {
     color: #bbb5af;
 }
 

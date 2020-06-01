@@ -15,7 +15,6 @@ const productRouter = require('./routes/product')
 const cartRouter = require('./routes/cart')
 
 
-
 const app = express();
 
 // view engine setup

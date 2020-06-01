@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Anti-errors (don't touch) -->
     <link rel="stylesheet" href="/stylsheets/normalize.css">
     <!-- CUstom Stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/specific-register-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"
+    />
     <title>Specific Register</title>
 </head>
 
 <body>
+
+    <main>
+
     <div class="caja-header">
         <header> Reservado para el header</header>
     </div>
@@ -47,10 +53,11 @@
 
     </form>
 
-    <div class="caja-footer">
-        <footer> Reservado para el footer </footer>
-    </div>
+</main>
 
+    <%- include('partials/footer.ejs') %>
+
+    
 </body>
 
 </html>
