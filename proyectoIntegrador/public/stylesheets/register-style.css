@@ -9,24 +9,24 @@ main {
 
 /* on hover placeholder */
 
-input::placeholder,
+.campo::placeholder,
 textarea::placeholder {
     color: #aca49c;
     font-size: 0.875em;
 }
 
-input:focus::placeholder,
+.campo:focus::placeholder,
 textarea::focus::placeholder {
     color: #bbb5af;
 }
 
-input:hover::placeholder,
+.campo:hover::placeholder,
 textarea:hover::placeholder {
     color: #e2dedb;
     font-size: 0.875em;
 }
 
-input:hover:focus::placeholder,
+.campo:hover:focus::placeholder,
 textarea:hover:focus::placeholder {
     color: #cbc6c1;
 }
@@ -40,7 +40,7 @@ body {
 
 }
 
-h2 {
+.register-title {
     position: relative;
     margin: 2% auto;
     font-size: 2.3em;
@@ -58,7 +58,7 @@ h2 {
     box-sizing: border-box;
 }
 
-input {
+.campo {
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
     width: 95%;
@@ -80,13 +80,15 @@ input {
     -ms-transition: all 0.3s ease-in-out;
 }
 
-input:hover {
+.campo:hover {
     background: #b3aca7;
     color: #e2dedb;
 }
 
 
-span {
+.artist-form,
+.check-btn,
+.submit-btn {
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
     width: 95%;

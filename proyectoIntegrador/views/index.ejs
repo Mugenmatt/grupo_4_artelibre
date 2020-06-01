@@ -13,42 +13,8 @@
   </head>
   <body>
     <div class="hero">
-
-      <header id="masthead" role="banner">
-        <div class="container">
-          <button class="hamburger hamburger--boring" type="button">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-            <span class="hamburger-label"></span>
-          </button>
-
-          <!-- De aca para abajo, es de der a izq  -->
-
-          <a class="cart" href="/cart"><img src="/images/icons/bolso.png" alt="" srcset=""></a>
-          <!-- <span class="icon-cart-label">Carrito</span> -->
-          </button>
-
-          <a class="cart"  href="/login"><img src="/images/icons/usuario.png" alt="" srcset=""></a>
-          </button>
-
-          <form id="masthead-search">
-            <input type="search" name="s" aria-labelledby="search-label" placeholder="Search&hellip;" class="draw">
-            <button type="submit">&rarr;</button>
-          </form>
-          
-          <nav id="site-nav" role="navigation">
-            <a href="http://">Inicio</a>
-            <a href="http://">Galeria</a>
-            <a href="http://">¿Como funciona?</a>
-            <a href="http://">Interes</a>
-            <a href="http://">Nosotros</a>
-            <a href="http://">Contacto</a>
-          </nav>
-
-        </div>
-
-      </header>
+          <%- include('partials/header') %>
+    </div>
 
       <main>
 
@@ -82,7 +48,7 @@
         <!------------------------- SLIDER --------------------------->
         <!-- =========================================================================== -->
 
-    <section class="contenedor-fondo-slider">
+     <section class="contenedor-fondo-slider">
 
         <div class="contenedor-slider">
 
@@ -117,7 +83,7 @@
         
         </div>
 
-    </section>
+     </section>
 
         <!-- =========================================================================== -->
         <!-- -------------------------------SEPARADOR----------------------------------  -->
@@ -293,14 +259,14 @@
 
         </section>
 
-    </main>
+     </main>
 
 
-    <%- include('partials/footer.ejs') %>
+     <%- include('partials/footer.ejs') %>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script src="/js/header-function.js"></script>
   </body>

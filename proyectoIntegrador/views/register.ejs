@@ -23,38 +23,41 @@
         <!--HEADER-->
         <%- include('partials/header') %>
     </div>
+    
 
     <main>
-    <h2>COMPLETÁ TUS DATOS</h2>
+    <h2 class="register-title">COMPLETÁ TUS DATOS</h2>
 
     <form action="/users/register" id="form" class="caja-form" method="POST">
 
-        <input id="name" type="text" placeholder="NOMBRE" name="name" >
-        <input id="lastname" type="text" placeholder="APELLIDO" name="lastname" >
+        <input class="campo" id="name" type="text" placeholder="NOMBRE" name="name" >
+        <input class="campo" id="lastname" type="text" placeholder="APELLIDO" name="lastname">
 
-        <input id="dni" type="text" placeholder="Número de documento (sin puntos)" name="dni">
+        <input class="campo" id="dni" type="text" placeholder="Número de documento (sin puntos)" name="dni">
 
-        <input id="username" type="text" placeholder="NOMBRE DE USUARIO" name="username">
-        <input id="email" type="text" placeholder="E-MAIL" name="email">
+        <input class="campo" id="username" type="text" placeholder="NOMBRE DE USUARIO" name="username">
+        <input class="campo" id="email" type="text" placeholder="E-MAIL" name="email">
 
-        <input id="password" type="password" placeholder="CONSTRASEÑA" name="password">
-        <input id="password2" type="password" placeholder="REPETÍ TU CONSTRASEÑA" name="password2">
+        <input class="campo" id="password" type="password" placeholder="CONSTRASEÑA" name="password">
+        <input class="campo" id="password2" type="password" placeholder="REPETÍ TU CONSTRASEÑA" name="password2">
 
         <span class="artist-form">
-            <input class="artist-btn" id="artist-btn" type="button" value="NO SOY ARTISTA" name="nosoyartista">
+            <input class="campo artist-btn" id="artist-btn" type="button" value="NO SOY ARTISTA" name="nosoyartista">
         </span>
 
         <span class="check-btn">
-            <label><input type="checkbox" id="newsletter" checked name="recibirmails"> Quiero recibir mails </label>
-            <label><input type="checkbox" id="terms"checked> Entiendo los terminos y condiciones </label>
+            <label><input class="campo" type="checkbox" id="newsletter" checked name="recibirmails"> Quiero recibir
+                mails </label>
+            <label><input class="campo" type="checkbox" id="terms" checked> Entiendo los terminos y condiciones </label>
         </span>
 
         <span id="submit-btn" class="submit-btn">
-            <input id="submit" type="submit" value="REGISTRARME">
+            <input class="campo" id="submit" type="submit" value="REGISTRARME">
         </span>
 
     </form>
     </main>
+    
 
     <%- include('partials/footer.ejs') %>
 
