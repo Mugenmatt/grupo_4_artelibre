@@ -1,178 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-
-
-main {
-    width: 100%;
-        display: flex;
-        flex-direction: column;
+*::placeholder{
+    color: black;
+    opacity: 0.4;
 }
 
-/* on hover placeholder */
-
-.campo::placeholder,
-textarea::placeholder {
-    color: #aca49c;
-    font-size: 0.875em;
+main.row {
+    width: 50%;
 }
 
-.campo:focus::placeholder,
-textarea::focus::placeholder {
-    color: #bbb5af;
-}
-
-.campo:hover::placeholder,
-textarea:hover::placeholder {
-    color: #e2dedb;
-    font-size: 0.875em;
-}
-
-.campo:hover:focus::placeholder,
-textarea:hover:focus::placeholder {
-    color: #cbc6c1;
-}
-
-/* GENERICO */
-
-body {
-    font-family: 'Lato', sans-serif;
-    background: whitesmoke;
-    color: #b3aca7;
-
-}
-
-.register-title {
-    position: relative;
-    margin: 2% auto;
-    font-size: 2.3em;
+h2.register-title {
     text-align: center;
-    letter-spacing: 7px;
-    display: inline;
+    margin: 4%;
 }
 
-#form {
-    position: relative;
-    width: 45%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-.campo {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    width: 95%;
-    height: 30px;
-    padding: 1%;
-
-    display: block;
-
-    background: transparent;
-    outline: none;
-    color: #726659;
-
-    border: solid 1px #808080;
-    border-bottom: none;
-
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-}
-
-.campo:hover {
-    background: #b3aca7;
-    color: #e2dedb;
-}
-
-
-.artist-form,
-.check-btn,
-.submit-btn {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    width: 95%;
-    min-height: 35px;
-    padding: 1%;
-
-    background: transparent;
-    outline: none;
-    color: #726659;
-
-    border: solid 1px #808080;
-    border-bottom: none;
-
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+div.switch {
     text-align: center;
-    justify-content: center;
-    align-content: start;
-
+    margin-bottom: 4%;
 }
 
-.artist-btn {
-    width: 100%;
-    margin: auto;
-
-    padding: 0%;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    color: #b3aca7;
-
-    outline: none;
-    cursor: pointer;
-
-    border: none;
-}
-
-.artist-btn:hover {
-    color: #727272;
-}
-
-.artist-btn:hover:focus {
-    color: #303030;
+div.switch label {
+    font-size: 18px;
 }
 
 
-.check-btn {
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
-.check-btn label {
-    display: flex;
-    width: 100%;
-    text-align: left;
-    margin: 2%;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    color: #b3aca7;
-}
-
-.check-btn label input {
-    width: 0%;
-    height: 0%;
-    display: block;
-}
-
-.submit-btn {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    border: solid 1px #808080;
-}
-
-#submit {
-    box-sizing: border-box;
-    position: relative;
-    border: none;
-    margin: auto;
-    width: 100%;
-}

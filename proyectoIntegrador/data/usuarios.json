@@ -17,5 +17,16 @@
   "username": "fefe",
   "email": "facundo@hotmail.com",
   "password": "$2a$10$AXIZyqiL69Y72.BhM20r3ut.zWGtT.nXmGlTnTBOrW85iIdqBLDou"
+ },
+ {
+  "id": 4,
+  "name": "",
+  "lastname": "",
+  "username": "",
+  "email": "",
+  "password": "$2a$10$RanG2xN/oCDCSsOZuP9IluxG3UdVUu9sJBbBoIBnggEiUilFA4lna",
+  "recibirmails": "on",
+  "terms": "on",
+  "action": ""
  }
 ]
