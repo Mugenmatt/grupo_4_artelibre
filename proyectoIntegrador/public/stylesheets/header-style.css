@@ -1,14 +1,15 @@
-/*
-Inspiration for this menu: https://dribbble.com/shots/2962837-Header-Nav by Scout: https://dribbble.com/scout
-*/
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 
+.hero {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: whitesmoke;
+}
 
 html {
     box-sizing: border-box;
 }
-
 
 html,
 body,
@@ -39,7 +40,6 @@ figure {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     font-size: 100%;
 }
 
@@ -55,14 +55,6 @@ body {
     clear: both;
 }
 
-/* 
-Full screen background image
-*/
-.hero {
-    position: relative;
-    width: 100%;
-    background-color: whitesmoke;
-}
 
 
 /*
@@ -87,7 +79,7 @@ Making sure everything in .hero sits above our :after elements
 #masthead {
     padding: 50px 0;
     position: relative;
-    background-color: rgb(97, 97, 97);
+    background-color: var(--tealdark);
 }
 
 #masthead.is-active {

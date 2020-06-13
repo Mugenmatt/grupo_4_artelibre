@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&display=swap');
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Hind',
+  sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
-a {
-  color: #00B7FF;
+:root {
+  --orangedark: #F58F00;
+  --orangelight: #FFAF47;
+  --tealdark: #27A599;
+  --teallight: #ACECE7;
+  --white: white;
 }
+
+.contenedor {
+  margin-top: 10%;
+}
+
+

@@ -1,6 +1,6 @@
 .piePagina {
     width: 100%;
-    background-color: #fff;
+    background-color: var(--tealdark);
     border-top: 1px solid #000;
     margin-bottom: 0;
 }
