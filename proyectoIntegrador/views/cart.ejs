@@ -25,31 +25,33 @@
     
     </div>
 
-        <div class="contenedor">
+        <div class="contenedor container">
             <h2>Tus cuadros favoritos</h2>
             <!-- TARJETA DE PRODUCTO -->
-            <div class="row" style="width: 40%;">
+            <div class="row" style="width: 70%;">
                 <section class="card horizontal small">
                     <span class="card-image">
                         <img class="responsive-img materialboxed"
                             src="/images/products/mona-lisa-with-face-mask-3957982.jpg">
                     </span>
                     <div class="card-stacked">
-                        <div class="card-content col">
+                        <a class="btn-flat boton-eliminar"><i class="material-icons">close</i></a>
+                        <div class="card-content col contenido-item">
                             <p class="left-align flow-text">(AUTOR)</p>
                             <h6 class="left-align flow-text">TITULO</h6>
                             <blockquote>Descripcion</blockquote>
                             <p class="right-align flow-text">$$$</p>
                         </div>
-                        <div class="card-action"
-                            style="display: flex; justify-content: space-between; align-content: center;">
-                            <a href="#" class="teal-text text-lighten-2">COMPRAR</a>
-                            <a class="btn-flat"><i class="material-icons">close</i></a>
-                        </div>
                     </div>
                 </section>
             </div>
 
+            <div class="row right-align" style="margin: 5%;">
+                <p class="total-productos">Cant de items</p>
+                <p class="total-precio">TOTAL $</p>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Comprar todos
+                </button>
+            </div>
         </div>
 
 

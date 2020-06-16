@@ -5,6 +5,8 @@ body {
   sans-serif;
   font-style: normal;
   font-weight: 100;
+  background-color: whitesmoke;
+  margin-top: 5%;
 }
 
 :root {
@@ -15,8 +17,8 @@ body {
   --white: white;
 }
 
-.contenedor {
-  margin-top: 10%;
+.container {
+  margin-top: 5%;
 }
 
 
