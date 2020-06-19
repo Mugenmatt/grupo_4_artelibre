@@ -29,6 +29,25 @@
     <div class="container contenedor">
         <div class="row card">
             <div class="card-content ">
+
+                <!-- ERRORES DE LOGUEO COMETIDO POR USUARIO  -->
+
+                <% if(typeof errors != 'undefined')  {%>
+                    
+                    <p style="color:red">ERROR</p>
+
+                    <ul>
+                        <% for(let i = 0; i < errors.length; i++) { %>
+                            
+                            <li>
+                                <%= erros[i].msg %>
+                            </li>
+
+                        <% } %> 
+                    </ul>
+
+                <% } %> 
+
                 <!-- <h2 class="center blue-text">Login Form</h2> -->
                 <form method="POST" action="/users/login" class="row s12">
                     <div class="col s12">

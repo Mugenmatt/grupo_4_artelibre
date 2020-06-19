@@ -29,6 +29,24 @@
     <main class="row container">
     <h2 class="register-title">COMPLETÁ TUS DATOS</h2>
 
+                    <!-- ERRORES DE REGISTRACION COMETIDO POR USUARIO  -->
+
+                    <% if(typeof errors != 'undefined')  {%>
+                    
+                        <p style="color:red">ERROR</p>
+    
+                        <ul>
+                            <% for(let i = 0; i < errors.length; i++) { %>
+                                
+                                <li>
+                                    <%= erros[i].msg %>
+                                </li>
+    
+                            <% } %> 
+                        </ul>
+    
+                    <% } %> 
+
     <form action="/users/register" id="form" class="col s12" method="POST">
 
         <div class="row">

@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require("method-override")
+const session = require('express-session');
 
 // Require routes
 const indexRouter = require('./routes/index');
@@ -13,7 +14,6 @@ const specificRegisterRouter = require('./routes/specific-register')
 const galleryRouter = require('./routes/gallery')
 const productRouter = require('./routes/product')
 const cartRouter = require('./routes/cart')
-
 
 const app = express();
 
@@ -26,7 +26,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+app.use(session({secret: "ArteLibre: Shh, es un secreto!"}));
 
 // use routes
 app.use('/', indexRouter);
