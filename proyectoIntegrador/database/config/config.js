@@ -2,10 +2,11 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "arte_libre", //aca poner el nombre verdadero de la data base
+    "database": "arte_db_4",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": 0
+    "operatorsAliases": 0,
+    "define": {"paranoid": true}
   },
   "test": {
     "username": "root",
