@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     quantity: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN, //Facu: es tinyint(4), ver si funciona con boolean
     idUser: DataTypes.INTEGER
-  }, {});
+  }, {tablename: "products"});
 
   Product.associate = function(models) {
 

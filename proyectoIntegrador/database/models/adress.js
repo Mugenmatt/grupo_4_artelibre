@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     door: DataTypes.INTEGER,
     idUser: DataTypes.INTEGER
 
-  }, {tableName: "adresses"});
+  }, {tablename: "adresses"});
 
   Adress.associate = function(models) {
       

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Keyword', key: 'id'
       }
     }
-  }, {});
+  }, {tablename: "productkeys"});
 
   Productkey.associate = function(models) {
 

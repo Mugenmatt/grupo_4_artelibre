@@ -1,5 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const { check, validationResult, body} = require('express-validator');
+const db= require('../database/models/')
+const Usuario = db.Usuario;
 
 const usersController ={
     register: function(req,res){

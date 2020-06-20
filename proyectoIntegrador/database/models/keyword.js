@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const Keyword = sequelize.define('Keyword', {
     name: DataTypes.STRING,
-  }, {});
+  }, {tablename: "keywords"});
 
   Keyword.associate = function(models) {
 

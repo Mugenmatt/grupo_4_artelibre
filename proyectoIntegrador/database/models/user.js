@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     noShipping: DataTypes.BOOLEAN,
     averageScore: DataTypes.DECIMAL,
 
-  }, {});
+  }, {tablename: "users"});
 
   User.associate = function(models) {
 
