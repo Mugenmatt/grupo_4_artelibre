@@ -13,18 +13,18 @@ module.exports = (sequelize, DataTypes) => {
 
   Product.associate = function(models) {
 
-    Product.belogsTo(models.User,{
+    Product.belongsTo(models.User,{
       as:"user",
       foreignKey: "idUser"
       
     })
 
-    Product.hasMany(models.ProductImage, {
+    Product.hasMany(models.Productimage, {
       as:"productImages",
       foreignKey:"idProduct",
     })
 
-    Product.belogsToMany(models.Keyword,{
+    Product.belongsToMany(models.Keyword,{
       as:"keywords",
       through: "Productkey",
       foreignKey: "idProduct",

@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const Adress = sequelize.define('Adress', {
     street: DataTypes.STRING,
-    number: DataTypes.BOOLEAN, //Facu: esto no deberia ser integer?
+    number: DataTypes.INTEGER, 
     floor: DataTypes.INTEGER,
     door: DataTypes.INTEGER,
     idUser: DataTypes.INTEGER

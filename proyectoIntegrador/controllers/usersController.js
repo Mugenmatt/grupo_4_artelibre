@@ -1,7 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const { check, validationResult, body} = require('express-validator');
 const db= require('../database/models/')
-const Usuario = db.Usuario;
+const User = db.User;
 
 const usersController ={
     register: function(req,res){
@@ -9,18 +9,20 @@ const usersController ={
     },
 
     processRegister: function(req,res){
+        let user = req.body;
 
-        req.body.password = bcryptjs.hashSync(req.body.password,10);
-        delete req.body.password2;
+        user.password = bcryptjs.hashSync(user.password,10);
+        delete user.password2;
 
-        let nuevoUsuario={
-            id:userModel.nextId(),
-            ...req.body
-        }
+        User.create(user)
+        .then(()=>{
+            return res.redirect('/users/login');
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
 
-        userModel.save(nuevoUsuario);
-
-        return res.redirect('/users/login');
     },
     
     login: function(req,res){
@@ -39,39 +41,65 @@ const usersController ={
 
         // Matias dijo: "Me guié del video de Session de Playground"
 
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()) {
-
-            let dbUsuarios = fs.readFileSync('', {});
-            let users;
-            if(dbUsuarios == "") {
-                users = [];
-            } else {
-                users = JSON.parse(dbUsuarios)
+        User.findOne({
+            where: {
+               email: req.body.email
             }
+         })
+            .then(user => {
+   
+               if(user){
+                  if(bcryptjs.compareSync(req.body.password, user.password)){
+                     let userSession = user;
+   
+                     delete userSession.password;
+   
+                     req.session.user = userSession;
+   
+                     return res.redirect('/');
+   
+                  } else {
+                    return res.render('login',{error:'Usuario y/o contraseña no coinciden'})
+                  }
+               } else {
+                return res.render('login',{error:'Usuario y/o contraseña no coinciden'})
+               }
+            })
 
-            for(let i = 0; i < users.length; i++) {
-                if(users[i].email == req.body.email) {
-                    if(bcryptjs.compareSync(req.body.password, users[i].password)) {
-                        let usuarioALoguearse = users[i];
-                        break;
-                    }
-                }
-            }
 
-            if(usuarioALoguearse == undefined) {
-                return res.render('login', {errors: 
-                    [{msg:'Credenciales invalidas'}]
-                })
-            }
+        // let errors = validationResult(req);
 
-            req.session.usuarioLogueado = usuarioALoguearse;
-            res.redirect('index');
+        // if(errors.isEmpty()) {
 
-        } else {
-            return res.render('login', {errors:errors.errors})
-        }
+        //     let dbUsuarios = fs.readFileSync('', {});
+        //     let users;
+        //     if(dbUsuarios == "") {
+        //         users = [];
+        //     } else {
+        //         users = JSON.parse(dbUsuarios)
+        //     }
+
+        //     for(let i = 0; i < users.length; i++) {
+        //         if(users[i].email == req.body.email) {
+        //             if(bcryptjs.compareSync(req.body.password, users[i].password)) {
+        //                 let usuarioALoguearse = users[i];
+        //                 break;
+        //             }
+        //         }
+        //     }
+
+        //     if(usuarioALoguearse == undefined) {
+        //         return res.render('login', {errors: 
+        //             [{msg:'Credenciales invalidas'}]
+        //         })
+        //     }
+
+        //     req.session.usuarioLogueado = usuarioALoguearse;
+        //     res.redirect('index');
+
+        // } else {
+        //     return res.render('login', {errors:errors.errors})
+        // }
 
     }
 

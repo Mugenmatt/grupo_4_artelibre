@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Keyword.associate = function(models) {
 
-    Keyword.belogsToMany(models.Product,{
+    Keyword.belongsToMany(models.Product,{
       as:"products",
       through: "Productkey",
       foreignKey: "idKeyword",

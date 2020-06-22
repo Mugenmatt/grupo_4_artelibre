@@ -11,7 +11,7 @@ const authMiddleware = require('../middlewares/authMiddleware'); //Esto te deja 
 
 router.get('/register', guestMiddleware,usersController.register);
 router.post('/register',usersController.processRegister);
-router.get('/login', authMiddleware,usersController.login);
+router.get('/login', guestMiddleware,usersController.login);
 router.post('/login', [
     check('username').isEmail().withMessage('El usuario debe ser un email'),
     check('password').isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres')

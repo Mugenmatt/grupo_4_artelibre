@@ -3,14 +3,14 @@ module.exports = (sequelize, DataTypes) => {
 
   const Productkey = sequelize.define('Productkey', {
     idProduct: {
-      type: datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       references:{
         model: 'Product', key: 'id'
       }
     },
 
     idKeyword:{
-      type: datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       references:{
         model: 'Keyword', key: 'id'
       }

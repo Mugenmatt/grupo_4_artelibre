@@ -32,19 +32,9 @@
 
                 <!-- ERRORES DE LOGUEO COMETIDO POR USUARIO  -->
 
-                <% if(typeof errors != 'undefined')  {%>
+                <% if(typeof error != 'undefined')  {%>
                     
-                    <p style="color:red">ERROR</p>
-
-                    <ul>
-                        <% for(let i = 0; i < errors.length; i++) { %>
-                            
-                            <li>
-                                <%= erros[i].msg %>
-                            </li>
-
-                        <% } %> 
-                    </ul>
+                    <p style="color:red">Usuario y/o contraseña no coinciden</p>
 
                 <% } %> 
 
@@ -52,8 +42,8 @@
                 <form method="POST" action="/users/login" class="row s12">
                     <div class="col s12">
                         <div class="input-field">
-                            <input class="center" type="text" name="username" id="username"
-                                placeholder="Nombre de usuario">
+                            <input class="center" type="text" name="email" id="email"
+                                placeholder="Nombre de email">
                         </div>
                     </div>
                     <div class="col s12">
