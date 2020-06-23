@@ -2,12 +2,11 @@
 <html>
   <head>
     <title><%= title %></title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel='stylesheet' href='/stylesheets/header-style.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"
     />
@@ -41,7 +40,7 @@
         <div class="separador-textura antesDe-slider">
 
             <div class="centrador centrador-separador">
-                <p class="frase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum. Illum consequatur blanditiis consectetur vitae quis nam, aperiam maiores quo aut vel autem consequuntur, deserunt assumenda fugiat ratione deleniti amet.</p>
+                <p class="frase">-Así como el sol colorea las flores, el arte también colorea la vida.<br> -John Lubbock.</p>
             </div>
 
         </div>
@@ -190,7 +189,9 @@
                 </div>
 
                 <div class="caja-texto-nosotros">
-                    <p class="nosotros-texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat debitis aperiam, ex iusto doloribus reprehenderit corrupti et cumque dicta velit aliquid facilis, atque consectetur eum dolor porro in ad error ab commodi iste soluta neque laudantium. Cumque, at totam ipsa rerum id quia! A unde omnis necessitatibus commodi, rem corrupti.</p>
+                    <p class="nosotros-texto">Somos estudiantes de programación que queremos ayudar, desde nuestro lugar, a la difusión del arte. 
+                        Buscamos facilitar la visibilización de los artistas a lo largo y ancho de nuestro país. 
+                        Si un ambiente se llena de vida gracias a nuestra página, cumplimos nuestro objetivo. </p>
                 </div>
 
                 <div class="caja-imagenes-nosotros">
@@ -219,47 +220,45 @@
         
         <div class="separador-textura antesDe-contactanos">
 
-            <div class="centrador centrador-separador">
+            <!-- =========================================================================== -->
+            <!-- -------------------------------CONTACTANOS--------------------------------  -->
+            <!-- =========================================================================== -->
 
-            </div>            
+            <section class="contenedor contenedor-contactanos">
             
-        </div>
-        
-        
-        <!-- =========================================================================== -->
-        <!-- -------------------------------CONTACTANOS--------------------------------  -->
-        <!-- =========================================================================== -->
-        
-
-        <section class="contenedor contenedor-contactanos">
-
-            <div class="centrador centrador-contactanos">
-
-                <div class="caja-subtitulo">
-                    <h3 class="subtitulo">Contactános</h3>
+                <div class="centrador centrador-contactanos card-panel">
+                    <h4 class="subtitulo center-align">Contactános</h4>
+                    <form class="formulario-contactanos col s12" action="" method="GET">
+            
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="fullname" type="text" class="validate" name="fullname">
+                                <label for="fullname">Tu nombre y apellido</label>
+                            </div>
+            
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Tu email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Tu mensaje</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="waves-effect waves-teal btn-flat center-align" type="submit" name="action"
+                                style="margin: auto;">Enviar
+                            </button>
+                        </div>
+                    </form>
+            
                 </div>
-
-                <form class="formulario-contactanos" action="" method="GET">
-                    
-                    <label for="nombre" class="label-nombreApellido">Nombre y Apellido</label>
-                    <input type="text" class="input-nombreApellido" name="" id="nombre" placeholder="Escriba aquí" required>
-
-                    <label for="email" class="label-email">Email</label>
-                    <input type="email" class="input-email" name="" id="email" placeholder="Escriba aquí" required>
-
-                    <label for="celular" class="label-celular">Celular</label>
-                    <input type="tel" class="input-celular" name="" id="celular" placeholder="Escriba aquí">
-
-                    <label for="mensaje" class="label-mensaje">Tu mensaje</label>
-                    <textarea class="input-mensaje" name="" id="mensaje" cols="30" rows="10" placeholder="Escriba aquí" required></textarea>
-
-                    <input type="submit" class="btn-contacto-enviar" value="Enviar">
-
-                </form>
             
-            </div>
+            </section>
 
-        </section>
+        </div>
 
      </main>
 
@@ -269,6 +268,7 @@
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="/js/header-function.js"></script>
   </body>

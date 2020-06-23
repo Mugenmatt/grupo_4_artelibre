@@ -36,7 +36,7 @@
 }
 
 .contenedor {
-    width: 100%;
+    width: auto;
 }
 
 .centrador {
@@ -51,7 +51,7 @@
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-
+    margin-bottom: 10%;
 }
 
 .contenedor .fondo-caja-titulo {
@@ -85,19 +85,21 @@
 }
 
 .separador-textura .centrador .frase {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fdfffc;
     text-align: center;
-    line-height: 3em;
+    line-height: 1.5em;
 }
 
 .antesDe-slider {
     background-color: #2E0E02;
     background-image: url('https://c.pxhere.com/photos/45/49/oil_paint_texture_painting_artistic_brush_colorful_paint_orange-773565.jpg!d');
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
-    height: 95vh;
+    width: 100%;
+    height: 60vh;
 }
 
 /* ========================= SLIDER ========================= */
@@ -211,8 +213,10 @@
     background-image: url('https://c.pxhere.com/photos/73/53/painting_art_artwork_blue_yellow_creativity_backdrop_creative-1132791.jpg!d');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 95vh;
+    width: 100%;
+    height: 55vh;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* ========================= COMO FUNCIONA ========================= */
@@ -378,7 +382,7 @@
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-texto-nosotros .nosotros-texto {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 1.5em;
 }
 
@@ -404,19 +408,23 @@
     background-image: url('https://c.pxhere.com/photos/22/9b/painting_art_artwork_red_yellow_creativity_backdrop_creative-1132816.jpg!d');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
-    height: 95vh;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* =================== CONTACTANOS =================== */
 
-/* .contenedor-contactanos {} */
+ .contenedor-contactanos {
+     margin: 5%;
+ } 
 
 .contenedor-contactanos .centrador-contactanos {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
-
+/*
 .contenedor-contactanos .centrador-contactanos .formulario-contactanos {
     display: flex;
     flex-direction: column;
@@ -454,3 +462,4 @@
 .contenedor-contactanos .centrador-contactanos .formulario-contactanos .btn-contacto-enviar:hover {
     background-color: firebrick;
 }
+*/
