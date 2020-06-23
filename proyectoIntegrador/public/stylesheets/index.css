@@ -109,18 +109,14 @@
     height: 45vh;
 }
 
-.contenedor-fondo-slider .contenedor-slider {
-
-}
+.contenedor-fondo-slider .contenedor-slider {}
 
 .contenedor-fondo-slider .contenedor-slider .centrador {
     display: flex;
     flex-direction: column;
 }
 
-.contenedor-fondo-slider .contenedor-slider .centrador .caja-subt-destacados {
-
-}
+.contenedor-fondo-slider .contenedor-slider .centrador .caja-subt-destacados {}
 
 .contenedor-fondo-slider .contenedor-slider .centrador .caja-subt-destacados .subt-destacados {
     font-size: 1.9rem;
