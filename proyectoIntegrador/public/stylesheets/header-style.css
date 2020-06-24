@@ -442,6 +442,7 @@ button:focus {
     filter: invert(0%);
 }
 
+<<<<<<< HEAD
 .btn-floating i {
     color: black;
 }
@@ -512,3 +513,5 @@ button:focus {
     font-size: 1rem;
     color: #0000007a;
 }
+=======
+>>>>>>> dd933e81875af91098f8979991b57a379a468348
