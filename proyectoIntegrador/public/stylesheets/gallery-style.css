@@ -36,6 +36,15 @@ aside .collapsible {
     font-weight: 600;
 }
 
+.titulo-desplegable .flechita {
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.collapsible-body {
+    padding-top: 0;
+}
+
 .collapsible-body ul li a {
     color: #727272;
 }

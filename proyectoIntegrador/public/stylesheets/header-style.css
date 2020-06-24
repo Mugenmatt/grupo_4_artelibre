@@ -38,8 +38,6 @@ body {
     clear: both;
 }
 
-
-
 /*
 Blueish tint overlay
 */
@@ -102,6 +100,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     float: left;
     font: inherit;
     margin: 0.8125em 0 0;
+    margin-top: 0.5%;
     overflow: visible;
     outline: none;
     padding: 0;
@@ -123,6 +122,7 @@ button:focus {
     height: 24px;
     display: inline-block;
     position: relative;
+    left: 10%;
 }
 
 .hamburger-inner {
@@ -228,6 +228,8 @@ button:focus {
     overflow: visible;
     width: auto;
     box-shadow: none;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #site-nav .lista-links {
@@ -440,3 +442,89 @@ button:focus {
     filter: invert(0%);
 }
 
+.btn-floating i {
+    color: black;
+}
+
+.icono-usuario {
+    scale: 1.2;
+}
+
+.icono-usuario {
+    scale: 1.2;
+}
+
+/*=================================================*/
+
+#dropdown1{
+    height: auto;
+}
+
+#dropdown1 li {
+    min-height: auto;
+    text-align: center;
+}
+
+#dropdown1 li a {
+    line-height: normal;
+    padding: 5%;
+
+}
+
+/*===================================================
+====================================================*/
+.piePagina {
+    width: 100%;
+    background-color: var(--tealdark);
+    border-top: 1px solid #000;
+    margin-bottom: 0;
+}
+
+.piePagina .caja-redes-ayuda-terminos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/* .piePagina .caja-redes-ayuda-terminos .caja-redesSociales {
+    
+} */
+
+.piePagina .caja-redes-ayuda-terminos .caja-redesSociales .redesSociales {
+    text-decoration: none;
+}
+
+.piePagina .caja-redes-ayuda-terminos .caja-redesSociales .fab {
+    font-size: 1.5rem;
+}
+
+.piePagina .caja-redes-ayuda-terminos .caja-redesSociales .fb:hover {
+    color: #3b5998;
+}
+
+.piePagina .caja-redes-ayuda-terminos .caja-redesSociales .ig:hover {
+    color: #DD2A7B;
+}
+
+.piePagina .caja-redes-ayuda-terminos .caja-redesSociales .wp:hover {
+    color: #075e54;
+}
+
+.piePagina .caja-redes-ayuda-terminos a {
+    color: #000;
+    padding: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.caja-copyright {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.caja-copyright .copyright {
+    font-size: 1rem;
+    color: #0000007a;
+}
