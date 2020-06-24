@@ -51,19 +51,23 @@
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-    margin-bottom: 10%;
+    background-image: url('../images/bg/arte3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 90vh;
 }
 
 .contenedor .fondo-caja-titulo {
-    background-image: url("https://wallpaperaccess.com/full/53929.jpg");
-    background-position-x: 25%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    clip-path: polygon(50% 0, 100% 50%, 100% 50%, 50% 100%, 0 50%);
+    /* background-image: url(""); */
+    /* background-position-x: 25%; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* clip-path: polygon(50% 0, 100% 50%, 100% 50%, 50% 100%, 0 50%); */
     /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%); */
-    width: 30%;
+    width: 50%;
     /* height: 70%; */
-    padding: 30px;
+    /* padding: 30px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,9 +75,12 @@
 
 .contenedor .fondo-caja-titulo .titulo {
     /* este margin esta en reemplazo del heigth de fondo-caj-titulo que no se porque no me toma el heigth: 60% */
-    margin: 60% 0;
-    font-size: 3em;
-    color: #a30000;
+    /* margin: 20% 0; */
+    border: 25px solid var(--tealdark);
+    padding: 20px;
+    font-size: 7em;
+    color: var(--white);
+    margin-bottom: 15%;
 }
 
 /* ========================= SEPARADOR ========================= */
@@ -86,26 +93,27 @@
 
 .separador-textura .centrador .frase {
     font-size: 1.5rem;
-    color: #fdfffc;
+    font-weight: 400;
+    color: var(--orangedark);
     text-align: center;
     line-height: 1.5em;
 }
 
 .antesDe-slider {
     background-color: #2E0E02;
-    background-image: url('https://c.pxhere.com/photos/45/49/oil_paint_texture_painting_artistic_brush_colorful_paint_orange-773565.jpg!d');
+    background-image: url('../images/bg/arte5.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 60vh;
+    height: 30vh;
 }
 
-/* ========================= SLIDER ========================= */
+/* ========================= SLIDER DESTACADOS ========================= */
 
 .contenedor-fondo-slider {
-    background-color: gray;
+    background-color: var(--tealdark);
     height: 45vh;
 }
 
@@ -206,7 +214,7 @@
 
 .antesDe-comoFunciona {
     background-color: #2E0E02;
-    background-image: url('https://c.pxhere.com/photos/73/53/painting_art_artwork_blue_yellow_creativity_backdrop_creative-1132791.jpg!d');
+    background-image: url('../images/bg/arte1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -218,7 +226,7 @@
 /* ========================= COMO FUNCIONA ========================= */
 
 .contenedor-comoFunciona {
-    background-color: #03045e;
+    background-color: var(--tealdark);
     color: white;
 }
 
@@ -279,14 +287,15 @@
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn {
-    width: 10%;
+    /* width: 10%; */
+    padding: 20px;
     border: 2px solid #fff;
     border-radius: 10px;
     text-align: center;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn:hover {
-    background-color: #a30000;
+    background-color: var(--orangedark);
     cursor: pointer;
 }
 
@@ -297,11 +306,15 @@
     padding: 20px;
 }
 
+.centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate:hover {
+    color: var(--orangelight);
+}
+
 
 /* =================== ARTICULOS DE INTERES =================== */
 
 .contenedor-articulosInteres {
-    background-color: #160A54;
+    background-color: var(--orangedark);
     display: flex;
     flex-direction: column;
 }
@@ -328,12 +341,10 @@
 }
 
 .caja-articulos .articulo .a-img-articulo  {
-    border: 1px solid rgba(255, 255, 255, 0);
     padding: 5px;
 }
 
 .caja-articulos .articulo .a-img-articulo:hover {
-    border: 1px solid #fff;
     padding: 5px;
 }
 
@@ -364,7 +375,9 @@
 
 /* =================== NOSOTROS =================== */
 
-/* .contenedor-nosotros {} */
+.contenedor-nosotros {
+    background-color: var(--tealdark);
+}
 
 .contenedor-nosotros .centrador-nosotros {
     display: flex;
@@ -401,7 +414,7 @@
 
 .antesDe-contactanos {
     background-color: #2E0E02;
-    background-image: url('https://c.pxhere.com/photos/22/9b/painting_art_artwork_red_yellow_creativity_backdrop_creative-1132816.jpg!d');
+    background-image: url('../images/bg/arte4.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
