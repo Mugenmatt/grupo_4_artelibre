@@ -2,7 +2,6 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel='stylesheet' href='/stylesheets/header-style.css'/>
@@ -49,42 +48,37 @@
         <!------------------------- SLIDER --------------------------->
         <!-- =========================================================================== -->
 
-     <section class="contenedor-fondo-slider">
+    <section class="contenedor-fondo-slider">
 
-        <div class="contenedor-slider">
+        <h3 class="titulo-destacados">Los más destacados</h3>
 
-            <div class="centrador centrador-slider">
-                
-
-                <div class="caja-subtitulo caja-subt-destacados">
-                    <h3 class="subtitulo subt-destacados">Los Más Destacados</h3>
-                </div>
-
-
-                <div class="contenedor-slider">
-
-                    <div class="subcontenedor-slider">
-
-                        <figure><img src="https://www.wallpaperup.com/uploads/wallpapers/2015/08/03/770144/e3ac19c560484c3daf09b5d5715b1d54-700.jpg"></figure>
-                        <figure><img src="http://wikiooimg.wikioo.org/ADC/Art.nsf/O/8Y34MD/$File/Francisco-Camilo-Adoration-of-the-Magi-2-.JPG"></figure>
-                        <figure><img src="https://lh3.googleusercontent.com/proxy/jurICKGy-bKwK3QpmR39rK6T9IS0KjNFiqNshUaeg_-twwxx1TY0yHMSVabGRMfr3Cg711yOQxaeEhBFOhBjlQw-Gf4_UMSA-WpCC69WmVbGWRpO24wb-IFrDjotZ66nFrlTtLvWMr7B4n5NlwdJDnKlIevycsthcWW2sX1q4yOdNg1NU9f8gebsFvw1VjZ5tLAE9Gv56u-3aoM"></figure>
-                        <figure><img src="https://wahooart.com/Art.nsf/O/9GZHJG/$File/FilippinoLippi-TheAdorationoftheMagi.JPG"></figure>
-                        <figure><img src="https://lh3.googleusercontent.com/proxy/2NoomzM2y670ergvwdZrMalyfzAByvyG04bTWDWO8T8N7cPvs3RYzk_z8uJSkCayNskOzdmzByUzRjg7tM99OWeATdMfebCpg2-EBXbTONm3CqPcHwt9r3hb1HMZAtZMj8UDl0prkDlLRQ0P"></figure>
-                        <figure><img src="https://wahooart.com/Art.nsf/O/8Y3RSF/$File/Luca-Giordano-The-Rape-of-Europa-4-.JPG"></figure>
-                        <figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bartolomeo_Bimbi_-_The_Pumpkin_-_WGA02200.jpg"></figure>
-                        <figure><img src="http://wikiooimg.wikioo.org/ADC/Art.nsf/O/8XXKAT/$File/Auguste-Chabaud-Landscape-Blue-.JPG"></figure>
-                        <figure><img src="https://wahooart.com/Art.nsf/O/8XYJLZ/$File/Maurice-Prendergast-Bathers.JPG"></figure>
-                        <figure><img src="https://2.bp.blogspot.com/-QM72j3eWDIg/UyS59ysFC6I/AAAAAAAAAVw/prKa6N-1sIo/s1600/A-Brief-Tail-of-Love-1017x700.jpg"></figure>
-
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="carousel">
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro1.jpg"></a>
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro2.jpg"></a>
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro3.jpg"></a>
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro4.jpg"></a>
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto1.jpg"></a>
+                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto2.jpg"></a>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
-            </div>
-        
-        </div>
 
-     </section>
+                    <!-- Botones (no se estan usando ) -->
+
+                    <!-- <div class="botones-slider">
+
+                        <button class="prev">Anterior</button>
+
+                        <button class="next">Siguiente</button>
+
+                    </div> -->
+
+    </section>
 
         <!-- =========================================================================== -->
         <!-- -------------------------------SEPARADOR----------------------------------  -->
@@ -266,10 +260,9 @@
      <%- include('partials/footer.ejs') %>
 
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="/js/header-function.js"></script>
+    <script src="/js/index-carrousel.js"></script>
   </body>
 </html>

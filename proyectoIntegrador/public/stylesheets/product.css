@@ -13,7 +13,7 @@ body {
   }
 
 main {
-    background-color: #a2a2a2;
+    background-color: var(--tealdark);
 }
 
 /* ============================ SLIDER ============================ */
@@ -22,7 +22,7 @@ main {
     height: 70vh;
     width: 100%;
     /* ACA HAY UN PROBLEMA CON EL MARGIN PARA ALEJAR AL SLIDER DE ARRIBA SIN TOCAR EL COLOR DE FONDO */
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .caja-slider .ul-slider {
