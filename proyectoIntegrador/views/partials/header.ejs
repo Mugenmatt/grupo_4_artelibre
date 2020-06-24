@@ -1,6 +1,6 @@
 <header id="masthead" role="banner">
     <div class="container-menu">
-      <button class="hamburger hamburger--boring" type="button">
+      <button class="hamburger hamburger--boring btn-floating white" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -9,12 +9,18 @@
 
        <!-- De aca para abajo, es de der a izq  -->
 
-      <a class="cart" href="/cart"><img src="/images/icons/bolso.png" alt="" srcset=""></a>
-      <!-- <span class="icon-cart-label">Carrito</span> -->
-      </button>
+      <a class="cart btn-floating white" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
+      
 
-      <a class="cart"  href="/users/login"><img src="/images/icons/usuario.png" alt="" srcset=""></a>
-      </button>
+      <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i
+          class="material-icons icono-usuario">person_outline</i></a>
+      <!-- Dropdown Trigger 
+      <a class='cart dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>-->
+       <!-- Dropdown Structure -->
+       <ul id='dropdown1' class='dropdown-content'>
+         <li><a href="#!">one</a></li>
+         <li><a href="#!">two</a></li>
+       </ul>
 
       
       
@@ -22,10 +28,10 @@
         <div class="lista-links">
           <a href="/">Inicio</a>
           <a href="/gallery">Galeria</a>
-          <a href="/">¿Como funciona?</a>
+          <a href="/#como-funciona">¿Como funciona?</a>
           <a href="/">Interes</a>
-          <a href="/">Nosotros</a>
-          <a href="/">Contacto</a>
+          <a href="/#nosotros">Nosotros</a>
+          <a href="/#contacto">Contacto</a>
         </div>
         <form id="masthead-search">
           <input type="search" name="s" aria-labelledby="search-label" placeholder="Search&hellip;" class="draw">

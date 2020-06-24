@@ -10,6 +10,7 @@ const usersController ={
 
     processRegister: function(req,res){
         let user = req.body;
+        console.log(user);
 
         user.password = bcryptjs.hashSync(user.password,10);
         delete user.password2;

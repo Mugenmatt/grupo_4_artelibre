@@ -12,3 +12,8 @@ $(function () {
         return false;
     })
 });
+
+$('.dropdown-trigger').dropdown({
+    alignment: 'center',
+    coverTrigger: false,
+});

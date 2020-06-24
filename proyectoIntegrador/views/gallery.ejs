@@ -26,13 +26,16 @@
         <aside class="izquierda col s12 m4 l3 main-aside">
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header titulo-desplegable">Artistas</div>
+                    <div class="collapsible-header titulo-desplegable">Artistas <i class="tiny material-icons prefix flechita">expand_more</i></div>
                     <div class="collapsible-body">
                         <ul>
+                            <% for (let artist of artistas) { %>
+                                <li><a href=""><%= artist.username %> </a></li>
+                            <% }  %> 
                             <li><a href="">Nombre de Artista 1</a></li>
                             <li><a href="">Nombre de Artista 2</a></li>
                             <li><a href="">Nombre de Artista 3</a></li>
-                            <li><a href="">Nombre de Artista 4</a></li>
+                            <li><a href="">Nombre de Artista 4</a></li> 
                         </ul>
                     </div>
                 </li>

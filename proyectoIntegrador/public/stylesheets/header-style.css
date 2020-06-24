@@ -38,8 +38,6 @@ body {
     clear: both;
 }
 
-
-
 /*
 Blueish tint overlay
 */
@@ -102,6 +100,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     float: left;
     font: inherit;
     margin: 0.8125em 0 0;
+    margin-top: 0.5%;
     overflow: visible;
     outline: none;
     padding: 0;
@@ -123,6 +122,7 @@ button:focus {
     height: 24px;
     display: inline-block;
     position: relative;
+    left: 10%;
 }
 
 .hamburger-inner {
@@ -228,6 +228,8 @@ button:focus {
     overflow: visible;
     width: auto;
     box-shadow: none;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #site-nav .lista-links {
@@ -438,6 +440,18 @@ button:focus {
 
 #masthead.is-active .cart img {
     filter: invert(0%);
+}
+
+.btn-floating i {
+    color: black;
+}
+
+.icono-usuario {
+    scale: 1.2;
+}
+
+.icono-usuario {
+    scale: 1.2;
 }
 
 /*===================================================
