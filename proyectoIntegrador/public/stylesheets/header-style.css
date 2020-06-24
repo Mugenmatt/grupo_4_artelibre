@@ -442,7 +442,6 @@ button:focus {
     filter: invert(0%);
 }
 
-<<<<<<< HEAD
 .btn-floating i {
     color: black;
 }
@@ -455,8 +454,24 @@ button:focus {
     scale: 1.2;
 }
 
+/*=================================================*/
+
+#dropdown1{
+    height: auto;
+}
+
+#dropdown1 li {
+    min-height: auto;
+    text-align: center;
+}
+
+#dropdown1 li a {
+    line-height: normal;
+    padding: 5%;
+
+}
+
 /*===================================================
-=================    FOOTER    ======================
 ====================================================*/
 .piePagina {
     width: 100%;
@@ -513,5 +528,3 @@ button:focus {
     font-size: 1rem;
     color: #0000007a;
 }
-=======
->>>>>>> dd933e81875af91098f8979991b57a379a468348
