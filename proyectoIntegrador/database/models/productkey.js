@@ -2,6 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
 
   const Productkey = sequelize.define('Productkey', {
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     idProduct: {
       type: DataTypes.INTEGER,
       references:{

@@ -2,13 +2,19 @@
 module.exports = (sequelize, DataTypes) => {
 
   const Product = sequelize.define('Product', {
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
     price: DataTypes.DECIMAL,
     size: DataTypes.STRING,
     quantity: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN, //Facu: es tinyint(4), ver si funciona con boolean
-    idUser: DataTypes.INTEGER
+    idUser: DataTypes.INTEGER,
+    
   }, {tablename: "products"});
 
   Product.associate = function(models) {
@@ -20,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Product.hasMany(models.Productimage, {
-      as:"productImages",
+      as:"productimages",
       foreignKey:"idProduct",
     })
 

@@ -2,6 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
 
   const Adress = sequelize.define('Adress', {
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     street: DataTypes.STRING,
     number: DataTypes.INTEGER, 
     floor: DataTypes.INTEGER,
