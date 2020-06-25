@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require("method-override")
 const session = require('express-session');
+const log = require('./middlewares/logMiddleware');
 
 // Require routes
 const indexRouter = require('./routes/index');
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "ArteLibre: Shh, es un secreto!"}));
+app.use(log);
 
 // use routes
 app.use('/', indexRouter);

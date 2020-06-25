@@ -44,6 +44,7 @@ const usersController ={
                      let userSession = user;
    
                      delete userSession.password;
+                     delete userSession.password2;
    
                      req.session.user = userSession;
    
@@ -58,6 +59,11 @@ const usersController ={
             })
        
 
+    },
+    logout: function(req,res){
+        req.session.destroy();
+
+        return res.redirect('/')
     }
 
 }

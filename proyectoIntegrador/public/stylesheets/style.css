@@ -489,6 +489,7 @@ button:focus {
 #dropdown1 {
   height: auto;
   position: absolute;
+  overflow-y: hidden;
 }
 
 #dropdown1 li {
@@ -499,6 +500,18 @@ button:focus {
 #dropdown1 li a {
   line-height: normal;
   padding: 5%;
+
+}
+
+.btn-cerrarSesion{
+  font-family: 'Hind',
+  sans-serif;
+  height:auto;
+  text-transform:none;
+  line-height: 1.15;
+  color: var(--tealdark);
+  font-size: 1rem;
+
 
 }
 

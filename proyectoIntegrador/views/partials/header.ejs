@@ -15,9 +15,20 @@
       <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i class="material-icons icono-usuario">person_outline</i></a>
             <!-- Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="/users/login">Inicia Sesión</a></li>
-              <li><a href="/profile#">Tu perfil</a></li>
-              <li><a href="/logout#">Cerrar sesión</a></li>
+              <% if (locals.user) { %>
+                <li><a href="/profile#">Tu perfil</a></li>
+                <li>
+                  <form action="/users/logout" method="post">
+                    <button class="btn-flat btn-cerrarSesion" type="submit">
+                      Cerrar session
+                    </button>
+                  </form>
+                </li>
+              <% }else{ %>
+                <li><a href="/users/login">Inicia Sesión</a></li>
+                <li><a href="/users/register">Registrate</a></li>
+              <% } %>
+              
             </ul>
       
       <nav id="site-nav" role="navigation">
@@ -25,7 +36,7 @@
           <a href="/">Inicio</a>
           <a href="/gallery">Galeria</a>
           <a href="/#como-funciona">¿Como funciona?</a>
-          <a href="/">Interes</a>
+          <a href="/#articulosInteres">Interes</a>
           <a href="/#nosotros">Nosotros</a>
           <a href="/#contacto">Contacto</a>
         </div>
