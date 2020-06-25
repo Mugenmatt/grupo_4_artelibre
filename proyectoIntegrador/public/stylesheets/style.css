@@ -244,8 +244,8 @@ button:focus {
   display: flex;
   height: 0px;
   overflow: hidden;
-  padding-top: 0.5em;
-  justify-content: space-around;
+  padding-top: 1em;
+  justify-content: start;
   background-color: transparent;
   line-height: normal;
   box-shadow: none;
@@ -257,8 +257,6 @@ button:focus {
   overflow: visible;
   width: auto;
   box-shadow: none;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 #site-nav .lista-links {
@@ -266,60 +264,26 @@ button:focus {
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-left: 15%;
+  margin: auto;
 }
 
-/*
-@media screen and (min-width: 550px) {
-    #site-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    #site-nav .col {
-        flex: 0 0 50%;
-    }
+#site-nav ul li {
+  text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-    #site-nav .col {
-        flex: 0 0 33.333333333%;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    #site-nav {
-        flex-wrap: nowrap;
-    }
-
-    #site-nav .col {
-        flex: 0 0 20%;
-    }
-
-    #site-nav .col:last-child {
-        display: flex;
-        justify-content: flex-end;
-    }
-}
-
-*/
-
-#site-nav a {
+#site-nav ul li a {
   letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 1%;
   text-decoration: none;
   transition: color 0.3s ease;
   color: #b4b9ba;
+  padding: 1% 15px;
 }
 
-#site-nav a:hover,
-#site-nav a:focus {
-  color: #686d6e;
+#site-nav ul li a:hover,
+#site-nav ul li a:focus {
+  color: var(--tealdark);
+  background-color: transparent;
 }
-
-
-
 
 #masthead-search {
   float: right;
@@ -514,6 +478,36 @@ button:focus {
 
 
 }
+
+@media screen and (max-width: 992px) {
+  #site-nav ul li a {
+    padding: 1% 5px;
+  }
+
+  #masthead-search{
+    max-width: 12em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-nav {
+    flex-direction: column-reverse;
+    align-content: center;
+  }
+
+  #site-nav .lista-links {
+    width: 90%;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    margin: auto;
+  }
+
+  #masthead-search {
+    margin: auto;
+  }
+}
+
 
 /*===================================================
 =================EXCLUSIVO FOOTER====================
