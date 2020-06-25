@@ -9,8 +9,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-
-  }
+    margin-top: 0;
+}
 
 main {
     background-color: var(--tealdark);
@@ -53,6 +53,7 @@ main {
 .contenedor-precio-descrip-user .caja-precio {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito {
@@ -65,21 +66,22 @@ main {
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito .precio {
     margin-bottom: 0.6%;
+    color: var(--white);
 }
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito .btn-agregarCarrito {
-    width: 5%;
-    height: 100%;
-    border: 1px solid #000;
-    background-color: white;
+    border: 1px solid var(--white);
+    background-color: var(--orangedark);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 100%;
     box-shadow: none;
+    padding: 20px;
 }
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito .btn-agregarCarrito:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--orangedark);
+    color: var(--white);
+    cursor: pointer;
 }
 
 .contenedor-precio-descrip-user .caja-descripcion {
@@ -93,6 +95,7 @@ main {
 .contenedor-precio-descrip-user .caja-descripcion .caja-descripcion-titulo {
     text-align: center;
     width: 70%;
+    color: var(--white);
 }
 
 .contenedor-precio-descrip-user .caja-descripcion .caja-descripcion-titulo .descripcion-titulo {
@@ -102,6 +105,7 @@ main {
 .contenedor-precio-descrip-user .caja-descripcion .caja-texto-descriptivo {
     width: 60%;
     margin-top: 20px;
+    color: var(--white);
 }
 
 .contenedor-precio-descrip-user .caja-descripcion .caja-texto-descriptivo .texto-descriptivo {
@@ -115,9 +119,10 @@ main {
     margin: auto;
     padding: 20px;
     margin-top: 50px;
-    border: 2px solid #000;
+    border: 2px solid var(--white);
     border-radius: 20px;
     width: 50%;
+    color: var(--white);
 }
 
 .contenedor-precio-descrip-user .caja-datosUsuario .datosUsuario-titulo {
@@ -135,13 +140,13 @@ main {
 .contenedor-precio-descrip-user .caja-precio .cartel-pop-up {
     display: flex;
     justify-content: center;
-    margin-left: 10%;
+    width: 100vw;
     margin-top: 2%;
 }
 
 .contenedor-precio-descrip-user .caja-precio .cartel-pop-up .pop-up-fondo {
     width: 15%;
-    background-color: red;
+    background-color: var(--orangedark);
     border-radius: 20px;
     height: 100px;
     display: flex;
@@ -151,7 +156,7 @@ main {
 
 .contenedor-precio-descrip-user .caja-precio .cartel-pop-up .pop-up-fondo .texto-pop-up {
     margin: auto;
-    color: #fff;
+    color: var(--white);
     font-size: 1.2rem;
     padding: 20px;
 }
@@ -168,8 +173,8 @@ main {
 
 .contenedor-precio-descrip-user .btn-masCosasArtista:hover {
     background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
+    color: var(--white);
+    border: 1px solid var(--white);
 }
 
 /* ========================= COMENTARIOS ========================= */
@@ -189,6 +194,8 @@ main {
 
 .contenedor-comentarios .caja-comentarios-titulo .titulo-comentarios {
     font-size: 1.5rem;
+    color: var(--white);
+    
 }
 
 .contenedor-comentarios .caja-comentarios {
@@ -198,6 +205,7 @@ main {
 
 .contenedor-comentarios .caja-comentarios .comentarioX {
     line-height: 1.5;
+    color: var(--white);
 }
 
 .contenedor-comentarios .formulario-comentario {
@@ -218,13 +226,13 @@ main {
     border-radius: 20px;
     border-style: none;
     margin: 1% 83%;
-    background: #fff;
-    color: #000;
+    background: var(--white);
+    color: var(--orangedark);
     font-size: 1.2rem;
 }
 .contenedor-comentarios .formulario-comentario .enviarComentario:hover {
-    background: #000;
-    color: #fff;
+    background: var(--orangedark);
+    color: var(--white);
 }
 
 /* ========================= SUGERENCIAS ========================= */
@@ -245,6 +253,8 @@ main {
 
 .contenedor-sugerencias .caja-titulo-sugerencias .titulo-sugerencias {
     font-size: 1.5rem;
+    color: var(--white);
+
 }
 
 .contenedor-sugerencias .caja-sugerencias-ventas {
