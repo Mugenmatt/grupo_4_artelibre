@@ -1,4 +1,4 @@
-const db= require('../database/models/')
+const db= require('../database/models/');
 const User = db.User;
 const Productimage = db.Productimage;
 const Product = db.Product;
@@ -10,20 +10,23 @@ const galleryController = {
         where:{
           rol:1
         }
-      }).catch(errors=>console.log(errors))
+      });
 
-      let obras = Productimage.findAll(
-         //{include: [{association:"product"}]}
-        ).catch(errors=>console.log(errors));
-      
-        // FACU: la asociacion de imagen producto con producto no esta funcionando, por eso lo deje comentado.
-        //tengo que traer solo una de las fotos de ese producto, para que no se repitan productos.
+      let obras = Product.findAll(
+         {
+           include: ["productimages"]
+          }
+        );
         
       Promise.all([artistas,obras])
         .then(function([artistas,obras]){
           return res.render('gallery',{artistas,obras})
         })
         .catch(errors=>console.log(errors));
+/* 
+obras.prodcutimages[0]
+*/
+
 
       },
 
@@ -34,18 +37,31 @@ const galleryController = {
           where:{
             rol:1
           }
-        }).catch(errors=>console.log(errors))
+        });
 
-        //FACU: por ahora hay problema con el product asi que no funciona. a preguntar.
-        let obras = Product.findAll({
-            where:{
-              idUser: artistId
-            }
-          }).catch(errors=>console.log(errors))
+        
+        // let obras = Product.findAll({
+        //     where:{
+        //       idUser: artistId
+        //     }
+        //   });
+
+        let artista = User.finByPk(artistId,{
+          include: {
+            all: true,
+            nested: true
+          }
+        });
+
+        /* 
+        artista.products.forEach(producto=>{
+          producto.productimages[0]
+        })
+        */
         
         Promise.all([artistas,obras])
         .then(function([artistas,obras]){
-          return res.render('gallery',{artistas,obras})
+          return res.render('gallery',{artistas,artista})
         })
         .catch(errors=>console.log(errors));
 
