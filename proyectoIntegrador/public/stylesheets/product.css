@@ -52,17 +52,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10%;
 }
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito .precio {
     margin-bottom: 0.6%;
+    margin-top: 0;
     color: var(--white);
 }
 
 .contenedor-precio-descrip-user .caja-precio .precio-carrito .btn-agregarCarrito {
-    border: 1px solid var(--white);
-    background-color: var(--orangedark);
+    background-color: var(--white);
+    border-style: none;
     padding: 10px;
     border-radius: 100%;
     box-shadow: none;
@@ -90,12 +90,13 @@ main {
 }
 
 .contenedor-precio-descrip-user .caja-descripcion .caja-descripcion-titulo .descripcion-titulo {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .contenedor-precio-descrip-user .caja-descripcion .caja-texto-descriptivo {
     width: 60%;
     margin-top: 20px;
+    text-align: center;
     color: var(--white);
 }
 
@@ -117,7 +118,7 @@ main {
 }
 
 .contenedor-precio-descrip-user .caja-datosUsuario .datosUsuario-titulo {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
 }
 
 .contenedor-precio-descrip-user .caja-datosUsuario .caja-texto-users {
@@ -186,7 +187,7 @@ main {
 }
 
 .contenedor-comentarios .caja-comentarios-titulo .titulo-comentarios {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--white);
     
 }
@@ -218,7 +219,7 @@ main {
     padding: 15px;
     border-radius: 20px;
     border-style: none;
-    margin: 1% 83%;
+    margin: 4% 83%;
     background: var(--white);
     color: var(--orangedark);
     font-size: 1.2rem;
@@ -242,10 +243,11 @@ main {
 .contenedor-sugerencias .caja-titulo-sugerencias {
     width: 100%;
     margin-left: 3%;
+    margin-bottom: 2.5%;
 }
 
 .contenedor-sugerencias .caja-titulo-sugerencias .titulo-sugerencias {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--white);
 }
 
