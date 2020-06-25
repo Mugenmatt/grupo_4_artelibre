@@ -168,11 +168,13 @@ main {
     padding: 20px;
     border-radius: 50px;
     border-style: none;
-    border: 1px solid black;
+    color: var(--orangedark);
+    background-color: var(--white);
+    border: 1px solid var(--orangedark);
 }
 
 .contenedor-precio-descrip-user .btn-masCosasArtista:hover {
-    background-color: #000;
+    background-color: var(--orangedark);
     color: var(--white);
     border: 1px solid var(--white);
 }
@@ -254,7 +256,6 @@ main {
 .contenedor-sugerencias .caja-titulo-sugerencias .titulo-sugerencias {
     font-size: 1.5rem;
     color: var(--white);
-
 }
 
 .contenedor-sugerencias .caja-sugerencias-ventas {
@@ -290,3 +291,19 @@ main {
 .contenedor-sugerencias .caja-sugerencia .caja-cartel-vendido3 {
     display: none;
 }
+
+.slider {
+    margin-bottom: 6%;
+}
+
+.slider .slides {}
+
+.slider .slides li {}
+
+.slider .slides li img {}
+
+.slider .slides li caption {}
+
+.slider .slides li caption h3 {}
+
+.slider .slides li caption h5 {}

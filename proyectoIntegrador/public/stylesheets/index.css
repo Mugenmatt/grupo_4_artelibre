@@ -32,7 +32,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
     background-image: url('../images/bg/arte3.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
