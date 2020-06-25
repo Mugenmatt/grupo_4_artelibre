@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL,
     size: DataTypes.STRING,
     quantity: DataTypes.INTEGER,
-    status: DataTypes.BOOLEAN, //Facu: es tinyint(4), ver si funciona con boolean
+    status: DataTypes.BOOLEAN, 
     idUser: DataTypes.INTEGER,
     
   }, {tablename: "products"});

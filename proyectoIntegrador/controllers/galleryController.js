@@ -39,13 +39,6 @@ obras.prodcutimages[0]
           }
         });
 
-        
-        // let obras = Product.findAll({
-        //     where:{
-        //       idUser: artistId
-        //     }
-        //   });
-
         let artista = User.finByPk(artistId,{
           include: {
             all: true,

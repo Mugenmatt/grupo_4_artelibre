@@ -47,6 +47,10 @@ const usersController ={
                      delete userSession.password2;
    
                      req.session.user = userSession;
+
+                     if (req.body.recordar) {
+                         res.cookie("id",userSession.id,{maxAge: 1000 * 60 * 60 * 24 })
+                     }
    
                      return res.redirect('/');
    
@@ -62,6 +66,10 @@ const usersController ={
     },
     logout: function(req,res){
         req.session.destroy();
+        
+        if (req.cookies.id) {
+            res.clearCookie("id");
+        }
 
         return res.redirect('/')
     },
