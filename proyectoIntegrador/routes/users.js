@@ -17,5 +17,6 @@ router.post('/register', [
 router.get('/login', guestMiddleware,usersController.login);
 router.post('/login',usersController.processLogin);
 router.post('/logout',authMiddleware, usersController.logout);
+router.get('/profile',authMiddleware, usersController.profile);
 
 module.exports = router;

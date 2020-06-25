@@ -64,6 +64,11 @@ const usersController ={
         req.session.destroy();
 
         return res.redirect('/')
+    },
+
+    profile: function(req,res){
+        
+        return res.render('profile')
     }
 
 }
