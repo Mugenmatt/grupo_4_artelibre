@@ -8,8 +8,8 @@
 .piePagina .caja-redes-ayuda-terminos {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: flex-end;
+    flex-direction: row-reverse;
 }
 
 /* .piePagina .caja-redes-ayuda-terminos .caja-redesSociales {

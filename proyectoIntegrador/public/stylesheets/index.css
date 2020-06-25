@@ -7,26 +7,8 @@
     font-size: 16px;
 }
 
-/* ========================= MENU ========================= */
-
-.contenedor-lista {
-    opacity: 0.3;
-}
-
-.menu .fixed-top .collapse .lista-opciones {
-    display: flex;
-    align-items: center;
-
-}
-
-.menu .fixed-top .collapse .lista-opciones .li-opcion {
-    list-style: none;
-}
-
-.menu .fixed-top .collapse .lista-opciones .li-opcion .a-opcion{
-
-    margin: 0 20px;
-
+html {
+    scroll-behavior: smooth;
 }
 
 /* ========================= MAIN ========================= */
@@ -89,6 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 30vh;
 }
 
 .separador-textura .centrador .frase {
@@ -107,7 +90,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 30vh;
 }
 
 /* ========================= SLIDER DESTACADOS ========================= */
@@ -142,7 +124,6 @@
 
 .contenedor-fondo-slider .carousel-item .carousel-img {
     width: 100%;
-    
 }
 
 
@@ -176,7 +157,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 55vh;
     background-attachment: fixed;
     background-position: center;
 }
@@ -200,38 +180,121 @@
 }
 
 .caja-subtitulo .subtitulo {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .caja-comprar-vender {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 3%;
+    margin-top: 1.5%;
 }
 
 .caja-comprar-vender .caja-comprar {
     text-align: center;
     width: 30%;
-    border: 2px solid white;
-    border-radius: 10px;
     padding: 2%;
+    position: relative;
+    
 }
 
 .caja-comprar-vender .caja-comprar .subcaja-subtitulo {
     font-size: 2rem;
 }
 
+.caja-comprar-vender .caja-comprar .card {
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    background: yellow;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.caja-comprar-vender .caja-comprar .card .adelante {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--orangelight);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja-comprar-vender .caja-comprar .card .atras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--orangedark);
+    color: var(--white);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja-comprar-vender .caja-comprar .card:hover {
+    transform: rotateY(180deg);
+    box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
 .caja-comprar-vender .caja-vender {
     text-align: center;
     width: 30%;
-    border: 2px solid white;
     padding: 2%;
-    border-radius: 10px;
+    position: relative;
+}
+
+.caja-comprar-vender .caja-vender .card {
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    background: yellow;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.caja-comprar-vender .caja-vender .card .adelante {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--orangelight);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.caja-comprar-vender .caja-vender .card .atras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--orangedark);
+    color: var(--white);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.caja-comprar-vender .caja-vender .card:hover {
+    transform: rotateY(180deg);
+    box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .caja-comprar-vender .caja-vender .subcaja-subtitulo {
     font-size: 2rem;
+    text-align: center;
 }
 
 /* .caja-comprar-vender .caja-comprar .texto-compraVenta {} */
@@ -240,16 +303,16 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 20%;
     margin-bottom: 8%;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn {
     /* width: 10%; */
-    padding: 20px;
     border: 2px solid #fff;
     border-radius: 10px;
     text-align: center;
+    
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn:hover {
@@ -258,14 +321,15 @@
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate {
-    width: 100%;
     text-decoration: none;
-    color: #fff;
-    padding: 20px;
+    color: rgba(255, 255, 255, 0.513);
+    margin: auto;
+    display: block;
+    padding: 0 50px;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate:hover {
-    color: var(--orangelight);
+    color: var(--white);
 }
 
 
@@ -281,7 +345,6 @@
 
 .caja-subtitulo .subt-articulos {
     color: #fff;
-    font-size: 2rem;
 }
 
 .caja-articulos {
@@ -328,6 +391,7 @@
 .ir-seccion .a-ir-seccion {
     color: #fff;
     text-decoration: none;
+    font-size: 2rem;
 }
 
 
@@ -342,6 +406,10 @@
     flex-direction: column;
 }
 
+.contenedor-nosotros .centrador-nosotros .caja-subtitulo .sub-nosotros {
+    color: var(--white);
+}
+
 .contenedor-nosotros .centrador-nosotros .caja-texto-nosotros {
     width: 80%;
     margin: auto;
@@ -349,8 +417,9 @@
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-texto-nosotros .nosotros-texto {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.5em;
+    color: var(--white);
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros {
@@ -382,9 +451,9 @@
 
 /* =================== CONTACTANOS =================== */
 
- .contenedor-contactanos {
-     margin: 5%;
- } 
+.contenedor-contactanos {
+    margin: 5%;
+} 
 
 .contenedor-contactanos .centrador-contactanos {
     display: flex;
