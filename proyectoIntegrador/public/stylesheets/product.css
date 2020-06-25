@@ -19,79 +19,28 @@ main {
 /* ============================ SLIDER ============================ */
 
 .caja-slider{
-    height: 70vh;
+
+    background-color: var(--tealdark);
     width: 100%;
-    /* ACA HAY UN PROBLEMA CON EL MARGIN PARA ALEJAR AL SLIDER DE ARRIBA SIN TOCAR EL COLOR DE FONDO */
-    /* margin-top: 20px; */
 }
 
-.caja-slider .ul-slider {
-    width: 25%;
-    height: 100%;
-    margin: auto;
-    position: relative;
-    list-style: none;
-    padding: 0;
+.caja-slider .carousel {
+    width: 100%;
+    height: 90vh;
+    margin-top: 3%;
+    
+}
+
+.caja-slider .carousel-item {
+    width: 50%;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    
+    align-items: center;
+
 }
 
-.caja-slider .ul-slider .li-slider{
-    
-}
-
-.caja-slider .ul-slider .li-slider .img-slider{
-    position: absolute;
-    top: 0;
-    left: 0;
+.caja-slider .carousel-item .carousel-img {
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.9s;
-    
 }
-
-.caja-slider .ul-slider .li-slider .input-radio-slider{
-    position: relative;
-    z-index: 50;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.caja-slider .ul-slider .li-slider .label-slider {
-    display: none;
-    width: 20px;
-    background: black;
-    border-radius: 50%;
-    border: 2px solid black;
-}
-
-.caja-slider .ul-slider .li-slider .input-radio-slider:checked ~ .img-slider {
-    opacity: 1;
-
-}
-
-.caja-slider .ul-slider .li-slider .input-radio-slider:checked ~ .label-slider {
-    background: #000;
-    border: #fff;
-
-}
-
-.caja-slider .ul-slider .li-slider .input-radio-slider + .label-slider {
-    position: relative;
-    z-index: 50;
-    margin: 10px;
-
-}
-
-.caja-slider .slider .li-slider .sbutton1{
-
-}
-
-
-
 
 /* ========================= PRECIO + DESCRIPCION + DATOS DEL USUARIO ========================= */
 
@@ -111,7 +60,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
     margin-left: 10%;
 }
 

@@ -15,7 +15,6 @@
 </head>
 <body>
     
-      <!-- El object promise es esto  -->
       <div class="hero">
           <%- include('partials/header') %>
       </div>
@@ -29,28 +28,17 @@
 
     <div class="caja-slider">
 
-        <ul class="ul-slider">
-            <li class="li-slider">
-                <input type="radio" id="sbutton1" class="input-radio-slider" name="slider-radio" checked>
-                <label class="label-slider" for="sbutton1"></label>
-                <img src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="" class="img-slider">
-            </li>
-            <li class="li-slider">
-                <input type="radio" id="sbutton2" class="input-radio-slider" name="slider-radio">
-                <label class="label-slider" for="sbutton2"></label>
-                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="" class="img-slider">
-            </li>
-            <li class="li-slider">
-                <input type="radio" id="sbutton3" class="input-radio-slider" name="slider-radio">
-                <label class="label-slider" for="sbutton3"></label>
-                <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80" alt="" class="img-slider">
-            </li>
-            <li class="li-slider">
-                <input type="radio" id="sbutton4" class="input-radio-slider" name="slider-radio">
-                <label class="label-slider" for="sbutton4"></label>
-                <img src="https://images.pexels.com/photos/595747/pexels-photo-595747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-slider">
-            </li>
-        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="carousel">
+                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro1.jpg"></a>
+                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro4.jpg"></a>
+                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto1.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -168,13 +156,8 @@
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
      </script>
-     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-     </script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-     </script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/header-function.js"></script>
-</body>
+     <script src="js/header-function.js"></script>
+     <script src="js/index-carrousel.js"></script>
+    </body>
 </html>
