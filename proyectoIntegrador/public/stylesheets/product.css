@@ -3,8 +3,17 @@
     margin: 0;
 }
 
+body {
+    margin-top: 0;
+}
+
 main {
     background-color: var(--tealdark);
+    padding-top: 6%;
+}
+
+.row.container {
+    margin-top: 0;
 }
 
 /* ============================ SLIDER ============================ */
@@ -35,10 +44,39 @@ main {
 
 /* ========================= PRECIO + DESCRIPCION + DATOS DEL USUARIO ========================= */
 
+.txt-tamaño{
+    padding: 5%;
+}
+
+.caja-precio-carrito {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+}
+
+.caja-precio-carrito button,
+.caja-precio-carrito h5 {
+    margin: auto;
+}
+
+.btn.boton-carrito {
+    background-color: var(--orangedark);
+}
+
+.btn.boton-carrito:hover {
+    background-color: var(--orangelight);
+}
+
+.row .col.caja-derecha {
+    padding: 3%;
+}
+
 .contenedor-precio-descrip-user {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .contenedor-precio-descrip-user .caja-precio {
@@ -153,19 +191,13 @@ main {
     padding: 20px;
 }
 
-.contenedor-precio-descrip-user .btn-masCosasArtista {
-    width: 20%;
-    margin: 3% auto;
-    font-size: 1.3rem;
-    padding: 20px;
-    border-radius: 50px;
-    border-style: none;
+.btn-masCosasArtista {
     color: var(--orangedark);
     background-color: var(--white);
     border: 1px solid var(--orangedark);
 }
 
-.contenedor-precio-descrip-user .btn-masCosasArtista:hover {
+.btn-masCosasArtista:hover {
     background-color: var(--orangedark);
     color: var(--white);
     border: 1px solid var(--white);
@@ -233,22 +265,24 @@ main {
 
 
 .contenedor-sugerencias {
-    width: 60%;
+    background-color: var(--white);
+    width: 100%;
     margin: auto;
     margin-top: 4%;
     display: flex;
     flex-direction: column;
+    padding: 2%;
 }
 
 .contenedor-sugerencias .caja-titulo-sugerencias {
-    width: 100%;
-    margin-left: 3%;
+    width: 60%;
+    margin: auto;
     margin-bottom: 2.5%;
 }
 
 .contenedor-sugerencias .caja-titulo-sugerencias .titulo-sugerencias {
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--tealdark);
 }
 
 .contenedor-sugerencias .caja-sugerencias-ventas {
@@ -287,6 +321,12 @@ main {
 
 .slider {
     margin-bottom: 6%;
+    width: 60%;
+    margin: auto;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: var(--tealdark);
 }
 
 .slider .slides {}
