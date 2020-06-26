@@ -11,7 +11,7 @@ aside {
     flex-direction: column;
     justify-content: start;
     padding: 2%;
-    position: fixed;
+    position: relative;
 }
 
 aside .collapsible {
