@@ -75,8 +75,17 @@ const usersController ={
     },
 
     profile: function(req,res){
-        
-        return res.render('profile')
+        let usuarioEnSesion= req.session.user;
+
+        User.findByPk(usuarioEnSesion.id,{
+            include: {
+              all: true,
+              nested: true
+            }
+          }).then(function(user){
+              return res.render('profile',{user})
+          })
+
     }
 
 }

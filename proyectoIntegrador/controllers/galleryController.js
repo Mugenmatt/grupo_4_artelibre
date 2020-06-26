@@ -1,6 +1,5 @@
 const db= require('../database/models/');
 const User = db.User;
-const Productimage = db.Productimage;
 const Product = db.Product;
 
 const galleryController = {
@@ -23,35 +22,20 @@ const galleryController = {
           return res.render('gallery',{artistas,obras})
         })
         .catch(errors=>console.log(errors));
-/* 
-obras.prodcutimages[0]
-*/
-
-
       },
 
       byArtist: function(req,res){
         let artistId = req.params.artistId;
 
-        let artista = User.findByPk(artistId,{
+        User.findByPk(artistId,{
           include: {
             all: true,
             nested: true
           }
-        });
-
-        /* 
-        artista.products.forEach(producto=>{
-          producto.productimages[0]
-        })
-        */
-        
-        Promise.all([artista])
-        .then(function([artista]){
+        }).then(function(artista){
           return res.render('artist-gallery',{artista})
         })
         .catch(errors=>console.log(errors));
-
 
       }
 }
