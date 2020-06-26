@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/gallery-style.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,12 +20,12 @@
     </div>
 
     <div>
-        <h2>Tu Perfil</h2>
+        <h2>Perfil</h2>
     </div>
 
-    <main class=" container">
+<main class="todo container">
 
-        <div class="col s12">
+        <div class="col s12 tablero">
             <ul class="tabs">
                 <li class="tab col s3"><a href="#test1">INFORMACION PERSONAL</a></li>
                 <li class="tab col s3"><a href="#test2">AGREGAR CUADRO</a></li>
@@ -34,22 +34,29 @@
             </ul>
         </div>
 
-        <div id="test1" class="col s12">
-        <form action="" method="post">
-            <div class="row">
-    
-                <div class="row valign-wrapper">
-                    <div class="col s4 m2">
-                        <img src="#" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+        
+    <form action="" method="post">
+            <div class="row valign-wrapper mayor-info">
+                <div class="foto-perfil col file-field input-field">
+                    <div class="btn-flat">
+                            <i class="material-icons">insert_photo</i>
+                        <input type="file" class="boton-examinar">
                     </div>
-                    <div class="col s8 m10">
-                        <span class="black-text">
-                            <p>Nombre de artista</p>
-                            <p>valoracion</p>
-                        </span>
+                    <!--<img src="#" alt="" class="circle responsive-img"> notice the "circle" class -->
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
                     </div>
                 </div>
-    
+                <div class="col s8 m10">
+                    <span class="black-text">
+                        <p>Nombre de artista</p>
+                        <p>valoracion</p>
+                    </span>
+                </div>
+            </div>
+        <div id="test1" class="col s12">
+            <div class="row extra-info">
+
                 <div class="col s12 m6">
                     <div class="row s12">
                         <div class="input-field">
@@ -115,8 +122,9 @@
                     </button>
                 </div>
             </div>
-        </form>
         </div>
+    </form>
+        
 
         <!-- CREAR PRODUCTO -->
         <div id="test2" class="col s12">
@@ -139,32 +147,47 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Textarea</label>
+                        <textarea id="descripcion" class="materialize-textarea"></textarea>
+                        <label for="descripcion">descripcion</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
                         <input id="price" type="number" class="validate">
                         <label for="price">Precio</label>
                     </div>
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
                         <input id="quantity" type="number" class="validate">
                         <label for="quantity">cantidad</label>
                     </div>
+                    <div class="col s12 m4 tamaño-cuadro">
+                        <div class="col input-field alto">
+                            <input id="alto" type="number" class="validate">
+                            <label for="alto">alto</label>
+                        </div>                        
+                        <p style="margin: auto;"> X </p>
+                        <div class="col input-field ancho">
+                            <input id="ancho" type="number" class="validate">
+                            <label for="ancho">ancho</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="keywords" class="materialize-textarea"></textarea>
+                        <label for="keywords">keywords</label>
+                    </div>
+                </div>
+                <div class="row right-align">
+                    <button type="submit" class="btn waves-effect waves-light btn-medium">
+                        Crear publicación
+                    </button>
                 </div>
             </form>
         </div>
         </div>
 
-
-
-
-        
-                
-     </form>
-     </div>
-    </main>
+</main>
     
 
 

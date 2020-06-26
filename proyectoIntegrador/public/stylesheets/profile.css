@@ -1,0 +1,70 @@
+.todo.container {
+    margin-top: 12%;
+}
+
+.mayor-info {
+    position: static;
+    margin-top: -27%;
+    background-color: white;
+    padding: 5%;
+}
+
+div.foto-perfil.col {
+    width: 120px;
+    height: 120px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--tealdark);
+    border-radius: 50%;
+}
+
+div.foto-perfil .btn-flat {
+    text-align: center;
+    margin-top: 30%;
+}
+
+
+.foto-perfil .btn-flat i {
+    color: white;
+    scale: 2;
+    padding: 2%;
+}
+
+
+input.file-path.validate {
+    border: none;
+}
+
+#test1,
+#test2 {
+    display: block;
+    padding: 3%;
+    background-color: white;
+
+}
+
+.tamaño-cuadro{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+input[type=number]{
+
+    -moz-appearance: textfield;
+
+}
