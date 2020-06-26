@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Product.belongsToMany(models.Keyword,{
       as:"keywords",
-      through: "Productkey",
+      through: "productkeys",
       foreignKey: "idProduct",
       otherKey: "idKeyword",
     })

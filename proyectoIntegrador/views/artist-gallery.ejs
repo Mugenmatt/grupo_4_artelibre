@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head', {title: 'Galeria', css: 'gallery-style.css'}) %>
+<%- include('partials/head', {title: 'Galeria del artista', css: 'gallery-style.css'}) %>
 <body>
     <div class="hero">
         <%- include('partials/header') %>
@@ -15,10 +15,6 @@
                     <div class="collapsible-header titulo-desplegable">Artistas <i class="tiny material-icons prefix flechita">expand_more</i></div>
                     <div class="collapsible-body">
                         <ul>
-                            <% for (let artist of artistas) { %>
-                                <li><a href="/gallery/<%=artist.id%>"><%= artist.username %> </a></li>
-                            <% }  %> 
-                            <li><a href="">Nombre de Artista 1</a></li>
                             <li><a href="">Nombre de Artista 2</a></li>
                             <li><a href="">Nombre de Artista 3</a></li>
                             <li><a href="">Nombre de Artista 4</a></li> 
@@ -34,13 +30,13 @@
         
             <div class="gallery-title row">
     
-                <h3>Todos los cuadros</h3>
+                <h3>Obras de <%=artista.username %></h3>
     
                 <div class="divider"></div>
             </div>
             <div class="gallery-products row">
 
-                <%for (let cuadro of obras) { %>
+                <%for (let cuadro of artista.products) { %>
                 
 
                 <div class="carta-producto col s12 m6 l4">
@@ -60,7 +56,7 @@
                         
                         <div class="por-debajo">
                             <h6><%=cuadro.name%></h6>
-                            <p> - <%=cuadro.user.username%> </p>
+                            <p> - <%=artista.username%> </p>
                         </div>
 
                     </div>

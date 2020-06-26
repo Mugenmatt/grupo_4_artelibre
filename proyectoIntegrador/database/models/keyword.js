@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Keyword.belongsToMany(models.Product,{
       as:"products",
-      through: "Productkey",
+      through: "productkeys",
       foreignKey: "idKeyword",
       otherKey: "idProduct",
     })

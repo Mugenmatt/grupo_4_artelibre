@@ -14,7 +14,7 @@ const galleryController = {
 
       let obras = Product.findAll(
          {
-           include: ["productimages"]
+           include: ["productimages", "user"]
           }
         );
         
@@ -33,13 +33,7 @@ obras.prodcutimages[0]
       byArtist: function(req,res){
         let artistId = req.params.artistId;
 
-        let artistas = User.findAll({
-          where:{
-            rol:1
-          }
-        });
-
-        let artista = User.finByPk(artistId,{
+        let artista = User.findByPk(artistId,{
           include: {
             all: true,
             nested: true
@@ -52,9 +46,9 @@ obras.prodcutimages[0]
         })
         */
         
-        Promise.all([artistas,obras])
-        .then(function([artistas,obras]){
-          return res.render('gallery',{artistas,artista})
+        Promise.all([artista])
+        .then(function([artista]){
+          return res.render('artist-gallery',{artista})
         })
         .catch(errors=>console.log(errors));
 
