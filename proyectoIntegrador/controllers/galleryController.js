@@ -22,22 +22,22 @@ const galleryController = {
           return res.render('gallery',{artistas,obras})
         })
         .catch(errors=>console.log(errors));
-      },
+    },
 
-      byArtist: function(req,res){
-        let artistId = req.params.artistId;
+    byArtist: function(req,res){
+      let artistId = req.params.artistId;
 
-        User.findByPk(artistId,{
-          include: {
-            all: true,
-            nested: true
-          }
-        }).then(function(artista){
-          return res.render('artist-gallery',{artista})
-        })
-        .catch(errors=>console.log(errors));
+      User.findByPk(artistId,{
+        include: {
+          all: true,
+          nested: true
+        }
+      }).then(function(artista){
+        return res.render('artist-gallery',{artista})
+      })
+      .catch(errors=>console.log(errors));
 
-      }
+    }
 }
 
 module.exports= galleryController;

@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     quantity: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN, 
     idUser: DataTypes.INTEGER,
+    imageFile: DataTypes.STRING,
     
   }, {tablename: "products"});
 

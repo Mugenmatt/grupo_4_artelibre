@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     number: DataTypes.INTEGER, 
     floor: DataTypes.INTEGER,
     door: DataTypes.INTEGER,
+    cp: DataTypes.INTEGER, 
+    province: DataTypes.STRING, 
+    city: DataTypes.STRING,
     idUser: DataTypes.INTEGER
 
   }, {tablename: "adresses"});
