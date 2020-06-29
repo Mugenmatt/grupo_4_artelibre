@@ -1,35 +1,36 @@
 <header id="masthead" role="banner">
-    <div class="container-menu">
-      <button class="hamburger hamburger--boring btn-floating white" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-        <span class="hamburger-label"></span>
-      </button>
 
-       <!-- De aca para abajo, es de der a izq  -->
+   <button class="hamburger hamburger--boring btn-floating white" type="button">
+     <span class="hamburger-box">
+       <span class="hamburger-inner"></span>
+     </span>
+     <span class="hamburger-label"></span>
+   </button>
 
-      <a class="cart btn-floating white" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
-      
-      <!-- Dropdown Trigger -->
-      <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i class="material-icons icono-usuario">person_outline</i></a>
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-              <% if (locals.user) { %>
-                <li><a href="/users/profile">Tu perfil</a></li>
-                <li>
-                  <form action="/users/logout" method="post">
-                    <button class="btn-flat btn-cerrarSesion" type="submit">
-                      Cerrar session
-                    </button>
-                  </form>
-                </li>
-              <% }else{ %>
-                <li><a href="/users/login">Inicia Sesión</a></li>
-                <li><a href="/users/register">Registrate</a></li>
-              <% } %>
-              
-            </ul>
+   <!-- De aca para abajo, es de der a izq  -->
+
+   <a class="cart btn-floating white" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
+
+   <!-- Dropdown Trigger -->
+   <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i
+       class="material-icons icono-usuario">person_outline</i></a>
+   <!-- Dropdown Structure -->
+   <ul id='dropdown1' class='dropdown-content'>
+     <% if (locals.user) { %>
+     <li><a href="/users/profile">Tu perfil</a></li>
+     <li>
+       <form action="/users/logout" method="post">
+         <button class="btn-flat btn-cerrarSesion" type="submit">
+           Cerrar session
+         </button>
+       </form>
+     </li>
+     <% }else{ %>
+     <li><a href="/users/login">Inicia Sesión</a></li>
+     <li><a href="/users/register">Registrate</a></li>
+     <% } %>
+
+   </ul>
       
       <nav id="site-nav" role="navigation">
         <ul class="lista-links"></li>
@@ -47,7 +48,5 @@
 
         
       </nav>
-
-    </div>
 
   </header>

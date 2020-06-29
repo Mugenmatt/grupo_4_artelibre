@@ -136,6 +136,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   text-transform: none;
   transition: opacity 0.15s;
   -webkit-appearance: none;
+  margin-left: 2%;
 }
 
 button:focus {
@@ -241,7 +242,7 @@ button:focus {
 }
 
 #site-nav {
-  display: flex;
+  display: none;
   height: 0px;
   overflow: hidden;
   padding-top: 1em;
@@ -253,6 +254,7 @@ button:focus {
 }
 
 #site-nav.is-active {
+  display: flex;
   height: auto;
   overflow: visible;
   width: auto;
