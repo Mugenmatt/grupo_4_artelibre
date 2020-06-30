@@ -7,6 +7,12 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Hind', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+}
+
 /* ========================= MAIN ========================= */
 
 .main {
@@ -36,24 +42,16 @@ html {
 }
 
 .contenedor .fondo-caja-titulo {
-    /* background-image: url(""); */
-    /* background-position-x: 25%; */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* clip-path: polygon(50% 0, 100% 50%, 100% 50%, 50% 100%, 0 50%); */
-    /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%); */
     width: 50%;
-    /* height: 70%; */
-    /* padding: 30px; */
+    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .contenedor .fondo-caja-titulo .titulo {
-    /* este margin esta en reemplazo del heigth de fondo-caj-titulo que no se porque no me toma el heigth: 60% */
-    /* margin: 20% 0; */
     border: 25px solid var(--tealdark);
+    font-weight: 300;
     padding: 20px;
     font-size: 7em;
     color: var(--white);
@@ -71,7 +69,7 @@ html {
 
 .separador-textura .centrador .frase {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--orangedark);
     text-align: center;
     line-height: 1.5em;
@@ -101,6 +99,7 @@ html {
     margin-top: 0;
     padding-top: 3.5%;
     line-height: 0;
+    font-weight: 400;
 }
 
 
@@ -147,6 +146,7 @@ html {
 /* ========================= SEPARADOR ========================= */
 
 .antesDe-comoFunciona {
+    display: block;
     background-color: #2E0E02;
     background-image: url('../images/bg/arte1.jpg');
     background-size: cover;
@@ -176,6 +176,7 @@ html {
 
 .caja-subtitulo .subtitulo {
     font-size: 3rem;
+    font-weight: 400;
 }
 
 .caja-comprar-vender {
@@ -195,6 +196,7 @@ html {
 
 .caja-comprar-vender .caja-comprar .subcaja-subtitulo {
     font-size: 2rem;
+    font-weight: 600;
 }
 
 .caja-comprar-vender .caja-comprar .card {
@@ -290,9 +292,20 @@ html {
 .caja-comprar-vender .caja-vender .subcaja-subtitulo {
     font-size: 2rem;
     text-align: center;
+    font-weight: 600;
 }
 
-/* .caja-comprar-vender .caja-comprar .texto-compraVenta {} */
+.caja-comprar-vender .caja-comprar .texto-compraVenta {
+    font-weight: 300;
+    text-align: justify;
+    padding: 0 40px;
+}
+
+.caja-comprar-vender .caja-vender .texto-compraVenta {
+    font-weight: 300;
+    text-align: justify;
+    padding: 0 40px;
+}
 
 .centrador-comoFunciona .caja-btn {
     width: 100%;
@@ -340,6 +353,7 @@ html {
 
 .caja-subtitulo .subt-articulos {
     color: #fff;
+    font-weight: 400;
 }
 
 .caja-articulos {
@@ -403,6 +417,7 @@ html {
 
 .contenedor-nosotros .centrador-nosotros .caja-subtitulo .sub-nosotros {
     color: var(--white);
+    font-weight: 400;
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-texto-nosotros {
@@ -415,6 +430,7 @@ html {
     font-size: 1.3rem;
     line-height: 1.5em;
     color: var(--white);
+    font-weight: 300;
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros {
@@ -455,46 +471,28 @@ html {
     flex-direction: column;
     width: 100%;
 }
-/*
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: auto;
+
+.contenedor-contactanos .centrador-contactanos .center-align {
+    font-weight: 600;
 }
 
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos {
-    background-color: #f2f2f2;
-    border: 2px solid firebrick;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 4%;
+.contenedor-contactanos .centrador-contactanos .labelForm {
+    font-weight: 300;
 }
 
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos .input-nombreApellido, .input-email, .input-celular, .input-mensaje {
-    padding: 20px;
-    margin-bottom: 1.6%;
+.contenedor-contactanos .centrador-contactanos .btn-flat {
+    text-align: center;
+    display: block;
+    background-color: var(--teallight);
+    color: var(--tealdark);
+    border: 1px solid #00000000;
 }
 
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos .label-nombreApellido, .label-email, .label-celular, .label-mensaje {
-    margin-bottom: 1.6%;
+.contenedor-contactanos .centrador-contactanos .btn-flat:hover {
+    background-color: var(--tealdark);
+    color: var(--white);
+    border: 1px solid var(--tealdark)
 }
-
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos .btn-contacto-enviar {
-    margin: auto;
-    width: 30%;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 1.3em;
-    color: #000;
-    background-color: #f2f2f2;
-}
-
-.contenedor-contactanos .centrador-contactanos .formulario-contactanos .btn-contacto-enviar:hover {
-    background-color: firebrick;
-}
-*/
-
 
 /* ================================ MEDIA QUERIES ================================ */
 
