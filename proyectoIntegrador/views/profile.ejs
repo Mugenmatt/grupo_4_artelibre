@@ -14,6 +14,7 @@
             <div class="row valign-wrapper mayor-info">
                 <div class="foto-perfil col s4 m2 file-field input-field">
                     <div class="btn-flat">
+                        <!-- IF () ------ user.avatar not null ---- else   -->
                             <i class="material-icons">insert_photo</i>
                         <input type="file" class="boton-examinar" name="avatar">
                     </div>
@@ -24,9 +25,9 @@
                 </div>
                 <div class="col s8 m6">
                     <span class="black-text">
-                        <p>Nombre Apellido</p>
-                        <p>Direccion de correo electronico</p>
-                        <p>valoracion</p>
+                        <p><%= user.name %> <%= user.lastname %></p>
+                        <p><%= user.email %></p>
+                        <p><%= user.averageScore %></p>
                     </span>
                 </div>
                 <div class="col s2 m4">
@@ -38,7 +39,7 @@
                 <div class="col s12 m6">
                     <div class="row s12">
                         <div class="input-field">
-                            <input value="Alvin" id="username" type="text" class="validate" name="username">
+                            <input disabled value="<%= user.username %>" id="username" type="text" class="validate" name="username">
                             <label class="active" for="username">Nombre de usuario</label>
                         </div>
                     </div>
@@ -68,23 +69,32 @@
                 <div class="col s12 m6">
                     <div class="row">
                         <h6 class="center-align">Formas de envio</h6>
-                        <div class="checkboxes-envio" style="display: flex; justify-content: space-around;">
+                        <div class="checkboxes-envio">
                             <p>
                                 <label>
-                                    <input type="checkbox" id="chk1" checked name="chk1" />
-                                    <span>chk1</span>
+                                    <input type="checkbox" id="mailShipping" 
+                                    <% if(user.mailshipping == 1) {%>
+                                        value ="<%=user.mailShipping%>" checked
+                                    <% } else { %>
+                                        value ="<%=user.mailShipping%>" unchecked
+                                    <% } %> name="mailShipping" />
+                                    <span>Correo</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" id="chk2" checked name="chk2" />
-                                    <span>chk2</span>
+                                    <input type="checkbox" id="privateShipping" <% if(user.privateShipping == 1) {%>
+                                        value="<%=user.privateShipping%>" checked <% } else { %>
+                                        value="<%=user.privateShipping%>" unchecked <% } %> name="privateShipping" />
+                                    <span>Mensajeria privada</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" id="chk3" checked name="chk3" />
-                                    <span>chk3</span>
+                                    <input type="checkbox" id="noShipping" <% if(user.noShipping == 1) {%>
+                                        value="<%=user.noShipping%>" checked <% } else { %>
+                                        value="<%=user.noShipping%>" unchecked <% } %> name="noShipping" />
+                                    <span>Retiro en domicilio del artista</span>
                                 </label>
                             </p>
                         </div>

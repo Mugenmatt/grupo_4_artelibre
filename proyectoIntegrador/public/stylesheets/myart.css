@@ -1,0 +1,17 @@
+main.todo.container {
+    margin-top: 10%;
+}
+
+tr td.botones-funciones {
+    width: 5%;
+}
+
+td,
+th {
+    text-align: center;
+}
+
+.truncated {
+    width: 20%;
+    font-size: smaller;
+}

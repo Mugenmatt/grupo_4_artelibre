@@ -37,33 +37,16 @@ input.file-path.validate {
     border: none;
 }
 
-#test1,
-#test2 {
-    display: block;
-    padding: 3%;
-    background-color: white;
-
-}
-
-.tamaño-cuadro{
+div.checkboxes-envio {
     display: flex;
-    justify-content: space-between;
-    align-content: center;
-
+    justify-content: space-around;
+    padding: 2%;
 }
 
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-
-    -webkit-appearance: none;
-
-    margin: 0;
-
+.checkboxes-envio p {
+    margin: 4%;
 }
 
-input[type=number]{
-
-    -moz-appearance: textfield;
-
+input[type="text"]:not(.browser-default):disabled {
+    color: black;
 }
