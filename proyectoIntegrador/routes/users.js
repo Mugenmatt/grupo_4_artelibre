@@ -48,5 +48,6 @@ router.post('/logout',authMiddleware, usersController.logout);
 router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
 //router.delete('/profile',authMiddleware, usersController.profileDelete);
+router.get('/profile/myart', authMiddleware, usersController.show );
 
 module.exports = router;

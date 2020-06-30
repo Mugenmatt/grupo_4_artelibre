@@ -122,5 +122,9 @@ const usersController ={
 
     },
 
+    show: function(req,res){
+        return res.render('myart');
+    }
+
 }
 module.exports = usersController; 

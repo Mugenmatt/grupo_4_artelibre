@@ -7,24 +7,12 @@
         <%- include('partials/header') %>
     </div>
 
-    <div>
-        <h2>Perfil</h2>
-    </div>
-
 <main class="todo container">
 
-        <div class="col s12 tablero">
-            <ul class="tabs">
-                <li class="tab col s3"><a href="#test1">INFORMACION PERSONAL</a></li>
-                <li class="tab col s3"><a href="#test2">AGREGAR CUADRO</a></li>
-                <li class="tab col s3"><a href="#test3">Disabled Tab</a></li>
-                <li class="tab col s3"><a href="#test4">Test 4</a></li>
-            </ul>
-        </div>
-
-    <form action="" method="post">
+    <form action="/profile?_method=PUT" method="post" enctype="multipart/form-data">
+        <div class="row">
             <div class="row valign-wrapper mayor-info">
-                <div class="foto-perfil col file-field input-field">
+                <div class="foto-perfil col s4 m2 file-field input-field">
                     <div class="btn-flat">
                             <i class="material-icons">insert_photo</i>
                         <input type="file" class="boton-examinar">
@@ -34,21 +22,24 @@
                         <input class="file-path validate" type="text">
                     </div>
                 </div>
-                <div class="col s8 m10">
+                <div class="col s8 m6">
                     <span class="black-text">
-                        <p>Nombre de artista</p>
+                        <p>Nombre Apellido</p>
+                        <p>Direccion de correo electronico</p>
                         <p>valoracion</p>
                     </span>
                 </div>
+                <div class="col s2 m4">
+                    <a href="/users/profile/myart" class="waves-effect waves-teal btn-flat">Mis publicaciones 
+                        <i class="material-icons small">palette</i></a>
+                </div>
             </div>
-        <div id="test1" class="col s12">
-            <div class="row extra-info">
-
+            
                 <div class="col s12 m6">
                     <div class="row s12">
                         <div class="input-field">
-                            <input value="Alvin" id="email" type="email" class="validate">
-                            <label class="active" for="email">Direccion de correo electronico</label>
+                            <input value="Alvin" id="username" type="text" class="validate">
+                            <label class="active" for="username">Nombre de usuario</label>
                         </div>
                     </div>
                     <div class="row s12 m6">
@@ -103,17 +94,26 @@
                         <h6>Info pagos</h6>
                     </div>
                 </div>
-                <div class="right-align">
-                    <button type="submit" class="btn waves-effect waves-light btn-medium">
-                        Guardar cambios
-                    </button>
-                </div>
+                
             </div>
+        </div>
+        <div class="right-align section">
+            <button type="submit" class="btn waves-effect waves-light btn-medium">
+                Modificar
+                <i class="material-icons right">brush</i>
+            </button>
+            <button type="reset" class="btn waves-effect waves-light btn-medium red">
+                <i class="material-icons">replay</i>
+            </button>
+            <button type="submit" class="btn waves-effect waves-light btn-medium">
+                Guardar
+                <i class="material-icons right">check</i>
+            </button>
         </div>
     </form>
         
 
-    <!-- CREAR PRODUCTO -->
+    <!-- CREAR PRODUCTO 
     <div id="test2" class="col s12">
         <div class="row">
             <form class="col s12">
@@ -173,6 +173,7 @@
             </form>
         </div>
     </div>
+    -->
 
 </main>
     
