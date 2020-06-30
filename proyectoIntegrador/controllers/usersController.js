@@ -103,7 +103,7 @@ const usersController ={
                 {id: usuarioEnSesion.id} 
             }
         ).then(()=>{
-            return res.redirect("/profile")
+            return res.redirect("/users/profile")
         }).catch(errors=> console.log(errors))
 
     },

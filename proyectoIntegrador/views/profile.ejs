@@ -9,13 +9,13 @@
 
 <main class="todo container">
 
-    <form action="/profile?_method=PUT" method="post" enctype="multipart/form-data">
+    <form action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="row valign-wrapper mayor-info">
                 <div class="foto-perfil col s4 m2 file-field input-field">
                     <div class="btn-flat">
                             <i class="material-icons">insert_photo</i>
-                        <input type="file" class="boton-examinar">
+                        <input type="file" class="boton-examinar" name="avatar">
                     </div>
                     <!--<img src="#" alt="" class="circle responsive-img"> notice the "circle" class -->
                     <div class="file-path-wrapper">
@@ -38,7 +38,7 @@
                 <div class="col s12 m6">
                     <div class="row s12">
                         <div class="input-field">
-                            <input value="Alvin" id="username" type="text" class="validate">
+                            <input value="Alvin" id="username" type="text" class="validate" name="username">
                             <label class="active" for="username">Nombre de usuario</label>
                         </div>
                     </div>
