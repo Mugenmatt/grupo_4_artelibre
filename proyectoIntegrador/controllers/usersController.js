@@ -86,7 +86,41 @@ const usersController ={
               return res.render('profile',{user})
           })
 
-    }
+    },
+
+    profileEdit: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
+        User.update(
+            {username: req.body.username,
+            avatar: req.file ? req.file.filename : null,
+            rol: req.body.rol,
+            noShipping: req.body.noShipping,
+            mailShipping: req.body.mailShipping,
+            privateShipping: req.body.privateShipping
+            },
+            {where: 
+                {id: usuarioEnSesion.id} 
+            }
+        ).then(()=>{
+            return res.redirect("/profile")
+        }).catch(errors=> console.log(errors))
+
+    },
+
+    profileDelete: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
+        User.findByPk(usuarioEnSesion.id,{
+            include: {
+              all: true,
+              nested: true
+            }
+          }).then(function(user){
+              return res.render('profile',{user})
+          })
+
+    },
 
 }
 module.exports = usersController; 
