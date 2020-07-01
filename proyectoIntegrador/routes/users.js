@@ -42,12 +42,18 @@ let upload = multer({
 
 router.get('/register', guestMiddleware,usersController.register);
 router.post('/register',usersController.processRegister);
+
 router.get('/login', guestMiddleware,usersController.login);
 router.post('/login',usersController.processLogin);
+
 router.post('/logout',authMiddleware, usersController.logout);
+
 router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
-//router.delete('/profile',authMiddleware, usersController.profileDelete);
-router.get('/profile/myart', authMiddleware, usersController.show );
+router.delete('/profile',authMiddleware, usersController.profileDelete);
+
+router.get('/profile/myart', authMiddleware, usersController.showMyart );
+router.post('/profile/myart', authMiddleware, usersController.createMyart );
+router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
 
 module.exports = router;

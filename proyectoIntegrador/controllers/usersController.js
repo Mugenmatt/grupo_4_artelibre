@@ -2,6 +2,7 @@ const bcryptjs = require('bcryptjs');
 const { check, validationResult, body} = require('express-validator');
 const db= require('../database/models/')
 const User = db.User;
+const Product = db.Product;
 
 const usersController ={
     register: function(req,res){
@@ -111,20 +112,65 @@ const usersController ={
     profileDelete: function(req,res){
         let usuarioEnSesion= req.session.user;
 
-        User.findByPk(usuarioEnSesion.id,{
-            include: {
-              all: true,
-              nested: true
+        User.destroy(
+            {where: {
+                id:usuarioEnSesion.id
+                }
+            })
+        .then(function(user){
+            req.session.destroy();
+        
+            if (req.cookies.id) {
+                res.clearCookie("id");
             }
-          }).then(function(user){
-              return res.render('profile',{user})
-          })
+            return res.redirect('/')
+          }).catch(errors=> console.log(errors))
 
     },
 
-    show: function(req,res){
-        return res.render('myart');
-    }
+    showMyart: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
+        User.findByPk(usuarioEnSesion.id, {
+            include: ["products"]
+        }).then(user=>{
+            return res.render('myart',{user});
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+    
+    createMyart: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
+        let productoACrear={
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            size: req.body.size,
+            quantity: req.body.quentity,
+            //status: req.body.status, esto viene por default?
+            idUser: usuarioEnSesion.id,
+            imageFile: req.file ? req.file.filename : null,
+        }
+
+        return res.send("ya esta listo en el back, pero todavia no en el front asi que mando este mensaje para evitar errores")
+
+        Product.create(productoACrear)
+        .then(()=>{
+            return res.render('myart')
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+
+    deleteMyart: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
+        return res.send("funcion no implementada aun")
+
+    },
+
 
 }
 module.exports = usersController; 
