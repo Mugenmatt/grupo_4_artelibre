@@ -50,3 +50,7 @@ div.checkboxes-envio {
 input[type="text"]:not(.browser-default):disabled {
     color: black;
 }
+
+.apagado {
+    display: none;
+}

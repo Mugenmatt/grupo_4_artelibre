@@ -15,3 +15,29 @@ th {
     width: 20%;
     font-size: smaller;
 }
+
+#test2 {
+    display: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+    width: 60%;
+    top: 0;
+    background-color: rgba(0, 0, 0);
+}
+
+#test2 form {
+    margin: auto;
+    padding: 5%;
+    position: relative;
+
+}
+
+.boton-cerrar{
+    z-index: 5;
+    position: absolute;
+    right: 0;
+}
