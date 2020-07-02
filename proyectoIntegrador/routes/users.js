@@ -53,7 +53,7 @@ router.put('/profile',authMiddleware, upload.single('avatar'), usersController.p
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
-router.post('/profile/myart', authMiddleware, usersController.createMyart );
+router.post('/profile/myart', authMiddleware, upload.single('imageFile'), usersController.createMyart );
 router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
 
 module.exports = router;

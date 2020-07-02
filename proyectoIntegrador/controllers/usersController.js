@@ -147,18 +147,16 @@ const usersController ={
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
-            size: req.body.size,
-            quantity: req.body.quentity,
+            //size: req.body.size,
+            quantity: req.body.quantity,
             //status: req.body.status, esto viene por default?
             idUser: usuarioEnSesion.id,
             imageFile: req.file ? req.file.filename : null,
         }
 
-        return res.send("ya esta listo en el back, pero todavia no en el front asi que mando este mensaje para evitar errores")
-
         Product.create(productoACrear)
         .then(()=>{
-            return res.render('myart')
+            return res.redirect('/users/profile/myart')
         })
         .catch(errors=> console.log(errors))
 

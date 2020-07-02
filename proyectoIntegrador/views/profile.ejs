@@ -9,7 +9,7 @@
 
 <main class="todo container">
 
-    <form enctype="multipart/form-data">
+    <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT">
         <div class="row">
             <div class="row valign-wrapper mayor-info">
                 <div class="foto-perfil col s4 m2 file-field input-field">
@@ -39,7 +39,7 @@
                 <div class="col s12 m6">
                     <div class="row s12">
                         <div class="input-field">
-                            <input disabled value="<%= user.username %>" id="username" type="text" class="validate" name="username">
+                            <input disabled value="<%= user.username %>" id="username" type="text" class="validate" name="username"/>
                             <label class="active" for="username">Nombre de usuario</label>
                         </div>
                     </div>
