@@ -153,8 +153,9 @@ const usersController ={
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
-            //size: req.body.size,
             quantity: req.body.quantity,
+            ancho: req.body.ancho,
+            alto: req.body.alto,
             //status: req.body.status, esto viene por default?
             idUser: usuarioEnSesion.id,
             imageFile: req.file ? req.file.filename : null,

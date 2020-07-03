@@ -44,13 +44,13 @@
                  <label for="quantity">cantidad</label>
              </div>
              <div class="col s12 m4 tamaño-cuadro">
-                 <div class="col s6 input-field alto">
-                     <input id="alto" type="number" class="validate">
-                     <label for="alto">alto</label>
-                 </div>
                  <div class="col s6 input-field ancho">
-                     <input id="ancho" type="number" class="validate">
+                     <input id="ancho" type="number" class="validate" name="ancho">
                      <label for="ancho">ancho</label>
+                 </div>
+                 <div class="col s6 input-field alto">
+                     <input id="alto" type="number" class="validate" name="alto">
+                     <label for="alto">alto</label>
                  </div>
              </div>
          </div>
@@ -94,7 +94,7 @@
                     <td class="truncated">
                             <%= product.description %> 
                     </td>
-                    <td><%= //product.ancho %> x<%= //alto %>  cm</td>
+                    <td><%=product.ancho %>x<%=product.alto %>  cm</td>
                     <td><%= product.quantity %> </td>
                     <td>$<%= product.price %> </td>
                     <td class="botones-funciones">
