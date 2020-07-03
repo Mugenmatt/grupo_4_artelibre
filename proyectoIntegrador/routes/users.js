@@ -83,6 +83,6 @@ router.delete('/profile',authMiddleware, usersController.profileDelete);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
 router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
-router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
+router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );
 
 module.exports = router;

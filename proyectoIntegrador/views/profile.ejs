@@ -75,11 +75,7 @@
                                 <label>
                                     <input disabled type="checkbox" id="mailShipping" 
                                     <% if(user.mailShipping == 1) {%>
-<<<<<<< HEAD
-                                         checked
-=======
                                         value ="<%=user.mailShipping%>" checked
->>>>>>> e11c5f58589c3d6cc41f4a06fe73a15f260f6b25
                                     <% } else { %>
                                         value ="<%=user.mailShipping%>" unchecked
                                     <% } %> name="mailShipping" />
@@ -88,8 +84,9 @@
                             </p>
                             <p>
                                 <label>
-                                    <input disabled type="checkbox" id="privateShipping"
-                                        value="" name="privateShipping" />
+                                    <input disabled type="checkbox" id="privateShipping" <% if(user.privateShipping == 1) {%>
+                                        value="<%=user.privateShipping%>" checked <% } else { %>
+                                        value="<%=user.privateShipping%>" unchecked <% } %> name="privateShipping" />
                                     <span>Mensajeria privada</span>
                                 </label>
                             </p>

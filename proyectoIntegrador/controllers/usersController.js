@@ -171,9 +171,17 @@ const usersController ={
     },
 
     deleteMyart: function(req,res){
-        let usuarioEnSesion= req.session.user;
+        let productId = req.params.id;
 
-        return res.send("funcion no implementada aun")
+        Product.destroy({
+            where: {
+                id: productId
+            }
+        })
+        .then(()=>{
+            return res.redirect("/users/profile/myart")
+        })
+        .catch(errors=> console.log(errors))
 
     },
 
