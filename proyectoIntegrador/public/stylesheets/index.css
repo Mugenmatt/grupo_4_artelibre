@@ -9,7 +9,6 @@ html {
 
 body {
     font-family: 'Hind', sans-serif;
-    font-weight: 600;
     margin-top: 0;
 }
 
@@ -23,11 +22,19 @@ body {
     width: auto;
 }
 
+.container {
+    margin-top: 3%;
+}
+
 .centrador {
-    width: 70%;
+    /* width: 70%; */
     margin: auto;
     display: flex;
     justify-content: center;
+}
+
+.centrador-titulo {
+    width: 70%;
 }
 
 .contenedor-titulo {
@@ -38,7 +45,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 .contenedor .fondo-caja-titulo {
@@ -86,26 +93,27 @@ body {
 }
 
 /* ========================= SLIDER DESTACADOS ========================= */
+
 .contenedor-fondo-slider {
     background-color: var(--tealdark);
-    height: 102vh;
+    height: 110vh;
     width: 100%;
-
 }
+
 .contenedor-fondo-slider .titulo-destacados {
     display: flex;
     justify-content: center;
     color: var(--white);
     margin-top: 0;
-    padding-top: 3.5%;
     line-height: 0;
     font-weight: 400;
+    padding-top: 3.5%;
 }
 
 
 .contenedor-fondo-slider .carousel {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     
 }
 
@@ -164,6 +172,7 @@ body {
 }
 
 .centrador-comoFunciona {
+    width: 70%;
     display: flex;
     flex-direction: column;
 }
@@ -230,6 +239,7 @@ body {
     color: var(--white);
     transform: rotateY(180deg);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -266,7 +276,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
 }
 
 .caja-comprar-vender .caja-vender .card .atras {
@@ -278,10 +288,9 @@ body {
     color: var(--white);
     transform: rotateY(180deg);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-
-
+    align-items: center;
 }
 
 .caja-comprar-vender .caja-vender .card:hover {
@@ -297,14 +306,20 @@ body {
 
 .caja-comprar-vender .caja-comprar .texto-compraVenta {
     font-weight: 300;
+    font-size: 1.5rem;
     text-align: justify;
-    padding: 0 40px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--white);
 }
 
 .caja-comprar-vender .caja-vender .texto-compraVenta {
     font-weight: 300;
+    font-size: 1.5rem;
     text-align: justify;
-    padding: 0 40px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--white);
 }
 
 .centrador-comoFunciona .caja-btn {
@@ -368,14 +383,6 @@ body {
     margin: 0 30px;
     /* border: 2px solid green; */
     /* padding: 10px; */
-}
-
-.caja-articulos .articulo .a-img-articulo  {
-    padding: 5px;
-}
-
-.caja-articulos .articulo .a-img-articulo:hover {
-    padding: 5px;
 }
 
 .caja-articulos .articulo .a-img-articulo .img-1 {
@@ -451,6 +458,10 @@ body {
 /* =================== SEPARADOR =================== */
 
 .antesDe-contactanos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
     background-color: #2E0E02;
     background-image: url('../images/bg/arte4.jpg');
     background-repeat: no-repeat;
@@ -496,3 +507,283 @@ body {
 
 /* ================================ MEDIA QUERIES ================================ */
 
+@media (max-width: 1400px) {
+    .centrador-titulo {
+        width: 80%;
+    }
+
+    .centrador-comoFunciona .caja-btn .fondo-btn {
+        margin-top: 4%;
+    }
+
+    .centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate {
+        padding: 0 30px;
+    }
+
+    .contenedor-fondo-slider .carousel {
+        /* bottom: 6%; */
+    }
+
+}
+
+@media (max-width: 1280px) {
+    .centrador-titulo {
+        width: 90%;
+    }
+
+    .contenedor-fondo-slider {
+        height: 90vh;
+    }
+
+    .contenedor-fondo-slider .carousel {
+        bottom: 15%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .centrador-titulo {
+        width: 100%;
+    }
+
+    .contenedor-fondo-slider .titulo-destacados {
+        padding-top: 6.5%;
+    }
+
+    .contenedor .fondo-caja-titulo .titulo {
+        padding: 10px;
+    }
+
+    .contenedor-fondo-slider {
+        height: 70vh;
+    }
+
+    .contenedor-fondo-slider .carousel {
+        bottom: 14%;
+        height: 75vh;
+    }
+
+    .contenedor-fondo-slider .carousel-item {
+        width: 40%;
+    }
+
+    .separador-textura {
+        height: 20vh;
+    }
+
+    .centrador-comoFunciona .caja-btn .fondo-btn {
+        margin-top: 10%;
+    }
+
+    .caja-comprar-vender .caja-comprar .subcaja-subtitulo {
+        font-size: 1.5rem;
+    }
+
+    .caja-comprar-vender .caja-vender .subcaja-subtitulo {
+        font-size: 1.5rem;
+    }
+
+    .caja-comprar-vender .caja-comprar .texto-compraVenta {
+        font-size: 1.2rem;
+    }
+
+    .caja-comprar-vender .caja-vender .texto-compraVenta {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 950px) {
+
+    .contenedor .fondo-caja-titulo .titulo {
+        padding: 8px;
+    }
+
+    .caja-articulos {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+
+    .contenedor-fondo-slider .carousel {
+        bottom: 25%;
+        height: 100vh;
+    }
+
+    .caja-articulos .articulo {
+        width: 70%;
+    }
+
+    .caja-articulos .articulo .a-img-articulo .img-articulo {
+        margin: 2% 0;
+    }
+
+    .caja-articulos .articulo .a-img-articulo .img-1 {
+        clip-path: none;
+    }
+
+    .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros {
+        margin-bottom: 5%;
+    }
+
+
+}
+
+
+@media (max-width: 640px) {
+
+    .contenedor .fondo-caja-titulo {
+        width: 100%;
+    }
+
+
+    .centrador-comoFunciona {
+        width: 100%;
+    }
+
+    .caja-comprar-vender {
+        flex-direction: column;
+        /* align-items: center; */
+        display: block;
+        margin-top: 0;
+    }
+
+    .caja-comprar-vender .caja-vender {
+        width: 100%;
+        display: block;
+        position: static;
+    }
+
+    .caja-comprar-vender .caja-comprar {
+        width: 100%;
+        display: block;
+        position: static;
+    }
+
+    .caja-comprar-vender .caja-comprar .card {
+        width: 100%;
+        position: initial;
+    }
+    .caja-comprar-vender .caja-vender .card {
+        width: 100%;
+        position: initial;
+    }
+
+    .caja-comprar-vender .caja-vender .subcaja-subtitulo {
+        font-size: 3.5rem;
+    }
+
+    .caja-comprar-vender .caja-comprar .subcaja-subtitulo {
+        font-size: 3.5rem;
+    }
+
+    .caja-comprar-vender .caja-vender .texto-compraVenta {
+        font-size: 2rem;
+        line-height: 30px;
+    }
+
+    .caja-comprar-vender .caja-comprar .texto-compraVenta {
+        font-size: 2rem;
+        line-height: 30px;
+    }
+
+    .centrador-comoFunciona .caja-btn {
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    .contenedor .fondo-caja-titulo {
+        width: 50%;
+    }
+
+    .separador-textura {
+        height: 10vh;
+    }
+
+    .contenedor-fondo-slider .titulo-destacados {
+        padding-top: 18.5%;
+    }
+
+    .separador-textura .centrador {
+        width: 90%;
+    }
+
+    .separador-textura .centrador .frase {
+        font-size: 1rem;
+    }
+
+    .centrador-comoFunciona .caja-btn .fondo-btn {
+        margin-bottom: 10%;
+    }
+
+    .caja-articulos {
+        margin-bottom: 10%;
+    }
+
+    .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+
+    .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona {
+        width: 50%;
+    }
+
+    .contenedor-fondo-slider {
+        height: 60vh;
+    }
+
+    .contenedor-fondo-slider .carousel {
+        bottom: 20%;
+        height: 75vh;
+    }
+
+    .contenedor-fondo-slider .carousel-item {
+        width: 40%;
+    }
+
+    .caja-comprar-vender {
+        display: flex;
+        align-items: center;
+    }
+
+    .caja-comprar-vender .caja-comprar {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .caja-comprar-vender .caja-vender {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .caja-comprar-vender .caja-comprar .card {
+        width: 80%;
+        position: initial;
+    }
+    .caja-comprar-vender .caja-vender .card {
+        width: 80%;
+        position: initial;
+    }
+
+    .caja-comprar-vender .caja-vender .texto-compraVenta {
+        font-size: 1.6rem;
+        line-height: 15px;
+    }
+
+    .caja-comprar-vender .caja-comprar .texto-compraVenta {
+        font-size: 1.6rem;
+        line-height: 15px;
+    }
+
+    .contenedor-contactanos .centrador-contactanos {
+        margin: 10% 0;
+    }
+
+}

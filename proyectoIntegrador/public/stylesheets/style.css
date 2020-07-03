@@ -570,3 +570,18 @@ button:focus {
   font-size: 1rem;
   color: var(--white);
 }
+
+
+/* MEDIAQUERIES FOOTER  */
+
+@media (max-width: 640px) {
+  .caja-redes-ayuda-terminos {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+  }
+
+  .caja-copyright {
+    padding-bottom: 5%;
+  }
+}
