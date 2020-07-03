@@ -273,7 +273,7 @@ button:focus {
   letter-spacing: 0.05em;
   text-decoration: none;
   transition: color 0.3s ease;
-  color: #b4b9ba;
+  color: #000000;
   padding: 1% 15px;
 }
 
@@ -329,47 +329,47 @@ button:focus {
 }
 
 #masthead.is-active #masthead-search button {
-  color: #b4b9ba;
+  color: black;
 }
 
 #masthead.is-active #masthead-search input {
-  border-color: #b4b9ba;
+  border-color: black;
 }
 
 #masthead-search ::-webkit-input-placeholder {
-  color: #fff;
+  color: black;
 }
 
 #masthead-search :-moz-placeholder {
-  color: #fff;
+  color: black;
   opacity: 1;
 }
 
 #masthead-search ::-moz-placeholder {
-  color: #fff;
+  color: black;
   opacity: 1;
 }
 
 #masthead-search :-ms-input-placeholder {
-  color: #fff;
+  color: black;
 }
 
 #masthead.is-active #masthead-search ::-webkit-input-placeholder {
-  color: #b4b9ba;
+  color: black;
 }
 
 #masthead.is-active #masthead-search :-moz-placeholder {
-  color: #b4b9ba;
+  color: black;
   opacity: 1;
 }
 
 #masthead.is-active #masthead-search ::-moz-placeholder {
-  color: #b4b9ba;
+  color: black;
   opacity: 1;
 }
 
 #masthead.is-active #masthead-search :-ms-input-placeholder {
-  color: #b4b9ba
+  color: black;
 }
 
 #masthead .col {

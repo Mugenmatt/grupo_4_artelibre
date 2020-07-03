@@ -73,8 +73,8 @@
                             <p>
                                 <label>
                                     <input disabled type="checkbox" id="mailShipping" 
-                                    <% if(user.mailshipping == 1) {%>
-                                        value ="<%=user.mailShipping%>" checked
+                                    <% if(user.mailShipping == 1) {%>
+                                         checked
                                     <% } else { %>
                                         value ="<%=user.mailShipping%>" unchecked
                                     <% } %> name="mailShipping" />
@@ -83,9 +83,8 @@
                             </p>
                             <p>
                                 <label>
-                                    <input disabled type="checkbox" id="privateShipping" <% if(user.privateShipping == 1) {%>
-                                        value="<%=user.privateShipping%>" checked <% } else { %>
-                                        value="<%=user.privateShipping%>" unchecked <% } %> name="privateShipping" />
+                                    <input disabled type="checkbox" id="privateShipping"
+                                        value="" name="privateShipping" />
                                     <span>Mensajeria privada</span>
                                 </label>
                             </p>
