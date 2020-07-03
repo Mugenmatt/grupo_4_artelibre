@@ -21,7 +21,7 @@
              <div class="col s12 m6 file-field input-field">
                  <div class="btn">
                      <span>File</span>
-                     <input type="file" multiple name="imageFile" >
+                     <input type="file" name="imageFile" >
                  </div>
                  <div class="file-path-wrapper">
                      <input class="file-path validate" type="text" placeholder="Upload one or more files">
@@ -44,13 +44,13 @@
                  <label for="quantity">cantidad</label>
              </div>
              <div class="col s12 m4 tamaño-cuadro">
-                 <div class="col s6 input-field alto">
-                     <input id="alto" type="number" class="validate">
-                     <label for="alto">alto</label>
-                 </div>
                  <div class="col s6 input-field ancho">
-                     <input id="ancho" type="number" class="validate">
+                     <input id="ancho" type="number" class="validate" name="ancho">
                      <label for="ancho">ancho</label>
+                 </div>
+                 <div class="col s6 input-field alto">
+                     <input id="alto" type="number" class="validate" name="alto">
+                     <label for="alto">alto</label>
                  </div>
              </div>
          </div>
@@ -61,7 +61,7 @@
              </div>
          </div>
          <div class="row right-align">
-             <button type="submit" class="btn waves-effect waves-light btn-medium">
+             <button type="submit" class="btn waves-effect waves-light btn-medium boton-crearpublicacion">
                  Crear publicación
              </button>
          </div>
@@ -87,72 +87,31 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td><img src="" alt="Imagen" class="circle responsive-img"></td>
-                <td>Eclair</td>
-                <td class="truncated">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, alias. Lorem ipsum dolor sit amet.
-                </td>
-                <td>20x35 cm</td>
-                <td>1</td>
-                <td>$0.87</td>
-                <td class="botones-funciones">
-                    <a class="btn-floating btn-small waves-effect waves-light orange">
-                        <i class="material-icons">brush</i>
-                    </a>
-                </td>
-                <td class="botones-funciones">
-                    <form action="" method="post">
-                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="" alt="Imagen" class="circle responsive-img"></td>
-                <td>Eclair</td>
-                <td class="truncated">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, alias. Lorem ipsum dolor sit amet.
-                </td>
-                <td>20x35 cm</td>
-                <td>1</td>
-                <td>$0.87</td>
-                <td class="botones-funciones">
-                    <a class="btn-floating btn-small waves-effect waves-light orange">
-                        <i class="material-icons">brush</i>
-                    </a>
-                </td>
-                <td class="botones-funciones">
-                    <form action="" method="post">
-                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="" alt="Imagen" class="circle responsive-img"></td>
-                <td>Eclair</td>
-                <td class="truncated">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, alias. Lorem ipsum dolor sit amet.
-                </td>
-                <td>20x35 cm</td>
-                <td>1</td>
-                <td>$0.87</td>
-                <td class="botones-funciones">
-                    <a class="btn-floating btn-small waves-effect waves-light orange">
-                        <i class="material-icons">brush</i>
-                    </a>
-                </td>
-                <td class="botones-funciones">
-                    <form action="" method="post">
-                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
+            <% for(let product of user.products) { %>
+                <tr>
+                    <td><img src="/images/products/<%= product.imageFile %> " alt="Imagen" class="circle responsive-img"></td>
+                    <td><%= product.name %> </td>
+                    <td class="truncated">
+                            <%= product.description %> 
+                    </td>
+                    <td><%=product.ancho %>x<%=product.alto %>  cm</td>
+                    <td><%= product.quantity %> </td>
+                    <td>$<%= product.price %> </td>
+                    <td class="botones-funciones">
+                        <a class="btn-flat">
+                            <i class="material-icons">brush</i>
+                        </a>
+                    </td>
+                    <td class="botones-funciones">
+                        <form action="/users/profile/myart/<%= product.id %>?_method=DELETE" method="POST">
+                            <button class="btn-flat waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+
         </tbody>
     </table>
 
