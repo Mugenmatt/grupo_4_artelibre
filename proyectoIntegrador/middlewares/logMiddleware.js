@@ -7,15 +7,24 @@ module.exports = function(req,res,next){
     req.cookies.id;
 
     if (req.session.user) {
-        res.locals.user= req.session.user;
-        return next();
+        User.findByPk(req.session.user.id)
+        .then(function(user){
+            if (user) {
+                let usuario=user;
+                delete usuario.password;
+
+                req.session.user = usuario;
+                res.locals.user = usuario;
+            }
+            return next();
+        }).catch( errors=>console.log(errors) )
+
     } else if (req.cookies.id) {
         User.findByPk(req.cookies.id)
         .then(function(user){
             if (user) {
                 let usuario=user;
                 delete usuario.password;
-                delete usuario.password2;
 
                 req.session.user = usuario;
                 res.locals.user = usuario;

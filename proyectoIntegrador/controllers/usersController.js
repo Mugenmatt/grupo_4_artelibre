@@ -92,20 +92,26 @@ const usersController ={
     profileEdit: function(req,res){
         let usuarioEnSesion= req.session.user;
 
-        User.update(
-            {username: req.body.username,
-            avatar: req.file ? req.file.filename : null,
-            rol: req.body.rol,
-            noShipping: req.body.noShipping,
-            mailShipping: req.body.mailShipping,
-            privateShipping: req.body.privateShipping
-            },
-            {where: 
-                {id: usuarioEnSesion.id} 
-            }
-        ).then(()=>{
-            return res.redirect("/users/profile")
-        }).catch(errors=> console.log(errors))
+        User.findByPk(req.session.user.id)
+            .then(user => {
+                User.update(
+                    {username: req.body.username,
+                    avatar: req.file ? req.file.filename : user.avatar,
+                    rol: req.body.rol,
+                    noShipping: req.body.noShipping ? 1 : 0,
+                    mailShipping: req.body.mailShipping ? 1 : 0,
+                    privateShipping: req.body.privateShipping ? 1 : 0
+                    },
+                    {where: 
+                        {id: usuarioEnSesion.id} 
+                    }
+                ).then(()=>{
+                    console.log(req.body);
+                    
+                    return res.redirect("/users/profile")
+                }).catch(errors=> console.log(errors))
+            })
+        
 
     },
 
@@ -153,6 +159,8 @@ const usersController ={
             idUser: usuarioEnSesion.id,
             imageFile: req.file ? req.file.filename : null,
         }
+
+        // Product.setkeywords()
 
         Product.create(productoACrear)
         .then(()=>{
