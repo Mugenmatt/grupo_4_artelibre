@@ -14,11 +14,12 @@
             <div class="row valign-wrapper mayor-info">
                 <div class="foto-perfil col s4 m2 file-field input-field">
                     <div class="btn-flat">
-                        <!-- IF () ------ user.avatar not null ---- else   -->
+                        <% if (! user.avatar) { %>
                             <i class="material-icons">insert_photo</i>
+                        <% } %>
                         <input type="file" class="boton-examinar" name="avatar">
                     </div>
-                    <!--<img src="#" alt="" class="circle responsive-img"> notice the "circle" class -->
+                    <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
                     </div>
@@ -73,7 +74,7 @@
                             <p>
                                 <label>
                                     <input disabled type="checkbox" id="mailShipping" 
-                                    <% if(user.mailshipping == 1) {%>
+                                    <% if(user.mailShipping == 1) {%>
                                         value ="<%=user.mailShipping%>" checked
                                     <% } else { %>
                                         value ="<%=user.mailShipping%>" unchecked
