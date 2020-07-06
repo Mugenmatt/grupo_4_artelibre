@@ -14,3 +14,17 @@ $(".boton-descartar").click(function(event){
     $('.boton-guardar').toggleClass('apagado');
     $(this).toggleClass('apagado');
 })
+
+$(".nueva-direccion").click(function (event) {
+    event.preventDefault();
+    $('.formulario-nueva-direccion').toggleClass('apagado');
+    $('.cerrar-nueva-direccion').toggleClass('apagado');
+    $(this).toggleClass('apagado');
+})
+
+$(".cerrar-nueva-direccion").click(function (event) {
+    event.preventDefault();
+    $('.formulario-nueva-direccion').toggleClass('apagado');
+    $('.nueva-direccion').toggleClass('apagado');
+    $(this).toggleClass('apagado');
+})

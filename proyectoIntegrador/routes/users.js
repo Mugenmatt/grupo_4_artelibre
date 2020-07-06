@@ -81,6 +81,8 @@ router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
+//.post '/profile/newadress' --------> para la creacion (submit form) de una dirección.
+
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
 router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
 router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );

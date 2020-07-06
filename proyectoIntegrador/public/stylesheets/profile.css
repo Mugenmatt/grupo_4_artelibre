@@ -8,6 +8,10 @@
     padding: 5%;
 }
 
+.row {
+    margin-bottom: 2%;
+}
+
 .row div.foto-perfil.col.m2.s4 {
     width: 150px;
     height: 150px;
@@ -53,4 +57,13 @@ input[type="text"]:not(.browser-default):disabled {
 
 .apagado {
     display: none;
+}
+
+a i.fix{
+    vertical-align: middle;
+}
+
+.nueva-direccion,
+.cerrar-nueva-direccion {
+    color: var(--tealdark);
 }

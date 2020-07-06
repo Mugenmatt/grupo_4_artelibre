@@ -9,7 +9,8 @@
 
 <main class="todo container">
 
-    <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT">
+    <!--form edicion datos-->
+    <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT" id="UserEdit">
         <div class="row">
             <div class="row valign-wrapper mayor-info">
                 <div class="foto-perfil col s4 m2 file-field input-field">
@@ -31,11 +32,29 @@
                         <p><%= user.averageScore %></p>
                     </span>
                 </div>
-                <div class="col s2 m4">
+                <div class="col s2 m4 right-align">
                     <a href="/users/profile/myart" class="waves-effect waves-teal btn-flat">Mis publicaciones 
-                        <i class="material-icons small">palette</i></a>
+                        <i class="material-icons small fix"">palette</i></a>
+                    <a href="/users/profile/myart" class="waves-effect waves-teal btn-flat">Mis ventas
+                        <i class="material-icons small fix"">business_center</i></a>
                 </div>
             </div>
+                <div class="row s12">
+                     <!-- Switch -->
+                     <div class="switch">
+                         <label>
+                             <input disabled type="checkbox" value=<%= user.rol %> 
+                             <% if (user.rol == 1){ %>
+                                 checked 
+                             <% } else { %>
+                                 unchecked
+                             <% } %> 
+                             >
+                             <span class="lever"></span>
+                             Quiero Publicar!
+                         </label>
+                     </div>
+                </div>
             
                 <div class="col s12 m6">
                     <div class="row s12">
@@ -44,26 +63,76 @@
                             <label class="active" for="username">Nombre de usuario</label>
                         </div>
                     </div>
-                    <div class="row s12 m6">
-                        <div class="input-field col">
-                            <input disabled value="Provincia" id="Provincia" type="text" class="validate">
-                            <label class="active" for="Provincia">Provincia</label>
+
+                    <table class="striped col s12">
+                        <div class="row">
+                            <h6>Mis direcciones</h6>
                         </div>
-                        <div class="input-field col">
-                            <input disabled value="localidad" id="localidad" type="text" class="validate">
-                            <label class="active" for="localidad">localidad</label>
-                        </div>
-                    </div>
-                    <div class="row s6">
-                        <div class="input-field col">
-                            <input disabled value="Calle" id="street" type="text" class="validate">
-                            <label class="active" for="street">Calle</label>
-                        </div>
-                        <div class="input-field col">
-                            <input disabled value="Alvin" id="number" type="text" class="validate">
-                            <label class="active" for="number">Numero</label>
-                        </div>
-                    </div>
+                        <!--if (adresses null) -> no mostrar tbody -->
+                        <% if (user.adresses != null) { %> 
+                        <tbody >
+                            <tr>
+                                <td><%= user.adresses.province %></td>
+                                <td><%= user.adresses.city %></td>
+                                <% if (user.adresses.floor == null) { %>
+                                    <td><%= user.adresses.street %> <%= user.adresses.number %> </td>
+                                    <% } else { %>
+                                        <td><%= user.adresses.street %> <%= user.adresses.number %> - <%= user.adresses.florr %>/<%= user.adresses.door %> </td>
+                                    <% } %> 
+                            </tr>
+                        </tbody>
+                    <% } %> 
+                     </table>
+                     <div class="row s12">
+                         <a class="nueva-direccion" href="">Agregar<i class="material-icons fix">add</i></a>
+                         <a class="cerrar-nueva-direccion apagado" href=""><i class="material-icons fix">close</i></a>
+                     </div>
+                                    <!--form AGREGAR NUEVA ADRESS-->
+                                    <div class="formulario-nueva-direccion apagado">
+                                        <form  action="/users/profile/newadress" method="post" id="NewAdress">
+                                            <div class="row s12 m6">
+                                                <div class="input-field col s6">
+                                                    <input value="Provincia" id="Provincia" type="text" class="validate">
+                                                    <label class="active" for="Provincia">Provincia</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input value="localidad" id="localidad" type="text" class="validate">
+                                                    <label class="active" for="localidad">localidad</label>
+                                                </div>
+                                            </div>
+                                            <div class="row s12 m6">
+                                                <div class="input-field col s6">
+                                                    <input value="Alvin" id="cp" type="text" class="validate">
+                                                    <label class="active" for="cp">Codigo Postal</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input value="Calle" id="street" type="text" class="validate">
+                                                    <label class="active" for="street">Calle</label>
+                                                </div>                                             
+                                            </div>
+                                            <div class="row s12 m6">
+                                                <div class="input-field col s4">
+                                                    <input value="Alvin" id="number" type="text" class="validate">
+                                                    <label class="active" for="number">Numero</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input value="piso" id="floor" type="text"
+                                                        class="validate">
+                                                    <label class="active" for="floor">Piso</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input value="door" id="door" type="text"
+                                                        class="validate">
+                                                    <label class="active" for="door">puerta</label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" form="NewAdress"
+                                                class="btn waves-effect waves-light btn-medium">
+                                                Guardar
+                                            </button>
+                                       </form>
+                                    </div>
+
                 </div>
     
                 <!--INFO EXTRA DEL VENDEDOR-->
@@ -115,78 +184,16 @@
             </a>
                 
             </button>
-            <button type="reset" class="btn waves-effect waves-light btn-medium red boton-descartar apagado">
+            <button type="reset" class="btn waves-effect waves-light btn-medium red boton-descartar apagado"
+                id="UserEdit">
                 <i class="material-icons">replay</i>
             </button>
-            <button type="submit" class="btn waves-effect waves-light btn-medium boton-guardar apagado">
+            <button type="submit" class="btn waves-effect waves-light btn-medium boton-guardar apagado" id="UserEdit">
                 Guardar
                 <i class="material-icons right">check</i>
             </button>
         </div>
     </form>
-        
-
-    <!-- CREAR PRODUCTO 
-    <div id="test2" class="col s12">
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Titulo de la obra</label>
-                    </div>
-                    <div class="col s12 m6 file-field input-field">
-                        <div class="btn">
-                            <span>File</span>
-                            <input type="file" multiple>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="descripcion" class="materialize-textarea"></textarea>
-                        <label for="descripcion">descripcion</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 m4">
-                        <input id="price" type="number" class="validate">
-                        <label for="price">Precio</label>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <input id="quantity" type="number" class="validate">
-                        <label for="quantity">cantidad</label>
-                    </div>
-                    <div class="col s12 m4 tamaño-cuadro">
-                        <div class="col input-field alto">
-                            <input id="alto" type="number" class="validate">
-                            <label for="alto">alto</label>
-                        </div>                        
-                        <p style="margin: auto;"> X </p>
-                        <div class="col input-field ancho">
-                            <input id="ancho" type="number" class="validate">
-                            <label for="ancho">ancho</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="keywords" class="materialize-textarea"></textarea>
-                        <label for="keywords">keywords</label>
-                    </div>
-                </div>
-                <div class="row right-align">
-                    <button type="submit" class="btn waves-effect waves-light btn-medium">
-                        Crear publicación
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    -->
 
 </main>
 

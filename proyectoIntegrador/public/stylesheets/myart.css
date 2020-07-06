@@ -46,3 +46,11 @@ th {
 button.btn.boton-crearpublicacion {
     background-color: var(--orangedark);
 }
+
+main a.linkprofile {
+    color: var(--tealdark);
+}
+
+a.linkprofile i.material-icons {
+    vertical-align: middle;
+}

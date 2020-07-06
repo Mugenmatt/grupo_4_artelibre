@@ -1,0 +1,79 @@
+.grilla-padre {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*----------COLUMNA IZQ (filtros-busqueda)-------------*/
+
+aside {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 2%;
+    position: relative;
+}
+aside .fixeado{
+    position: fixed;
+}
+
+/*---------- COLUMNA DERECHA (productos-resultados)-------------*/
+
+.col .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col.derecha {
+    margin-right: 2%;
+    margin-top: 0%;
+}
+
+.gallery-title h3 {
+    margin-top: 1.5%;
+}
+
+.por-encima {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    top: -65px;
+    visibility: hidden;
+}
+
+.contenido-carta:hover .por-encima {
+    visibility: visible;
+}
+
+.por-encima a {
+    margin: 4%;
+}
+
+.por-encima a i {
+    color: var(--tealdark);
+}
+
+.por-encima .precio {
+    margin-left: 4%;
+    width: 60%;
+}
+
+.por-debajo {
+    position: relative;
+    top: -65px;
+}
+
+.por-debajo h6 {
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.por-debajo p{
+    margin-top: 0px;
+
+}
+
+
