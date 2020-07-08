@@ -186,6 +186,21 @@ const usersController ={
 
     },
 
+    showMyorders: function (req, res) {
+
+        let usuarioEnSesion = req.session.user;
+
+        User.findByPk(usuarioEnSesion.id, {
+                include: ["products"]
+            }).then(user => {
+                return res.render('myorders', {
+                    user
+                });
+            })
+            .catch(errors => console.log(errors))
+
+    },
+
 
 }
 module.exports = usersController; 

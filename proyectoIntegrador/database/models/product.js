@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     ancho: DataTypes.INTEGER,
     alto: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
-    status: DataTypes.BOOLEAN, 
+    status: DataTypes.INTEGER, 
     idUser: DataTypes.INTEGER,
     imageFile: DataTypes.STRING,
     

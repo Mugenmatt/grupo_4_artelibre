@@ -86,5 +86,8 @@ router.delete('/profile',authMiddleware, usersController.profileDelete);
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
 router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
 router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );
+//.PUT '/profile/myart/:id' --------> para editar info de productos.
+
+router.get('/profile/myorders', authMiddleware, usersController.showMyorders);
 
 module.exports = router;

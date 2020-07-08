@@ -86,6 +86,7 @@
                 <th>Tamaño</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
+                <th>Estado</th>
             </tr>
         </thead>
 
@@ -100,6 +101,7 @@
                     <td><%=product.ancho %>x<%=product.alto %>  cm</td>
                     <td><%= product.quantity %> </td>
                     <td>$<%= product.price %> </td>
+                    <td> <%= product.status %> </td>
                     <td class="botones-funciones">
                         <a class="btn-flat">
                             <i class="material-icons">brush</i>
