@@ -97,7 +97,7 @@ const usersController ={
                 User.update(
                     {username: req.body.username,
                     avatar: req.file ? req.file.filename : user.avatar,
-                    rol: req.body.rol,
+                    rol: req.body.rol? 1 : 0,
                     noShipping: req.body.noShipping ? 1 : 0,
                     mailShipping: req.body.mailShipping ? 1 : 0,
                     privateShipping: req.body.privateShipping ? 1 : 0
@@ -106,7 +106,6 @@ const usersController ={
                         {id: usuarioEnSesion.id} 
                     }
                 ).then(()=>{
-                    console.log(req.body);
                     
                     return res.redirect("/users/profile")
                 }).catch(errors=> console.log(errors))
