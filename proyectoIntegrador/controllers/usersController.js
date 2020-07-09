@@ -186,6 +186,40 @@ const usersController ={
 
     },
 
+    editMyart: function(res,res){
+        let productId = req.params.id;
+
+        Product.findByPk(productId)
+        .then((product)=>{
+            return res.render("edit-myart",{product})
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+
+    processEditMyart: function(res,res){
+        let productId = req.params.id;
+
+        Product.update({
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            ancho: req.body.ancho,
+            alto: req.body.alto,
+            quantity: req.body.quantity,
+            status: req.body.status, 
+            imageFile: req.file ? req.file.filename : null,
+            },
+            {where: 
+                {id: productId} 
+            })
+        .then((product)=>{
+            return res.redirect("/users/profile/myart")
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+
     showMyorders: function (req, res) {
 
         let usuarioEnSesion = req.session.user;
