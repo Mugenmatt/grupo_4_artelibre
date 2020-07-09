@@ -203,6 +203,10 @@ main {
     border: 1px solid var(--white);
 }
 
+.responsive-img {
+    width: 70%;
+}
+
 /* ========================= COMENTARIOS ========================= */
 
 
@@ -340,3 +344,22 @@ main {
 .slider .slides li caption h3 {}
 
 .slider .slides li caption h5 {}
+
+
+
+/* ================================ MEDIA QUERIES ================================ */
+
+
+
+@media (max-width: 600px) {
+
+    .responsive-img {
+        margin: auto;
+        margin-top: 7%;
+    }
+
+    .white-text {
+        text-align: center;
+    }
+    
+}
