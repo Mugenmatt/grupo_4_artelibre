@@ -418,7 +418,8 @@ button:focus {
   margin-top: 0.625em;
   position: relative;
   cursor: pointer;
-  margin-left: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .cart img {

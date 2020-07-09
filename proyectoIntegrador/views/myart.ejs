@@ -93,7 +93,7 @@
         <tbody>
             <% for(let product of user.products) { %>
                 <tr>
-                    <td><img src="/images/products/<%= product.imageFile %> " alt="Imagen" class="circle responsive-img"></td>
+                    <td><img src="/images/products/<%= product.imageFile %> " alt="Imagen" class="responsive-img" width="100"></td>
                     <td><%= product.name %> </td>
                     <td class="truncated">
                             <%= product.description %> 
@@ -103,7 +103,7 @@
                     <td>$<%= product.price %> </td>
                     <td> <%= product.status %> </td>
                     <td class="botones-funciones">
-                        <a class="btn-flat">
+                        <a href="/users/profile/myart/<%= product.id %>" class="btn-flat">
                             <i class="material-icons">brush</i>
                         </a>
                     </td>

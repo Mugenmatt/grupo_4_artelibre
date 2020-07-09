@@ -1,0 +1,56 @@
+main.todo.container {
+    margin-top: 10%;
+}
+
+tr td.botones-funciones {
+    width: 5%;
+}
+
+td,
+th {
+    text-align: center;
+}
+
+.truncated {
+    width: 20%;
+    font-size: smaller;
+}
+
+#test2 {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+    width: 60%;
+    top: 0;
+    background-color: whitesmoke;
+    box-shadow: 3px 4px 50px 0px rgb(0, 0, 0);
+}
+
+#test2 form {
+    margin: auto;
+    padding: 5%;
+    position: relative;
+
+}
+
+.boton-cerrar{
+    z-index: 5;
+    position: absolute;
+    right: 0;
+}
+
+button.btn.boton-crearpublicacion {
+    background-color: var(--orangedark);
+}
+
+main a.linkprofile {
+    color: var(--tealdark);
+}
+
+a.linkprofile i.material-icons {
+    vertical-align: middle;
+}

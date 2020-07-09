@@ -26,7 +26,7 @@ let upload = multer({
     // Validate image
     fileFilter: (req, file, cb) => {
        
-       const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+       const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.PNG'];
  
        const ext = path.extname(file.originalname);
  
@@ -55,7 +55,7 @@ let storage2 = multer.diskStorage({
       // Validate image
       fileFilter: (req, file, cb) => {
          
-         const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+         const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.PNG'];
    
          const ext = path.extname(file.originalname);
    

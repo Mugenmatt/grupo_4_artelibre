@@ -186,7 +186,7 @@ const usersController ={
 
     },
 
-    editMyart: function(res,res){
+    editMyart: function(req,res){
         let productId = req.params.id;
 
         Product.findByPk(productId)
@@ -197,7 +197,7 @@ const usersController ={
 
     },
 
-    processEditMyart: function(res,res){
+    processEditMyart: function(req,res){
         let productId = req.params.id;
 
         Product.update({
