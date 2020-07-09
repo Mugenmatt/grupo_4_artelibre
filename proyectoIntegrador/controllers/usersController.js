@@ -2,6 +2,7 @@ const bcryptjs = require('bcryptjs');
 const { check, validationResult, body} = require('express-validator');
 const db= require('../database/models/')
 const User = db.User;
+const Adress = db.Adress;
 const Product = db.Product;
 
 const usersController ={
@@ -92,11 +93,11 @@ const usersController ={
     profileEdit: function(req,res){
         let usuarioEnSesion= req.session.user;
 
-        User.findByPk(req.session.user.id)
-            .then(user => {
+        // User.findByPk(usuarioEnSesion.id)
+        //     .then(user => {
                 User.update(
                     {username: req.body.username,
-                    avatar: req.file ? req.file.filename : user.avatar,
+                    avatar: req.file ? req.file.filename : usuarioEnSesion.avatar,
                     rol: req.body.rol? 1 : 0,
                     noShipping: req.body.noShipping ? 1 : 0,
                     mailShipping: req.body.mailShipping ? 1 : 0,
@@ -109,7 +110,7 @@ const usersController ={
                     
                     return res.redirect("/users/profile")
                 }).catch(errors=> console.log(errors))
-            })
+            // })
         
 
     },
@@ -130,6 +131,60 @@ const usersController ={
             }
             return res.redirect('/')
           }).catch(errors=> console.log(errors))
+
+    },
+
+    profileNewAdress: function(req,res){
+        Adress.create({
+            street: req.body.street ,
+            number: req.body.number , 
+            floor: req.body.floor ,
+            door: req.body.door ,
+            cp: req.body.cp , 
+            province: req.body.province , 
+            city: req.body.city ,
+            idUser: usuarioEnSesion.id
+        })
+        .then(function(){
+            return res.redirect('/users/profile')
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+
+    profileEditAdress: function(req,res){
+        let adressId= req.params.id;
+
+        Adress.update({
+            street: req.body.street ,
+            number: req.body.number , 
+            floor: req.body.floor ,
+            door: req.body.door ,
+            cp: req.body.cp , 
+            province: req.body.province , 
+            city: req.body.city ,
+        },
+        {where: 
+            {id: adressId} 
+        })
+        .then(function(){
+            return res.redirect('/users/profile')
+        })
+        .catch(errors=> console.log(errors))
+
+    },
+
+    profileDeleteAdress: function(req,res){
+        let adressId= req.params.id;
+
+        Adress.destroy(
+        {where: 
+            {id: adressId} 
+        })
+        .then(function(){
+            return res.redirect('/users/profile')
+        })
+        .catch(errors=> console.log(errors))
 
     },
 
@@ -155,7 +210,7 @@ const usersController ={
             quantity: req.body.quantity,
             ancho: req.body.ancho,
             alto: req.body.alto,
-            //status: req.body.status, esto viene por default?
+            //status: req.body.status
             idUser: usuarioEnSesion.id,
             imageFile: req.file ? req.file.filename : null,
         }

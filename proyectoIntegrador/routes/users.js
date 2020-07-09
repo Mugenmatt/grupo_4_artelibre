@@ -81,14 +81,15 @@ router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
-//.post '/profile/newadress' --------> para la creacion (submit form) de una dirección.
+router.post('/profile/adress/new',authMiddleware, usersController.profileNewAdress);
+router.put('/profile/adress/:id',authMiddleware, usersController.profileEditAdress);
+router.delete('/profile/adress/:id',authMiddleware, usersController.profileDeleteAdress);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
 router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
 router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );
 router.get('/profile/myart/:id', authMiddleware,usersController.editMyart );
 router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile') ,usersController.processEditMyart );
-//.PUT '/profile/myart/:id' --------> para editar info de productos.
 
 router.get('/profile/myorders', authMiddleware, usersController.showMyorders);
 
