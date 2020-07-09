@@ -44,12 +44,7 @@
                      <div class="switch">
                          <label>
                              <input disabled type="checkbox" name="rol" value=<%= user.rol %> 
-                             <% if (user.rol == 1){ %>
-                                 checked 
-                             <% } else { %>
-                                 unchecked
-                             <% } %> 
-                             >
+                             <% if (user.rol == true){ %> checked <% } else { %> unchecked <% } %> >
                              <span class="lever"></span>
                              Quiero Publicar!
                          </label>
@@ -89,40 +84,41 @@
                      </div>
                                     <!--form AGREGAR NUEVA ADRESS-->
                                     <div class="formulario-nueva-direccion apagado">
-                                        <form  action="/users/profile/newadress" method="post" id="NewAdress">
+                                        <form  action="/users/profile/adress/new" method="post" id="NewAdress">
                                             <div class="row s12 m6">
                                                 <div class="input-field col s6">
-                                                    <input value="Provincia" id="Provincia" type="text" class="validate">
+                                                    <input value="Provincia" id="Provincia" type="text" class="validate" name="province">
                                                     <label class="active" for="Provincia">Provincia</label>
                                                 </div>
                                                 <div class="input-field col s6">
-                                                    <input value="localidad" id="localidad" type="text" class="validate">
+                                                    <input value="localidad" id="localidad" type="text" class="validate"
+                                                        name="city">
                                                     <label class="active" for="localidad">localidad</label>
                                                 </div>
                                             </div>
                                             <div class="row s12 m6">
                                                 <div class="input-field col s6">
-                                                    <input value="Alvin" id="cp" type="text" class="validate">
+                                                    <input value="Alvin" id="cp" type="text" class="validate" name="cp">
                                                     <label class="active" for="cp">Codigo Postal</label>
                                                 </div>
                                                 <div class="input-field col s6">
-                                                    <input value="Calle" id="street" type="text" class="validate">
+                                                    <input value="Calle" id="street" type="text" class="validate" name="street">
                                                     <label class="active" for="street">Calle</label>
                                                 </div>                                             
                                             </div>
                                             <div class="row s12 m6">
                                                 <div class="input-field col s4">
-                                                    <input value="Alvin" id="number" type="text" class="validate">
+                                                    <input value="Alvin" id="number" type="text" class="validate" name="number">
                                                     <label class="active" for="number">Numero</label>
                                                 </div>
                                                 <div class="input-field col s4">
                                                     <input value="piso" id="floor" type="text"
-                                                        class="validate">
+                                                        class="validate" name="floor">
                                                     <label class="active" for="floor">Piso</label>
                                                 </div>
                                                 <div class="input-field col s4">
                                                     <input value="door" id="door" type="text"
-                                                        class="validate">
+                                                        class="validate" name="door">
                                                     <label class="active" for="door">puerta</label>
                                                 </div>
                                             </div>
