@@ -1,5 +1,5 @@
 const bcryptjs = require('bcryptjs');
-const { check, validationResult, body} = require('express-validator');
+const {validationResult} = require('express-validator');
 const db= require('../database/models/')
 const User = db.User;
 const Adress = db.Adress;
@@ -11,20 +11,26 @@ const usersController ={
     },
 
     processRegister: function(req,res){
-        let user = req.body;
-        console.log(user);
-
-        user.password = bcryptjs.hashSync(user.password,10);
-        delete user.password2;
-
-        User.create(user)
-        .then(()=>{
-            return res.redirect('/users/login');
-        })
-        .catch((error)=>{
-            console.log(error);
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+            let user = req.body;
+            user.password = bcryptjs.hashSync(user.password,10);
+            delete user.password2;
+    
+            User.create(user)
+            .then(()=>{
+                return res.redirect('/users/login');
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
             
-        })
+        }else{
+            return res.render('register',{errors: errors.mapped() , old:req.body})
+        }
+
 
     },
     
