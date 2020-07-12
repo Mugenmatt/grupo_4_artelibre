@@ -43,9 +43,10 @@ th {
     right: 0;
 }
 
-button.btn.boton-crearpublicacion {
+button.btn.boton-guardar {
     background-color: var(--orangedark);
 }
+
 
 main a.linkprofile {
     color: var(--tealdark);

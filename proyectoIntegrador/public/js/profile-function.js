@@ -28,3 +28,7 @@ $(".cerrar-nueva-direccion").click(function (event) {
     $('.nueva-direccion').toggleClass('apagado');
     $(this).toggleClass('apagado');
 })
+
+ $(document).ready(function () {
+     $('.collapsible').collapsible();
+ });

@@ -1,5 +1,5 @@
 .todo.container {
-    margin-top: 22%;
+    margin-top: 10%;
 }
 
 .mayor-info {
@@ -67,3 +67,14 @@ a i.fix{
 .cerrar-nueva-direccion {
     color: var(--tealdark);
 }
+
+div.collapsible-header {
+    justify-content: space-between;
+    border: none;
+    background-color: transparent;
+}
+ ul.collapsible {
+     border: none;
+     box-shadow: none;
+
+ }

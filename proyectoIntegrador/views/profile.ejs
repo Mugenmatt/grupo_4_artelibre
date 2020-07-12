@@ -11,186 +11,201 @@
 
     <!--form edicion datos-->
     <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT" id="UserEdit">
-        <div class="row">
-            <div class="row valign-wrapper mayor-info">
-                <div class="foto-perfil col s4 m2 file-field input-field">
+        <div class="row center-align card-panel">
+
+                <div class="foto-perfil col s12 m4 l2 file-field input-field">
                     <div class="btn-flat">
-                        <% if (! user.avatar) { %>
+                        <% if (user.avatar == null) { %>
                             <i class="material-icons">insert_photo</i>
                         <% } %>
-                        <input type="file" class="boton-examinar" name="avatar">
+                        <input disabled type="file" class="boton-examinar" name="avatar">
                     </div>
                     <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
+                        <input disabled class="file-path validate" type="text">
                     </div>
                 </div>
-                <div class="col s8 m6">
+
+                <div class="col s12 m8 l4">
+                    <div class="input-field">
+                        <input disabled value="<%= user.username %>" id="username" type="text" class="validate center-align" name="username" style="width: auto;"/>
+                    </div>
                     <span class="black-text">
                         <p><%= user.name %> <%= user.lastname %></p>
                         <p><%= user.email %></p>
-                        <p><%= user.averageScore %></p>
                     </span>
-                </div>
-                <div class="col s2 m4 right-align">
-                    <a href="/users/profile/myart" class="waves-effect waves-orange btn-flat">Mis publicaciones 
-                        <i class="material-icons small fix"">palette</i></a>
-                    <a href="/users/profile/myorders" class="waves-effect waves-orange btn-flat">Mis ordenes
-                        <i class="material-icons small fix"">business_center</i></a>
-                </div>
-            </div>
-                <div class="row s12">
-                     <!-- Switch -->
-                     <div class="switch">
-                         <label>
-                             <input disabled type="checkbox" name="rol" value=<%= user.rol %> 
-                             <% if (user.rol == true){ %> checked <% } else { %> unchecked <% } %> >
-                             <span class="lever"></span>
-                             Quiero Publicar!
-                         </label>
-                     </div>
-                </div>
-            
-                <div class="col s12 m6">
-                    <div class="row s12">
-                        <div class="input-field">
-                            <input disabled value="<%= user.username %>" id="username" type="text" class="validate" name="username"/>
-                            <label class="active" for="username">Nombre de usuario</label>
+                    <div class="row">
+                        <!-- Switch -->
+                        <div class="switch">
+                            <label>
+                                <input disabled type="checkbox" name="rol" value=<%= user.rol %> <% if (user.rol == true){ %> checked
+                                    <% } else { %> unchecked <% } %>>
+                                <span class="lever"></span>
+                                Quiero Publicar!
+                            </label>
                         </div>
                     </div>
-
-                    <table class="striped col s12">
-                        <div class="row">
-                            <h6>Mis direcciones</h6>
-                        </div>
-                        <!--if (adresses null) -> no mostrar tbody -->
-                        <% if (user.adresses != null) { %> 
-                        <tbody >
-                            <tr>
-                                <td><%= user.adresses.province %></td>
-                                <td><%= user.adresses.city %></td>
-                                <% if (user.adresses.floor == null) { %>
-                                    <td><%= user.adresses.street %> <%= user.adresses.number %> </td>
-                                    <% } else { %>
-                                        <td><%= user.adresses.street %> <%= user.adresses.number %> - <%= user.adresses.florr %>/<%= user.adresses.door %> </td>
-                                    <% } %> 
-                            </tr>
-                        </tbody>
-                    <% } %> 
-                     </table>
-                     <div class="row s12">
-                         <a class="nueva-direccion" href="">Agregar<i class="material-icons fix">add</i></a>
-                         <a class="cerrar-nueva-direccion apagado" href=""><i class="material-icons fix">close</i></a>
-                     </div>
-                                    <!--form AGREGAR NUEVA ADRESS-->
-                                    <div class="formulario-nueva-direccion apagado">
-                                        <form  action="/users/profile/adress/new" method="post" id="NewAdress">
-                                            <div class="row s12 m6">
-                                                <div class="input-field col s6">
-                                                    <input value="Provincia" id="Provincia" type="text" class="validate" name="province">
-                                                    <label class="active" for="Provincia">Provincia</label>
-                                                </div>
-                                                <div class="input-field col s6">
-                                                    <input value="localidad" id="localidad" type="text" class="validate"
-                                                        name="city">
-                                                    <label class="active" for="localidad">localidad</label>
-                                                </div>
-                                            </div>
-                                            <div class="row s12 m6">
-                                                <div class="input-field col s6">
-                                                    <input value="Alvin" id="cp" type="text" class="validate" name="cp">
-                                                    <label class="active" for="cp">Codigo Postal</label>
-                                                </div>
-                                                <div class="input-field col s6">
-                                                    <input value="Calle" id="street" type="text" class="validate" name="street">
-                                                    <label class="active" for="street">Calle</label>
-                                                </div>                                             
-                                            </div>
-                                            <div class="row s12 m6">
-                                                <div class="input-field col s4">
-                                                    <input value="Alvin" id="number" type="text" class="validate" name="number">
-                                                    <label class="active" for="number">Numero</label>
-                                                </div>
-                                                <div class="input-field col s4">
-                                                    <input value="piso" id="floor" type="text"
-                                                        class="validate" name="floor">
-                                                    <label class="active" for="floor">Piso</label>
-                                                </div>
-                                                <div class="input-field col s4">
-                                                    <input value="door" id="door" type="text"
-                                                        class="validate" name="door">
-                                                    <label class="active" for="door">puerta</label>
-                                                </div>
-                                            </div>
-                                            <button type="submit" form="NewAdress"
-                                                class="btn waves-effect waves-light btn-medium">
-                                                Guardar
-                                            </button>
-                                       </form>
-                                    </div>
-
                 </div>
-    
-                <!--INFO EXTRA DEL VENDEDOR-->
-                <div class="col s12 m6">
-                    <div class="row">
+
+                <!--COL DERECHA-->
+                <div class="col s12 m10 l6">
+                    <div class="row section">
                         <h6 class="center-align">Formas de envio</h6>
                         <div class="checkboxes-envio">
                             <p>
                                 <label>
-                                    <input disabled type="checkbox" id="mailShipping" 
-                                    <% if(user.mailShipping == 1) {%>
-                                        value ="<%=user.mailShipping%>" checked
-                                    <% } else { %>
-                                        value ="<%=user.mailShipping%>" unchecked
-                                    <% } %> name="mailShipping" />
+                                    <input disabled type="checkbox" id="mailShipping" <% if(user.mailShipping == 1) {%>
+                                        value="<%=user.mailShipping%>" checked <% } else { %> value="<%=user.mailShipping%>" unchecked
+                                        <% } %> name="mailShipping" />
                                     <span>Correo</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input disabled type="checkbox" id="privateShipping" <% if(user.privateShipping == 1) {%>
-                                        value="<%=user.privateShipping%>" checked <% } else { %>
-                                        value="<%=user.privateShipping%>" unchecked <% } %> name="privateShipping" />
+                                        value="<%=user.privateShipping%>" checked <% } else { %> value="<%=user.privateShipping%>"
+                                        unchecked <% } %> name="privateShipping" />
                                     <span>Mensajeria privada</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input disabled type="checkbox" id="noShipping" <% if(user.noShipping == 1) {%>
-                                        value="<%=user.noShipping%>" checked <% } else { %>
-                                        value="<%=user.noShipping%>" unchecked <% } %> name="noShipping" />
+                                        value="<%=user.noShipping%>" checked <% } else { %> value="<%=user.noShipping%>" unchecked
+                                        <% } %> name="noShipping" />
                                     <span>Retiro en domicilio del artista</span>
                                 </label>
                             </p>
                         </div>
-                        
-                    </div>
-                    <div class="row">
-                        <h6>Info pagos</h6>
                     </div>
                 </div>
-                
-            </div>
+                <div class="right-align section">
+                    <a href="" class="btn waves-effect waves-light btn-medium boton-modificar">
+                        Editar mi perfil
+                        <i class="material-icons right">brush</i>
+                    </a>
+                    <button type="reset" class="btn waves-effect waves-light btn-medium red boton-descartar apagado"
+                        form="UserEdit">
+                        <i class="material-icons">replay</i>
+                    </button>
+                    <button type="submit" class="btn waves-effect waves-light btn-medium boton-guardar apagado"
+                        form="UserEdit">
+                        Guardar
+                        <i class="material-icons right">check</i>
+                    </button>
+                </div>
         </div>
-        <div class="right-align section">
-            <a href="" class="btn waves-effect waves-light btn-medium boton-modificar">
-                Modificar
-                <i class="material-icons right">brush</i>
-            </a>
-                
-            </button>
-            <button type="reset" class="btn waves-effect waves-light btn-medium red boton-descartar apagado"
-                form="UserEdit">
-                <i class="material-icons">replay</i>
-            </button>
-            <button type="submit" class="btn waves-effect waves-light btn-medium boton-guardar apagado" form="UserEdit">
-                Guardar
-                <i class="material-icons right">check</i>
-            </button>
-        </div>
+        
     </form>
 
+    <!--============================================================-->
+    <!--==================       MITAD      =======================-->
+    <!--============================================================-->
+
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">
+                <h6>
+                    Mis direcciones
+                    <i class="material-icons small fix"">palette</i>
+                </h6>
+            </div>
+            <div class="collapsible-body">
+                <% if (user.adresses.id != null) { %>
+                <table class="striped col s12">
+                    <tbody>
+                        <tr>
+                            <td><%= user.adresses.province %></td>
+                            <td><%= user.adresses.city %></td>
+                            <% if (user.adresses.floor == null) { %>
+                            <td><%= user.adresses.street %> <%= user.adresses.number %> </td>
+                            <% } else { %>
+                            <td><%= user.adresses.street %> <%= user.adresses.number %> -
+                                <%= user.adresses.florr %>/<%= user.adresses.door %> </td>
+                            <% } %>
+                        </tr>
+                    </tbody>
+                </table>
+                <% } else { %> <p>No hay direcciones registradas</p> <% } %>
+                <div class="row left-align">
+                    <a class="nueva-direccion" href="">Agregar<i class="material-icons fix">add</i></a>
+                    <a class="cerrar-nueva-direccion apagado" href=""><i class="material-icons fix">close</i></a>
+                </div>
+
+
+                    <!--form AGREGAR NUEVA ADRESS-->
+                    <div class="formulario-nueva-direccion apagado col s6">
+                        <form action="/users/profile/adress/new" method="post" id="NewAdress">
+                            <div class="row s12 m6">
+                                <div class="input-field col s6">
+                                    <input value="Provincia" id="Provincia" type="text" class="validate"
+                                        name="province">
+                                    <label class="active" for="Provincia">Provincia</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input value="localidad" id="localidad" type="text" class="validate" name="city">
+                                    <label class="active" for="localidad">localidad</label>
+                                </div>
+                            </div>
+                            <div class="row s12 m6">
+                                <div class="input-field col s6">
+                                    <input value="Alvin" id="cp" type="text" class="validate" name="cp">
+                                    <label class="active" for="cp">Codigo Postal</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input value="Calle" id="street" type="text" class="validate" name="street">
+                                    <label class="active" for="street">Calle</label>
+                                </div>
+                            </div>
+                            <div class="row s12 m6">
+                                <div class="input-field col s4">
+                                    <input value="Alvin" id="number" type="text" class="validate" name="number">
+                                    <label class="active" for="number">Numero</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input value="piso" id="floor" type="text" class="validate" name="floor">
+                                    <label class="active" for="floor">Piso</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input value="door" id="door" type="text" class="validate" name="door">
+                                    <label class="active" for="door">puerta</label>
+                                </div>
+                            </div>
+                            <div class="section right-align">
+                                <button type="submit" form="NewAdress" class="btn waves-effect waves-light btn-medium">
+                                    Guardar
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <h6> Mis publicaciones <i class="material-icons small fix"">palette</i> </h6>
+                <p>
+                    <a href="profile/myart">Ver todas</a>
+                </p>
+            </div>
+            <div class="collapsible-body">
+                <span>Lorem ipsum dolor sit amet.</span>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <h6> Mis ordenes <i class="material-icons small fix"">palette</i> </h6>
+                <p class="valign-wrapper right-align ">
+                    <a  href="profile/myorders">Ver todas</a>
+                </p> 
+            </div>
+            <div class=" collapsible-body">              
+                <span>Lorem ipsum dolor sit amet.</span>
+            </div>
+        </li>
+
+    </ul>
+               
 </main>
 
 
