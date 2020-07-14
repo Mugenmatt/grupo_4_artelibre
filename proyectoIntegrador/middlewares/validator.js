@@ -1,6 +1,7 @@
 const path = require('path');
 const { body } = require('express-validator');
 const db= require('../database/models/')
+const Op = db.Sequelize.Op
 const User = db.User;
 
 module.exports ={
@@ -9,11 +10,77 @@ module.exports ={
             .notEmpty().withMessage('Campo obligatorio'),
         body('username')
         .notEmpty().withMessage('Campo obligatorio').bail()
-        // .custom(value=>{
-            //ckeckear si el usuario ya existe.
-        // })
+        .custom(value => {
+
+            return User.findOne({
+               where: {
+                  username: value
+               }
+            })
+               .then(user => {
+                  if(user){
+                     return Promise.reject('El username ya está registrado')
+                  }
+               })
+
+         }),
+        body('email')
+         .notEmpty().withMessage('Campo obligatorio').bail()
+         .isEmail().withMessage('Debes ingresar un email válido').bail()
+         .custom(value => {
+
+            return User.findOne({
+               where: {
+                  email: value
+               }
+            })
+               .then(user => {
+                  if (user) {
+                     return Promise.reject('El email ya está registrado')
+                  }
+               })
+
+         }),
+        body('password')
+         .notEmpty().withMessage('Campo obligatorio').bail()
+         .isLength({ min: 3 }).withMessage('La contraseña debe tener al menos 3 caracteres'),
+        body('password2')
+         .notEmpty().withMessage('Campo obligatorio').bail()
+         .custom((value, { req }) => req.body.password == req.body.password2).withMessage('Las contraseñas no coinciden')
+
             ],
-    editUser:[],
+    editUser:[
+        body('username')
+        .notEmpty().withMessage('Campo obligatorio').bail()
+        .custom((value, {req}) => {
+
+            return User.findOne({
+               where: {
+                  username: value,
+                  id:{[Op.ne]:req.session.user.id}
+               }
+            })
+               .then(user => {
+                  if(user){
+                     return Promise.reject('El username ya está registrado')
+                  }
+               })
+
+         }),
+
+        body('avatar')
+         .custom((value, { req }) => {
+
+            if(req.file != undefined){
+               const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.PNG'];
+               const ext = path.extname(req.file.originalname)
+               return acceptedExtensions.includes(ext);
+            }
+
+            return true
+            
+         }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG')
+    ],
     createProduct:[
         body('name')
             .notEmpty().withMessage('Campo obligatorio')

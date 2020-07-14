@@ -97,26 +97,38 @@ const usersController ={
     },
 
     profileEdit: function(req,res){
-        let usuarioEnSesion= req.session.user;
 
-        // User.findByPk(usuarioEnSesion.id)
-        //     .then(user => {
-                User.update(
-                    {username: req.body.username,
-                    avatar: req.file ? req.file.filename : usuarioEnSesion.avatar,
-                    rol: req.body.rol? 1 : 0,
-                    noShipping: req.body.noShipping ? 1 : 0,
-                    mailShipping: req.body.mailShipping ? 1 : 0,
-                    privateShipping: req.body.privateShipping ? 1 : 0
-                    },
-                    {where: 
-                        {id: usuarioEnSesion.id} 
-                    }
-                ).then(()=>{
-                    
-                    return res.redirect("/users/profile")
-                }).catch(errors=> console.log(errors))
-            // })
+        const errors = validationResult(req);
+        let usuarioEnSesion= req.session.user;
+        
+        if (errors.isEmpty()) {
+    
+            User.update(
+                {username: req.body.username,
+                avatar: req.file ? req.file.filename : usuarioEnSesion.avatar,
+                rol: req.body.rol? 1 : 0,
+                noShipping: req.body.noShipping ? 1 : 0,
+                mailShipping: req.body.mailShipping ? 1 : 0,
+                privateShipping: req.body.privateShipping ? 1 : 0
+                },
+                {where: 
+                    {id: usuarioEnSesion.id} 
+                }
+            ).then(()=>{
+                
+                return res.redirect("/users/profile")
+            }).catch(errors=> console.log(errors))
+            
+        }else{
+            User.findByPk(usuarioEnSesion.id,{
+                include: {
+                  all: true,
+                  nested: true
+                }
+              }).then(function(user){
+                  return res.render('profile',{user,errors:errors.mapped()})
+              })
+        }
         
 
     },
@@ -141,6 +153,8 @@ const usersController ={
     },
 
     profileNewAdress: function(req,res){
+        let usuarioEnSesion= req.session.user;
+
         Adress.create({
             street: req.body.street ,
             number: req.body.number , 

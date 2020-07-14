@@ -78,8 +78,7 @@ router.post('/login',usersController.processLogin);
 router.post('/logout',authMiddleware, usersController.logout);
 
 router.get('/profile',authMiddleware, usersController.profile);
-//agregarle validator al de aca abajo
-router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
+router.put('/profile',authMiddleware, upload.single('avatar'), validator.editUser, usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
 //agregarle validator al de aca abajo
