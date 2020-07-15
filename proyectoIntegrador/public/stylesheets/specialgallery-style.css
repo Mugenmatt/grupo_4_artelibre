@@ -13,8 +13,12 @@ aside {
     padding: 2%;
     position: relative;
 }
-aside .fixeado{
+/* aside .fixeado{
     position: fixed;
+} */
+
+.perfil-artista img{
+    width: 50%;
 }
 
 /*---------- COLUMNA DERECHA (productos-resultados)-------------*/

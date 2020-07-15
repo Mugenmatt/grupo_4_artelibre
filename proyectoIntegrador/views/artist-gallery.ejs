@@ -13,7 +13,7 @@
         <div class="fixeado">
             <div class="section perfil-artista">
                 <h4><%= artista.username %> </h4>
-                <img class="responsive-img" src="<%= artista.avatar %>">
+                <img class="responsive-img" src="\images\users\<%= artista.avatar%>">
                 <h6><%= artista.name %> <%= artista.lastName %> </h6>
             </div>
             <div class="divider"></div>
@@ -71,7 +71,7 @@
                         <div class="imagen">
                             <a href="/product/<%=cuadro.id%>">
                                 <!--cuadro.productImages[0].filename-->
-                                <img class="responsive-img" src="\images\products\mona-lisa-with-face-mask-3957982.jpg"                                 
+                                <img class="responsive-img" src="\images\products\<%=cuadro.imageFile%> "                                 
                                     alt="">
                             </a>
                         </div>

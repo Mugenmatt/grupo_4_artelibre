@@ -111,19 +111,22 @@
                 </h6>
             </div>
             <div class="collapsible-body">
-                <% if (user.adresses.id != null) { %>
+                <% if (user.adresses!= null) { %>
                 <table class="striped col s12">
                     <tbody>
-                        <tr>
-                            <td><%= user.adresses.province %></td>
-                            <td><%= user.adresses.city %></td>
-                            <% if (user.adresses.floor == null) { %>
-                            <td><%= user.adresses.street %> <%= user.adresses.number %> </td>
-                            <% } else { %>
-                            <td><%= user.adresses.street %> <%= user.adresses.number %> -
-                                <%= user.adresses.florr %>/<%= user.adresses.door %> </td>
-                            <% } %>
-                        </tr>
+                        <% for( let adress of user.adresses)  { %>
+                            <tr>
+                                <td><%= adress.province %></td>
+                                <td><%= adress.city %></td>
+                                <% if (adress.floor == null) { %>
+                                <td><%= adress.street %> <%= adress.number %> </td>
+                                <% } else { %>
+                                <td><%= adress.street %> <%= adress.number %> -
+                                    <%= adress.floor %>/<%= adress.door %> </td>
+                                <% } %>
+                            </tr>
+                        
+                        <% } %>
                     </tbody>
                 </table>
                 <% } else { %> <p>No hay direcciones registradas</p> <% } %>

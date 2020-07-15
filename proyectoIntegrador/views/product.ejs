@@ -39,7 +39,7 @@
     <div class="col s12 m6 caja-izquierda">
         <a href="">
             <img class="responsive-img materialboxed" width="450"
-                src="../images/products/mona-lisa-with-face-mask-3957982.jpg"
+                src="../images/products/<%= obra.imageFile %> "
                 alt="">
         </a>
     </div>
@@ -54,9 +54,9 @@
                 </span>
             </div>
         </div>
-        <h4 class="white-text"><%= obra.name %> Titulo obra</h4>
+        <h4 class="white-text"><%= obra.name %></h4>
 
-        <p class="txt-tamaño white-text"><%= obra.size %> cm</p>
+        <p class="txt-tamaño white-text"><%= obra.ancho%>x<%= obra.alto %> cm</p>
         <div class="divider"></div>
         <div class="section">
             <p class="white-text"><%= obra.description %></p>
