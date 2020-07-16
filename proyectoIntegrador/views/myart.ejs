@@ -111,7 +111,8 @@
                         </a>
                     </td>
                     <td class="botones-funciones">
-                        <form action="/users/profile/myart/<%= product.id %>?_method=DELETE" method="POST">
+                        <form action="/users/profile/myart?_method=DELETE" method="POST">
+                            <input type="hidden" name="productId" value="<%= product.id %> ">
                             <button class="btn-flat waves-effect waves-light" type="submit" name="action">
                                 <i class="material-icons">delete</i>
                             </button>

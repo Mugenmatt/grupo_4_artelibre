@@ -82,11 +82,80 @@ module.exports ={
          }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG')
     ],
     createProduct:[
-        body('name')
-            .notEmpty().withMessage('Campo obligatorio')
+         body('name')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('price')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('ancho')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('alto')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('quantity')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('imageFile')
+            .custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
+            .custom((value,{req}) =>{
+               
+               if(req.file != undefined){
+                  const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.PNG'];
+                  const ext = path.extname(req.file.originalname)
+                  return acceptedExtensions.includes(ext);
+               }
+               return true
+               
+            }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
+         // body('status')
+         //    .notEmpty().withMessage('Campo obligatorio')
+            
     ],
     editProduct:[
-        body('name')
-            .notEmpty().withMessage('Campo obligatorio')
+         body('name')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('price')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('ancho')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('alto')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('quantity')
+            .notEmpty().withMessage('Campo obligatorio'),
+         body('imageFile')
+            .custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
+            .custom((value,{req}) =>{
+               
+               if(req.file != undefined){
+                  const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.PNG'];
+                  const ext = path.extname(req.file.originalname)
+                  return acceptedExtensions.includes(ext);
+               }
+               return true
+               
+            }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
+         // body('status')
+         //    .notEmpty().withMessage('Campo obligatorio')
+    ],
+    newAdress: [
+      body('province')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('city')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('street')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('number')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('cp')
+         .notEmpty().withMessage('Campo obligatorio')
+    ],
+    editAdress: [
+      body('province')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('city')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('street')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('number')
+         .notEmpty().withMessage('Campo obligatorio'),
+      body('cp')
+         .notEmpty().withMessage('Campo obligatorio')
     ],
 }

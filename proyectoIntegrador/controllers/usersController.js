@@ -1,9 +1,9 @@
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const db= require('../database/models/')
-const User = db.User;
-const Adress = db.Adress;
-const Product = db.Product;
+const {User, Adress, Product}= require('../database/models/')
+// const User = db.User;
+// const Adress = db.Adress;
+// const Product = db.Product;
 
 const usersController ={
     register: function(req,res){
@@ -98,8 +98,8 @@ const usersController ={
 
     profileEdit: function(req,res){
 
-        const errors = validationResult(req);
         let usuarioEnSesion= req.session.user;
+        const errors = validationResult(req);
         
         if (errors.isEmpty()) {
     
@@ -126,7 +126,7 @@ const usersController ={
                   nested: true
                 }
               }).then(function(user){
-                  return res.render('profile',{user,errors:errors.mapped()})
+                  return res.render('profile',{user, errors: errors.mapped(), old:req.body})
               })
         }
         
@@ -154,43 +154,74 @@ const usersController ={
 
     profileNewAdress: function(req,res){
         let usuarioEnSesion= req.session.user;
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+            Adress.create({
+                street: req.body.street ,
+                number: req.body.number , 
+                floor: req.body.floor ,
+                door: req.body.door ,
+                cp: req.body.cp , 
+                province: req.body.province , 
+                city: req.body.city ,
+                idUser: usuarioEnSesion.id
+            })
+            .then(function(){
+                return res.redirect('/users/profile')
+            })
+            .catch(errors=> console.log(errors))
 
-        Adress.create({
-            street: req.body.street ,
-            number: req.body.number , 
-            floor: req.body.floor ,
-            door: req.body.door ,
-            cp: req.body.cp , 
-            province: req.body.province , 
-            city: req.body.city ,
-            idUser: usuarioEnSesion.id
-        })
-        .then(function(){
-            return res.redirect('/users/profile')
-        })
-        .catch(errors=> console.log(errors))
+        }else{
+            User.findByPk(usuarioEnSesion.id,{
+                include: {
+                  all: true,
+                  nested: true
+                }
+              }).then(function(user){
+                  return res.render('profile',{user, adressErrors: errors.mapped(), oldAdress:req.body})
+              })
+        }
+
 
     },
 
     profileEditAdress: function(req,res){
+        let usuarioEnSesion= req.session.user;
         let adressId= req.params.id;
 
-        Adress.update({
-            street: req.body.street ,
-            number: req.body.number , 
-            floor: req.body.floor ,
-            door: req.body.door ,
-            cp: req.body.cp , 
-            province: req.body.province , 
-            city: req.body.city ,
-        },
-        {where: 
-            {id: adressId} 
-        })
-        .then(function(){
-            return res.redirect('/users/profile')
-        })
-        .catch(errors=> console.log(errors))
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+
+            Adress.update({
+                street: req.body.street ,
+                number: req.body.number , 
+                floor: req.body.floor ,
+                door: req.body.door ,
+                cp: req.body.cp , 
+                province: req.body.province , 
+                city: req.body.city ,
+            },
+            {where: 
+                {id: adressId} 
+            })
+            .then(function(){
+                return res.redirect('/users/profile')
+            })
+            .catch(errors=> console.log(errors))
+        }else{
+            
+            User.findByPk(usuarioEnSesion.id,{
+                include: {
+                  all: true,
+                  nested: true
+                }
+              }).then(function(user){
+                  return res.render('profile',{user, adressErrors: errors.mapped(), oldAdress:req.body})
+              })
+        }
+
 
     },
 
@@ -223,30 +254,44 @@ const usersController ={
     createMyart: function(req,res){
         let usuarioEnSesion= req.session.user;
 
-        let productoACrear={
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            quantity: req.body.quantity,
-            ancho: req.body.ancho,
-            alto: req.body.alto,
-            //status: req.body.status
-            idUser: usuarioEnSesion.id,
-            imageFile: req.file ? req.file.filename : null,
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+            
+            let productoACrear={
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                quantity: req.body.quantity,
+                ancho: req.body.ancho,
+                alto: req.body.alto,
+                //status: req.body.status,
+                idUser: usuarioEnSesion.id,
+                imageFile: req.file ? req.file.filename : null,
+            }
+    
+            // Product.setkeywords()
+    
+            Product.create(productoACrear)
+            .then(()=>{
+                return res.redirect('/users/profile/myart')
+            })
+            .catch(errors=> console.log(errors))
+        }else{
+
+            User.findByPk(usuarioEnSesion.id, {
+                include: ["products"]
+            }).then(user=>{
+                return res.render('myart',{user, errors: errors.mapped(), old:req.body});
+            })
+            .catch(errors=> console.log(errors))
         }
 
-        // Product.setkeywords()
-
-        Product.create(productoACrear)
-        .then(()=>{
-            return res.redirect('/users/profile/myart')
-        })
-        .catch(errors=> console.log(errors))
 
     },
 
     deleteMyart: function(req,res){
-        let productId = req.params.id;
+        let productId = req.body.productId;
 
         Product.destroy({
             where: {
@@ -274,23 +319,36 @@ const usersController ={
     processEditMyart: function(req,res){
         let productId = req.params.id;
 
-        Product.update({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            ancho: req.body.ancho,
-            alto: req.body.alto,
-            quantity: req.body.quantity,
-            status: req.body.status, 
-            imageFile: req.file ? req.file.filename : null,
-            },
-            {where: 
-                {id: productId} 
+        const errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+
+            Product.update({
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                ancho: req.body.ancho,
+                alto: req.body.alto,
+                quantity: req.body.quantity,
+                //status: req.body.status, 
+                imageFile: req.file ? req.file.filename : null,
+                },
+                {where: 
+                    {id: productId} 
+                })
+            .then((product)=>{
+                return res.redirect("/users/profile/myart")
             })
-        .then((product)=>{
-            return res.redirect("/users/profile/myart")
-        })
-        .catch(errors=> console.log(errors))
+            .catch(errors=> console.log(errors))
+        }else{
+
+            Product.findByPk(productId)
+                .then((product)=>{
+                    return res.render("edit-myart",{product, errors: errors.mapped(), old:req.body})
+                })
+                .catch(errors=> console.log(errors))
+        }
+
 
     },
 

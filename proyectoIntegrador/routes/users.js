@@ -6,8 +6,8 @@ const path = require('path');
 
 
 // Middlewares
-const guestMiddleware = require('../middlewares/guestMiddleware'); //Esto te deja acceder solo si sos invitado
-const authMiddleware = require('../middlewares/authMiddleware'); //Esto te deja acceder solo si sos usuario
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const validator = require('../middlewares/validator');
 
 // Usuarios
@@ -81,19 +81,15 @@ router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), validator.editUser, usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
-//agregarle validator al de aca abajo
-router.post('/profile/adress/new',authMiddleware, usersController.profileNewAdress);
-//agregarle validator al de aca abajo
-router.put('/profile/adress/:id',authMiddleware, usersController.profileEditAdress);
+router.post('/profile/adress/new',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
+router.put('/profile/adress/:id',authMiddleware, validator.editAdress ,usersController.profileEditAdress);
 router.delete('/profile/adress/:id',authMiddleware, usersController.profileDeleteAdress);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
-//agregarle validator al de aca abajo
-router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
-router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );
+router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, usersController.createMyart );
+router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
 router.get('/profile/myart/:id', authMiddleware,usersController.editMyart );
-//agregarle validator al de aca abajo
-router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile') ,usersController.processEditMyart );
+router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,usersController.processEditMyart );
 
 router.get('/profile/myorders', authMiddleware, usersController.showMyorders);
 
