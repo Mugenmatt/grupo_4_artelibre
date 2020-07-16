@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-07-2020 a las 15:16:35
+-- Tiempo de generación: 16-07-2020 a las 23:44:49
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -42,6 +42,36 @@ CREATE TABLE `adresses` (
   `city` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `adresses`
+--
+
+INSERT INTO `adresses` (`id`, `idUser`, `street`, `number`, `floor`, `door`, `createdAt`, `updatedAt`, `deletedAt`, `cp`, `province`, `city`) VALUES
+(1, 3, 'Calle falsa', 12, 1, 2, '2020-07-14 18:30:56', '2020-07-14 18:30:56', NULL, 1212, 'bsas', 'vicentine'),
+(2, 3, 'elmer lulu', 12, 9, 4, '2020-07-15 00:37:49', '2020-07-15 00:37:49', NULL, 1212, 'catamarca', 'sanjose'),
+(3, 3, 'Calle', 0, 0, 0, '2020-07-16 18:55:53', '2020-07-16 18:55:53', NULL, 0, '', ''),
+(4, 3, 'Calle', 0, 0, 0, '2020-07-16 18:58:06', '2020-07-16 18:58:06', NULL, 0, 'Provincia', 'localidad'),
+(5, 3, 'Calle', 0, 0, 0, '2020-07-16 19:21:18', '2020-07-16 19:21:18', NULL, 0, 'Provincia', 'localidad');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `idUser` int(10) UNSIGNED NOT NULL,
+  `idOrder` int(10) UNSIGNED DEFAULT NULL,
+  `idProduct` int(10) UNSIGNED NOT NULL,
+  `idSeller` int(10) UNSIGNED NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `status` tinyint(2) DEFAULT 0,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `deletedAt` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +81,21 @@ CREATE TABLE `adresses` (
 CREATE TABLE `keywords` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `deletedAt` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `orderNumber` int(10) UNSIGNED NOT NULL,
   `createdAt` datetime DEFAULT current_timestamp(),
   `updatedAt` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deletedAt` datetime DEFAULT NULL
@@ -114,23 +159,23 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `ancho`, `quantity`, `idUser`, `createdAt`, `updatedAt`, `deletedAt`, `status`, `imageFile`, `alto`) VALUES
 (1, 'Mona Lisa', 'Prueba', '1200', NULL, 1, 3, '2020-06-26 09:48:54', '2020-07-03 14:53:36', '2020-07-03 14:53:36', 0, NULL, NULL),
-(2, 'Skiando ando', 'Prueba 2', '850', NULL, 1, 3, '2020-06-26 09:51:20', NULL, NULL, 0, NULL, NULL),
-(3, 'Lineas blancas', 'Prueba 3', '15000', NULL, 1, 3, '2020-06-26 09:52:08', NULL, NULL, 0, NULL, NULL),
-(4, 'Cuadro de prueba', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:53:42', NULL, NULL, 0, NULL, NULL),
+(2, 'me como un paty', ' Prueba 2 ', '850', 0, 1, 3, '2020-06-26 09:51:20', '2020-07-09 14:04:32', '2020-07-09 14:04:32', 0, 'imageFile-1594303430515.jpg', 0),
+(3, 'Lineas blancas', 'Prueba 3', '15000', NULL, 1, 3, '2020-06-26 09:52:08', '2020-07-15 00:26:26', '2020-07-15 00:26:26', 0, NULL, NULL),
+(4, 'Cuadro de prueba', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:53:42', '2020-07-15 00:26:27', '2020-07-15 00:26:27', 0, NULL, NULL),
 (5, 'Cuadro de prueba 2', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:54:15', '2020-07-03 14:32:49', '2020-07-03 14:32:49', 0, NULL, NULL),
 (6, 'Cuadro de prueba 2', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:39', '2020-07-03 14:32:54', '2020-07-03 14:32:54', 0, NULL, NULL),
-(7, 'Cuadro de prueba 3', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:48', NULL, NULL, 0, NULL, NULL),
-(8, 'Cuadro de prueba 4', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:53', NULL, NULL, 0, NULL, NULL),
-(9, 'Cuadro de prueba 5', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:55', NULL, NULL, 0, NULL, NULL),
+(7, 'Cuadro de prueba 3', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:55:48', '2020-07-15 00:26:28', '2020-07-15 00:26:28', 0, 'imageFile-1594512033459.jpg', 0),
+(8, 'Cuadro de prueba cuatro', ' Este es un cuadro que tome de prueba para ver que pasa si le meto una gran descricpcion y ver como cambia. por ahora esto esta andando bien me parece pero queiro escribir mucho texto lorem ipsum blablablablablablabal ', '556', 23, 1, 3, '2020-06-26 09:55:53', '2020-07-16 21:42:05', '2020-07-16 21:42:05', 0, 'imageFile-1594321680385.jpg', 32),
+(9, 'Cuadro de prueba 5', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:55', '2020-07-15 00:26:30', '2020-07-15 00:26:30', 0, NULL, NULL),
 (10, 'Cuadro de prueba 6', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:57', '2020-07-06 21:23:12', '2020-07-06 21:23:12', 0, NULL, NULL),
-(11, 'Cuadro de prueba 7', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:55:58', NULL, NULL, 0, NULL, NULL),
-(12, 'Cuadro de prueba 8', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:00', NULL, NULL, 0, NULL, NULL),
+(11, 'Cuadro de prueba 7', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:55:58', '2020-07-15 00:26:39', NULL, 0, 'imageFile-1594772799143.jpg', 0),
+(12, 'Cuadro de prueba 8', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:00', '2020-07-16 18:28:03', '2020-07-16 18:28:03', 0, 'imageFile-1594772806954.jpg', 0),
 (13, 'Cuadro de prueba 9', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:04', '2020-07-03 14:52:42', '2020-07-03 14:52:42', 0, NULL, NULL),
-(14, 'Cuadro de prueba 10', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:06', NULL, NULL, 0, NULL, NULL),
-(15, 'Cuadro de prueba 11', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:08', NULL, NULL, 0, NULL, NULL),
-(16, 'Cuadro de prueba 12', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:10', NULL, NULL, 0, NULL, NULL),
-(17, 'Cuadro de prueba 13', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:11', NULL, NULL, 0, NULL, NULL),
-(18, 'Cuadro de prueba 14', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:13', NULL, NULL, 0, NULL, NULL),
+(14, 'Cuadro de prueba 10', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:06', '2020-07-15 00:27:08', NULL, 0, 'imageFile-1594772828454.jpg', 0),
+(15, 'Cuadro de prueba 11', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:08', '2020-07-15 00:27:16', NULL, 0, 'imageFile-1594772836181.jpg', 0),
+(16, 'Cuadro de prueba 12', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:10', '2020-07-15 00:27:23', NULL, 0, 'imageFile-1594772843171.jpg', 0),
+(17, 'Cuadro de prueba 13', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:11', '2020-07-15 00:27:31', NULL, 0, 'imageFile-1594772851242.jpg', 0),
+(18, 'Cuadro de prueba 14', ' Prueba ', '1000', 0, 1, 3, '2020-06-26 09:56:13', '2020-07-16 19:06:54', '2020-07-16 19:06:54', 0, 'imageFile-1594772858603.jpg', 0),
 (19, 'Cuadro de prueba 15', 'Prueba', '1000', NULL, 1, 3, '2020-06-26 09:56:16', '2020-07-09 13:04:18', '2020-07-09 13:04:18', 0, NULL, NULL),
 (20, '', NULL, '0', NULL, 1, 3, '2020-07-01 17:18:55', '2020-07-03 14:52:10', '2020-07-03 14:52:10', 0, NULL, NULL),
 (21, '', NULL, '0', NULL, 1, 3, '2020-07-01 17:18:59', '2020-07-03 14:51:45', '2020-07-03 14:51:45', 0, NULL, NULL),
@@ -139,12 +184,17 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `ancho`, `quantity
 (24, '', NULL, '0', NULL, 1, 3, '2020-07-02 20:00:05', '2020-07-03 14:52:19', '2020-07-03 14:52:19', 0, NULL, NULL),
 (25, '', NULL, '0', NULL, 1, 3, '2020-07-02 20:00:31', '2020-07-03 14:52:22', '2020-07-03 14:52:22', 0, NULL, NULL),
 (26, '', NULL, '0', NULL, 1, 3, '2020-07-02 20:05:18', '2020-07-03 14:34:05', '2020-07-03 14:34:05', 0, NULL, NULL),
-(27, 'obra maestra', 'sila en silencio', '23', NULL, 23, 3, '2020-07-02 20:23:49', '2020-07-02 20:23:49', NULL, 0, 'imageFile-1593721428998.jpg', NULL),
+(27, 'obra maestra', ' sila en silencio ', '23', 21, 23, 3, '2020-07-02 20:23:49', '2020-07-15 00:27:53', NULL, 0, 'imageFile-1594772873252.jpg', 12),
 (28, 'notimporta', 'sadf', '45', NULL, 45, 3, '2020-07-02 20:26:58', '2020-07-03 14:53:24', '2020-07-03 14:53:24', 0, 'imageFile-1593721618955.jpg', NULL),
 (29, 'dafssdf', 'sadfsad', '2323', NULL, 23, 3, '2020-07-03 13:42:18', '2020-07-03 14:31:55', '2020-07-03 14:31:55', 0, 'imageFile-1593783738793.jpg', NULL),
 (30, 'obra maestra', 'gatito bajo paraguas', '100000', NULL, 1, 105, '2020-07-03 14:42:02', '2020-07-03 14:46:35', '2020-07-03 14:46:35', 0, 'imageFile-1593787322237.jpg', NULL),
 (31, 'otro gato', 'gaot lluvia paraguas', '1234', NULL, 1, 3, '2020-07-03 15:38:10', '2020-07-03 15:40:01', '2020-07-03 15:40:01', 0, 'imageFile-1593790689999.jpg', NULL),
-(32, 'fafafafa', 'fafafa', '23', 122, 2, 3, '2020-07-03 15:41:34', '2020-07-03 15:41:48', '2020-07-03 15:41:48', 0, 'imageFile-1593790894863.jpg', 31);
+(32, 'fafafafa', 'fafafa', '23', 122, 2, 3, '2020-07-03 15:41:34', '2020-07-03 15:41:48', '2020-07-03 15:41:48', 0, 'imageFile-1593790894863.jpg', 31),
+(33, 'tortelini', 'rico', '34', 34, 3, 3, '2020-07-10 21:52:19', '2020-07-11 23:54:54', '2020-07-11 23:54:54', 0, 'imageFile-1594417939033.jpg', 32),
+(34, 'rita', '  torta  ', '100000', 90, 1, 3, '2020-07-11 23:56:03', '2020-07-16 18:28:12', '2020-07-16 18:28:12', 0, 'imageFile-1594772820480.jpg', 175),
+(35, 'torta ', 'asdf', '12', 12, 1, 3, '2020-07-16 19:16:11', '2020-07-16 19:16:11', NULL, 0, 'imageFile-1594926971054.jpg', 12),
+(36, 'torta de la verdadera gama', 'sale con fritas', '1222', 22, 121, 3, '2020-07-16 19:17:40', '2020-07-16 19:17:40', NULL, 0, 'imageFile-1594927060732.jpg', 12),
+(37, 'ddddd', 'dddddd', '657', 56, 5, 3, '2020-07-16 19:21:01', '2020-07-16 19:21:01', NULL, 0, 'imageFile-1594927261224.jpg', 65);
 
 -- --------------------------------------------------------
 
@@ -178,7 +228,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `lastname`, `username`, `email`, `avatar`, `password`, `rol`, `mailShipping`, `privateShipping`, `noShipping`, `averageScore`, `createdAt`, `updatedAt`, `deletedAt`, `newsletter`) VALUES
 (1, 'Juan', 'Gomez', 'juangomez', 'juangomez@hotmail.com', NULL, '$2a$10$mCbDx6aVt93hji2Z4Z2p3ux1bhx8GIDUbjmOFrMzXFrHU3ccSn7iS', 0, 0, 0, 0, '0', '2020-06-24 18:50:27', '2020-06-24 18:50:27', NULL, 1),
 (2, 'daniel', 'daniel', 'daniel', 'daniel@hotmail.com', NULL, '$2a$10$9B0ckMUWSXJHOrpogpDEaOVBqK43pMlHMy3jDl3CY5vw7Oiofc5Zu', 0, 0, 0, 0, '0', '2020-06-24 18:58:06', '2020-06-24 18:58:06', NULL, 1),
-(3, 'marcos', 'marcos', 'facu', 'marcos@hotmail.com', 'avatar-1593785388320.jpg', '$2a$10$BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 1, 1, 0, 0, '0', '2020-06-24 18:59:48', '2020-07-03 14:09:55', NULL, 1),
+(3, 'marcos', 'marcos', 'marquets', 'marcos@hotmail.com', 'avatar-1594772764943.jpg', '$2a$10$BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 1, 1, 0, 1, '0', '2020-06-24 18:59:48', '2020-07-16 19:02:39', NULL, 1),
 (4, 'Laura', 'Laura', 'Laura', 'laura@hotmail.com', NULL, '$2a$10$HKmB2dT//eapBd458qg97e8o8nmojo4WyQMCZRZ4UZClr9TG2wHLS', 1, 0, 0, 0, '0', '2020-06-26 13:40:49', '2020-06-26 13:40:49', NULL, 1),
 (5, 'Jillane', 'Bertomeu', 'jbertomeu0', 'jbertomeu0@earthlink.net', NULL, '02am103BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (6, 'Jamey', 'MacCrackan', 'jmaccrackan1', 'jmaccrackan1@moonfruit.com', NULL, 'f2ac104BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
@@ -280,7 +330,8 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `username`, `email`, `avatar`, `p
 (102, 'Tine', 'Baumaier', 'tbaumaier2p', 'tbaumaier2p@weebly.com', NULL, 'c2al10hBADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (103, 'Nananne', 'Greeding', 'ngreeding2q', 'ngreeding2q@example.com', NULL, 't2a7102BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (104, 'Patric', 'Rouch', 'prouch2r', 'prouch2r@unesco.org', NULL, '12an10oBADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
-(105, 'facu', 'facu', 'ucafuck', 'facu@hotmail.com', 'avatar-1593787265909.jpg', '$2a$10$65cMlWi0gmpDyfKYjeiC7eeECLZXxkCgyg/MbmpmYU.d/T77VBu6e', 1, 0, 1, 1, '0', '2020-07-03 14:40:19', '2020-07-03 14:41:05', NULL, 0);
+(105, 'facu', 'facu', 'ucafuck', 'facu@hotmail.com', 'avatar-1593787265909.jpg', '$2a$10$65cMlWi0gmpDyfKYjeiC7eeECLZXxkCgyg/MbmpmYU.d/T77VBu6e', 1, 0, 1, 1, '0', '2020-07-03 14:40:19', '2020-07-03 14:41:05', NULL, 0),
+(106, 'sadf', 'asdf', 'asdf', 'asdf', 'avatar-1594412343986.jpg', '$2a$10$.a7lhWu33F48178ihN37OemZEoSq4BKAxRvfvNeMFZ2cEuJyv83/K', 0, 0, 0, 0, '0', '2020-07-10 20:18:30', '2020-07-10 20:19:04', NULL, 0);
 
 --
 -- Índices para tablas volcadas
@@ -294,9 +345,25 @@ ALTER TABLE `adresses`
   ADD KEY `idUser` (`idUser`);
 
 --
+-- Indices de la tabla `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idUser` (`idUser`),
+  ADD KEY `idOrder` (`idOrder`),
+  ADD KEY `idProduct` (`idProduct`),
+  ADD KEY `idSeller` (`idSeller`);
+
+--
 -- Indices de la tabla `keywords`
 --
 ALTER TABLE `keywords`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -338,12 +405,24 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `adresses`
 --
 ALTER TABLE `adresses`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `carts`
+--
+ALTER TABLE `carts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `keywords`
 --
 ALTER TABLE `keywords`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -362,13 +441,13 @@ ALTER TABLE `productkeys`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- Restricciones para tablas volcadas
@@ -379,6 +458,15 @@ ALTER TABLE `users`
 --
 ALTER TABLE `adresses`
   ADD CONSTRAINT `adresses_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `carts`
+--
+ALTER TABLE `carts`
+  ADD CONSTRAINT `idOrder` FOREIGN KEY (`idOrder`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `idProduct` FOREIGN KEY (`idProduct`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `idSeller` FOREIGN KEY (`idSeller`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `idUser` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `productimages`
