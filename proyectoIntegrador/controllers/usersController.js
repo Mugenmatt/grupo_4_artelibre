@@ -341,7 +341,6 @@ const usersController ={
             })
             .catch(errors=> console.log(errors))
         }else{
-
             Product.findByPk(productId)
                 .then((product)=>{
                     return res.render("edit-myart",{product, errors: errors.mapped(), old:req.body})

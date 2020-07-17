@@ -23,9 +23,9 @@
                     <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
                     <div class="file-path-wrapper">
                         <input disabled class="file-path validate" type="text">
-                        <% if(typeof adressErrors != "undefined"){ %>
-                        <% if(typeof adressErrors.avatar != "undefined"){ %>
-                        <span class="helper-text"><%= adressErrors.avatar.msg  %> </span>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.avatar != "undefined"){ %>
+                        <span class="helper-text"><%= errors.avatar.msg  %> </span>
                         <% } %>
                         <% } %>
                     </div>
@@ -34,9 +34,9 @@
                 <div class="col s12 m8 l4">
                     <div class="input-field">
                         <input disabled value="<%= user.username %>" id="username" type="text" class="validate center-align" name="username" style="width: auto;"/>
-                        <% if(typeof adressErrors != "undefined"){ %>
-                        <% if(typeof adressErrors.username != "undefined"){ %>
-                        <span class="helper-text"><%= adressErrors.username.msg  %> </span>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.username != "undefined"){ %>
+                        <span class="helper-text"><%= errors.username.msg  %> </span>
                         <% } %>
                         <% } %>
                     </div>

@@ -42,13 +42,14 @@ $(".cerrar-nueva-direccion").click(function (event) {
     }
        
     if(alerta.innerHTML == "hay errores"){
+
         $('#mis-direcciones').toggleClass('active');
         $('.formulario-nueva-direccion').toggleClass('apagado');
         $('.cerrar-nueva-direccion').toggleClass('apagado');
         $(".nueva-direccion").toggleClass('apagado'); 
-         $(document).ready(function () {
-             $('#NewAdress').scrollIntoView();
-         });
+
+        setTimeout(()=> { form.scrollIntoView()  },50)
+        
     }
 
 

@@ -32,10 +32,15 @@
                 <div class="col s12 m6 file-field input-field">
                     <div class="btn">
                         <span>File</span>
-                        <input type="file" name="imageFile">
+                        <input type="file" name="imageFile"  >
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="<%= product.imageFile %>">
+                        <input class="file-path validate" type="text" placeholder="<%= product.imageFile %>" >
+                        <% if(typeof errors != "undefined"){ %>
+                            <% if(typeof errors.imageFile != "undefined"){ %>
+                            <span class="helper-text"><%= errors.imageFile.msg  %> </span>
+                            <% } %>
+                            <% } %>
                     </div>
                 </div>
             </div>
@@ -94,7 +99,7 @@
             </div>-->
             <div class="row">
                 <div class="input-field col s12 m6">
-                    <select>
+                    <select name="status" >
                         <option value="0" <% if (product.status == 0) { %> selected <% } %> >Disponible</option>
                         <option value="1" <% if (product.status == 1) { %> selected <% } %>>Vendido</option>
                         <option value="2" <% if (product.status == 2) { %> selected <% } %>>Oculto</option>
