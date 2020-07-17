@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
 
-  const Cart = sequelize.define('Cart', {
+  const Cartitem = sequelize.define('Cartitem', {
     price: DataTypes.DECIMAL,
     status: DataTypes.INTEGER,
     idUser: DataTypes.INTEGER,  
@@ -9,31 +9,31 @@ module.exports = (sequelize, DataTypes) => {
     idProduct: DataTypes.INTEGER,  
     idSeller: DataTypes.INTEGER
 
-  }, {tablename: "carts"});
+  }, {tablename: "cartitems"});
 
-  Cart.associate = function(models) {
+  Cartitem.associate = function(models) {
 
-    Cart.belongsTo(models.User,{
+    Cartitem.belongsTo(models.User,{
       as: "user",
       foreignKey: "idUser"
     })
 
-    Cart.belongsTo(models.User,{
+    Cartitem.belongsTo(models.User,{
       as: "seller",
       foreignKey: "idSeller"
     })
 
-    Cart.belongsTo(models.Product,{
+    Cartitem.belongsTo(models.Product,{
       as: "product",
       foreignKey: "idProduct"
     })
 
-    Cart.belongsTo(models.Order,{
+    Cartitem.belongsTo(models.Order,{
       as: "order",
       foreignKey: "idOrder"
     })
 
   };
 
-  return Cart;
+  return Cartitem;
 };

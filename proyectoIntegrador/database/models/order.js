@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Order.associate = function(models) {
 
-    Order.hasMany(models.Cart,{
-      as: "cart",
+    Order.hasMany(models.Cartitem,{
+      as: "cartitems",
       foreignKey: "idOrder"
     })
 
