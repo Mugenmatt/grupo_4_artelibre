@@ -16,8 +16,14 @@
      <form enctype="multipart/form-data" method="POST" action="/users/profile/myart" class="col s12">
          <div class="row">
              <div class="input-field col s12 m6">
-                 <input id="first_name" type="text" class="validate" name="name" >
+                 <input id="first_name" type="text" class="validate" name="name"
+                 <% if (typeof old != "undefined") { %> value="<%= old.name %>" <% } %> >
                  <label for="first_name">Titulo de la obra</label>
+                 <% if(typeof errors != "undefined"){ %>
+                 <% if(typeof errors.name != "undefined"){ %>
+                 <span class="helper-text"><%= errors.name.msg  %> </span>
+                 <% } %>
+                 <% } %>
              </div>
              <div class="col s12 m6 file-field input-field">
                  <div class="btn">
@@ -37,34 +43,68 @@
          </div>
          <div class="row">
              <div class="input-field col s12 m4">
-                 <input id="price" type="number" class="validate" name="price">
+                 <input id="price" type="number" class="validate" name="price" <% if (typeof old != "undefined") { %>
+                     value="<%= old.price %>" <% } %>>
                  <label for="price">Precio</label>
+                 <% if(typeof errors != "undefined"){ %>
+                 <% if(typeof errors.price != "undefined"){ %>
+                 <span class="helper-text"><%= errors.price.msg  %> </span>
+                 <% } %>
+                 <% } %>
              </div>
              <div class="input-field col s12 m4">
-                 <input id="quantity" type="number" class="validate" name="quantity">
+                 <input id="quantity" type="number" class="validate" name="quantity" value="1">
                  <label for="quantity">cantidad</label>
+                 <% if(typeof errors != "undefined"){ %>
+                 <% if(typeof errors.price != "undefined"){ %>
+                 <span class="helper-text"><%= errors.price.msg  %> </span>
+                 <% } %>
+                 <% } %>
              </div>
              <div class="col s12 m4 tamaño-cuadro">
                  <div class="col s6 input-field ancho">
-                     <input id="ancho" type="number" class="validate" name="ancho">
+                     <input id="ancho" type="number" class="validate" name="ancho"
+                      <% if (typeof old != "undefined") { %> value="<%= old.ancho %>" <% } %>>
                      <label for="ancho">ancho</label>
+                     <% if(typeof errors != "undefined"){ %>
+                     <% if(typeof errors.ancho != "undefined"){ %>
+                     <span class="helper-text"><%= errors.ancho.msg  %> </span>
+                     <% } %>
+                     <% } %>
                  </div>
                  <div class="col s6 input-field alto">
-                     <input id="alto" type="number" class="validate" name="alto">
+                     <input id="alto" type="number" class="validate" name="alto" 
+                     <% if (typeof old != "undefined") { %> value="<%= old.alto %>" <% } %>>
                      <label for="alto">alto</label>
+                     <% if(typeof errors != "undefined"){ %>
+                     <% if(typeof errors.alto != "undefined"){ %>
+                     <span class="helper-text"><%= errors.alto.msg  %> </span>
+                     <% } %>
+                     <% } %>
                  </div>
              </div>
          </div>
-         <div class="row">
+         <!--<div class="row">
              <div class="input-field col s12">
                  <textarea id="keywords" class="materialize-textarea"></textarea>
                  <label for="keywords">keywords</label>
              </div>
-         </div>
-         <div class="row right-align">
-             <button type="submit" class="btn waves-effect waves-light btn-medium boton-crearpublicacion">
-                 Crear publicación
-             </button>
+         </div>-->
+         <div class="row">
+             <div class="input-field col s12 m6">
+                 <select>
+                     <option selected value="0">Disponible</option>
+                     <option value="1">Vendido</option>
+                     <option value="2">Oculto</option>
+                 </select>
+                 <label>Estado: </label>
+             </div>
+             <div class="col s6 right-align">
+                 <button type="submit" class="btn waves-effect waves-light btn-medium boton-crearpublicacion">
+                     Crear publicación
+                 </button>
+             </div>
+             
          </div>
      </form>
  </div>
@@ -139,6 +179,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/header-function.js"></script>
     <script src="/js/myart-function.js"></script>
+    <script src="/js/select.js"></script>
 
 </body>
 

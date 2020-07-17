@@ -226,7 +226,7 @@ const usersController ={
     },
 
     profileDeleteAdress: function(req,res){
-        let adressId= req.params.id;
+        let adressId= req.body.adressId;
 
         Adress.destroy(
         {where: 
@@ -265,7 +265,7 @@ const usersController ={
                 quantity: req.body.quantity,
                 ancho: req.body.ancho,
                 alto: req.body.alto,
-                //status: req.body.status,
+                status: req.body.status,
                 idUser: usuarioEnSesion.id,
                 imageFile: req.file ? req.file.filename : null,
             }
@@ -330,7 +330,7 @@ const usersController ={
                 ancho: req.body.ancho,
                 alto: req.body.alto,
                 quantity: req.body.quantity,
-                //status: req.body.status, 
+                status: req.body.status, 
                 imageFile: req.file ? req.file.filename : null,
                 },
                 {where: 

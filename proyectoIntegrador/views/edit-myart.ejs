@@ -23,6 +23,11 @@
                 <div class="input-field col s12 m6">
                     <input id="first_name" type="text" class="validate" name="name" value="<%= product.name %>">
                     <label for="first_name">Titulo de la obra</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.name != "undefined"){ %>
+                    <span class="helper-text"><%= errors.name.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="col s12 m6 file-field input-field">
                     <div class="btn">
@@ -45,34 +50,54 @@
                 <div class="input-field col s12 m4">
                     <input id="price" type="number" class="validate" name="price" value="<%= product.price %>">
                     <label for="price">Precio</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.price != "undefined"){ %>
+                    <span class="helper-text"><%= errors.price.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="input-field col s12 m4">
                     <input id="quantity" type="number" class="validate" name="quantity" value="<%= product.quantity %>">
                     <label for="quantity">Cantidad</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.quantity != "undefined"){ %>
+                    <span class="helper-text"><%= errors.quantity.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="col s12 m4 tamaño-cuadro">
                     <div class="col s6 input-field ancho">
                         <input id="ancho" type="number" class="validate" name="ancho" value="<%= product.ancho %>">
                         <label for="ancho">Ancho</label>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.ancho != "undefined"){ %>
+                        <span class="helper-text"><%= errors.ancho.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                     <div class="col s6 input-field alto">
                         <input id="alto" type="number" class="validate" name="alto" value="<%= product.alto %>">
                         <label for="alto">Alto</label>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.alto != "undefined"){ %>
+                        <span class="helper-text"><%= errors.alto.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <div class="input-field col s12">
                     <textarea id="keywords" class="materialize-textarea"></textarea>
                     <label for="keywords">keywords</label>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
                 <div class="input-field col s12 m6">
                     <select>
                         <option value="0" <% if (product.status == 0) { %> selected <% } %> >Disponible</option>
                         <option value="1" <% if (product.status == 1) { %> selected <% } %>>Vendido</option>
-                        <option value="2" <% if (product.status == 2) { %> selected <% } %>>En pausa</option>
+                        <option value="2" <% if (product.status == 2) { %> selected <% } %>>Oculto</option>
                     </select>
                     <label>Estado</label>
                 </div>

@@ -23,12 +23,22 @@
                     <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
                     <div class="file-path-wrapper">
                         <input disabled class="file-path validate" type="text">
+                        <% if(typeof adressErrors != "undefined"){ %>
+                        <% if(typeof adressErrors.avatar != "undefined"){ %>
+                        <span class="helper-text"><%= adressErrors.avatar.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                 </div>
 
                 <div class="col s12 m8 l4">
                     <div class="input-field">
                         <input disabled value="<%= user.username %>" id="username" type="text" class="validate center-align" name="username" style="width: auto;"/>
+                        <% if(typeof adressErrors != "undefined"){ %>
+                        <% if(typeof adressErrors.username != "undefined"){ %>
+                        <span class="helper-text"><%= adressErrors.username.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                     <span class="black-text">
                         <p><%= user.name %> <%= user.lastname %></p>
@@ -103,7 +113,7 @@
     <!--============================================================-->
 
     <ul class="collapsible">
-        <li>
+        <li id="mis-direcciones">
             <div class="collapsible-header">
                 <h6>
                     Mis direcciones
@@ -113,6 +123,13 @@
             <div class="collapsible-body">
                 <% if (user.adresses!= null) { %>
                 <table class="striped col s12">
+                    <thead>
+                        <tr>
+                            <th>Provincia</th>
+                            <th>Ciudad</th>
+                            <th>Domicilio</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <% for( let adress of user.adresses)  { %>
                             <tr>
@@ -124,6 +141,14 @@
                                 <td><%= adress.street %> <%= adress.number %> -
                                     <%= adress.floor %>/<%= adress.door %> </td>
                                 <% } %>
+                                <td>
+                                    <form action="/users/profile/adress?_method=DELETE" method="POST">
+                                        <input type="hidden" name="adressId" value="<%= adress.id %> ">
+                                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         
                         <% } %>
@@ -131,46 +156,78 @@
                 </table>
                 <% } else { %> <p>No hay direcciones registradas</p> <% } %>
                 <div class="row left-align">
-                    <a class="nueva-direccion" href="">Agregar<i class="material-icons fix">add</i></a>
+                    <a class="nueva-direccion" href="">Agregar nueva dirección<i class="material-icons fix">add</i></a>
                     <a class="cerrar-nueva-direccion apagado" href=""><i class="material-icons fix">close</i></a>
                 </div>
 
 
                     <!--form AGREGAR NUEVA ADRESS-->
+                    <% if (typeof adressErrors != "undefined") { %>
+                        <p class="apagado errores-true">hay errores</p>
+                    <% } %> 
                     <div class="formulario-nueva-direccion apagado col s6">
-                        <form action="/users/profile/adress/new" method="post" id="NewAdress">
+                        <form action="/users/profile" method="post" id="NewAdress">
                             <div class="row s12 m6">
                                 <div class="input-field col s6">
-                                    <input value="Provincia" id="Provincia" type="text" class="validate"
-                                        name="province">
+                                    <input id="Provincia" type="text" class="validate"
+                                        name="province" <% if (typeof oldAdress != "undefined") { %> value="<%= oldAdress.province %>" <% } %>>
                                     <label class="active" for="Provincia">Provincia</label>
+                                    <% if(typeof adressErrors != "undefined"){ %>
+                                    <% if(typeof adressErrors.province != "undefined"){ %>
+                                    <span class="helper-text"><%= adressErrors.province.msg  %> </span>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input value="localidad" id="localidad" type="text" class="validate" name="city">
+                                    <input id="localidad" type="text" class="validate" name="city"
+                                        <% if (typeof oldAdress != "undefined") { %> value="<%= oldAdress.city %>" <% } %>>
                                     <label class="active" for="localidad">localidad</label>
+                                    <% if(typeof adressErrors != "undefined"){ %>
+                                    <% if(typeof adressErrors.city != "undefined"){ %>
+                                    <span class="helper-text"><%= adressErrors.city.msg  %> </span>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="row s12 m6">
                                 <div class="input-field col s6">
-                                    <input value="Alvin" id="cp" type="text" class="validate" name="cp">
+                                    <input id="cp" type="text" class="validate" name="cp"
+                                        <% if (typeof oldAdress != "undefined") { %> value="<%= oldAdress.cp %>" <% } %>>
                                     <label class="active" for="cp">Codigo Postal</label>
+                                    <% if(typeof adressErrors != "undefined"){ %>
+                                    <% if(typeof adressErrors.cp != "undefined"){ %>
+                                    <span class="helper-text"><%= adressErrors.cp.msg  %> </span>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input value="Calle" id="street" type="text" class="validate" name="street">
+                                    <input id="street" type="text" class="validate" name="street"
+                                    <% if (typeof oldAdress != "undefined") { %> value="<%= oldAdress.street %>" <% } %>>
                                     <label class="active" for="street">Calle</label>
+                                    <% if(typeof adressErrors != "undefined"){ %>
+                                    <% if(typeof adressErrors.street != "undefined"){ %>
+                                    <span class="helper-text"><%= adressErrors.street.msg  %> </span>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="row s12 m6">
                                 <div class="input-field col s4">
-                                    <input value="Alvin" id="number" type="text" class="validate" name="number">
+                                    <input id="number" type="text" class="validate" name="number"
+                                    <% if (typeof oldAdress != "undefined") { %> value="<%= oldAdress.number %>" <% } %>>
                                     <label class="active" for="number">Numero</label>
+                                    <% if(typeof adressErrors != "undefined"){ %>
+                                    <% if(typeof adressErrors.number != "undefined"){ %>
+                                    <span class="helper-text"><%= adressErrors.number.msg  %> </span>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                                 <div class="input-field col s4">
-                                    <input value="piso" id="floor" type="text" class="validate" name="floor">
+                                    <input id="floor" type="text" class="validate" name="floor">
                                     <label class="active" for="floor">Piso</label>
                                 </div>
                                 <div class="input-field col s4">
-                                    <input value="door" id="door" type="text" class="validate" name="door">
+                                    <input id="door" type="text" class="validate" name="door">
                                     <label class="active" for="door">puerta</label>
                                 </div>
                             </div>
@@ -187,23 +244,24 @@
         <li>
             <div class="collapsible-header">
                 <h6> Mis publicaciones <i class="material-icons small fix"">palette</i> </h6>
-                <p>
-                    <a href="profile/myart">Ver todas</a>
-                </p>
             </div>
             <div class="collapsible-body">
                 <span>Lorem ipsum dolor sit amet.</span>
+                <p>
+                    <a href="profile/myart">Ver todas</a>
+                </p>
             </div>
         </li>
         <li>
             <div class="collapsible-header">
                 <h6> Mis ordenes <i class="material-icons small fix"">palette</i> </h6>
-                <p class="valign-wrapper right-align ">
-                    <a  href="profile/myorders">Ver todas</a>
-                </p> 
+                
             </div>
             <div class=" collapsible-body">              
                 <span>Lorem ipsum dolor sit amet.</span>
+                <p class="valign-wrapper right-align ">
+                    <a href="profile/myorders">Ver todas</a>
+                </p>
             </div>
         </li>
 

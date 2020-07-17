@@ -81,9 +81,8 @@ router.get('/profile',authMiddleware, usersController.profile);
 router.put('/profile',authMiddleware, upload.single('avatar'), validator.editUser, usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
-router.post('/profile/adress/new',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
-router.put('/profile/adress/:id',authMiddleware, validator.editAdress ,usersController.profileEditAdress);
-router.delete('/profile/adress/:id',authMiddleware, usersController.profileDeleteAdress);
+router.post('/profile',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
+router.delete('/profile/adress',authMiddleware, usersController.profileDeleteAdress);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
 router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, usersController.createMyart );

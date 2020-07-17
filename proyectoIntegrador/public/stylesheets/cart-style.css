@@ -2,12 +2,14 @@ blockquote{
     border-left: 5px solid #4db6ac;
 }
 
-.boton-eliminar {
+.btn-flat.boton-eliminar {
     display: inline;
-    width: 10%;
+    width: 3%;
     margin: auto;
     margin-right: 1%;
     box-sizing: border-box;
+    padding: 0;
+    margin-top: 1%;
 }
 
 div.contenido-item {
