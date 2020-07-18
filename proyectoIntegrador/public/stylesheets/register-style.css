@@ -8,6 +8,15 @@ main.row {
     margin-top: 10%;
 }
 
+.row .col.s12 {
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+
+}
+
 h2.register-title {
     text-align: center;
     margin: 4%;
@@ -22,4 +31,10 @@ div.switch label {
     font-size: 18px;
 }
 
+/* -------------------------------------------- MEDIAQUERIES -------------------------------------------- */
 
+@media (max-width:600px) {
+
+   
+
+}

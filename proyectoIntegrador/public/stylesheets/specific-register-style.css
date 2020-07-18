@@ -13,3 +13,14 @@ div.checks-box {
     align-content: center;
     margin: 2%;
 }
+
+/* --------------------- MEDIAQUERIES --------------------- */
+
+@media (max-width: 900px) {
+
+    /* SEGUIR ESTO QUE NO FUNCIONA */
+    .div.checks-box  {
+        display: block;
+    }
+    
+}

@@ -30,6 +30,18 @@ input::placeholder {
     }
 }
 
+@media(max-width: 952px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media(max-width: 600px) {
+    .waves-light {
+        width: 100%;
+    }
+}
+
 @media(max-width: 475px) {
     .container {
         width: 80%;
