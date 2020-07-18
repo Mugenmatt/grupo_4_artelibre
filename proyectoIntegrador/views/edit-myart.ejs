@@ -11,7 +11,9 @@
 
 <main>
 
-    <a class="linkprofile" href="/users/profile/myart"><i class="material-icons">navigate_before</i>Volver</a>
+    <h6 class="container">
+        <a class="linkprofile" href="/users/profile/myart"><i class="material-icons">navigate_before</i>Volver a mis publicaciones</a>
+    </h6>
 
     <div id="test2" class="col s12">
         
@@ -21,14 +23,24 @@
                 <div class="input-field col s12 m6">
                     <input id="first_name" type="text" class="validate" name="name" value="<%= product.name %>">
                     <label for="first_name">Titulo de la obra</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.name != "undefined"){ %>
+                    <span class="helper-text"><%= errors.name.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="col s12 m6 file-field input-field">
                     <div class="btn">
                         <span>File</span>
-                        <input type="file" name="imageFile">
+                        <input type="file" name="imageFile"  >
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="<%= product.imageFile %>">
+                        <input class="file-path validate" type="text" placeholder="<%= product.imageFile %>" >
+                        <% if(typeof errors != "undefined"){ %>
+                            <% if(typeof errors.imageFile != "undefined"){ %>
+                            <span class="helper-text"><%= errors.imageFile.msg  %> </span>
+                            <% } %>
+                            <% } %>
                     </div>
                 </div>
             </div>
@@ -43,43 +55,63 @@
                 <div class="input-field col s12 m4">
                     <input id="price" type="number" class="validate" name="price" value="<%= product.price %>">
                     <label for="price">Precio</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.price != "undefined"){ %>
+                    <span class="helper-text"><%= errors.price.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="input-field col s12 m4">
                     <input id="quantity" type="number" class="validate" name="quantity" value="<%= product.quantity %>">
                     <label for="quantity">Cantidad</label>
+                    <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.quantity != "undefined"){ %>
+                    <span class="helper-text"><%= errors.quantity.msg  %> </span>
+                    <% } %>
+                    <% } %>
                 </div>
                 <div class="col s12 m4 tamaño-cuadro">
                     <div class="col s6 input-field ancho">
                         <input id="ancho" type="number" class="validate" name="ancho" value="<%= product.ancho %>">
                         <label for="ancho">Ancho</label>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.ancho != "undefined"){ %>
+                        <span class="helper-text"><%= errors.ancho.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                     <div class="col s6 input-field alto">
                         <input id="alto" type="number" class="validate" name="alto" value="<%= product.alto %>">
                         <label for="alto">Alto</label>
+                        <% if(typeof errors != "undefined"){ %>
+                        <% if(typeof errors.alto != "undefined"){ %>
+                        <span class="helper-text"><%= errors.alto.msg  %> </span>
+                        <% } %>
+                        <% } %>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <div class="input-field col s12">
                     <textarea id="keywords" class="materialize-textarea"></textarea>
                     <label for="keywords">keywords</label>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
-                <div class="input-field col s6">
-                    <select>
+                <div class="input-field col s12 m6">
+                    <select name="status" >
                         <option value="0" <% if (product.status == 0) { %> selected <% } %> >Disponible</option>
                         <option value="1" <% if (product.status == 1) { %> selected <% } %>>Vendido</option>
-                        <option value="2" <% if (product.status == 2) { %> selected <% } %>>En pausa</option>
+                        <option value="2" <% if (product.status == 2) { %> selected <% } %>>Oculto</option>
                     </select>
                     <label>Estado</label>
                 </div>
-                <div class="col s6 right-align">
-                    <button type="reset" class="btn waves-effect waves-light btn-medium boton-crearpublicacion">
-                        Descartar cambios
+                <div class="row s12 m6 right-align">
+                    <button type="reset" class="btn waves-effect waves-light btn-medium red boton-resetear">
+                        <i class="material-icons">replay</i>
                     </button>
-                    <button type="submit" class="btn waves-effect waves-light btn-medium boton-crearpublicacion">
-                        Guardar cambios
+                    <button type="submit" class="btn waves-effect waves-light btn-medium boton-guardar">
+                        Guardar <i class="material-icons right">check</i>
                     </button>
                 </div>
             </div>
@@ -95,7 +127,7 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/header-function.js"></script>
-    <script src="/js/myart-function.js"></script>
+    <script src="/js/editmyart-function.js"></script>
 
 </body>
 

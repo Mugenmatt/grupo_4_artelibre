@@ -28,3 +28,29 @@ $(".cerrar-nueva-direccion").click(function (event) {
     $('.nueva-direccion').toggleClass('apagado');
     $(this).toggleClass('apagado');
 })
+
+ $(document).ready(function () {
+     $('.collapsible').collapsible();
+ });
+
+    let form = document.querySelector("#NewAdress");
+    let alerta = document.querySelector(".errores-true");
+
+    function myFunction() {
+        var elmnt = document.getElementById("NewAdress");
+        elmnt.scrollIntoView();
+    }
+       
+    if(alerta.innerHTML == "hay errores"){
+
+        $('#mis-direcciones').toggleClass('active');
+        $('.formulario-nueva-direccion').toggleClass('apagado');
+        $('.cerrar-nueva-direccion').toggleClass('apagado');
+        $(".nueva-direccion").toggleClass('apagado'); 
+
+        setTimeout(()=> { form.scrollIntoView()  },50)
+        
+    }
+
+
+

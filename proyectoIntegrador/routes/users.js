@@ -3,11 +3,12 @@ const router = express.Router();
 const usersController = require('../controllers/usersController');
 const multer = require("multer");
 const path = require('path');
-const { check, validationResult, body} = require('express-validator');
+
 
 // Middlewares
-const guestMiddleware = require('../middlewares/guestMiddleware'); //Esto te deja acceder solo si sos invitado
-const authMiddleware = require('../middlewares/authMiddleware'); //Esto te deja acceder solo si sos usuario
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+const validator = require('../middlewares/validator');
 
 // Usuarios
 // ************  Multer Config  ***************
@@ -70,26 +71,24 @@ let storage2 = multer.diskStorage({
 //rutas
 
 router.get('/register', guestMiddleware,usersController.register);
-router.post('/register',usersController.processRegister);
-
+router.post('/register',validator.register, usersController.processRegister);
 router.get('/login', guestMiddleware,usersController.login);
 router.post('/login',usersController.processLogin);
 
 router.post('/logout',authMiddleware, usersController.logout);
 
 router.get('/profile',authMiddleware, usersController.profile);
-router.put('/profile',authMiddleware, upload.single('avatar'), usersController.profileEdit);
+router.put('/profile',authMiddleware, upload.single('avatar'), validator.editUser, usersController.profileEdit);
 router.delete('/profile',authMiddleware, usersController.profileDelete);
 
-router.post('/profile/adress/new',authMiddleware, usersController.profileNewAdress);
-router.put('/profile/adress/:id',authMiddleware, usersController.profileEditAdress);
-router.delete('/profile/adress/:id',authMiddleware, usersController.profileDeleteAdress);
+router.post('/profile',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
+router.delete('/profile/adress',authMiddleware, usersController.profileDeleteAdress);
 
 router.get('/profile/myart', authMiddleware, usersController.showMyart );
-router.post('/profile/myart', authMiddleware, upload2.single('imageFile'), usersController.createMyart );
-router.delete('/profile/myart/:id', authMiddleware, usersController.deleteMyart );
+router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, usersController.createMyart );
+router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
 router.get('/profile/myart/:id', authMiddleware,usersController.editMyart );
-router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile') ,usersController.processEditMyart );
+router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,usersController.processEditMyart );
 
 router.get('/profile/myorders', authMiddleware, usersController.showMyorders);
 

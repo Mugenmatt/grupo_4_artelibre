@@ -23,6 +23,10 @@ body {
   margin-top: 5%;
 }
 
+div.input-field span.helper-text {
+  color: red;
+}
+
 /*======== EXCLUSIVO HEADER ===========*/
 
 .hero {

@@ -11,34 +11,36 @@
     </div>
 
     <main class="row container">
+
+        
     <h2 class="register-title">COMPLETÁ TUS DATOS</h2>
-
-                    <!-- ERRORES DE REGISTRACION COMETIDO POR USUARIO  -->
-
-                    <% if(typeof errors != 'undefined')  {%>
-                    
-                        <p style="color:red">ERROR</p>
-    
-                        <ul>
-                            <% for(let i = 0; i < errors.length; i++) { %>
-                                
-                                <li>
-                                    <%= erros[i].msg %>
-                                </li>
-    
-                            <% } %> 
-                        </ul>
-    
-                    <% } %> 
 
     <form action="/users/register" id="form" class="col s12 formulario" method="POST">
 
+<<<<<<< HEAD
         <div class="row nombreApellido">
             <div class="input-field col s12">
                 <input class="validate campo" id="name" type="text" name="name" >
+=======
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input class="validate campo" id="name" type="text" name="name" 
+                <% if (typeof old != "undefined") { %>
+                    value="<%= old.name %>" 
+                <% } %> >
+>>>>>>> 013fbe9aea18c537c32a2b1f98f340d947d9bba0
                 <label for="name">Nombre</label>
+                <% if(typeof errors != "undefined"){ %>
+                    <% if(typeof errors.name != "undefined"){ %>
+                    <span class="helper-text"><%= errors.name.msg  %> </span>
+                    <% } %>
+                <% } %>
             </div>
+<<<<<<< HEAD
             <div class="input-field col s12">
+=======
+            <div class="input-field col s12 m6">
+>>>>>>> 013fbe9aea18c537c32a2b1f98f340d947d9bba0
                 <input class="validate campo" id="lastname" type="text" name="lastname">
                 <label for="lastname">Apellido</label>
              </div>
@@ -46,29 +48,53 @@
         
         <div class="row">
             <div class="input-field col s12">
-                <input class="validate campo" id="username" type="text" name="username">
+                <input class="validate campo" id="username" type="text" name="username"
+                    <% if (typeof old != "undefined") { %> value="<%= old.username %>" <% } %>>
                 <label for="username">Nombre de usuario</label>
+                <% if(typeof errors != "undefined"){ %>
+                <% if(typeof errors.username != "undefined"){ %>
+                <span class="helper-text"><%= errors.username.msg  %> </span>
+                <% } %>
+                <% } %>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <input class="validate campo" id="email" type="text" name="email">
+                <input class="validate campo" id="email" type="text" name="email" <% if (typeof old != "undefined") { %>
+                    value="<%= old.email %>" <% } %>>
                 <label for="email">E-mail</label>
+                <% if(typeof errors != "undefined"){ %>
+                <% if(typeof errors.email != "undefined"){ %>
+                <span class="helper-text"><%= errors.email.msg  %> </span>
+                <% } %>
+                <% } %>
             </div>
         </div>
         
         <div class="row">
             <div class="input-field col s12">
-                <input class="validate campo" id="password" type="password" name="password">
+                <input class="validate campo" id="password" type="password" name="password"
+                    <% if (typeof old != "undefined") { %> value="<%= old.password %>" <% } %>>
                 <label for="password">Contraseña</label>
+                <% if(typeof errors != "undefined"){ %>
+                <% if(typeof errors.password != "undefined"){ %>
+                <span class="helper-text"><%= errors.password.msg  %> </span>
+                <% } %>
+                <% } %>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <input class="validate campo" id="password2" type="password" name="password2">
+                <input class="validate campo" id="password2" type="password" name="password2" 
+                <% if (typeof old != "undefined") { %> value="<%= old.password2 %>" <% } %> >
                 <label for="password2">Repetí tu contraseña</label>
+                <% if(typeof errors != "undefined"){ %>
+                <% if(typeof errors.password2 != "undefined"){ %>
+                <span class="helper-text"><%= errors.password2.msg  %> </span>
+                <% } %>
+                <% } %>
             </div>
         </div>
 
@@ -100,6 +126,7 @@
         </div>
 
     </form>
+
     </main>
 
     
