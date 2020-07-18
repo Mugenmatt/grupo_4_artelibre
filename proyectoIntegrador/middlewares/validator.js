@@ -104,8 +104,6 @@ module.exports ={
                return true
                
             }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
-         // body('status')
-         //    .notEmpty().withMessage('Campo obligatorio')
             
     ],
     editProduct:[
@@ -120,7 +118,7 @@ module.exports ={
          body('quantity')
             .notEmpty().withMessage('Campo obligatorio'),
          body('imageFile')
-            .custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
+            //.custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
             .custom((value,{req}) =>{
                
                if(req.file != undefined){
@@ -131,8 +129,7 @@ module.exports ={
                return true
                
             }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
-         // body('status')
-         //    .notEmpty().withMessage('Campo obligatorio')
+         
     ],
     newAdress: [
       body('province')

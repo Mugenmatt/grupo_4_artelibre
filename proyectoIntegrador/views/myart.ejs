@@ -149,7 +149,7 @@
                     <td><%=product.ancho %>x<%=product.alto %>  cm</td>
                     <td><%= product.quantity %> </td>
                     <td>$<%= product.price %> </td>
-                    <td> <%= product.status %> </td>
+                    <td> <%= product.status == 0? "Disponible" : product.status == 1? "Vendido" : "Oculto" %> </td>
                     <td class="botones-funciones">
                         <a href="/users/profile/myart/<%= product.id %>" class="btn-flat">
                             <i class="material-icons">brush</i>

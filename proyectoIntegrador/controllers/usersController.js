@@ -1,9 +1,8 @@
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
 const {User, Adress, Product}= require('../database/models/')
-// const User = db.User;
-// const Adress = db.Adress;
-// const Product = db.Product;
+const fs = require('fs')
+const path = require('path')
 
 const usersController ={
     register: function(req,res){
@@ -293,15 +292,25 @@ const usersController ={
     deleteMyart: function(req,res){
         let productId = req.body.productId;
 
-        Product.destroy({
-            where: {
-                id: productId
-            }
+        Product.findByPk(productId)
+        .then(producto =>{
+            let filePath = path.join(__dirname, '..','public','images','products',producto.imageFile)
+            fs.unlinkSync(filePath)
         })
         .then(()=>{
-            return res.redirect("/users/profile/myart")
-        })
-        .catch(errors=> console.log(errors))
+            Product.destroy({
+                where: {
+                    id: productId
+                }
+            })
+            .then(()=>{
+    
+                return res.redirect("/users/profile/myart")
+            })
+            .catch(errors=> console.log(errors))
+
+        }).catch(errors=> console.log(errors))
+
 
     },
 
@@ -323,21 +332,32 @@ const usersController ={
         
         if (errors.isEmpty()) {
 
-            Product.update({
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                ancho: req.body.ancho,
-                alto: req.body.alto,
-                quantity: req.body.quantity,
-                status: req.body.status, 
-                imageFile: req.file ? req.file.filename : null,
-                },
-                {where: 
-                    {id: productId} 
+            Product.findByPk(productId)
+            .then(producto =>{
+                let filePath = path.join(__dirname, '..','public','images','products',producto.imageFile)
+                if (req.file && producto.imageFile != req.file.filename) {
+                    fs.unlinkSync(filePath)
+                }
+                return producto;
+            })
+            .then((producto)=>{
+                Product.update({
+                    name: req.body.name,
+                    description: req.body.description,
+                    price: req.body.price,
+                    ancho: req.body.ancho,
+                    alto: req.body.alto,
+                    quantity: req.body.quantity,
+                    status: req.body.status, 
+                    imageFile: req.file ? req.file.filename : producto.imageFile,
+                    },
+                    {where: 
+                        {id: productId} 
+                    })
+                .then((product)=>{
+                    return res.redirect("/users/profile/myart")
                 })
-            .then((product)=>{
-                return res.redirect("/users/profile/myart")
+                .catch(errors=> console.log(errors))
             })
             .catch(errors=> console.log(errors))
         }else{

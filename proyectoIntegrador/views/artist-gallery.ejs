@@ -65,29 +65,32 @@
 
                 <%for (let cuadro of artista.products) { %>
                 
-
-                <div class="carta-producto col s12 m6 l4">
-                    <div class="contenido-carta">              
-                        <div class="imagen">
-                            <a href="/product/<%=cuadro.id%>">
-                                <!--cuadro.productImages[0].filename-->
-                                <img class="responsive-img" src="\images\products\<%=cuadro.imageFile%> "                                 
-                                    alt="">
-                            </a>
-                        </div>
-
-                            <div class="por-encima">
-                                <p class="precio">$<%=cuadro.price%></p>
-                                <a href="#"><i class="material-icons prefix small">local_mall</i></a>
+                    <% if (cuadro.status != 2) { %>
+                     
+                        <div class="carta-producto col s12 m6 l4">
+                            <div class="contenido-carta">              
+                                <div class="imagen">
+                                    <a href="/product/<%=cuadro.id%>">
+                                        <!--cuadro.productImages[0].filename-->
+                                        <img class="responsive-img" src="\images\products\<%=cuadro.imageFile%> "                                 
+                                            alt="">
+                                    </a>
+                                </div>
+        
+                                    <div class="por-encima">
+                                        <p class="precio">$<%=cuadro.price%></p>
+                                        <a href="#"><i class="material-icons prefix small">local_mall</i></a>
+                                    </div>
+                                
+                                <div class="por-debajo">
+                                    <h6><%=cuadro.name%></h6>
+                                    <p> - <%=artista.username%> </p>
+                                </div>
+        
                             </div>
-                        
-                        <div class="por-debajo">
-                            <h6><%=cuadro.name%></h6>
-                            <p> - <%=artista.username%> </p>
-                        </div>
+                        </div> 
+                    <% } %>
 
-                    </div>
-                </div> 
 
                 <% } %>
     

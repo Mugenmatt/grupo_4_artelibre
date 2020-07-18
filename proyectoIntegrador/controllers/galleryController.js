@@ -13,6 +13,9 @@ const galleryController = {
 
       let obras = Product.findAll(
          {
+           where:{
+             status: 0
+           },
            include: ["productimages", "user"]
           }
         );
