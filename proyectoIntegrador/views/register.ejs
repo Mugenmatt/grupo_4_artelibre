@@ -17,18 +17,12 @@
 
     <form action="/users/register" id="form" class="col s12 formulario" method="POST">
 
-<<<<<<< HEAD
-        <div class="row nombreApellido">
-            <div class="input-field col s12">
-                <input class="validate campo" id="name" type="text" name="name" >
-=======
         <div class="row">
             <div class="input-field col s12 m6">
                 <input class="validate campo" id="name" type="text" name="name" 
                 <% if (typeof old != "undefined") { %>
                     value="<%= old.name %>" 
                 <% } %> >
->>>>>>> 013fbe9aea18c537c32a2b1f98f340d947d9bba0
                 <label for="name">Nombre</label>
                 <% if(typeof errors != "undefined"){ %>
                     <% if(typeof errors.name != "undefined"){ %>
@@ -36,11 +30,7 @@
                     <% } %>
                 <% } %>
             </div>
-<<<<<<< HEAD
-            <div class="input-field col s12">
-=======
             <div class="input-field col s12 m6">
->>>>>>> 013fbe9aea18c537c32a2b1f98f340d947d9bba0
                 <input class="validate campo" id="lastname" type="text" name="lastname">
                 <label for="lastname">Apellido</label>
              </div>
