@@ -11,13 +11,17 @@
 
    <a class="cart btn-floating white" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
 
+   <% if (locals.user) { %>
    <!-- Dropdown Trigger -->
-   <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i
-       class="material-icons icono-usuario">person_outline</i></a>
+    <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'>
+     <% let nombre = locals.user.name  %>
+     <h4 class="black-text center-align letra-inicial"><%= nombre.slice(0,1)  %> </h4>
+    </a>
    <!-- Dropdown Structure -->
    <ul id='dropdown1' class='dropdown-content'>
-     <% if (locals.user) { %>
-     <li><a href="/users/profile">Tu perfil</a></li>
+     
+     <li><a href="/users/profile">Mi perfil</a></li>
+     <li><a href="/users/profile/myart">Mi arte</a></li>
      <li>
        <form action="/users/logout" method="post">
          <button class="btn-flat btn-cerrarSesion" type="submit">
@@ -25,12 +29,17 @@
          </button>
        </form>
      </li>
-     <% }else{ %>
-     <li><a href="/users/login">Inicia Sesión</a></li>
-     <li><a href="/users/register">Registrate</a></li>
-     <% } %>
-
-   </ul>
+    </ul>
+    <% }else{ %>
+      <!-- Dropdown Trigger -->
+      <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i
+         class="material-icons icono-usuario">person_outline</i></a>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="/users/login">Inicia Sesión</a></li>
+        <li><a href="/users/register">Registrate</a></li>
+      </ul>
+    <% } %>
       
       <nav id="site-nav" role="navigation">
         <ul class="lista-links"></li>

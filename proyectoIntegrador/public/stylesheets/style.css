@@ -86,13 +86,14 @@ Making sure everything in .hero sits above our :after elements
 }
 
 #masthead {
-  padding: 1% 0;
+  padding: 0;
   position: relative;
 }
 
 #masthead.is-active {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--white);
+  padding-bottom: 1% ;
 }
 
 /*
@@ -113,6 +114,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 #masthead.is-active:after {
   opacity: 1;
 }
+
 
 /*!
  * Hamburgers
@@ -478,8 +480,12 @@ button:focus {
   line-height: 1.15;
   color: var(--tealdark);
   font-size: 1rem;
+}
 
-
+h4.letra-inicial {
+  text-transform: capitalize;
+  margin: 10%;
+  font-size: 2.00rem;
 }
 
 @media screen and (max-width: 992px) {
