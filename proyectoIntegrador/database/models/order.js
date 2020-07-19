@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Order = sequelize.define('Order', {
     total: DataTypes.DECIMAL,
-    orderNumber: DataTypes.INTEGER
+    orderNumber: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   },
   {tablename: "orders"});
 
@@ -12,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     Order.hasMany(models.Cartitem,{
       as: "cartitems",
       foreignKey: "idOrder"
+    })
+
+    Order.belongsTo(models.User,{
+      as: "order",
+      foreignKey: "userId"
     })
 
   };
