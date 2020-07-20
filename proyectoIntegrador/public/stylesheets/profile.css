@@ -78,3 +78,10 @@ div.collapsible-header {
      box-shadow: none;
 
  }
+
+
+ div.sin-tamaño { 
+     height: 0;
+     margin: 0;
+     padding: 0;
+ }

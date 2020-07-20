@@ -14,15 +14,15 @@
         <div class="row center-align card-panel">
 
                 <div class="foto-perfil col s12 m4 l2 file-field input-field">
-                    <div class="btn-flat">
+                    <div class="btn-flat sin-tamaño">
                         <% if (user.avatar == null) { %>
                             <i class="material-icons">insert_photo</i>
                         <% } %>
-                        <input disabled type="file" class="boton-examinar" name="avatar">
+                        <input disabled type="file" class="boton-examinar" name="avatar" >
                     </div>
                     <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
                     <div class="file-path-wrapper">
-                        <input disabled class="file-path validate" type="text">
+                        <input disabled class="file-path validate" type="text" style="display: none;">
                         <% if(typeof errors != "undefined"){ %>
                         <% if(typeof errors.avatar != "undefined"){ %>
                         <span class="helper-text"><%= errors.avatar.msg  %> </span>
