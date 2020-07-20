@@ -85,10 +85,7 @@ const usersController ={
         let usuarioEnSesion= req.session.user;
 
         User.findByPk(usuarioEnSesion.id,{
-            include: {
-              all: true,
-              nested: true
-            }
+            include: ['adresses']
           }).then(function(user){
               return res.render('profile',{user})
           })
@@ -255,6 +252,7 @@ const usersController ={
 
         const errors = validationResult(req);
         
+
         if (errors.isEmpty()) {
             
             let productoACrear={
@@ -269,7 +267,6 @@ const usersController ={
                 imageFile: req.file ? req.file.filename : null,
             }
     
-            // Product.setkeywords()
     
             Product.create(productoACrear)
             .then(()=>{

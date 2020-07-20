@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
 
   const Cartitem = sequelize.define('Cartitem', {
-    price: DataTypes.DECIMAL,
+    price: DataTypes.INTEGER,
     status: DataTypes.INTEGER,
     idUser: DataTypes.INTEGER,  
     idOrder: DataTypes.INTEGER,  

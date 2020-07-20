@@ -5,9 +5,7 @@ const cartController = {
       let usuarioEnSesion= req.session.user;
 
       Cartitem.findAll({
-        include:{
-          all:true,
-        },
+        include:['product','seller'],
         where:{
           idUser:usuarioEnSesion.id,
           status: 0
@@ -63,7 +61,7 @@ const cartController = {
     efectuarCompra: function (req,res) {
       let usuarioEnSesion= req.session.user;
       let items=[];
-      let numeroDeOrdenNuevo=0;
+      let numeroDeOrdenNuevo=1;
 
       Cartitem.findAll({
         where:{
@@ -82,7 +80,10 @@ const cartController = {
 
       })
       .then((orden=>{
-        numeroDeOrdenNuevo = orden.orderNumber + 1;
+        if (orden) {
+          numeroDeOrdenNuevo = orden.orderNumber + 1;
+        }
+
       }))
       .then(()=>{
         let precioFinal=0;

@@ -42,10 +42,13 @@
             </div>
 
             <div class="row right-align" style="margin: 5%;">
-                <p class="total-productos">Cant de items</p>
-                <p class="total-precio">TOTAL $</p>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Comprar todos
-                </button>
+                <p class="total-productos">Cant de items: <%= items.length %> </p>
+                <p class="total-precio">TOTAL: $ <%= items.reduce((acumulador,item)=>{return acumulador + item.price},0) %>  </p>
+
+                <form action="/cart/purchase" method="post" style="display: flex; justify-content: end">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Comprar todos
+                    </button>
+                </form>
             </div>
         </div>
 
