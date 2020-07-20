@@ -62,9 +62,12 @@
         <div class="divider"></div>
         <div class="row caja-precio-carrito section center-align">
             <h5 class="white-text"> $ <%= obra.price %></h5>
-             <button class="btn waves-effect waves-light boton-carrito" type="submit" name="action">Agregar
-                 <i class="material-icons right">local_mall</i>
-             </button>
+            <form action="/cart" method="POST">
+                <input type="hidden" name="productId" value=<%= obra.id %> >
+                <button class="btn waves-effect waves-light boton-carrito" type="submit" name="action">Agregar
+                    <i class="material-icons right">local_mall</i>
+                </button>
+            </form>
         </div>
     </div>
 

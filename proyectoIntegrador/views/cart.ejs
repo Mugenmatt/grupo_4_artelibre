@@ -14,21 +14,31 @@
             <h2 class="tituloCart">Tus cuadros favoritos</h2>
             <!-- TARJETA DE PRODUCTO -->
             <div class="row" style="width: 100%;">
-                <section class="card horizontal small">
-                    <span class="card-image">
-                        <img class="responsive-img materialboxed"
-                            src="/images/products/mona-lisa-with-face-mask-3957982.jpg">
-                    </span>
-                    <div class="card-stacked">
-                        <a class="btn-flat boton-eliminar"><i class="material-icons">close</i></a>
-                        <div class="card-content col contenido-item">
-                            <p class="left-align flow-text">(AUTOR)</p>
-                            <h6 class="left-align flow-text">TITULO</h6>
-                            <blockquote>Descripcion</blockquote>
-                            <p class="right-align flow-text">$$$</p>
+                <% items.forEach(item => { %>
+                    <section class="card horizontal small">
+                        <span class="card-image">
+                            <img class="responsive-img materialboxed"
+                                src="/images/products/<%= item.product.imageFile %> ">
+                        </span>
+                        <div class="card-stacked">
+                            <form action="/cart?_method=DELETE" method="post" style="display: flex; justify-content: end">
+                                <input type="hidden" name="itemId" value=<%= item.id %>  >
+                                <button type="submit" class="btn-flat waves-effect waves-light">
+
+                                    <i class="material-icons">close</i>
+                                </button>
+
+                            </form>
+                            <!-- <a class="btn-flat boton-eliminar"><i class="material-icons">close</i></a> -->
+                            <div class="card-content col contenido-item">
+                                <p class="left-align flow-text"> <%= item.seller.name %>  </p>
+                                <h6 class="left-align flow-text"> <%= item.product.name %> </h6>
+                                <blockquote> <%= item.product.description %>  </blockquote>
+                                <p class="right-align flow-text">$<%= item.price %>  </p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                <% }) %>
             </div>
 
             <div class="row right-align" style="margin: 5%;">

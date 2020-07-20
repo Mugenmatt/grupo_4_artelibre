@@ -5,8 +5,11 @@ const cartController = {
       let usuarioEnSesion= req.session.user;
 
       Cartitem.findAll({
+        include:{
+          all:true,
+        },
         where:{
-          id:usuarioEnSesion.id,
+          idUser:usuarioEnSesion.id,
           status: 0
         }
       })
@@ -64,7 +67,7 @@ const cartController = {
 
       Cartitem.findAll({
         where:{
-          id:usuarioEnSesion.id,
+          idUser:usuarioEnSesion.id,
           status: 0
         }
       })
