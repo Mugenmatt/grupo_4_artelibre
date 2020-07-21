@@ -11,7 +11,7 @@ const log = require('./middlewares/logMiddleware');
 // Require routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const specificRegisterRouter = require('./routes/specific-register')
+
 const galleryRouter = require('./routes/gallery')
 const productRouter = require('./routes/product')
 const cartRouter = require('./routes/cart')
@@ -34,7 +34,7 @@ app.use(log);
 // use routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/specific-register', specificRegisterRouter);
+
 app.use('/gallery', galleryRouter);
 app.use('/product', productRouter);
 app.use('/cart', cartRouter);

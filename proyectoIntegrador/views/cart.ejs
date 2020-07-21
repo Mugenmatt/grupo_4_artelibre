@@ -11,9 +11,22 @@
     </div>
 
         <div class="contenedor container">
+            <% if (items < 1 ) { %>
+            <div class="section"></div>
+            <div class="section"> 
+                <h3 class="center-align">No agregaste nada todavia...
+                    <br><br> <a class="link-galeria" href="/gallery">Explorá la galeria !</a>
+                </h3>
+            </div>
+            <div class="section"></div>
+            <div class="section"></div>
+            <div class="section"></div>
+            <% } else { %>
             <h2 class="tituloCart">Tus cuadros favoritos</h2>
             <!-- TARJETA DE PRODUCTO -->
             <div class="row" style="width: 100%;">
+            
+
                 <% items.forEach(item => { %>
                     <section class="card horizontal small">
                         <span class="card-image">
@@ -21,35 +34,47 @@
                                 src="/images/products/<%= item.product.imageFile %> ">
                         </span>
                         <div class="card-stacked">
-                            <form action="/cart?_method=DELETE" method="post" style="display: flex; justify-content: end">
-                                <input type="hidden" name="itemId" value=<%= item.id %>  >
+                            <form action="/cart?_method=DELETE" method="post">
+                                <input type="hidden" name="itemId" value=<%= item.id %> >
                                 <button type="submit" class="btn-flat waves-effect waves-light">
 
                                     <i class="material-icons">close</i>
                                 </button>
 
                             </form>
+
+                            <button type="submit" formaction="/cart?_method=DELETE" formmethod="post">
+                                <i class="material-icons">close</i>
+                            </button>
                             <!-- <a class="btn-flat boton-eliminar"><i class="material-icons">close</i></a> -->
-                            <div class="card-content col contenido-item">
+                            
                                 <p class="left-align flow-text"> <%= item.seller.name %>  </p>
                                 <h6 class="left-align flow-text"> <%= item.product.name %> </h6>
                                 <blockquote> <%= item.product.description %>  </blockquote>
+                                <% if (item.product.quantity > 1) { %>
+                                    <form action="/cart?_method=PUT" method="post">
+                                       <input type="number" max="<%item.product.quantity%>" name="quantity">
+                                    </form>
+                                <% } %>
                                 <p class="right-align flow-text">$<%= item.price %>  </p>
-                            </div>
+                            
                         </div>
                     </section>
                 <% }) %>
+            
             </div>
-
+            
             <div class="row right-align" style="margin: 5%;">
                 <p class="total-productos">Cant de items: <%= items.length %> </p>
                 <p class="total-precio">TOTAL: $ <%= items.reduce((acumulador,item)=>{return acumulador + item.price},0) %>  </p>
 
                 <form action="/cart/purchase" method="post" style="display: flex; justify-content: end">
+
                     <button class="btn waves-effect waves-light" type="submit" name="action">Comprar todos
                     </button>
                 </form>
             </div>
+        <% } %>
         </div>
 
 

@@ -1,5 +1,6 @@
 blockquote{
     border-left: 5px solid #4db6ac;
+    padding: 2%;
 }
 
 .btn-flat.boton-eliminar {
@@ -16,6 +17,18 @@ div.contenido-item {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.card.horizontal div.card-stacked {
+    padding: 2%;
+}
+
+div.card-stacked form {
+    text-align: end;
+}
+
+div.card-stacked p {
+    padding: 2%;
 }
 
 /* ----------------------------- MEDIAQUERIES ----------------------------- */

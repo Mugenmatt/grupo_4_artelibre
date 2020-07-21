@@ -12,7 +12,18 @@
         <aside class="izquierda col s12 m4 l3 main-aside">
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header titulo-desplegable">Artistas <i class="tiny material-icons prefix flechita">expand_more</i></div>
+                    <div class="collapsible-header titulo-desplegable">Artistas
+                        <form class="buscador-artistas" autocomplete="off" action="/ ">
+                             <div class="autocomplete">
+                                 <input id="myInput" type="text" name="myArtist">
+                                <label class="label-icon" for="myInput">
+                                        <i class="material-icons">search</i>
+                                </label>
+                                <input class="input-invisible" type="submit">
+                             </div>
+                        </form>
+                         <i class="tiny material-icons prefix flechita">expand_more</i>
+                    </div>
                     <div class="collapsible-body">
                         <ul>
                             <% for (let artist of artistas) { %>
@@ -62,33 +73,6 @@
                       </form>
                   </div>
               </div>
-                <!-- 
-                <div class="carta-producto col s12 m6 l4">
-                    <div class="contenido-carta">              
-                        <div class="imagen">
-                            <a href="/product/<%=cuadro.id%>">
-                                <img class="responsive-img" src="\images\products\<%=cuadro.imageFile%> "                                 
-                                    alt="">
-                            </a>
-                        </div>
-
-                            <div class="por-encima">
-                                <p class="precio">$<%=cuadro.price%></p>
-                                <form action="/cart" method="POST">
-                                    <input type="hidden" name="productId" value="<%= cuadro.id %> ">
-                                    <button class="btn-flat waves-effect waves-light" type="submit" name="action">
-                                        <i class="material-icons prefix small">local_mall</i>
-                                    </button>
-                                </form>
-                            </div>
-                        
-                        <div class="por-debajo">
-                            <h6><%=cuadro.name%></h6>
-                            <p> - <%=cuadro.user.username%> </p>
-                        </div>
-
-                    </div>
-                </div> -->
 
                 <% } %>
             </div>
@@ -104,6 +88,10 @@
 
     <script src="/js/header-function.js"></script>
     <script src="/js/gallery-function.js"></script>
+    <script>
+        let artistas = ["marcos", "facu", "mati"];
+        autocomplete(document.getElementById("myInput"), artistas);
+    </script>
 
 </body>
 </html>
