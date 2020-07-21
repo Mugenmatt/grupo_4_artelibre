@@ -76,7 +76,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .contenedor-precio-descrip-user .caja-precio {
@@ -220,6 +220,7 @@ main {
     flex-direction: column;
     width: 60%;
     margin: auto;
+    margin-top: 3%;
 }
 
 .contenedor-comentarios .caja-comentarios-titulo {
@@ -268,6 +269,7 @@ main {
 .contenedor-comentarios .formulario-comentario .enviarComentario:hover {
     background: var(--orangedark);
     color: var(--white);
+    cursor: pointer;
 }
 
 /* ========================= SUGERENCIAS ========================= */
