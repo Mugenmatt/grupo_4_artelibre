@@ -1,6 +1,6 @@
 main.todo.container {
     margin-top: 10%;
-    height: 74.3vh;
+    min-height: 74.3vh;
 }
 
 tr td.botones-funciones {

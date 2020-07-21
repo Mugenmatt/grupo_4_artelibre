@@ -19,7 +19,7 @@ div.contenido-item {
 }
 
 .container {
-    height: 81.4vh;
+    min-height: 81.4vh;
 }
 
 /* ----------------------------- MEDIAQUERIES ----------------------------- */
