@@ -12,6 +12,10 @@ body {
     margin-top: 0;
 }
 
+h3 {
+    margin: 0;
+}
+
 /* ========================= MAIN ========================= */
 
 .main {
@@ -326,8 +330,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
-    margin-bottom: 8%;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn {
@@ -348,7 +352,7 @@ body {
     color: rgba(255, 255, 255, 0.513);
     margin: auto;
     display: block;
-    padding: 0 50px;
+    padding: 20px 50px;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate:hover {
