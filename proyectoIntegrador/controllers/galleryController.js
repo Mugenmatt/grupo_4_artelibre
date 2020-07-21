@@ -34,10 +34,7 @@ const galleryController = {
       let artistId = req.params.artistId;
 
       User.findByPk(artistId,{
-        include: {
-          all: true,
-          nested: true
-        }
+        include: ['products']
       }).then(function(artista){
         return res.render('artist-gallery',{artista})
       })

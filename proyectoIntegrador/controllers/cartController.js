@@ -1,4 +1,5 @@
-const {Cartitem, Product, Order} = require('../database/models')
+const {Cartitem, Product, Order, Sequelize} = require('../database/models')
+const Op = Sequelize.Op;
 
 const cartController = {
     index: function(req, res) {
@@ -72,33 +73,49 @@ const cartController = {
       .then((itemsEncontrados)=>{
         items = itemsEncontrados;
 
+        let itemsId = items.map(item=>{
+          return item.idProduct
+        })
+        
+        return Product.update({
+            status:1
+          },
+          {
+            where:{
+              id :{
+                [Op.in]:itemsId
+              } 
+            }
+          }
+        )
+        
+      })
+      .then(()=>{
+        
         return Order.findOne({
           order:[
             ['orderNumber','DESC']
           ]
         })
-
       })
-      .then((orden=>{
+      .then(orden=>{
         if (orden) {
           numeroDeOrdenNuevo = orden.orderNumber + 1;
         }
-
-      }))
-      .then(()=>{
         let precioFinal=0;
-
+  
         items.forEach(item => {
           precioFinal += item.price
         });
-
+  
         let ordenACrear = {
           orderNumber: numeroDeOrdenNuevo,
           total:precioFinal,
           userId: usuarioEnSesion.id
         }
-
+  
         return Order.create(ordenACrear)
+
       })
       .then((ordenCreada)=>{
         return Cartitem.update({
@@ -113,6 +130,7 @@ const cartController = {
       })
       .then(()=>{
         return res.redirect('/')
+        
       })
       .catch(errors=> console.log(errors))
 

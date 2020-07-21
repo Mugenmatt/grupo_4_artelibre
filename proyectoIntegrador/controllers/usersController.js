@@ -117,10 +117,7 @@ const usersController ={
             
         }else{
             User.findByPk(usuarioEnSesion.id,{
-                include: {
-                  all: true,
-                  nested: true
-                }
+                include: ['adresses']
               }).then(function(user){
                   return res.render('profile',{user, errors: errors.mapped(), old:req.body})
               })
@@ -170,10 +167,7 @@ const usersController ={
 
         }else{
             User.findByPk(usuarioEnSesion.id,{
-                include: {
-                  all: true,
-                  nested: true
-                }
+                include: ['adresses']
               }).then(function(user){
                   return res.render('profile',{user, adressErrors: errors.mapped(), oldAdress:req.body})
               })
@@ -209,10 +203,7 @@ const usersController ={
         }else{
             
             User.findByPk(usuarioEnSesion.id,{
-                include: {
-                  all: true,
-                  nested: true
-                }
+                include: ['adresses']
               }).then(function(user){
                   return res.render('profile',{user, adressErrors: errors.mapped(), oldAdress:req.body})
               })
@@ -376,12 +367,14 @@ const usersController ={
             where: {
                 idSeller: usuarioEnSesion.id
             },
+            
             include: {
-                all:true
+                all:true,
+                paranoid: false
             }
         })
         .then(items=>{
-            return res.render('myorders',{items})
+            return res.render('misventas',{items})
         })
         .catch(errors => console.log(errors))
 

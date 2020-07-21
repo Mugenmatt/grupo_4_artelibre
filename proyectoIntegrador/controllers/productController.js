@@ -5,10 +5,7 @@ const productController = {
     index: function(req, res) {
       
       Product.findByPk(req.params.id,{
-        include: {
-          all: true,
-          nested: true
-        }
+        include: ['user']
       })
       .then(function(obra){
         return res.render('product',{obra});

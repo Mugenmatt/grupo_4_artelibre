@@ -90,6 +90,6 @@ router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
 router.get('/profile/myart/:id', authMiddleware,usersController.editMyart );
 router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,usersController.processEditMyart );
 
-router.get('/profile/myorders', authMiddleware, usersController.showMyorders);
+router.get('/profile/misventas', authMiddleware, usersController.showMyorders);
 
 module.exports = router;
