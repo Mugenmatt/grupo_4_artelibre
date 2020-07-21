@@ -14,6 +14,11 @@ aside {
     position: relative;
 }
 
+.allPictures {
+    font-size: 2em;
+    font-weight: 300;
+}
+
 aside .collapsible {
     border: none;
     margin: 0;
@@ -97,17 +102,29 @@ form.buscador-artistas {
 }
 
 .precio {
-    margin: 3%;
+    margin: 0px 20px;
+    font-size: 1.4em;
 }
 
 .autor {
-    margin: 0;
+    margin-left: 20px;
 }
 
 .info-cuadro {
     margin: 0;
 }
 
+.titulo-obra {
+    text-align: center;
+    font-weight: 700;
+    margin: 10px 0px;
+    font-size: 1.2em;
+}
+
+.btn-flat {
+    line-height: 0;
+    margin: 0 20px 10px 20px
+}
 
 /* Masonry grid */
 .masonry {

@@ -1,6 +1,6 @@
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const {User, Adress, Product}= require('../database/models/')
+const {User, Adress, Product, Cartitem}= require('../database/models/')
 const fs = require('fs')
 const path = require('path')
 
@@ -372,14 +372,20 @@ const usersController ={
 
         let usuarioEnSesion = req.session.user;
 
-        User.findByPk(usuarioEnSesion.id, {
-                include: ["products"]
-            }).then(user => {
-                return res.render('myorders', {
-                    user
-                });
-            })
-            .catch(errors => console.log(errors))
+        Cartitem.findAll({
+            where: {
+                idSeller: usuarioEnSesion.id
+            },
+            include: {
+                all:true
+            }
+        })
+        .then(items=>{
+            return res.render('myorders',{items})
+        })
+        .catch(errors => console.log(errors))
+
+        
 
     },
 

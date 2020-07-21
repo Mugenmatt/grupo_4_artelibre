@@ -12,6 +12,10 @@ body {
     margin-top: 0;
 }
 
+h1, h3 {
+    margin: 0;
+}
+
 /* ========================= MAIN ========================= */
 
 .main {
@@ -41,28 +45,140 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/bg/arte3.jpg');
+    /* background-image: url('../images/bg/arte3.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
     height: 100vh;
+    background-color: whitesmoke;
 }
 
+
+
 .contenedor .fondo-caja-titulo {
-    width: 50%;
+    width: 90%;
     font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 20px;
+    /* border: 25px solid var(--tealdark); */
+    margin-top: -5%;
+}
+
+.fade-in {
+    animation: fadeIn ease 2.5s forwards;
+    -moz-animation: fadeIn ease 2.5s forwards;
+    -webkit-animation: fadeIn ease 2.5s forwards;
+    -moz-animation: fadeIn ease 2.5s forwards;
+    -o-animation: fadeIn ease 2.5s forwards;
+    -ms-animation: fadeIn ease 2.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+        width: 0px;
+    }
+
+    50% {
+        width: 90%;
+        opacity:0.7;
+    }
+
+    100% {
+        width: 90%;
+        opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
+        width: 0px;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        width: 90%;
+        opacity:0.7;
+    }
+
+    100% {
+        width: 90%;
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+        width: 0px;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        width: 90%;
+        opacity:0.7;
+    }
+
+    100% {
+        width: 90%;
+        opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
+        width: 0px;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        width: 90%;
+        opacity:0.7;
+    }
+
+    100% {
+        width: 90%;
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
+        width: 0px;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        width: 90%;
+        opacity:0.7;
+    }
+
+    100% {
+        width: 90%;
+        opacity:1;
+    }
+}
+
+
+.contenedor .fondo-caja-titulo .tituloPagina {
+    /* transform: translateY(300deg) */
+}
+
+.contenedor .fondo-caja-titulo .tituloPagina2 {
+    margin-left: 3%;
 }
 
 .contenedor .fondo-caja-titulo .titulo {
-    border: 25px solid var(--tealdark);
     font-weight: 300;
-    padding: 20px;
-    font-size: 7em;
+    font-size: 9em;
     color: var(--white);
-    margin-bottom: 15%;
+    margin-top: 3%;
+    margin-left: 3%;
 }
 
 /* ========================= SEPARADOR ========================= */
@@ -326,8 +442,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
-    margin-bottom: 8%;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn {
@@ -348,7 +464,7 @@ body {
     color: rgba(255, 255, 255, 0.513);
     margin: auto;
     display: block;
-    padding: 0 50px;
+    padding: 20px 50px;
 }
 
 .centrador-comoFunciona .caja-btn .fondo-btn .a-btn-registrate:hover {

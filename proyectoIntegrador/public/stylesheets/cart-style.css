@@ -31,6 +31,10 @@ div.card-stacked p {
     padding: 2%;
 }
 
+.container {
+    min-height: 81.4vh;
+}
+
 /* ----------------------------- MEDIAQUERIES ----------------------------- */
 
 

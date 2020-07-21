@@ -27,6 +27,32 @@
         </thead>
 
         <tbody>
+            <!-- < % for(let item of items) { %>
+                <tr>
+                    <td><img src="/images/products/< %= item.product.imageFile %> " alt="Imagen" class="responsive-img" width="100"></td>
+                    <td>< %= item.product.name %> </td>
+                    <td class="truncated">
+                            < %= product.description %> 
+                    </td>
+                    <td>< %=product.ancho %>x< %=product.alto %>  cm</td>
+                    <td>< %= product.quantity %> </td>
+                    <td>$< %= product.price %> </td>
+                    <td> < %= product.status == 0? "Disponible" : product.status == 1? "Vendido" : "Oculto" %> </td>
+                    <td class="botones-funciones">
+                        <a href="/users/profile/myart/< %= product.id %>" class="btn-flat">
+                            <i class="material-icons">brush</i>
+                        </a>
+                    </td>
+                    <td class="botones-funciones">
+                        <form action="/users/profile/myart?_method=DELETE" method="POST">
+                            <input type="hidden" name="productId" value="< %= product.id %> ">
+                            <button class="btn-flat waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            < % } %> -->
 
         </tbody>
     </table>
