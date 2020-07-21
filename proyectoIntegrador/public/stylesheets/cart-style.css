@@ -18,6 +18,10 @@ div.contenido-item {
     justify-content: space-around;
 }
 
+.container {
+    height: 81.4vh;
+}
+
 /* ----------------------------- MEDIAQUERIES ----------------------------- */
 
 
