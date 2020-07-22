@@ -1,6 +1,6 @@
 <header id="masthead" role="banner">
 
-   <button class="hamburger hamburger--boring btn-floating white" type="button">
+   <button class="hamburger hamburger--boring btn-floating teal" type="button">
      <span class="hamburger-box">
        <span class="hamburger-inner"></span>
      </span>
@@ -9,13 +9,13 @@
 
    <!-- De aca para abajo, es de der a izq  -->
 
-   <a class="cart btn-floating white" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
+   <a class="cart btn-floating teal" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
 
    <% if (locals.user) { %>
    <!-- Dropdown Trigger -->
-    <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'>
+    <a class="cart dropdown-trigger btn-floating teal" href="#" data-target='dropdown1'>
      <% let nombre = locals.user.name  %>
-     <h4 class="black-text center-align letra-inicial"><%= nombre.slice(0,1)  %> </h4>
+     <h4 class="orange-text center-align letra-inicial"><%= nombre.slice(0,1)  %> </h4>
     </a>
    <!-- Dropdown Structure -->
    <ul id='dropdown1' class='dropdown-content'>
@@ -32,8 +32,8 @@
     </ul>
     <% }else{ %>
       <!-- Dropdown Trigger -->
-      <a class="cart dropdown-trigger btn-floating white" href="#" data-target='dropdown1'><i
-         class="material-icons icono-usuario">person_outline</i></a>
+      <a class="cart dropdown-trigger btn-floating teal" href="#" data-target='dropdown1'>
+        <i class="material-icons icono-usuario">person_outline</i></a>
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
         <li><a href="/users/login">Inicia Sesión</a></li>

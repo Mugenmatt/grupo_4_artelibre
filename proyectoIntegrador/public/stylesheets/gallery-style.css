@@ -6,7 +6,7 @@
 /*----------COLUMNA IZQ (filtros-busqueda)-------------*/
 
 aside {
-    width: 25%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -29,11 +29,7 @@ aside .collapsible {
     background-color: transparent;
     border-bottom: none;
     font-weight: 600;
-}
-
-.titulo-desplegable .flechita {
-    margin-left: auto;
-    margin-right: 2%;
+    justify-content: space-between;
 }
 
 form.buscador-artistas {
@@ -41,7 +37,7 @@ form.buscador-artistas {
     justify-content: end;
     flex-direction: column;
     align-items: center;
-
+    float: right;
 }
 
 .buscador-artistas div.autocomplete {
@@ -56,6 +52,11 @@ form.buscador-artistas {
     cursor: default;
     width: 80%;
     margin: 0;
+}
+
+.collapsible-header i.flechita {
+    margin: 0;
+
 }
 
 .buscador-artistas label {
@@ -86,6 +87,11 @@ form.buscador-artistas {
 }
 
 /*---------- COLUMNA DERECHA (productos-resultados)-------------*/
+
+div.col.container.derecha {
+    width: 80%;
+    max-width: 1400px;
+}
 
 .col .row {
     margin-left: 0;
@@ -121,7 +127,7 @@ form.buscador-artistas {
     font-size: 1.2em;
 }
 
-.btn-flat {
+.boton-carrito {
     line-height: 0;
     margin: 0 20px 10px 20px
 }

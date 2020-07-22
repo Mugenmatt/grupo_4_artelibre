@@ -168,7 +168,7 @@ button:focus {
 .hamburger-inner::after {
   width: 30px;
   height: 2px;
-  background-color: black;
+  background-color: white;
   border-radius: 4px;
   position: absolute;
   transition-property: -webkit-transform;
@@ -181,7 +181,7 @@ button:focus {
 #masthead.is-active .hamburger-inner,
 #masthead.is-active .hamburger-inner::before,
 #masthead.is-active .hamburger-inner::after {
-  background-color: #000;
+  background-color: white;
 }
 
 .hamburger-inner::before,
@@ -442,7 +442,7 @@ button:focus {
 }
 
 .btn-floating i {
-  color: black;
+  color: white;
 }
 
 .icono-usuario {
@@ -473,13 +473,13 @@ button:focus {
 }
 
 .btn-cerrarSesion{
-  font-family: 'Hind',
-  sans-serif;
+  font-family: 'Hind', sans-serif;
   height:auto;
   text-transform:none;
-  line-height: 1.15;
+  line-height: 1.15rem;
   color: var(--tealdark);
   font-size: 1rem;
+  margin: 0;
 }
 
 h4.letra-inicial {

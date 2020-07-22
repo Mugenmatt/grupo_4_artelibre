@@ -26,31 +26,39 @@
                 <p>Obras publicadas</p>
                 <p>vendidos</p>
             </div>
-            <div class="section row center-align envios">
+            
+            <div class="divider"></div>
+            <!-- Metodos de envios -->
+            <div class="section">
+                <h5 class="center-align">Metodos de envios</h5>
+            </div>
+            
+            <div class="section row center-align metodos-envios">
+                
+                <% if (artista.mailShipping == 1){ %>
                 <div class="col s4">
-                    <!-- Promo Content 1 goes here -->
-                    <% if (artista.mailShipping == 1){ %>
-                        <i class="material-icon valign-wrapper">
-                            local_shipping
-                        </i>
-                    <% } %>
+                    <i class="material-icons valign-wrapper">
+                        local_shipping
+                    </i>
                 </div>
+                <% } %>
+                
+                <% if (artista.privateShipping == 1){ %>
                 <div class="col s4">
-                    <!-- Promo Content 2 goes here -->
-                    <% if (artista.privateShipping == 1){ %>
-                    <i class="material-icon valign-wrapper">
+                    <i class="material-icons valign-wrapper">
                         motorcycle
                     </i>
-                    <% } %>
                 </div>
+                <% } %>
+                
+                <% if (artista.noShipping == 1){ %>
                 <div class="col s4">
-                    <!-- Promo Content 3 goes here -->
-                    <% if (artista.noShipping == 1){ %>
-                    <i class="material-icon valign-wrapper">
+                    <i class="material-icons valign-wrapper">
                         home
                     </i>
-                    <% } %>
                 </div>
+                <% } %>
+                
             </div>
         </div>
         </aside>
