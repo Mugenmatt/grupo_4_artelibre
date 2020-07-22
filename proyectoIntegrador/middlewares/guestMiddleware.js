@@ -1,7 +1,7 @@
 function guestMiddleware(req, res, next) {
 
     if(req.session.user == undefined) {
-        next();
+        return next();
     } else {
         return res.redirect('/')
     }

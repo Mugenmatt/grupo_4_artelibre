@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
+const myartController = require('../controllers/myartController');
 const multer = require("multer");
 const path = require('path');
 
@@ -84,12 +85,13 @@ router.delete('/profile',authMiddleware, usersController.profileDelete);
 router.post('/profile',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
 router.delete('/profile/adress',authMiddleware, usersController.profileDeleteAdress);
 
-router.get('/profile/myart', authMiddleware, usersController.showMyart );
-router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, usersController.createMyart );
-router.delete('/profile/myart', authMiddleware, usersController.deleteMyart );
-router.get('/profile/myart/:id', authMiddleware,usersController.editMyart );
-router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,usersController.processEditMyart );
+router.get('/profile/myart', authMiddleware, myartController.showMyart );
+router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, myartController.createMyart );
+router.delete('/profile/myart', authMiddleware, myartController.deleteMyart );
+router.get('/profile/myart/:id', authMiddleware,myartController.editMyart );
+router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,myartController.processEditMyart );
 
-router.get('/profile/misventas', authMiddleware, usersController.showMyorders);
+router.get('/profile/misventas', authMiddleware, usersController.showMisventas);
+router.get('/profile/miscompras', authMiddleware, usersController.showMiscompras);
 
 module.exports = router;
