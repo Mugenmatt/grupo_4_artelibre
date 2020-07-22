@@ -22,10 +22,8 @@ const galleryController = {
         
       Promise.all([artistas,obras])
         .then(function([artistas,obras]){
-          const nombresArtistas = artistas.map(artista=>{
-            return artista.username
-          })
-          return res.render('gallery',{artistas,obras,nombresArtistas})
+          
+          return res.render('gallery',{artistas,obras})
         })
         .catch(errors=>console.log(errors));
     },

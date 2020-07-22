@@ -89,12 +89,17 @@
 
                                 <p class="precio left">$<%=cuadro.price%></p>
 
-                                <form action="/cart" method="POST" class="right">
-                                    <input type="hidden" name="productId" value="<%= cuadro.id %> ">
-                                    <button class="btn-flat waves-effect waves-light" type="submit" name="action">
-                                        <i class="material-icons prefix small">local_mall</i>
-                                    </button>
-                                </form>
+                                <% if (cuadro.status == 0) { %>
+                                 
+                                    <form action="/cart" method="POST" class="right">
+                                        <input type="hidden" name="productId" value="<%= cuadro.id %> ">
+                                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
+                                            <i class="material-icons prefix small">local_mall</i>
+                                        </button>
+                                    </form>
+                                <% }else{ %>
+                                    <p style="display: flex; justify-content: end; color: red;" >Vendido</p>
+                                <% } %>
                             </div>
                         </div>
                     <% } %>
