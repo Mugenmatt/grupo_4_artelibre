@@ -356,7 +356,15 @@ main {
 
 /* ================================ MEDIA QUERIES ================================ */
 
-
+@media(max-width:1000px) {
+    .contenedor-comentarios .formulario-comentario .enviarComentario {
+        width: 25%;
+        margin: 4% 73%;
+        background: var(--white);
+        color: var(--orangedark);
+        font-size: 1.2rem;
+    }
+}
 
 @media (max-width: 600px) {
 
@@ -368,5 +376,10 @@ main {
     .white-text {
         text-align: center;
     }
+
+    .contenedor-comentarios .formulario-comentario .enviarComentario {
+        width: 100%;
+        margin: 10% 0;
+    }        
     
 }
