@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     idUser: DataTypes.INTEGER,
     imageFile: DataTypes.STRING,
     
-  }, {tablename: "products"});
+  }, {tableName: "products"});
 
   Product.associate = function(models) {
 

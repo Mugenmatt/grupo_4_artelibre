@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     idUser: DataTypes.INTEGER
 
-  }, {tablename: "adresses"});
+  }, {tableName: "adresses"});
 
   Adress.associate = function(models) {
       

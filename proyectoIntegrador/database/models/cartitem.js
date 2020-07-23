@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     idProduct: DataTypes.INTEGER,  
     idSeller: DataTypes.INTEGER
 
-  }, {tablename: "cartitems"});
+  }, {tableName: "cartitems"});
 
   Cartitem.associate = function(models) {
 

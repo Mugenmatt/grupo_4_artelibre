@@ -227,11 +227,11 @@
             
                 <div class="centrador centrador-contactanos card-panel">
                     <h4 class="subtitulo center-align">Contactános</h4>
-                    <form class="formulario-contactanos col s12" action="" method="GET">
+                    <form class="formulario-contactanos col s12" action="/" method="POST">
             
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="fullname" type="text" class="validate" name="fullname">
+                                <input id="fullname" type="text" class="validate" name="nombre">
                                 <label class="labelForm labelName" for="fullname">Tu nombre y apellido</label>
                             </div>
             
@@ -242,12 +242,12 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <textarea id="textarea1" class="materialize-textarea" name="consulta" ></textarea>
                                 <label class="labelForm labelMessage" for="textarea1">Tu mensaje</label>
                             </div>
                         </div>
                         <div class="row">
-                            <button class="waves-effect waves-teal btn-flat center-align" type="submit" name="action"
+                            <button class="waves-effect waves-teal btn-flat center-align" type="submit" 
                                 style="margin: auto;">Enviar
                             </button>
                         </div>
