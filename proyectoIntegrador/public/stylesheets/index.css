@@ -221,6 +221,7 @@ h1, h3 {
     justify-content: center;
     color: var(--white);
     margin-top: 0;
+    font-size: 3rem;
     line-height: 0;
     font-weight: 400;
     padding-top: 3.5%;

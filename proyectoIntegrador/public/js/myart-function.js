@@ -19,3 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
 if (txt.length > 0) {
     document.querySelector("#test2").style.display = "flex"
 }
+
+ document.addEventListener('DOMContentLoaded', function () {
+     var elems = document.querySelectorAll('.collapsible');
+     var instances = M.Collapsible.init(elems, options);
+ });

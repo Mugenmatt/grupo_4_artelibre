@@ -35,6 +35,10 @@ div.card-stacked p {
     min-height: 81.4vh;
 }
 
+p.artista {
+    margin: 0;
+}
+
 /* ----------------------------- MEDIAQUERIES ----------------------------- */
 
 

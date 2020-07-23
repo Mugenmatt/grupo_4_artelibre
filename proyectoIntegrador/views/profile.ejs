@@ -8,8 +8,30 @@
     </div>
 
 <main class="todo container">
-
     <!--form edicion datos-->
+    <div class="section row s12 links">
+        <div class="col">
+            <h6>
+                <a href="profile/myart">
+                    Mis publicaciones <i class="material-icons small fix"">palette</i>
+                </a> 
+            </h6>
+        </div>
+        <div class="col">
+            <h6>
+                <a href="profile/misventas">
+                    Mis ventas <i class="material-icons small fix"">palette</i>
+                </a> 
+            </h6>
+        </div>
+        <div class="col">
+            <h6>
+                <a href="profile/miscompras">
+                    Mis compras <i class="material-icons small fix"">palette</i>
+                </a> 
+            </h6>
+        </div>
+    </div>
     <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT" id="UserEdit">
         <div class="row center-align card-panel">
 
@@ -241,30 +263,6 @@
                     </div>
             </div>
         </li>
-        <li>
-            <div class="collapsible-header">
-                <h6> Mis publicaciones <i class="material-icons small fix"">palette</i> </h6>
-            </div>
-            <div class="collapsible-body">
-                <span>Lorem ipsum dolor sit amet.</span>
-                <p>
-                    <a href="profile/myart">Ver todas</a>
-                </p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <h6> Mis ventas <i class="material-icons small fix">palette</i> </h6>
-                
-            </div>
-            <div class=" collapsible-body">              
-                <span>Lorem ipsum dolor sit amet.</span>
-                <p class="valign-wrapper right-align ">
-                    <a href="profile/misventas">Ver todas</a>
-                </p>
-            </div>
-        </li>
-
     </ul>
                
 </main>
