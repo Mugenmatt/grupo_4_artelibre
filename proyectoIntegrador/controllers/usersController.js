@@ -47,18 +47,17 @@ const usersController ={
    
                if(user){
                   if(bcryptjs.compareSync(req.body.password, user.password)){
-                     let userSession = user;
+                    let userSession = user;
    
-                     delete userSession.password;
-                     delete userSession.password2;
-   
-                     req.session.user = userSession;
+                    delete userSession.dataValues.password;
+                    
+                    req.session.user = userSession;
 
-                     if (req.body.recordar) {
-                         res.cookie("id",userSession.id,{maxAge: 1000 * 60 * 60 * 24 })
+                    if (req.body.recordar) {
+                        res.cookie("id",userSession.id,{maxAge: 1000 * 60 * 60 * 24 })
                      }
    
-                     return res.redirect('/');
+                    return res.redirect('/');
    
                   } else {
                     return res.render('login',{error:'Usuario y/o contraseña no coinciden'})
@@ -95,7 +94,6 @@ const usersController ={
 
         let usuarioEnSesion= req.session.user;
         const errors = validationResult(req);
-        
         if (errors.isEmpty()) {
     
             User.update(

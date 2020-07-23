@@ -11,7 +11,7 @@ module.exports = function(req,res,next){
         .then(function(user){
             if (user) {
                 let usuario=user;
-                delete usuario.password;
+                delete usuario.dataValues.password;
 
                 req.session.user = usuario;
                 res.locals.user = usuario;
@@ -24,7 +24,7 @@ module.exports = function(req,res,next){
         .then(function(user){
             if (user) {
                 let usuario=user;
-                delete usuario.password;
+                delete usuario.dataValues.password;
 
                 req.session.user = usuario;
                 res.locals.user = usuario;

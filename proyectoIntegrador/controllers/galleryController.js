@@ -38,6 +38,25 @@ const galleryController = {
       })
       .catch(errors=>console.log(errors));
 
+    },
+
+    api: function(req,res){
+
+
+      User.findAll({
+        where:{
+          rol:1
+        }
+      })
+      .then((artistasEncontrados)=>{
+        let artistas= artistasEncontrados;
+
+        artistas.forEach(artista => {
+          delete artista.dataValues.password
+        });
+
+        return res.json(artistas)
+      })
     }
 }
 
