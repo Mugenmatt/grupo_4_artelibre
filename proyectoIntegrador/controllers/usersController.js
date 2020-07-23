@@ -1,6 +1,6 @@
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const {User, Adress, Cartitem}= require('../database/models/')
+const {User, Adress, Cartitem, Order}= require('../database/models/')
 
 
 const usersController ={
@@ -254,11 +254,9 @@ const usersController ={
 
         let usuarioEnSesion = req.session.user;
 
-        return res.send("ruta en construccion")
-
-        Cartitem.findAll({
+        Order.findAll({
             where: {
-                idUser: usuarioEnSesion.id
+                userId: usuarioEnSesion.id
             },
             
             include: {
@@ -266,8 +264,8 @@ const usersController ={
                 paranoid: false
             }
         })
-        .then(items=>{
-            return res.render('miscompras',{items})
+        .then(ordenes=>{
+            return res.render('miscompras',{ordenes})
         })
         .catch(errors => console.log(errors))
 
