@@ -1,5 +1,5 @@
 main.todo.container {
-    margin-top: 10%;
+    margin-top: 8%;
     min-height: 74.3vh;
 }
 
@@ -10,6 +10,7 @@ tr td.botones-funciones {
 td,
 th {
     text-align: center;
+    vertical-align: middle;
 }
 
 .truncated {
@@ -54,4 +55,12 @@ main a.linkprofile {
 
 a.linkprofile i.material-icons {
     vertical-align: middle;
+}
+
+.imagen-producto {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    margin-right: auto;
+    margin-left: auto;
 }

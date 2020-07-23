@@ -108,9 +108,10 @@ div.col.container.derecha {
 }
 
 .precio {
-    margin: 0px 20px;
+    margin: 0px 5%;
     font-size: 1.4em;
 }
+
 
 .autor {
     margin-left: 20px;

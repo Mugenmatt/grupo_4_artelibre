@@ -28,7 +28,9 @@
             <% for(let item of items) { %>
                 <tr>
                     <td>
-                        <img src="/images/products/<%= item.product.imageFile %> " alt="Imagen" class="responsive-img" width="100">
+                        <div class="card imagen-producto"
+                            style="background-image:url(/images/products/<%= item.product.imageFile %>">
+                        </div>
                     </td>
                     <td><%= item.product.name %> </td>
                     <td > <%= new Date(item.updatedAt).toLocaleDateString()%> </td>

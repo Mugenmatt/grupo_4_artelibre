@@ -87,9 +87,9 @@
                                     <p class="autor"> - <%=artista.username%> </p>
                                 </div>
 
-                                <p class="precio left">$<%=cuadro.price%></p>
-
                                 <% if (cuadro.status == 0) { %>
+
+                                    <p class="precio left">$ <%=cuadro.price%></p>                              
                                  
                                     <form action="/cart" method="POST" class="right">
                                         <input type="hidden" name="productId" value="<%= cuadro.id %> ">
@@ -98,7 +98,9 @@
                                         </button>
                                     </form>
                                 <% }else{ %>
-                                    <p style="display: flex; justify-content: end; color: red;" >Vendido</p>
+                                    <p class="center-align orange-text text-darken-2">Vendido
+                                        <i class="material-icons tiny">local_offer</i>
+                                    </p>
                                 <% } %>
                             </div>
                         </div>

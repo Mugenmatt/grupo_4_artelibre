@@ -48,47 +48,12 @@ div.section.metodos-envios div.col {
     margin-top: 1.5%;
 }
 
-.por-encima {
-    background-color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    width: 100%;
-    top: -65px;
-    visibility: hidden;
+.info-cuadro {
+    margin: 0;
 }
 
-.contenido-carta:hover .por-encima {
-    visibility: visible;
-}
-
-.por-encima a {
-    margin: 4%;
-}
-
-.por-encima a i {
-    color: var(--tealdark);
-}
-
-.por-encima .precio {
-    margin-left: 4%;
-    width: 60%;
-}
-
-.por-debajo {
-    position: relative;
-    top: -65px;
-}
-
-.por-debajo h6 {
-    font-weight: 600;
-    margin-bottom: 0px;
-}
-
-.por-debajo p{
-    margin-top: 0px;
-
+p.precio { 
+    margin-left: 5%;
 }
 
 /* Masonry grid */

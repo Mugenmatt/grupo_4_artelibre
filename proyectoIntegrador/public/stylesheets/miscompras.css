@@ -20,3 +20,9 @@ li.active div.collapsible-body.orden-contenido span {
     justify-content: space-around;
     align-items: center;
 }
+
+.imagen-producto {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}

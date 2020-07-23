@@ -63,7 +63,7 @@
                         <p class="autor"> - <%=cuadro.user.username%> </p>
                       </div>
 
-                      <p class="precio left">$<%=cuadro.price%></p>
+                      <p class="precio left">$ <%=cuadro.price%></p>
                       
                       <form action="/cart" method="POST" class="right">
                           <input type="hidden" name="productId" value="<%= cuadro.id %> ">

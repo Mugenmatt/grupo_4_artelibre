@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head', {title: 'Obra X', css: 'product.css'}) %>
+<%- include('partials/head', {title: 'Arte Libre', css: 'product.css'}) %>
 <body>
     
       <div class="hero">
@@ -60,9 +60,9 @@
             <p class="white-text"><%= obra.description %></p>
         </div>
         <div class="divider"></div>
+        <% if (obra.status == 0) { %>
         <div class="row caja-precio-carrito section center-align">
             <h5 class="white-text"> $ <%= obra.price %></h5>
-            <% if (obra.status == 0) { %>
                 <% if (! enCarrito) { %>
                     <form action="/cart" method="POST">
                         <input type="hidden" name="productId" value=<%= obra.id %> >
@@ -72,12 +72,16 @@
                     </form>            
                  
                 <% } else { %>
-                    <p>Ya agregado</p>
+                    <p>En carrito</p>
                 <% } %>
-            <% }else{ %>
-                <h2 style="color: red;" >Vendido</h2>
-            <% } %>
         </div>
+        <% }else{ %>
+            <div class="section">
+            <p class="center-align white-text ">Vendido
+                <i class="material-icons tiny">local_offer</i>
+            </p>
+            </div>
+        <% } %>
     </div>
 
 </div>
@@ -131,17 +135,35 @@
 
                     <div class="divider"></div>
 
-                    <div class="col s4 center-align">
+                    <div class="col s6 center-align">
                         <!-- Promo Content 1 goes here -->
-                        <h6 class="white-text">Método de envío</h6>
+                        <div class="section">
+                            <h6 class="white-text">Método de envío 
+                                <i class="material-icons valign-wrapper">
+                                    local_shipping
+                                </i>
+                            </h6>
+                        </div>
+                        <div class="metodos-envio">                        
+                            <% if (obra.user.mailShipping == 1){ %>
+                                <li class="white-text"> por correo </li>
+                            <% } %>
+    
+                            <% if (obra.user.privateShipping == 1){ %>
+                                <li class="white-text"> por mensajeria privada </li>
+                            <% } %>
+    
+                            <% if (obra.user.noShipping == 1){ %>
+                                <li class="white-text"> retiro en domicilio del artista </li>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="col s4 center-align">
-                        <!-- Promo Content 2 goes here -->
-                        <h6 class="white-text">Medios de pago</h6>
-                    </div>
-                    <div class="col s4 center-align">
+
+                    <div class="col s6 center-align">
                         <!-- Promo Content 3 goes here -->
-                        <h6 class="white-text">Local/Ubicacion</h6>
+                        <div class="section">
+                            <h6 class="white-text">Ubicacion</h6>
+                        </div>
 
                     </div>
 

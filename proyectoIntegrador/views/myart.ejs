@@ -141,7 +141,10 @@
         <tbody>
             <% for(let product of user.products) { %>
                 <tr>
-                    <td><img src="/images/products/<%= product.imageFile %> " alt="Imagen" class="responsive-img" width="100"></td>
+                    <td>
+                        <div class="card imagen-producto" style="background-image:url(/images/products/<%= product.imageFile %>)">
+                        </div>
+                    </td>
                     <td><%= product.name %> </td>
                     <td class="truncated">
                             <%= product.description %> 
