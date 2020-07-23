@@ -28,6 +28,7 @@
 div.foto-perfil .btn-flat {
     text-align: center;
     margin-top: 30%;
+    display: none;
 }
 
 
