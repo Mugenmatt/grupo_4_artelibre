@@ -259,11 +259,12 @@ const usersController ={
                 userId: usuarioEnSesion.id
             },
             
-            include: {
-                all:true,
-                paranoid: false
-            }
-        })
+            include: [{
+                   association: 'cartitems',
+                   include: ['product', 'seller']
+                }]
+            })
+            
         .then(ordenes=>{
             return res.render('miscompras',{ordenes})
         })

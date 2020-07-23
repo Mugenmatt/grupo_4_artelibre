@@ -1,0 +1,22 @@
+.titulos-tabla {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orden-titulo {
+    display: flex;
+    justify-content: space-around;
+}
+
+li.active div.collapsible-body.orden-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li.active div.collapsible-body.orden-contenido span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

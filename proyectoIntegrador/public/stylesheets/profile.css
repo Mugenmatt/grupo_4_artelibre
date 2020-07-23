@@ -13,6 +13,14 @@
     margin-bottom: 2%;
 }
 
+.links h6 a{
+    color: var(--tealdark);
+}
+
+.links h6 a:hover {
+    color: var(--orangedark);
+}
+
 .row div.foto-perfil.col.m2.s4 {
     width: 150px;
     height: 150px;
@@ -79,6 +87,14 @@ div.collapsible-header {
      box-shadow: none;
 
  }
+
+#mis-direcciones div h6 {
+    color: var(--tealdark);
+}
+
+#mis-direcciones div h6:hover {
+    color: var(--orangedark);
+}
 
 
  div.sin-tamaño { 

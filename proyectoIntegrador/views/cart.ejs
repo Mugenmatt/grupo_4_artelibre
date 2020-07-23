@@ -48,14 +48,9 @@
                             </button> -->
                             <!-- <a class="btn-flat boton-eliminar"><i class="material-icons">close</i></a> -->
                             
-                                <p class="left-align flow-text"> <%= item.seller.name %>  </p>
+                                <p class="left-align flow-text artista"> <%= item.seller.name %>  </p>
                                 <h6 class="left-align flow-text"> <%= item.product.name %> </h6>
                                 <blockquote> <%= item.product.description %>  </blockquote>
-                                <% if (item.product.quantity > 1) { %>
-                                    <form action="/cart?_method=PUT" method="post">
-                                       <input type="number" max="<%item.product.quantity%>" name="quantity">
-                                    </form>
-                                <% } %>
                                 <p class="right-align flow-text">$<%= item.price %>  </p>
                             
                         </div>
