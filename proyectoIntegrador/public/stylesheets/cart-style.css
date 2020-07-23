@@ -27,8 +27,8 @@ div.card-stacked form {
     text-align: end;
 }
 
-div.card-stacked p {
-    padding: 2%;
+div.card-stacked p.precio {
+    margin: 0;
 }
 
 .container {

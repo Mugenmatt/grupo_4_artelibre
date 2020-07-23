@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {title: 'Carrito', css: 'cart-style.css'}) %>
+<%- include('partials/head', {title: 'Carrito', css: 'cart-style.css', labs:""}) %>
 
 <body>
     <div class="hero">
@@ -14,9 +14,9 @@
             <% if (items < 1 ) { %>
             <div class="section"></div>
             <div class="section"> 
-                <h3 class="center-align">No agregaste nada todavia...
+                <h5 class="center-align">No agregaste nada todavia...
                     <br><br> <a class="link-galeria" href="/gallery">Explorá la galeria !</a>
-                </h3>
+                </h5>
             </div>
             <div class="section"></div>
             <div class="section"></div>
