@@ -24,18 +24,34 @@ const cartController = {
       let productId = req.body.productId;
       let usuarioEnSesion= req.session.user;
 
-      Product.findByPk(productId)
-      .then(product=>{
-        let item= {
-          price: product.price,
-          status: 0,
-          idUser: usuarioEnSesion.id,  
-          idOrder: null,  
-          idProduct: productId,  
-          idSeller: product.idUser
+
+      Cartitem.findOne({
+        where: {
+          idUser: usuarioEnSesion.id,
+          idProduct: productId,
+          status: 0
+        }
+      })
+      .then(item=>{
+        if (!item) {
+          return Product.findByPk(productId)
         }
 
-        return Cartitem.create(item)
+      })
+      .then(product=>{
+        if(typeof product == 'object'){
+
+          let item= {
+            price: product.price,
+            status: 0,
+            idUser: usuarioEnSesion.id,  
+            idOrder: null,  
+            idProduct: productId,  
+            idSeller: product.idUser
+          }
+  
+          return Cartitem.create(item)
+        }
       })
       .then(()=>{
         return res.redirect('/cart')
