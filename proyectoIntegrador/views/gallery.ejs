@@ -33,7 +33,7 @@
                     </div>
                 </li>
                 <div class="divider"></div>
-                
+            </ul>   
         </aside>
 
         <div class="col s12 m8 l11 container derecha">
@@ -51,27 +51,27 @@
 
                 <%for (let cuadro of obras) { %>
                 
-              <div class="brick card">
-                  <a href="/product/<%=cuadro.id%>">
-                      <img src="\images\products\<%=cuadro.imageFile%> " alt="<%=cuadro.name%>"
-                          title="<%=cuadro.name%>">
-                  </a>
-                  <div class="info-cuadro row">
-                      <div>
-                        <h6 class="titulo-obra"><%=cuadro.name%></h6>
-                        <p class="autor"> - <%=cuadro.user.username%> </p>
-                      </div>
+                    <div class="brick card">
+                        <a href="/product/<%=cuadro.id%>">
+                            <img src="\images\products\<%=cuadro.imageFile%> " alt="<%=cuadro.name%>"
+                                title="<%=cuadro.name%>">
+                        </a>
+                        <div class="info-cuadro row">
 
-                      <p class="precio left">$ <%=cuadro.price%></p>
-                      
-                      <form action="/cart" method="POST" class="right">
-                          <input type="hidden" name="productId" value="<%= cuadro.id %> ">
-                          <button class="btn-flat waves-effect waves-light boton-carrito" type="submit" name="action">
-                              <i class="material-icons prefix small">local_mall</i>
-                          </button>
-                      </form>
-                  </div>
-              </div>
+                          <h6 class="titulo-obra"><%=cuadro.name%></h6>
+                          <a class="autor teal-text left" href="gallery/<%=cuadro.idUser%>"> - <%=cuadro.user.username%> </a>
+
+                          <form action="/cart" method="POST" class="right">
+                              <input type="hidden" name="productId" value="<%= cuadro.id %> ">
+                              <button class="btn-flat waves-effect waves-light boton-carrito" type="submit" name="action">
+                                  <i class="material-icons prefix medium ">local_mall</i>
+                              </button>
+                          </form>
+
+                          <p class="precio right teal-text">$ <%=cuadro.price%></p>
+                          
+                        </div>
+                    </div>
 
                 <% } %>
             </div>

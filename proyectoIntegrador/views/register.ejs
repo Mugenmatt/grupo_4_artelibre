@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {title: 'Registrate', css: 'register-style.css'}) %>
+<%- include('partials/head', {title: 'Registrate', css: 'register-style.css', labs:""}) %>
 
 <body>
     <div class="hero">
@@ -55,9 +55,9 @@
                     value="<%= old.email %>" <% } %>>
                 <label for="email">E-mail</label>
                 <% if(typeof errors != "undefined"){ %>
-                <% if(typeof errors.email != "undefined"){ %>
-                <span class="helper-text"><%= errors.email.msg  %> </span>
-                <% } %>
+                   <% if(typeof errors.email != "undefined"){ %>
+                       <span class="helper-text"><%= errors.email.msg  %> </span>
+                   <% } %>
                 <% } %>
             </div>
         </div>

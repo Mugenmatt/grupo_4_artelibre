@@ -43,8 +43,8 @@
     </div>
     <div class="col s12 m6 caja-derecha">
         <div class="row valign-wrapper">
-            <div class="col s2">
-                <img src="/images/icons/usuario.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            <div class="col s2 circle responsive-img imagen-avatar"
+                style="background-image:url(/images/users/<%= obra.user.avatar %>">
             </div>
             <div class="col s10">
                 <span class="white-text">
@@ -184,14 +184,30 @@
         <section class="contenedor-comentarios">
 
             <div class="caja-comentarios-titulo">
-                <h4 class="titulo-comentarios">Comentarios</h4>
+                <h4 class="titulo-comentarios left-align">Comentarios</h4>
             </div>
 
+            <ul class="collection comentarios transparent">
+                <li class="collection-item comentario-item">Alvin</li>
+                <li class="collection-item comentario-item">Alvin</li>
+                <li class="collection-item comentario-item">Alvin</li>
+                <li class="collection-item comentario-item">Alvin</li>
+            </ul>
             <div class="caja-comentarios">
                 <p class="comentarioX">¡Gran artista!</p>
                 <p class="comentarioX">Qué agradable sujeto</p>
                 <p class="comentarioX">Me encanta su estilo.</p>
             </div>
+
+                <form class="row s12 white crear-comentario">
+                    <div class="col s10 input-field">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Comentario</label>
+                    </div>
+                    <button class="col s2 btn waves-effect waves-light" type="submit">
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
 
             <form class="formulario-comentario" action="">
                 

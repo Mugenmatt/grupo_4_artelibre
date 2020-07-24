@@ -13,12 +13,9 @@
         <div class="fixeado">
             <div class="section perfil-artista">
                 <h4><%= artista.username %> </h4>
+                
                 <img class="responsive-img" src="\images\users\<%= artista.avatar%>">
                 <h6><%= artista.name %> <%= artista.lastName %> </h6>
-            </div>
-            <div class="divider"></div>
-            <div class="section contacto">
-                <p><%= artista.email %> </p>
             </div>
             <div class="divider"></div>
             <div class="section ranking">
@@ -82,23 +79,21 @@
                                     title="<%=cuadro.name%>">
                             </a>
                             <div class="info-cuadro row">
-                                <div>
-                                    <h6 class="titulo-obra"><%=cuadro.name%></h6>
-                                    <p class="autor"> - <%=artista.username%> </p>
-                                </div>
+                                <h6 class="titulo-obra"><%=cuadro.name%></h6>
 
-                                <% if (cuadro.status == 0) { %>
-
-                                    <p class="precio left">$ <%=cuadro.price%></p>                              
+                                <% if (cuadro.status == 0) { %>                            
                                  
                                     <form action="/cart" method="POST" class="right">
                                         <input type="hidden" name="productId" value="<%= cuadro.id %> ">
-                                        <button class="btn-flat waves-effect waves-light" type="submit" name="action">
+                                        <button class="btn-flat waves-effect waves-light boton-carrito" type="submit"
+                                            name="action">
                                             <i class="material-icons prefix small">local_mall</i>
                                         </button>
                                     </form>
+
+                                    <p class="precio right teal-text">$ <%=cuadro.price%></p>
                                 <% }else{ %>
-                                    <p class="center-align orange-text text-darken-2">Vendido
+                                    <p class="center-align right orange-text text-darken-2 sold-out">Vendido
                                         <i class="material-icons tiny">local_offer</i>
                                     </p>
                                 <% } %>

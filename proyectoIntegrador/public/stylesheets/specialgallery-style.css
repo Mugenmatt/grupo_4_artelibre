@@ -53,9 +53,29 @@ div.section.metodos-envios div.col {
 }
 
 p.precio { 
-    margin-left: 5%;
+    margin: 0px;
+    font-size: 1.4em;
 }
 
+.titulo-obra {
+    text-align: center;
+    font-weight: 700;
+    margin: 10px 0px;
+    font-size: 1.2em;
+}
+
+.boton-carrito {
+    line-height: 0;
+    margin: 0;
+    color: var(--tealdark);
+}
+
+.sold-out {
+    margin: auto;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
 /* Masonry grid */
 .masonry {
     transition: all .5s ease-in-out;

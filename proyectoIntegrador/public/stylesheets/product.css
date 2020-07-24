@@ -212,9 +212,25 @@ main {
     font-weight: 400;
 }
 
+.row.valign-wrapper div.col.imagen-avatar {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+}
 
 /* ========================= COMENTARIOS ========================= */
 
+.crear-comentario {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.crear-comentario button {
+    
+}
 
 .contenedor-comentarios {
     display: flex;
