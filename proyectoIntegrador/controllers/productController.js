@@ -1,9 +1,11 @@
-const {Product, Cartitem}= require('../database/models/');
+const {Product, Cartitem, Comentario}= require('../database/models/');
 
 const productController = {
     index: function(req, res) {
       let usuarioEnSesion= req.session.user;
       let obra;
+      let enCarrito = false;
+
       Product.findByPk(req.params.id,{
         include: ['user']
       })
@@ -22,11 +24,19 @@ const productController = {
         
       })
       .then((item=>{
-        let enCarrito = false;
         enCarrito = item? true : false;
 
-        return res.render('product',{obra,enCarrito});
+        return Comentario.findAll({
+          where: {
+            idProduct: obra.id
+          }
+        })
+
       }))
+      .then((comentarios)=>{
+        return res.render('product',{obra,enCarrito, comentarios});
+
+      })
       .catch(errors=>{
         console.log(errors);
       })

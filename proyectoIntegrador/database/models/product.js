@@ -37,6 +37,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey:"idProduct",
     })
 
+    Product.hasMany(models.Comentario, {
+      as:"comentarios",
+      foreignKey:"idProduct",
+    })
+
     Product.belongsToMany(models.Keyword,{
       as:"keywords",
       through: "productkeys",

@@ -44,6 +44,16 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey:"idUser"
     })
 
+    User.hasMany(models.Comentario,{
+      as:"comentarios",
+      foreignKey:"idUser"
+    })
+
+    User.hasMany(models.Comentario,{
+      as:"respuestas",
+      foreignKey:"idSeller"
+    })
+
     User.hasMany(models.Order,{
       as:"orders",
       foreignKey:"userId"
