@@ -8,12 +8,13 @@ body {
 }
 
 main {
-    background-color: var(--tealdark);
-    padding-top: 6%;
+    padding-top: 10%;
+    background-size: cover;
+    background-position: center;
 }
 
-.row.container {
-    margin-top: 0;
+.row.container.card-panel {
+    margin: auto;
 }
 
 /* ============================ SLIDER ============================ */
@@ -72,11 +73,12 @@ main {
     padding: 3%;
 }
 
-.contenedor-precio-descrip-user {
+section.contenedor-precio-descrip-user {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 3%;
+    margin-top: 10%;
+    background-color: white;
 }
 
 .contenedor-precio-descrip-user .caja-precio {
@@ -204,7 +206,7 @@ main {
 }
 
 .responsive-img {
-    width: 70%;
+    width: 100%;
 }
 
 .white-text {
@@ -235,9 +237,14 @@ main {
 .contenedor-comentarios {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     margin: auto;
-    margin-top: 3%;
+    padding: 5% 20%;
+    background-color: white;
+}
+
+li blockquote {
+    border-color: var(--orangelight);
 }
 
 .contenedor-comentarios .caja-comentarios-titulo {
@@ -296,7 +303,6 @@ main {
     background-color: var(--white);
     width: 100%;
     margin: auto;
-    margin-top: 4%;
     display: flex;
     flex-direction: column;
     padding: 2%;

@@ -35,14 +35,17 @@
     <form enctype="multipart/form-data" method="POST" action="/users/profile?_method=PUT" id="UserEdit">
         <div class="row center-align card-panel">
 
-                <div class="foto-perfil col s12 m4 l2 file-field input-field">
+                <div class="foto-perfil circle responsive-img col s12 m4 l2 file-field input-field"
+                <% if (user.avatar) { %>
+                    style="background-image:url(/images/users/<%= user.avatar %>"
+                <% } %> >
                     <div class="btn-flat sin-tamaño">
                         <% if (user.avatar == null) { %>
                             <i class="material-icons">insert_photo</i>
-                        <% } %>
+                            <% } %>
                         <input disabled type="file" class="boton-examinar" name="avatar" >
                     </div>
-                    <img src="/images/users/<%= user.avatar %> " alt="" class="circle responsive-img">
+                 
                     <div class="file-path-wrapper">
                         <input disabled class="file-path validate" type="text" style="display: none;">
                         <% if(typeof errors != "undefined"){ %>
@@ -53,7 +56,7 @@
                     </div>
                 </div>
 
-                <div class="col s12 m8 l4">
+                <div class="datos-user col s12 m8 l4">
                     <div class="input-field">
                         <input disabled value="<%= user.username %>" id="username" type="text" class="validate center-align" name="username" style="width: auto;"/>
                         <% if(typeof errors != "undefined"){ %>
@@ -80,7 +83,7 @@
                 </div>
 
                 <!--COL DERECHA-->
-                <div class="col s12 m10 l6">
+                <div class="datos-envios col s12 m12 l4">
                     <div class="row section">
                         <h6 class="center-align">Formas de envio</h6>
                         <div class="checkboxes-envio">
@@ -111,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-align section">
+                <div class="col s12 right right-align section div-botones">
                     <a href="" class="btn waves-effect waves-light btn-medium boton-modificar">
                         Editar mi perfil
                         <i class="material-icons right">brush</i>

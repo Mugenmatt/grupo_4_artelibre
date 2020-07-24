@@ -21,24 +21,25 @@
     color: var(--orangedark);
 }
 
-.row div.foto-perfil.col.m2.s4 {
-    width: 150px;
-    height: 150px;
-    padding: 0px;
+div.row.card-panel {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+
+form div.card-panel div.foto-perfil.file-field {
+    width: 170px;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
     background-color: var(--tealdark);
-    border-radius: 50%;
+    margin: auto;
 }
 
 div.foto-perfil .btn-flat {
     text-align: center;
-    margin-top: 30%;
-    display: none;
 }
-
 
 .foto-perfil .btn-flat i {
     color: white;
@@ -46,9 +47,21 @@ div.foto-perfil .btn-flat {
     padding: 2%;
 }
 
+input.boton-examinar {
+    height: 170px;
+    width: 170px;
+    text-align: center;
+    margin-top: -100%;
+    position: relative;
+}
 
 input.file-path.validate {
     border: none;
+}
+
+.card-panel div.datos-user,
+.card-panel div.datos-envios {
+    margin: auto;
 }
 
 div.checkboxes-envio {
@@ -59,6 +72,13 @@ div.checkboxes-envio {
 
 .checkboxes-envio p {
     margin: 4%;
+}
+
+div.div-botones {
+    position: relative;
+    margin: auto;
+    margin-right: 2%;
+    
 }
 
 input[type="text"]:not(.browser-default):disabled {

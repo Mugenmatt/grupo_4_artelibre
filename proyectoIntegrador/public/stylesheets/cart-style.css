@@ -1,6 +1,12 @@
+section.card.small {
+    height: 185px;
+}
+
 blockquote{
     border-left: 5px solid #4db6ac;
     padding: 2%;
+    width: 80%;
+    margin: 0;
 }
 
 .btn-flat.boton-eliminar {
@@ -19,16 +25,26 @@ div.contenido-item {
     justify-content: space-around;
 }
 
-.card.horizontal div.card-stacked {
+section.card.horizontal div.card-stacked {
     padding: 2%;
 }
 
-div.card-stacked form {
+section.card form {
     text-align: end;
+    width: 10%;
+    position: absolute;
+    right: 1%;
 }
 
-div.card-stacked p.precio {
-    margin: 0;
+section.card form button {
+    padding: 0;
+}
+
+p.precio-obra {
+    margin: 2%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .container {
@@ -39,6 +55,18 @@ p.artista {
     margin: 0;
 }
 
+.imagen-obra {
+    width: 250px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+p.total-productos,
+p.total-precio {
+    margin: 2%;
+}
 /* ----------------------------- MEDIAQUERIES ----------------------------- */
 
 
@@ -53,10 +81,25 @@ p.artista {
         flex-direction: column;
         align-items: center;
     }
+
+    .card.imagen-obra {
+        width: 120px;
+    }
     
 }
 
 @media (max-width: 375px) {
+
+    section.card.small {
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .card.imagen-obra {
+        width: 80%;
+        height: 100%;
+        margin: 5%;
+    }
 
     .contenedor .row {
         display: flex;

@@ -8,7 +8,7 @@
       </div>
     
     
-    <main>
+    <main style="background: rgba(0, 0, 0, .65) url('/images/products/<%= obra.imageFile %>'); background-blend-mode: darken; background-size: cover; background-position: center;">
 
 <!-- =========================================================================== -->
 <!------------------------- SLIDER --------------------------------------------->
@@ -35,57 +35,56 @@
 <!------------------- PRECIO + DESCRIPCION + DATOS DEL USUARIO -------------------->
 <!-- =========================================================================== -->
 
-<div class="row container">
-    <div class="col s12 m6 caja-izquierda">
-            <img class="responsive-img materialboxed" width="450"
-                src="../images/products/<%= obra.imageFile %> "
-                alt="">
-    </div>
-    <div class="col s12 m6 caja-derecha">
-        <div class="row valign-wrapper">
-            <div class="col s2 circle responsive-img imagen-avatar"
-                style="background-image:url(/images/users/<%= obra.user.avatar %>">
+        <div class="card-panel row container">
+            <div class="col s12 m6 caja-izquierda">
+                    <img class="responsive-img materialboxed" width="450"
+                        src="../images/products/<%= obra.imageFile %> "
+                        alt="">
             </div>
-            <div class="col s10">
-                <span class="white-text">
-                    <%= obra.user.username %>
-                </span>
-            </div>
-        </div>
-        <h4 class="white-text"><%= obra.name %></h4>
-
-        <p class="txt-tamaño white-text"><%= obra.ancho%>x<%= obra.alto %> cm</p>
-        <div class="divider"></div>
-        <div class="section">
-            <p class="white-text"><%= obra.description %></p>
-        </div>
-        <div class="divider"></div>
-        <% if (obra.status == 0) { %>
-        <div class="row caja-precio-carrito section center-align">
-            <h5 class="white-text"> $ <%= obra.price %></h5>
-                <% if (! enCarrito) { %>
-                    <form action="/cart" method="POST">
-                        <input type="hidden" name="productId" value=<%= obra.id %> >
-                        <button class="btn waves-effect waves-light boton-carrito" type="submit" name="action">Agregar
-                            <i class="material-icons right">local_mall</i>
-                        </button>
-                    </form>            
-                 
-                <% } else { %>
-                    <p>En carrito</p>
-                <% } %>
-        </div>
-        <% }else{ %>
-            <div class="section">
-            <p class="center-align white-text ">Vendido
-                <i class="material-icons tiny">local_offer</i>
-            </p>
-            </div>
-        <% } %>
-    </div>
-
-</div>
+            <div class="col s12 m6 caja-derecha">
+                <div class="row valign-wrapper">
+                    <div class="col s2 circle responsive-img imagen-avatar"
+                        style="background-image:url(/images/users/<%= obra.user.avatar %>">
+                    </div>
+                    <div class="col s10">
+                        <span class="teal-text">
+                            <%= obra.user.username %>
+                        </span>
+                    </div>
+                </div>
+                <h4 class="teal-text"><%= obra.name %></h4>
         
+                <p class="txt-tamaño teal-text"><%= obra.ancho%>x<%= obra.alto %> cm</p>
+                <div class="divider"></div>
+                <div class="section">
+                    <p class="teal-text"><%= obra.description %></p>
+                </div>
+                <div class="divider"></div>
+                <% if (obra.status == 0) { %>
+                    <div class="row caja-precio-carrito section center-align">
+                        <h5 class=teal-text"> $ <%= obra.price %></h5>
+                            <% if (! enCarrito) { %>
+                                <form action="/cart" method="POST">
+                                    <input type="hidden" name="productId" value=<%= obra.id %> >
+                                    <button class="btn waves-effect waves-light boton-carrito" type="submit" name="action">Agregar
+                                        <i class="material-icons right">local_mall</i>
+                                    </button>
+                                </form>            
+                            <% } else { %>
+                                <a class="waves-effect waves-light btn small">En carrito</a>
+                            <% } %>
+                    </div>
+                    <% }else{ %>
+                        <div class="section">
+                            <p class="center-align teal-text ">Vendido
+                                <i class="material-icons tiny">local_offer</i>
+                            </p>
+                        </div>
+                <% } %>
+            </div>
+        
+        </div>
+                
             <!--<div class="caja-precio">
 
                 <div class="precio-carrito">
@@ -123,92 +122,96 @@
                         <p class="texto-user3">Local: </p>
                     </div>
                 </div>-->
-
-        <section class="contenedor-precio-descrip-user">
-                <div class="row container">
-
-                    <div class="row center-align">
-                        <h5 class="white-text">Datos del artista</h5>
-                            <h6 class="white-text">Valoracion: <%= obra.user.averageScore %> </h6>
-                            <h6 class="white-text">Cantidad de ventas: <%= obra.user.averageScore %> </h6>
-                    </div>
-
-                    <div class="divider"></div>
-
-                    <div class="col s6 center-align">
-                        <!-- Promo Content 1 goes here -->
-                        <div class="section">
-                            <h6 class="white-text">Método de envío 
-                                <i class="material-icons valign-wrapper">
-                                    local_shipping
-                                </i>
-                            </h6>
-                        </div>
-                        <div class="metodos-envio">                        
-                            <% if (obra.user.mailShipping == 1){ %>
-                                <li class="white-text"> por correo </li>
-                            <% } %>
-    
-                            <% if (obra.user.privateShipping == 1){ %>
-                                <li class="white-text"> por mensajeria privada </li>
-                            <% } %>
-    
-                            <% if (obra.user.noShipping == 1){ %>
-                                <li class="white-text"> retiro en domicilio del artista </li>
-                            <% } %>
-                        </div>
-                    </div>
-
-                    <div class="col s6 center-align">
-                        <!-- Promo Content 3 goes here -->
-                        <div class="section">
-                            <h6 class="white-text">Ubicacion</h6>
-                        </div>
-
-                    </div>
-
-                </div>
-<!-- 
-                <div class="row s12 center-align section">
-                    <a class="waves-effect waves-light btn-small btn-masCosasArtista"
-                        href="/gallery/EJS obra.user.id EJS">Ver más del mismo artista</a>
-                </div> -->
                 
-
-        </section>
-
-<!-- =========================================================================== -->
-<!---------------------------------- COMENTARIOS ---------------------------------->
-<!-- =========================================================================== -->
-
-        <section class="contenedor-comentarios">
-
-            <div class="caja-comentarios-titulo">
-                <h4 class="titulo-comentarios left-align">Comentarios</h4>
+        <section class="contenedor-precio-descrip-user">
+        
+            <div class="row container">
+                <div class="col s4 center-align">
+                    <!-- Promo Content 1 goes here -->
+                    <i class="material-icons large teal-text">local_shipping</i>
+                    <h5 class="teal-text">Metodos de envio</h5>
+                    <% if (obra.user.mailShipping == 1){ %>
+                    <li class="black-text"> por correo </li>
+                    <% } %>
+        
+                    <% if (obra.user.privateShipping == 1){ %>
+                    <li class="black-text"> por mensajeria privada </li>
+                    <% } %>
+        
+                    <% if (obra.user.noShipping == 1){ %>
+                    <li class="black-text"> retiro en domicilio del artista </li>
+                    <% } %>
+        
+                </div>
+                <div class="col s4 center-align">
+                    <!-- Promo Content 2 goes here -->
+                    <i class="material-icons large teal-text">thumbs_up_down</i>
+                    <h5 class="teal-text"><%= obra.user.name  %> </h5>
+                    <p class="black-text">Valoracion: <%= obra.user.averageScore %></p>
+                    <p class="black-text">Ventas: <%= obra.user.averageScore %></p>
+        
+                </div>
+                <div class="col s4 center-align">
+                    <!-- Promo Content 3 goes here -->
+                      <i class="material-icons large teal-text">person_pin_circle</i>
+                      <h5 class="teal-text">Ubicacion</h5>
+                      <p class="black-text"> Ciudad, Provincia </p>
+                </div>
             </div>
+            <!-- 
+            <div class="row s12 center-align section">
+                <a class="waves-effect waves-light btn-small btn-masCosasArtista"
+                    href="/gallery/EJS obra.user.id EJS">Ver más del mismo artista</a>
+            </div> -->
+        
+        </section>
+       
 
-            <ul class="collection comentarios transparent">
-                <li class="collection-item comentario-item">Alvin</li>
-                <li class="collection-item comentario-item">Alvin</li>
-                <li class="collection-item comentario-item">Alvin</li>
-                <li class="collection-item comentario-item">Alvin</li>
-            </ul>
+
+
+    </main>
+    <!-- =========================================================================== -->
+    <!---------------------------------- COMENTARIOS ---------------------------------->
+    <!-- =========================================================================== -->
+
+    <section class="contenedor-comentarios">
+
+        <ul class="card collection with-header comentarios transparent">
+            <li class="collection-header">
+                <h4>Comentarios</h4>
+            </li>
+            <% for (let post of comentarios) { %>
+            <li class="collection-item comentario-item">
+                <%= post.comentario%>
+                <% if (post.respuesta) { %>
+                <blockquote><%= post.respuesta  %> </blockquote>
+                <% } %>
+            </li>
+            <% } %>
+            <li class="collection-item comentario-item">
+                Gran artista! Muy contenta con el cuadro que le compre. Era lo que esperaba.
+                <blockquote>Gracias! Lo deje en buenas manos. Se que lo vas apreciar mucho.</blockquote>
+            </li>
+            <li class="collection-item comentario-item">Me encanta su estilo.</li>
+        </ul>
+        <!--
             <div class="caja-comentarios">
                 <p class="comentarioX">¡Gran artista!</p>
                 <p class="comentarioX">Qué agradable sujeto</p>
                 <p class="comentarioX">Me encanta su estilo.</p>
             </div>
+            -->
 
-                <form class="row s12 white crear-comentario">
-                    <div class="col s10 input-field">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Comentario</label>
-                    </div>
-                    <button class="col s2 btn waves-effect waves-light" type="submit">
-                        <i class="material-icons right">send</i>
-                    </button>
-                </form>
-
+        <form class="row s12 white crear-comentario">
+            <div class="col s11 input-field">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Comentario</label>
+            </div>
+            <button class="col s1 btn waves-effect waves-light" type="submit">
+                <i class="material-icons center-align">send</i>
+            </button>
+        </form>
+        <!--
             <form class="formulario-comentario" action="">
                 
                 <textarea class="dejarComentario" placeholder="Escribí tu comentario aquí" name="comentario" id=""  rows="5" maxlength="30" ></textarea>
@@ -216,56 +219,54 @@
                 <input class="enviarComentario" type="submit" value="Enviar">
             
             </form>
+            -->
 
-        </section>
+    </section>
 
-<!-- =========================================================================== -->
-<!---------------------------------- SUGERENCIAS ---------------------------------->
-<!-- =========================================================================== -->
+    <!-- =========================================================================== -->
+    <!---------------------------------- SUGERENCIAS ---------------------------------->
+    <!-- =========================================================================== -->
 
-        <section class="contenedor-sugerencias">
+    <section class="contenedor-sugerencias">
 
-            <div class="caja-titulo-sugerencias">
-                <h4 class="titulo-sugerencias">Sugerencias</h4>
-            </div>
+        <div class="caja-titulo-sugerencias">
+            <h4 class="titulo-sugerencias">Sugerencias</h4>
+        </div>
 
-            <div class="slider">
-                <ul class="slides">
-                  <li>
+        <div class="slider">
+            <ul class="slides">
+                <li>
                     <img src="../images/bg/arte1.jpg"> <!-- random image -->
                     <div class="caption center-align">
-                      <h3>Titulo de la Obra</h3>
-                      <h5 class="light red-text text-lighten-3">VENDIDO</h5>
+                        <h3>Titulo de la Obra</h3>
+                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
                     </div>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <img src="../images/bg/arte2.jpg"> <!-- random image -->
                     <div class="caption left-align">
-                      <h3>Titulo de la Obra</h3>
-                      <h5 class="light red-text text-lighten-3">VENDIDO</h5>
+                        <h3>Titulo de la Obra</h3>
+                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
                     </div>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <img src="../images/bg/arte3.jpg"> <!-- random image -->
                     <div class="caption right-align">
-                      <h3>Titulo de la Obra</h3>
-                      <h5 class="light red-text text-lighten-3">VENDIDO</h5>
+                        <h3>Titulo de la Obra</h3>
+                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
                     </div>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <img src="../images/bg/arte4.jpg"> <!-- random image -->
                     <div class="caption center-align">
-                      <h3>Titulo de la Obra</h3>
-                      <h5 class="light red-text text-lighten-3">VENDIDO</h5>
+                        <h3>Titulo de la Obra</h3>
+                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
                     </div>
-                  </li>
-                </ul>
-              </div>
+                </li>
+            </ul>
+        </div>
 
-        </section>
-
-    </main>
-
+    </section>
 
 <%- include('partials/footer.ejs') %>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
