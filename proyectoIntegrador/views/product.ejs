@@ -44,7 +44,7 @@
             <div class="col s12 m6 caja-derecha">
                 <div class="row valign-wrapper">
                     <div class="col s2 circle responsive-img imagen-avatar"
-                        style="background-image:url(/images/users/<%= obra.user.avatar %>">
+                        style="background-image:url('/images/users/<%= obra.user.avatar %>')">
                     </div>
                     <div class="col s10">
                         <span class="teal-text">
@@ -62,7 +62,7 @@
                 <div class="divider"></div>
                 <% if (obra.status == 0) { %>
                     <div class="row caja-precio-carrito section center-align">
-                        <h5 class=teal-text"> $ <%= obra.price %></h5>
+                        <h5 class="teal-text"> $ <%= obra.price %></h5>
                             <% if (! enCarrito) { %>
                                 <form action="/cart" method="POST">
                                     <input type="hidden" name="productId" value=<%= obra.id %> >
@@ -185,14 +185,26 @@
                 <%= post.comentario%>
                 <% if (post.respuesta) { %>
                 <blockquote><%= post.respuesta  %> </blockquote>
+                <% } else if(locals.user.id == obra.user.id){ %>
+                    <form class="row s12 white crear-comentario" action="/product/responder" method="POST" >
+                        <div class="col s11 input-field">
+                            <input type="hidden" name="obraId" value="<%= obra.id %>" >
+                            <input type="hidden" name="comentarioId" value="<%= post.id %>" >
+                            <textarea id="textarea1" class="materialize-textarea" name="respuesta" ></textarea>
+                            <label for="textarea1">Responder</label>
+                        </div>
+                        <button class="col s1 btn waves-effect waves-light" type="submit">
+                            <i class="material-icons center-align">send</i>
+                        </button>
+                    </form>
                 <% } %>
             </li>
             <% } %>
-            <li class="collection-item comentario-item">
+            <!-- <li class="collection-item comentario-item">
                 Gran artista! Muy contenta con el cuadro que le compre. Era lo que esperaba.
                 <blockquote>Gracias! Lo deje en buenas manos. Se que lo vas apreciar mucho.</blockquote>
             </li>
-            <li class="collection-item comentario-item">Me encanta su estilo.</li>
+            <li class="collection-item comentario-item">Me encanta su estilo.</li> -->
         </ul>
         <!--
             <div class="caja-comentarios">
@@ -202,9 +214,11 @@
             </div>
             -->
 
-        <form class="row s12 white crear-comentario">
+        <form class="row s12 white crear-comentario" action="/product/comentar" method="POST" >
             <div class="col s11 input-field">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <input type="hidden" name="obraId" value="<%= obra.id %>" >
+                <input type="hidden" name="sellerId" value="<%= obra.user.id %>" >
+                <textarea id="textarea1" class="materialize-textarea" name="comentario" ></textarea>
                 <label for="textarea1">Comentario</label>
             </div>
             <button class="col s1 btn waves-effect waves-light" type="submit">

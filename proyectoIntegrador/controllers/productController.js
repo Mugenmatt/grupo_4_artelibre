@@ -41,6 +41,38 @@ const productController = {
         console.log(errors);
       })
 
+    },
+
+    comentar: function(req,res){
+      let usuarioEnSesion= req.session.user;
+      Comentario.create({
+        comentario: req.body.comentario,
+        idUser: usuarioEnSesion.id,
+        idProduct: req.body.obraId,
+        idSeller: req.body.sellerId
+      })
+      .then(()=>{
+        return res.redirect("/product/" + req.body.obraId)
+      })
+
+    },
+
+    responder: function(req,res){
+      let usuarioEnSesion= req.session.user;
+
+      Comentario.update({
+        respuesta: req.body.respuesta
+      },{
+        where: {
+          id: req.body.comentarioId,
+          idProduct: req.body.obraId
+        }
+      })
+      .then(()=>{
+        return res.redirect("/product/" + req.body.obraId)
+      })
+
+
     }
 }
 
