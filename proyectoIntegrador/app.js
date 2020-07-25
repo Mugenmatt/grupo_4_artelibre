@@ -7,6 +7,7 @@ const logger = require('morgan');
 const methodOverride = require("method-override")
 const session = require('express-session');
 const log = require('./middlewares/logMiddleware');
+const cartMiddleware = require('./middlewares/cartMiddleware');
 
 // Require routes
 const indexRouter = require('./routes/index');
@@ -29,7 +30,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "ArteLibre: Shh, es un secreto!"}));
+
+//Middlewares propios globales
 app.use(log);
+app.use(cartMiddleware);
 
 // use routes
 app.use('/', indexRouter);

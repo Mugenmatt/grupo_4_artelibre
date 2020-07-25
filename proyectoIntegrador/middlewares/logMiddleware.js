@@ -1,5 +1,4 @@
-const db= require('../database/models/')
-const User = db.User;
+const {User}= require('../database/models/')
 
 module.exports = function(req,res,next){
 
