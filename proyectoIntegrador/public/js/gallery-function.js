@@ -24,3 +24,8 @@ inputBox.addEventListener('input',()=>{
 
 })
 
+inputBox.addEventListener('click', ()=>{
+    let desplegable = document.querySelector(".collapsible-body");
+    desplegable.style.display = "block";
+})
+

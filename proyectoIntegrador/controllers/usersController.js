@@ -99,11 +99,12 @@ const usersController ={
         if (errors.isEmpty()) {
     
             if (req.file) {
-                let filePath = path.join(__dirname, '..','public','images','users',usuarioEnSesion.avatar)
-                if (fs.existsSync(filePath)) {
-                    fs.unlinkSync(filePath)
-                }
-                
+                if(usuarioEnSesion.avatar){
+                    let filePath = path.join(__dirname, '..', 'public', 'images', 'users', usuarioEnSesion.avatar)
+                    if (fs.existsSync(filePath)) {
+                        fs.unlinkSync(filePath)
+                    }
+                }                
             }
 
             User.update(

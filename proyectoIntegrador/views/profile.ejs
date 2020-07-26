@@ -41,13 +41,13 @@
                 <% } %> >
                     <div class="btn-flat sin-tamaño">
                         <% if (user.avatar == null) { %>
-                            <i class="material-icons">insert_photo</i>
+                            <i class="icono-fotos material-icons">insert_photo</i>
                             <% } %>
                         <input disabled type="file" class="boton-examinar" name="avatar" >
                     </div>
                  
                     <div class="file-path-wrapper">
-                        <input disabled class="file-path validate" type="text" style="display: none;">
+                        <input disabled class="file-path validate" type="text">
                         <% if(typeof errors != "undefined"){ %>
                         <% if(typeof errors.avatar != "undefined"){ %>
                         <span class="helper-text"><%= errors.avatar.msg  %> </span>

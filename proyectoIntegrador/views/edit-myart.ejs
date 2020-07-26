@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m4">
+                <div class="input-field col s12 m6">
                     <input id="price" type="number" class="validate" name="price" value="<%= product.price %>">
                     <label for="price">Precio</label>
                     <% if(typeof errors != "undefined"){ %>
@@ -61,16 +61,16 @@
                     <% } %>
                     <% } %>
                 </div>
-                <div class="input-field col s12 m4">
-                    <input id="quantity" type="number" class="validate" name="quantity" value="<%= product.quantity %>">
+                <!--<div class="input-field col s12 m4">
+                    <input id="quantity" type="number" class="validate" name="quantity" value="< %=// product.quantity %>">
                     <label for="quantity">Cantidad</label>
-                    <% if(typeof errors != "undefined"){ %>
-                    <% if(typeof errors.quantity != "undefined"){ %>
-                    <span class="helper-text"><%= errors.quantity.msg  %> </span>
-                    <% } %>
-                    <% } %>
-                </div>
-                <div class="col s12 m4 tamaño-cuadro">
+                    < %// if(typeof errors != "undefined"){ %>
+                    < %// if(typeof errors.quantity != "undefined"){ %>
+                    <span class="helper-text">< %=// errors.quantity.msg  %> </span>
+                    < %// } %>
+                    < %// } %>
+                </div>-->
+                <div class="col s12 m6 tamaño-cuadro">
                     <div class="col s6 input-field ancho">
                         <input id="ancho" type="number" class="validate" name="ancho" value="<%= product.ancho %>">
                         <label for="ancho">Ancho</label>

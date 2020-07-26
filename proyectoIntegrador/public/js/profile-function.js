@@ -1,5 +1,4 @@
 window.addEventListener('load',()=>{
-
     
     $(".boton-modificar").click(function (event) {
         event.preventDefault();

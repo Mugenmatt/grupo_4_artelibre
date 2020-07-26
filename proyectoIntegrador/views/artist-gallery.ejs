@@ -11,10 +11,22 @@
 
         <aside class="izquierda col s12 m4 l3 main-aside center-align">
         <div class="fixeado">
+            <div class="section">
+                 <h5>
+                     <a class="link-gallery" href="/gallery"><i class="material-icons">navigate_before</i>
+                        Volver a la Galeria
+                    </a>
+                 </h5>
+            </div>
             <div class="section perfil-artista">
                 <h4><%= artista.username %> </h4>
                 
-                <img class="responsive-img" src="\images\users\<%= artista.avatar%>">
+                <div class="foto-perfil circle responsive-img col s12 m4 l2 file-field input-field"
+                    <% if (artista.avatar) { %>
+                        style="background-image:url(/images/users/<%= artista.avatar %>" 
+                        <% } else { %>
+                            style="background-color: var(--tealdark)"
+                        <% } %> > 
                 <h6><%= artista.name %> <%= artista.lastName %> </h6>
             </div>
             <div class="divider"></div>
@@ -66,6 +78,14 @@
             <div class="section">
             <div class="divider"></div>
             </div>
+
+            <% if(artista.products.length < 1){ %>
+            <div class="section">
+            </div>
+            <div class="section">
+                <h4>No hay publicaciones.</h4>
+            </div>
+            <% } %>
 
             <div class="masonry">
 

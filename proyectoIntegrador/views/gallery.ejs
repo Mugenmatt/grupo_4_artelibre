@@ -10,17 +10,18 @@
     <main class="main-gallery grilla-padre">
 
         <aside class="izquierda col s12 m4 l1 main-aside">
+            <form class="buscador-artistas" autocomplete="off">
+                <div class="autocomplete">
+                    <input id="myInput" type="text" name="myArtist">
+                    <label class="label-icon" for="myInput">
+                        <i class="material-icons">search</i>
+                    </label>
+                </div>
+            </form>
             <ul class="collapsible">
                 <li>
                     <div class="collapsible-header titulo-desplegable">Artistas
-                        <form class="buscador-artistas" autocomplete="off">
-                             <div class="autocomplete">
-                                 <input id="myInput" type="text" name="myArtist">
-                                <label class="label-icon" for="myInput">
-                                        <i class="material-icons">search</i>
-                                </label>
-                             </div>
-                        </form>
+                        
                         <i class="tiny material-icons prefix flechita right">expand_more</i>
                     </div>
                     <div class="collapsible-body">
@@ -46,6 +47,14 @@
                 <div class="divider"></div>
             </div>
             <!--<div class="gallery-products row">-->
+
+            <% if(obras.length < 1){ %>
+                <div class="section">
+                </div>
+                <div class="section">
+                    <h4>No hay publicaciones.</h4>
+                </div>
+            <% } %>
 
             <div class="masonry">
 

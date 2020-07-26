@@ -55,6 +55,11 @@ input.boton-examinar {
     position: relative;
 }
 
+div.file-path-wrapper {
+    position: relative;
+    margin-top: 100%;
+}
+
 input.file-path.validate {
     border: none;
 }

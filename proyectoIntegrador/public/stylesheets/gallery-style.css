@@ -1,6 +1,7 @@
 .grilla-padre {
     display: flex;
     justify-content: space-between;
+    min-height: 80vh;
 }
 
 /*----------COLUMNA IZQ (filtros-busqueda)-------------*/
