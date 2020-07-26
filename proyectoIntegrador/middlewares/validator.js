@@ -90,8 +90,6 @@ module.exports ={
             .notEmpty().withMessage('Campo obligatorio'),
          body('alto')
             .notEmpty().withMessage('Campo obligatorio'),
-         body('quantity')
-            .notEmpty().withMessage('Campo obligatorio'),
          body('imageFile')
             .custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
             .custom((value,{req}) =>{
@@ -114,8 +112,6 @@ module.exports ={
          body('ancho')
             .notEmpty().withMessage('Campo obligatorio'),
          body('alto')
-            .notEmpty().withMessage('Campo obligatorio'),
-         body('quantity')
             .notEmpty().withMessage('Campo obligatorio'),
          body('imageFile')
             //.custom((value, { req }) => req.file).withMessage('Debes ingresar una imagen para tu producto').bail()
