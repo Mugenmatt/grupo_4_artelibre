@@ -9,7 +9,24 @@
 
    <!-- De aca para abajo, es de der a izq  -->
 
-   <a class="cart btn-floating teal" href="/cart"><i class="material-icons icono-basket">local_mall</i></a>
+   <!-- le tuve que sacar el overflow: hidden para que se pueda ver -->
+   <a class="cart btn-floating teal" href="/cart" style="overflow: unset;">
+    <i class="material-icons icono-basket">local_mall</i>
+    <% if (locals.user) { %>
+      <span class="cantItems" style="background-color: red;
+      z-index: 2;
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      top: 29px;
+      right: -3px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;"> <%= locals.cantItems %> </span>
+    <% } %>
+  </a>
 
    <% if (locals.user) { %>
    <!-- Dropdown Trigger -->

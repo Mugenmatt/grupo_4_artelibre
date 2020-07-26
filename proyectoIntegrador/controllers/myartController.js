@@ -62,7 +62,7 @@ const myartController = {
         Product.findByPk(productId)
         .then(producto =>{
             let filePath = path.join(__dirname, '..','public','images','products',producto.imageFile)
-            fs.unlinkSync(filePath)
+            // fs.unlinkSync(filePath)
         })
         .then(()=>{
             Product.destroy({
@@ -103,7 +103,7 @@ const myartController = {
             .then(producto =>{
                 let filePath = path.join(__dirname, '..','public','images','products',producto.imageFile)
                 if (req.file && producto.imageFile != req.file.filename) {
-                    fs.unlinkSync(filePath)
+                    // fs.unlinkSync(filePath)
                 }
                 return producto;
             })

@@ -1,6 +1,8 @@
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
 const {User, Adress, Cartitem, Order}= require('../database/models/')
+const fs = require('fs')
+const path = require('path')
 
 
 const usersController ={
@@ -96,6 +98,14 @@ const usersController ={
         const errors = validationResult(req);
         if (errors.isEmpty()) {
     
+            if (req.file) {
+                let filePath = path.join(__dirname, '..','public','images','users',usuarioEnSesion.avatar)
+                if (fs.existsSync(filePath)) {
+                    fs.unlinkSync(filePath)
+                }
+                
+            }
+
             User.update(
                 {username: req.body.username,
                 avatar: req.file ? req.file.filename : usuarioEnSesion.avatar,
