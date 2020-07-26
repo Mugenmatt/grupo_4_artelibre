@@ -247,7 +247,8 @@ button:focus {
   display: none;
   height: 0px;
   overflow: hidden;
-  padding-top: 1em;
+  padding-top: 1.2em;
+  padding-bottom: 1em;
   justify-content: start;
   background-color: transparent;
   line-height: normal;

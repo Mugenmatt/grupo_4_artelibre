@@ -10,32 +10,14 @@
     
     <main style="background: rgba(0, 0, 0, .65) url('/images/products/<%= obra.imageFile %>'); background-blend-mode: darken; background-size: cover; background-position: center;">
 
-<!-- =========================================================================== -->
-<!------------------------- SLIDER --------------------------------------------->
-<!-- =========================================================================== 
-  (JUAN: lo apago por el momento porque por ahora vamos a usar una sola imagen por publiacion)
-
-    <div class="caja-slider">
-
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <div class="carousel">
-                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro1.jpg"></a>
-                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro4.jpg"></a>
-                        <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto1.jpg"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-                                                                                -->
-<!-- =========================================================================== -->
-<!------------------- PRECIO + DESCRIPCION + DATOS DEL USUARIO -------------------->
-<!-- =========================================================================== -->
+        
 
         <div class="card-panel row container">
+            <h6 class="left-align white-text link-galeria">
+                <a class="link-gallery white-text" href="/gallery"><i class="material-icons">navigate_before</i>
+                    Volver a la Galeria
+                </a>
+            </h6>
             <div class="col s12 m6 caja-izquierda">
                     <img class="responsive-img materialboxed" width="450"
                         src="../images/products/<%= obra.imageFile %> "
@@ -47,9 +29,9 @@
                         style="background-image:url('/images/users/<%= obra.user.avatar %>')">
                     </div>
                     <div class="col s10">
-                        <span class="teal-text">
+                        <a class="teal-text" href="/gallery/<%= obra.user.id %>">
                             <%= obra.user.username %>
-                        </span>
+                        </a>
                     </div>
                 </div>
                 <h4 class="teal-text"><%= obra.name %></h4>

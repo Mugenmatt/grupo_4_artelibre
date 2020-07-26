@@ -13,7 +13,8 @@
    <a class="cart btn-floating teal" href="/cart" style="overflow: unset;">
     <i class="material-icons icono-basket">local_mall</i>
     <% if (locals.user) { %>
-      <span class="cantItems" style="background-color: red;
+      <% if(locals.cantItems > 0){ %> 
+      <span class="cantItems" style="background-color: var(--orangedark);
       z-index: 2;
       width: 21px;
       height: 21px;
@@ -25,7 +26,7 @@
       justify-content: center;
       align-items: center;
       font-weight: bold;"> <%= locals.cantItems %> </span>
-    <% } %>
+    <% }} %>
   </a>
 
    <% if (locals.user) { %>
@@ -67,12 +68,12 @@
           <li><a href="/#nosotros">Nosotros</a></li>
           <li><a href="/#contacto">Contacto</a></li>
         </ul>
+        <!--
         <form id="masthead-search">
           <input type="search" name="s" aria-labelledby="search-label" placeholder="Search&hellip;" class="draw">
           <button type="submit">&rarr;</button>
         </form>
-
-        
+        -->        
       </nav>
 
   </header>

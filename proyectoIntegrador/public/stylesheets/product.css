@@ -15,6 +15,7 @@ main {
 
 .row.container.card-panel {
     margin: auto;
+    position: relative;
 }
 
 /* ============================ SLIDER ============================ */
@@ -209,10 +210,15 @@ section.contenedor-precio-descrip-user {
     width: 100%;
 }
 
-.white-text {
+.link-galeria {
+    position: absolute;
+    top: -41px;
+    left: 0;
+}
+/*.white-text {
     font-size: 1.3em;
     font-weight: 400;
-}
+}*/
 
 .row.valign-wrapper div.col.imagen-avatar {
     width: 60px;

@@ -1,3 +1,7 @@
+main.todo.container {
+    min-height: 80vh;
+}
+
 .titulos-tabla {
     display: flex;
     justify-content: space-between;

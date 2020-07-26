@@ -13,13 +13,13 @@
         <div class="fixeado">
             <div class="section">
                  <h5>
-                     <a class="link-gallery" href="/gallery"><i class="material-icons">navigate_before</i>
+                     <a class="link-gallery teal-text" href="/gallery"><i class="material-icons">navigate_before</i>
                         Volver a la Galeria
                     </a>
                  </h5>
             </div>
             <div class="section perfil-artista">
-                <h4><%= artista.username %> </h4>
+                <h4 class="negrita"><%= artista.username %> </h4>
                 
                 <div class="foto-perfil circle responsive-img col s12 m4 l2 file-field input-field"
                     <% if (artista.avatar) { %>
@@ -27,19 +27,19 @@
                         <% } else { %>
                             style="background-color: var(--tealdark)"
                         <% } %> > 
-                <h6><%= artista.name %> <%= artista.lastName %> </h6>
+                <h6 class="negrita"><%= artista.name %> <%= artista.lastName %> </h6>
             </div>
             <div class="divider"></div>
             <div class="section ranking">
-                <p><%= artista.averageScore %></p>
-                <p>Obras publicadas</p>
-                <p>vendidos</p>
+                <p class="negrita">Obras publicadas: <%= artista.products.length  %> </p>
+                <p class="negrita">vendidos:
+                    <%= artista.products.filter((producto) => { return producto.status == 1 }).length %> </p>
             </div>
             
             <div class="divider"></div>
             <!-- Metodos de envios -->
             <div class="section">
-                <h5 class="center-align">Metodos de envios</h5>
+                <h5 class="center-align negrita">Metodos de envios</h5>
             </div>
             
             <div class="section row center-align metodos-envios">

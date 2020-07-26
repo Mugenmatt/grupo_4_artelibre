@@ -10,6 +10,7 @@
 <main class="todo container">
     <!--form edicion datos-->
     <div class="section row s12 links">
+    <% if(user.rol == 1) { %>
         <div class="col">
             <h6>
                 <a href="profile/myart">
@@ -24,6 +25,7 @@
                 </a> 
             </h6>
         </div>
+    <% } %> 
         <div class="col">
             <h6>
                 <a href="profile/miscompras">
@@ -83,6 +85,7 @@
                 </div>
 
                 <!--COL DERECHA-->
+                <% if(user.rol == 1) { %> 
                 <div class="datos-envios col s12 m12 l4">
                     <div class="row section">
                         <h6 class="center-align">Formas de envio</h6>
@@ -114,6 +117,7 @@
                         </div>
                     </div>
                 </div>
+            <% } %> 
                 <div class="col s12 right right-align section div-botones">
                     <a href="" class="btn waves-effect waves-light btn-medium boton-modificar">
                         Editar mi perfil

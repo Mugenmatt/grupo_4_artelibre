@@ -23,7 +23,7 @@
                          <%= new Date(order.createdAt).toLocaleDateString()%>
                      </p>
                      <p>
-                         <%= order.total  %>
+                         $ <%= order.total  %>
                      </p>
                  </div>
                  <div class="collapsible-body orden-contenido">
@@ -34,7 +34,7 @@
                          </div>
                          <p><%= item.product.name %></p>
                          <p><%= item.seller.name %></p>
-                         <p><%= item.price %></p>
+                         <p>$ <%= item.price %></p>
 
                      </span>
                     <% } %> 

@@ -32,6 +32,10 @@ div.section.metodos-envios div.col {
     margin: 0;
 }
 
+.negrita {
+    font-weight: 600;
+}
+
 /*---------- COLUMNA DERECHA (productos-resultados)-------------*/
 
 .col .row {
