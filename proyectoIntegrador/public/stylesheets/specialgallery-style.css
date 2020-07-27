@@ -91,6 +91,20 @@ p.precio {
     margin-bottom: 5px;
     font-size: 1.1rem;
 }
+
+@media screen and (max-width: 767px) {
+    main.grilla-padre {
+        flex-direction: column;
+    }
+
+    main.grilla-padre aside.izquierda {
+        width: 100%;
+    }
+
+}
+
+
+/*=====================*/
 /* Masonry grid */
 .masonry {
     transition: all .5s ease-in-out;

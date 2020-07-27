@@ -134,6 +134,55 @@ div.col.container.derecha {
     color: var(--tealdark);
 }
 
+
+@media screen and (max-width: 767px) {
+    main.grilla-padre {
+        flex-direction: column;
+    }
+
+    main.grilla-padre aside.izquierda {
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    aside.izquierda ul.collapsible li div.titulo-desplegable {
+        justify-content: center;
+    }
+
+    .buscador-artistas div.autocomplete {
+        width: 80%;
+        margin: auto;
+        justify-content: space-around;
+    }
+
+    .buscador-artistas div input#myInput {
+        border-bottom: 1px solid #9e9e9e;
+    }
+
+    .buscador-artistas label {
+        width: auto;
+    }
+
+    aside.izquierda ul.collapsible li .collapsible-body ul.listaArtistas{
+        text-align: center;
+    }
+
+    .collapsible-body ul.listaArtistas li {
+        padding: 2% 0;
+    }
+
+    main.grilla-padre div.derecha {
+        width: 90%;
+        margin: auto;
+    }
+
+    main.grilla-padre div.derecha div h3.allPictures {
+        text-align: center;
+    }
+}
+
+/*============*/
+
 /* Masonry grid */
 .masonry {
     transition: all .5s ease-in-out;

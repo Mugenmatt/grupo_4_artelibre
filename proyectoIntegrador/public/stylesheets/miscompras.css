@@ -19,7 +19,7 @@ li.active div.collapsible-body.orden-contenido {
     align-items: center;
 }
 
-li.active div.collapsible-body.orden-contenido span {
+li div.collapsible-body.orden-contenido span {
     display: flex;
     justify-content: space-around;
     align-items: center;

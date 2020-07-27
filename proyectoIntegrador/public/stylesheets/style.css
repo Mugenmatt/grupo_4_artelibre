@@ -460,31 +460,33 @@ button:focus {
 
 /*===============login collapsible=====================*/
 
-#dropdown1 {
-  height: auto;
+.hero header ul#dropdown1 {
+  height: auto !important;
   position: absolute;
   overflow-y: hidden;
+  z-index: 5;
 }
 
-#dropdown1 li {
+.hero header ul#dropdown1 li {
   min-height: auto;
   text-align: center;
 }
 
-#dropdown1 li a {
+.hero header ul#dropdown1 li a {
   line-height: normal;
   padding: 5%;
 
 }
 
-.btn-cerrarSesion{
+.hero header ul#dropdown1 li form button.btn-cerrarSesion {
   font-family: 'Hind', sans-serif;
   height:auto;
   text-transform:none;
-  line-height: 1.15rem;
+  line-height: normal;
   color: var(--tealdark);
   font-size: 1rem;
   margin: 0;
+  padding: 5%;
 }
 
 h4.letra-inicial {
@@ -504,9 +506,10 @@ h4.letra-inicial {
 }
 
 @media screen and (max-width: 767px) {
-  #site-nav {
+  #site-nav.is-active {
     flex-direction: column-reverse;
     align-content: center;
+    width: 100%;
   }
 
   #site-nav .lista-links {
@@ -516,6 +519,19 @@ h4.letra-inicial {
     align-content: center;
     margin: auto;
   }
+
+  #site-nav .lista-links li {
+    margin: 1% 0;
+  }
+
+  #site-nav .lista-links li a {
+    font-size: 1.2rem;
+  }
+
+  .hero header ul#dropdown1 {
+    width: 100% !important;
+  }
+
 
   #masthead-search {
     margin: auto;
