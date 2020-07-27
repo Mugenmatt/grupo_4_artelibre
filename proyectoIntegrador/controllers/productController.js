@@ -7,6 +7,7 @@ const productController = {
       let obra;
       let enCarrito = false;
       let comentarios;
+      let cantVendidos;
 
       Product.findByPk(req.params.id,{
         include: [{
@@ -41,6 +42,17 @@ const productController = {
       .then((comentariosEncontrados)=>{
         comentarios = comentariosEncontrados;
 
+        return Product.count({
+          where:{
+            idUser: obra.idUser,
+            status: 1
+          }
+        })
+
+      })
+      .then((vendidosEncontrados)=>{
+        cantVendidos = vendidosEncontrados;
+
         return Product.findAll({
           where: {
             idUser: obra.idUser,
@@ -54,7 +66,8 @@ const productController = {
         
       })
       .then((masObras)=>{
-        return res.render('product',{obra,enCarrito, comentarios, masObras});
+
+        return res.render('product',{obra,enCarrito, comentarios, masObras, cantVendidos});
 
       })
       .catch(errors=>{
