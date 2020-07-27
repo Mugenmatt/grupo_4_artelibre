@@ -9,7 +9,10 @@ const productController = {
       let comentarios;
 
       Product.findByPk(req.params.id,{
-        include: ['user']
+        include: [{
+          association:'user',
+          include: ['adresses']
+        }]
       })
       .then(function(obraEncontrada){
         obra = obraEncontrada;

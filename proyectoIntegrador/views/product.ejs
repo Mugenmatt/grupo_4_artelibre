@@ -129,15 +129,20 @@
                     <!-- Promo Content 2 goes here -->
                     <i class="material-icons large teal-text">thumbs_up_down</i>
                     <h5 class="teal-text"><%= obra.user.name  %> </h5>
-                    <p class="black-text">Valoracion: <%= obra.user.averageScore %></p>
                     <p class="black-text">Ventas: <%= obra.user.averageScore %></p>
+                    
         
                 </div>
                 <div class="col s4 center-align">
                     <!-- Promo Content 3 goes here -->
                       <i class="material-icons large teal-text">person_pin_circle</i>
                       <h5 class="teal-text">Ubicacion</h5>
-                      <p class="black-text"> Ciudad, Provincia </p>
+                        <% if (obra.user.adresses.length > 0) { %>
+                       
+                            <p class="black-text"> <%=obra.user.adresses[0].city%>, <%=obra.user.adresses[0].province %>  </p>
+                        <% } else {  %>
+                            <p class="black-text"> Sin datos  </p>
+                        <% }  %>
                 </div>
             </div>
             <!-- 
