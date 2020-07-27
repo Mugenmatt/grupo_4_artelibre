@@ -577,6 +577,11 @@ h1, h3 {
     clip-path: polygon(0 0, 100% 0, 100% 89.5%, 0 89.5%);
 }
 
+.contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona .facu {
+    transform: scale(1.2);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%);
+}
+
 
 /* =================== SEPARADOR =================== */
 
