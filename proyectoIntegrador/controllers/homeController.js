@@ -1,8 +1,20 @@
-const {Consulta} = require('../database/models')
+const {Consulta, Product} = require('../database/models')
 
 const homeController = {
     index: function(req, res) {
-        return res.render('index');
+
+      Product.findAll({
+        where: {
+          status: 0
+        },
+        order: [['id','DESC']],
+        limit:5
+      })
+      .then(obras=>{
+
+        return res.render('index',{obras});
+      })
+
       },
 
     contactanos: function(req,res){

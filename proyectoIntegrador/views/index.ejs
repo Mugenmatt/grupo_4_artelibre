@@ -44,17 +44,17 @@
 
     <section class="contenedor-fondo-slider">
 
-        <h3 class="titulo-destacados subtitulo">Los más destacados</h3>
+        <h3 class="titulo-destacados subtitulo">Los más recientes</h3>
 
                 <div class="container">
                     <div class="row">
                         <div class="col s12" style="height:78vh;">
                             <div class="carousel">
-                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro1.jpg"></a>
-                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro3.jpg"></a>
-                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/cuadro4.jpg"></a>
-                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto1.jpg"></a>
-                                <a class="carousel-item" href=""> <img class="carousel-img" src="../images/features/foto2.jpg"></a>
+                                <% for( let obra of obras ) { %>
+                                
+                                    <a class="carousel-item" href="/product/<%=obra.id%>"> <img class="carousel-img" src="../images/products/<%= obra.imageFile %> "></a>
+                                <% } %>
+
                             </div>
                         </div>
                     </div>

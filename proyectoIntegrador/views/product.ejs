@@ -223,46 +223,34 @@
     <!---------------------------------- SUGERENCIAS ---------------------------------->
     <!-- =========================================================================== -->
 
-    <section class="contenedor-sugerencias">
+    <% if (masObras.length > 0) { %>
+        <section class="contenedor-sugerencias">
+    
+            <div class="caja-titulo-sugerencias">
+                <h4 class="titulo-sugerencias">Sugerencias</h4>
+            </div>
+    
+            <div class="slider">
+                <ul class="slides">
+                    <% masObras.forEach((obra,index) => { %>
+                        <li>
+                            <a href="/product/<%= obra.id %>">
+                            
+                                <img src="../images/products/<%= obra.imageFile %>">
+                                <div class="caption <%= index==0?'center-align' : index == 1? 'left-align': index ==2? 'right-align':'center-align'  %>">
+                                    <h3 style="color: whitesmoke;"> <%= obra.name %>  </h3>
+                                </div>
+                            </a>
+                        </li>
+                    <% }) %>
 
-        <div class="caja-titulo-sugerencias">
-            <h4 class="titulo-sugerencias">Sugerencias</h4>
-        </div>
+                </ul>
+            </div>
+    
+        </section>
+     
+    <% } %>
 
-        <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="../images/bg/arte1.jpg"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3>Titulo de la Obra</h3>
-                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/bg/arte2.jpg"> <!-- random image -->
-                    <div class="caption left-align">
-                        <h3>Titulo de la Obra</h3>
-                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/bg/arte3.jpg"> <!-- random image -->
-                    <div class="caption right-align">
-                        <h3>Titulo de la Obra</h3>
-                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/bg/arte4.jpg"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3>Titulo de la Obra</h3>
-                        <h5 class="light red-text text-lighten-3">VENDIDO</h5>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-    </section>
 
 <%- include('partials/footer.ejs') %>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

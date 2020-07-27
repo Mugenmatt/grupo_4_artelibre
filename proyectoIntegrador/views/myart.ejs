@@ -138,8 +138,10 @@
             <% for(let product of user.products) { %>
                 <tr>
                     <td>
-                        <div class="card imagen-producto" style="background-image:url('/images/products/<%= product.imageFile %>')">
-                        </div>
+                        <a href="/product/<%= product.id %> ">
+                            <div class="card imagen-producto" style="background-image:url('/images/products/<%= product.imageFile %>')">
+                            </div>
+                        </a>
                     </td>
                     <td><%= product.name %> </td>
                     <td class="truncated">

@@ -1,10 +1,12 @@
-const {Product, Cartitem, Comentario}= require('../database/models/');
+const {Product, Cartitem, Comentario, Sequelize}= require('../database/models/');
+const Op = Sequelize.Op;
 
 const productController = {
     index: function(req, res) {
       let usuarioEnSesion= req.session.user;
       let obra;
       let enCarrito = false;
+      let comentarios;
 
       Product.findByPk(req.params.id,{
         include: ['user']
@@ -33,8 +35,23 @@ const productController = {
         })
 
       }))
-      .then((comentarios)=>{
-        return res.render('product',{obra,enCarrito, comentarios});
+      .then((comentariosEncontrados)=>{
+        comentarios = comentariosEncontrados;
+
+        return Product.findAll({
+          where: {
+            idUser: obra.idUser,
+            status :0,
+            id: {
+              [Op.ne]: obra.id
+            }
+          },
+          limit: 5
+        })
+        
+      })
+      .then((masObras)=>{
+        return res.render('product',{obra,enCarrito, comentarios, masObras});
 
       })
       .catch(errors=>{
