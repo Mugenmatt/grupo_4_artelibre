@@ -564,11 +564,17 @@ h1, h3 {
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona {
-    width: 20%;
+    width: 15%;
+    overflow: hidden;
+    /* background-color: red; */
 }
 
 .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona .img-persona {
     width: 100%;
+}
+
+.contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona .juan {
+    clip-path: polygon(0 0, 100% 0, 100% 89.5%, 0 89.5%);
 }
 
 
@@ -849,6 +855,13 @@ h1, h3 {
     .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona {
         width: 50%;
     }
+
+    .contenedor-nosotros .centrador-nosotros .caja-imagenes-nosotros .img-perfil-persona .juan {
+        /* clip-path: none; */
+        position: relative;
+        top: 30px;
+    }
+    
 
     .contenedor-fondo-slider {
         height: 60vh;
