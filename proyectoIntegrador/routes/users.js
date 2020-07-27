@@ -9,6 +9,7 @@ const path = require('path');
 // Middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const rolMiddleware = require('../middlewares/rolMiddleware');
 const validator = require('../middlewares/validator');
 
 // Usuarios
@@ -85,13 +86,13 @@ router.delete('/profile',authMiddleware, usersController.profileDelete);
 router.post('/profile',authMiddleware,validator.newAdress ,usersController.profileNewAdress);
 router.delete('/profile/adress',authMiddleware, usersController.profileDeleteAdress);
 
-router.get('/profile/myart', authMiddleware, myartController.showMyart );
-router.post('/profile/myart', authMiddleware, upload2.single('imageFile'),validator.createProduct, myartController.createMyart );
-router.delete('/profile/myart', authMiddleware, myartController.deleteMyart );
-router.get('/profile/myart/:id', authMiddleware,myartController.editMyart );
-router.put('/profile/myart/:id', authMiddleware, upload2.single('imageFile'),validator.editProduct ,myartController.processEditMyart );
+router.get('/profile/myart', authMiddleware,rolMiddleware , myartController.showMyart );
+router.post('/profile/myart', authMiddleware,rolMiddleware , upload2.single('imageFile'),validator.createProduct, myartController.createMyart );
+router.delete('/profile/myart', authMiddleware,rolMiddleware , myartController.deleteMyart );
+router.get('/profile/myart/:id', authMiddleware,rolMiddleware ,myartController.editMyart );
+router.put('/profile/myart/:id', authMiddleware,rolMiddleware , upload2.single('imageFile'),validator.editProduct ,myartController.processEditMyart );
 
-router.get('/profile/misventas', authMiddleware, usersController.showMisventas);
+router.get('/profile/misventas', authMiddleware, rolMiddleware, usersController.showMisventas);
 router.get('/profile/miscompras', authMiddleware, usersController.showMiscompras);
 
 module.exports = router;
