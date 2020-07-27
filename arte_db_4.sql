@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-07-2020 a las 02:29:44
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.7
+-- Tiempo de generación: 27-07-2020 a las 20:02:29
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,10 +50,12 @@ INSERT INTO `adresses` (`id`, `idUser`, `street`, `number`, `floor`, `door`, `cr
 (1, 3, 'Calle falsa', 12, 1, 2, '2020-07-14 18:30:56', '2020-07-14 18:30:56', NULL, 1212, 'bsas', 'vicentine'),
 (2, 3, 'elmer lulu', 12, 9, 4, '2020-07-15 00:37:49', '2020-07-15 00:37:49', NULL, 1212, 'catamarca', 'sanjose'),
 (3, 3, 'Calle', 0, 0, 0, '2020-07-16 18:55:53', '2020-07-25 22:01:38', '2020-07-25 22:01:38', 0, '', ''),
-(4, 3, 'Calle', 0, 0, 0, '2020-07-16 18:58:06', '2020-07-16 18:58:06', NULL, 0, 'Provincia', 'localidad'),
-(5, 3, 'Calle', 0, 0, 0, '2020-07-16 19:21:18', '2020-07-16 19:21:18', NULL, 0, 'Provincia', 'localidad'),
+(4, 3, 'Calle', 0, 0, 0, '2020-07-16 18:58:06', '2020-07-27 17:10:13', '2020-07-27 17:10:13', 0, 'Provincia', 'localidad'),
+(5, 3, 'Calle', 0, 0, 0, '2020-07-16 19:21:18', '2020-07-27 17:10:16', '2020-07-27 17:10:16', 0, 'Provincia', 'localidad'),
 (6, 107, 'falsa', 123, 0, 0, '2020-07-18 04:43:46', '2020-07-20 16:57:11', '2020-07-20 16:57:11', 1555, 'buenos aires', 'vicente lopez'),
-(7, 107, 'sabiola', 1234, 2, 3, '2020-07-20 17:02:14', '2020-07-20 17:03:39', '2020-07-20 17:03:39', 1212, 'buenos aires', 'catmandu');
+(7, 107, 'sabiola', 1234, 2, 3, '2020-07-20 17:02:14', '2020-07-20 17:03:39', '2020-07-20 17:03:39', 1212, 'buenos aires', 'catmandu'),
+(8, 108, 'Gould ', 865, 0, 0, '2020-07-27 17:34:28', '2020-07-27 17:34:28', NULL, 2000, 'Santa Fe', 'Rosario'),
+(9, 109, 'Sarmiento', 154, 0, 0, '2020-07-27 17:48:49', '2020-07-27 17:48:49', NULL, 1623, 'Buenos Aires', 'Ingeniero Maszchwitz');
 
 -- --------------------------------------------------------
 
@@ -74,6 +76,17 @@ CREATE TABLE `cartitems` (
   `deletedAt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `cartitems`
+--
+
+INSERT INTO `cartitems` (`id`, `idUser`, `idOrder`, `idProduct`, `idSeller`, `price`, `status`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+(87, 3, NULL, 48, 3, 1100, 0, '2020-07-26 21:03:52', '2020-07-26 21:03:56', '2020-07-26 21:03:56'),
+(88, 3, NULL, 48, 3, 1100, 0, '2020-07-26 21:04:00', '2020-07-26 21:04:05', '2020-07-26 21:04:05'),
+(89, 3, NULL, 48, 3, 1100, 0, '2020-07-26 21:04:09', '2020-07-26 21:04:11', '2020-07-26 21:04:11'),
+(90, 3, 31, 48, 3, 1100, 1, '2020-07-26 21:23:25', '2020-07-26 21:23:27', NULL),
+(91, 3, NULL, 48, 3, 1100, 0, '2020-07-26 21:43:06', '2020-07-26 21:43:58', '2020-07-26 21:43:58');
+
 -- --------------------------------------------------------
 
 --
@@ -91,6 +104,15 @@ CREATE TABLE `comentarios` (
   `updatedAt` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deletedAt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id`, `idUser`, `idProduct`, `idSeller`, `comentario`, `respuesta`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+(5, 3, 48, 3, 'Muy lindo! ', 'Gracias', '2020-07-26 21:08:43', '2020-07-26 21:09:13', NULL),
+(6, 109, 48, 3, 'El precio incluye la obra y el marco?? ', NULL, '2020-07-27 17:58:45', '2020-07-27 17:58:45', NULL),
+(7, 109, 49, 3, 'Hola marcos! Me encanta lo que haces. Soy de Entre Rios, cuanto me saldria el envio? Gracias! Espero tu respuesta.', NULL, '2020-07-27 18:00:55', '2020-07-27 18:00:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -144,6 +166,13 @@ CREATE TABLE `orders` (
   `deletedAt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id`, `total`, `orderNumber`, `userId`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+(31, 1100, 1, 3, '2020-07-26 21:23:27', '2020-07-26 21:23:27', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -196,6 +225,21 @@ CREATE TABLE `products` (
   `alto` smallint(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `ancho`, `quantity`, `idUser`, `createdAt`, `updatedAt`, `deletedAt`, `status`, `imageFile`, `alto`) VALUES
+(48, 'hippe', ' Acrilico sobre tela. Enmarcada.  ', 1100, 70, 1, 3, '2020-07-26 20:40:36', '2020-07-26 21:43:01', NULL, 0, 'imageFile-1595796036321.jpg', 120),
+(49, 'Multicolor', 'Pintura abstracta multicolor. Acrilico sobre tela utilizando distintas tecnicas.', 1600, 130, 1, 3, '2020-07-27 17:13:20', '2020-07-27 17:13:20', NULL, 0, 'imageFile-1595870000652.jpg', 80),
+(50, 'Pensamientos', 'Obra de arte abstracto. Acrilico sobre tela. Mezcla de colores y texturas. ', 1900, 150, 1, 3, '2020-07-27 17:16:08', '2020-07-27 17:16:08', NULL, 1, 'imageFile-1595870168611.jpg', 90),
+(51, 'Frio y calor', 'Acrilico sobre tela. Arte abstracto. Mezcla de colores calidos y colores frios. Distintas tecnicas', 2250, 120, 1, 3, '2020-07-27 17:26:37', '2020-07-27 17:26:37', NULL, 0, 'imageFile-1595870797363.jpg', 80),
+(52, 'Casa del arbol', 'Acrilico sobre tela. Mi sueño de vivir en una casa del arbol. ', 1000, 40, 1, 108, '2020-07-27 17:36:48', '2020-07-27 17:36:48', NULL, 0, 'imageFile-1595871408941.jpeg', 70),
+(53, 'Suburbano', 'Paisaja imaginario de las afueras de una pequeña ciudad, y un arbolito. Simple. Pintado con acrilico sobre madera. Una pequeña obra de arte, de escritorio. ', 650, 40, 1, 108, '2020-07-27 17:41:24', '2020-07-27 17:41:24', NULL, 0, 'imageFile-1595871682288.jpeg', 35),
+(54, 'Retrato Bob Marley', 'Imagen retrato de Bob Marley tipo collage, a partir de muchas imagenes de el. Papel plastico de calidad. Marco de madera color negro. Consulta por otros diseños y/o marcos. Hago trabajos a pedido! Mandame la foto que quieras.', 800, 60, 1, 109, '2020-07-27 17:53:05', '2020-07-27 17:53:05', NULL, 0, 'imageFile-1595872385895.jpeg', 100),
+(55, 'Cinema retro', 'Cuadro tipo bastidor. Imagen impresa sobre tela. Listo para colgar. Consulta por otras medidas y/o marcos. Hago trabajos a pedido! Mandame la imagen que quieras.', 950, 40, 1, 109, '2020-07-27 17:56:09', '2020-07-27 17:56:09', NULL, 0, 'imageFile-1595872569607.jpeg', 70),
+(56, 'hawai coast', 'Cuadro tipo bastidor. Imagen impresa sobre tela. Listo para colgar. Consulta por otras medidas y/o marcos. Hago trabajos a pedido! Mandame la imagen que quieras. ', 700, 35, 1, 109, '2020-07-27 17:57:23', '2020-07-27 17:57:23', NULL, 0, 'imageFile-1595872641324.jpeg', 35);
+
 -- --------------------------------------------------------
 
 --
@@ -228,7 +272,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `lastname`, `username`, `email`, `avatar`, `password`, `rol`, `mailShipping`, `privateShipping`, `noShipping`, `averageScore`, `createdAt`, `updatedAt`, `deletedAt`, `newsletter`) VALUES
 (1, 'Juan', 'Gomez', 'juangomez', 'juangomez@hotmail.com', NULL, '$2a$10$mCbDx6aVt93hji2Z4Z2p3ux1bhx8GIDUbjmOFrMzXFrHU3ccSn7iS', 0, 0, 0, 0, '0', '2020-06-24 18:50:27', '2020-06-24 18:50:27', NULL, 1),
 (2, 'daniel', 'daniel', 'daniel', 'daniel@hotmail.com', NULL, '$2a$10$9B0ckMUWSXJHOrpogpDEaOVBqK43pMlHMy3jDl3CY5vw7Oiofc5Zu', 0, 0, 0, 0, '0', '2020-06-24 18:58:06', '2020-06-24 18:58:06', NULL, 1),
-(3, 'marcos', 'marcos', 'marquetsdf', 'marcos@hotmail.com', NULL, '$2a$10$BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 1, 1, 0, 1, '0', '2020-06-24 18:59:48', '2020-07-25 18:57:29', NULL, 1),
+(3, 'marcos', 'marcos', 'marquetsdf', 'marcos@hotmail.com', 'avatar-1595793473750.jpg', '$2a$10$BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 1, 1, 1, 1, '0', '2020-06-24 18:59:48', '2020-07-27 00:07:23', NULL, 1),
 (4, 'Laura', 'Laura', 'Laura', 'laura@hotmail.com', NULL, '$2a$10$HKmB2dT//eapBd458qg97e8o8nmojo4WyQMCZRZ4UZClr9TG2wHLS', 1, 0, 0, 0, '0', '2020-06-26 13:40:49', '2020-06-26 13:40:49', NULL, 1),
 (5, 'Jillane', 'Bertomeu', 'jbertomeu0', 'jbertomeu0@earthlink.net', NULL, '02am103BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (6, 'Jamey', 'MacCrackan', 'jmaccrackan1', 'jmaccrackan1@moonfruit.com', NULL, 'f2ac104BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
@@ -331,7 +375,9 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `username`, `email`, `avatar`, `p
 (103, 'Nananne', 'Greeding', 'ngreeding2q', 'ngreeding2q@example.com', NULL, 't2a7102BADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (104, 'Patric', 'Rouch', 'prouch2r', 'prouch2r@unesco.org', NULL, '12an10oBADztSE68LHnyD1N/KoWtuDbkNvgBqXrx/9FU/wTqAkoU5/YBip2a', 0, 0, 0, 0, '0', '2020-06-26 12:02:08', NULL, NULL, 1),
 (106, 'sadf', 'asdf', 'asdf', 'asdf', '', '$2a$10$.a7lhWu33F48178ihN37OemZEoSq4BKAxRvfvNeMFZ2cEuJyv83/K', 0, 0, 0, 0, '0', '2020-07-10 20:18:30', '2020-07-25 18:58:00', NULL, 0),
-(107, 'Facu', 'ollers', 'Facu', 'facundo@hotmail.com', 'avatar-1595715854948.jpg', '$2a$10$VbJySpZHwLnw4yjeeqY5sOtbM1xXkGsRV5FCkcD4wvKxnX7dRR8JO', 1, 1, 1, 1, '0', '2020-07-18 04:39:32', '2020-07-25 22:24:14', NULL, 0);
+(107, 'Facu', 'ollers', 'Facu', 'facundo@hotmail.com', 'avatar-1595715854948.jpg', '$2a$10$VbJySpZHwLnw4yjeeqY5sOtbM1xXkGsRV5FCkcD4wvKxnX7dRR8JO', 1, 1, 1, 1, '0', '2020-07-18 04:39:32', '2020-07-25 22:24:14', NULL, 0),
+(108, 'Esteban', 'Quito', 'tebi', 'esteban@esteban.com', 'avatar-1595871124318.jpg', '$2a$10$y4rPu0izcjrdtLdHLzslxe2ZB7jO9KykLwvi8vmaMg2Vno8ts8Zmi', 1, 0, 1, 1, '0', '2020-07-27 17:28:23', '2020-07-27 17:32:14', NULL, 0),
+(109, 'maria', 'pereyra', 'mery', 'maria@maria.com', 'avatar-1595872038097.jpg', '$2a$10$Wp/p5tXRkTRbRf5mWYRIm.IKB2Q0J4zzzsxWntRxNTTrSMfu1P8PG', 1, 1, 1, 1, '0', '2020-07-27 17:43:16', '2020-07-27 17:47:18', NULL, 0);
 
 --
 -- Índices para tablas volcadas
@@ -421,19 +467,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `adresses`
 --
 ALTER TABLE `adresses`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `cartitems`
 --
 ALTER TABLE `cartitems`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `consultas`
@@ -451,7 +497,7 @@ ALTER TABLE `keywords`
 -- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `productimages`
@@ -469,13 +515,13 @@ ALTER TABLE `productkeys`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- Restricciones para tablas volcadas

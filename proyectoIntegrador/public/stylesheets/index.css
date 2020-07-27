@@ -617,9 +617,9 @@ h1, h3 {
 .contenedor-contactanos .centrador-contactanos .btn-flat {
     text-align: center;
     display: block;
-    background-color: var(--teallight);
     color: var(--tealdark);
     border: 1px solid #00000000;
+    margin: auto;
 }
 
 .contenedor-contactanos .centrador-contactanos .btn-flat:hover {

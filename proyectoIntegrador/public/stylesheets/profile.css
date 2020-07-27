@@ -39,12 +39,14 @@ form div.card-panel div.foto-perfil.file-field {
 
 div.foto-perfil .btn-flat {
     text-align: center;
+    
 }
 
 .foto-perfil .btn-flat i {
     color: white;
     scale: 2;
     padding: 2%;
+    margin-top: 250%;
 }
 
 input.boton-examinar {
