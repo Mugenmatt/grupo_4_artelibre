@@ -27,6 +27,10 @@ div.input-field span.helper-text {
   color: red;
 }
 
+i.fix {
+  vertical-align: middle;
+}
+
 /*======== EXCLUSIVO HEADER ===========*/
 
 .hero {

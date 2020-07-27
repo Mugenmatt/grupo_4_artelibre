@@ -30,3 +30,8 @@ li.active div.collapsible-body.orden-contenido span {
     height: 60px;
     background-size: cover;
 }
+
+h6 .linkprofile {
+    color: var(--tealdark);
+    
+}

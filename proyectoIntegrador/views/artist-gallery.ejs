@@ -12,22 +12,25 @@
         <aside class="izquierda col s12 m4 l3 main-aside center-align">
         <div class="fixeado">
             <div class="section">
-                 <h5>
-                     <a class="link-gallery teal-text" href="/gallery"><i class="material-icons">navigate_before</i>
-                        Volver a la Galeria
+                 <h5 class="left-align">
+                     <a class="link-gallery teal-text" href="/gallery"><i class="material-icons fix">navigate_before</i>
+                        Volver a la galeria
                     </a>
                  </h5>
             </div>
             <div class="section perfil-artista">
-                <h4 class="negrita"><%= artista.username %> </h4>
-                
-                <div class="foto-perfil circle responsive-img col s12 m4 l2 file-field input-field"
+                <div class="foto-perfil circle responsive-img col s12 m4 l2"
                     <% if (artista.avatar) { %>
                         style="background-image:url(/images/users/<%= artista.avatar %>" 
                         <% } else { %>
                             style="background-color: var(--tealdark)"
-                        <% } %> > 
-                <h6 class="negrita"><%= artista.name %> <%= artista.lastName %> </h6>
+                        <% } %> >
+                </div>
+                <div class="section">
+                    <h4 class="negrita"><%= artista.username %> </h4>
+                    <h6 class="negrita"> <%= artista.name %> <%= artista.lastName %> </h6>
+                </div>
+                
             </div>
             <div class="divider"></div>
             <div class="section ranking">
@@ -45,7 +48,7 @@
             <div class="section row center-align metodos-envios">
                 
                 <% if (artista.mailShipping == 1){ %>
-                <div class="col s4">
+                <div class="col s4 iconos-envios">
                     <i class="material-icons valign-wrapper">
                         local_shipping
                     </i>
@@ -53,7 +56,7 @@
                 <% } %>
                 
                 <% if (artista.privateShipping == 1){ %>
-                <div class="col s4">
+                <div class="col s4 iconos-envios">
                     <i class="material-icons valign-wrapper">
                         motorcycle
                     </i>
@@ -61,7 +64,7 @@
                 <% } %>
                 
                 <% if (artista.noShipping == 1){ %>
-                <div class="col s4">
+                <div class="col s4 iconos-envios">
                     <i class="material-icons valign-wrapper">
                         home
                     </i>

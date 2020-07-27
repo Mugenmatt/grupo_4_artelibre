@@ -94,7 +94,7 @@ input[type="text"]:not(.browser-default):disabled {
     display: none;
 }
 
-a i.fix{
+i.fix{
     vertical-align: middle;
 }
 
