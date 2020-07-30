@@ -134,6 +134,16 @@ div.col.container.derecha {
     color: var(--tealdark);
 }
 
+.toastYaAgregado{
+    background-color: red;
+    border-radius: 2%;
+}
+
+.toastNuevoItem{
+    background-color: green;
+    border-radius: 2%;
+}
+
 
 @media screen and (max-width: 767px) {
     main.grilla-padre {

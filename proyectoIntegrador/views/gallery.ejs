@@ -69,8 +69,8 @@
                           <h6 class="titulo-obra"><%=cuadro.name%></h6>
                           <a class="autor teal-text left" href="gallery/<%=cuadro.idUser%>"> - <%=cuadro.user.username%> </a>
 
-                          <form action="/cart" method="POST" class="right">
-                              <input type="hidden" name="productId" value="<%= cuadro.id %> ">
+                          <form class="right formsAgregar">
+                              <input class="productId" type="hidden" name="productId" value="<%= cuadro.id %> ">
                               <button class="btn-flat waves-effect waves-light boton-carrito" type="submit" name="action">
                                   <i class="material-icons prefix medium ">local_mall</i>
                               </button>

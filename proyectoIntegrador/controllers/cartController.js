@@ -60,6 +60,72 @@ const cartController = {
 
     },
 
+    agregarPorApi: function(req,res){
+      let productId = req.body.productId;
+      let usuarioEnSesion= req.session.user;
+
+      if (usuarioEnSesion) {
+        
+        Cartitem.findOne({
+          where: {
+            idUser: usuarioEnSesion.id,
+            idProduct: productId,
+            status: 0
+          }
+        })
+        .then(item=>{
+          if (!item) {
+            return Product.findByPk(productId)
+          }
+  
+        })
+        .then(product=>{
+          if(typeof product == 'object'){
+  
+            let item= {
+              price: product.price,
+              status: 0,
+              idUser: usuarioEnSesion.id,  
+              idOrder: null,  
+              idProduct: productId,  
+              idSeller: product.idUser
+            }
+    
+            return Cartitem.create(item)
+          }
+        })
+        .then((response)=>{
+          return res.json(response)
+        })
+        .catch(errors=> console.log(errors))
+      }else{
+        console.log("No estas iniciado sesion");
+      }
+
+    },
+
+    traerCantidadPorApi: function(req,res){
+      return Cartitem.findAll({
+        where: {
+            idUser: req.session.user.id,
+            status: 0
+        }
+      })
+      .then(itemsEncontrados=>{
+          res.locals.cantItems = itemsEncontrados.length;
+          let items = {
+            meta: {
+              status: 200,
+              url: req.originalUrl ,
+              cantidad: itemsEncontrados.length
+            },
+            data: itemsEncontrados
+          }
+          return res.json(items)
+      })
+      .catch(errors=>{console.log(errors)})
+    },
+
     eliminarDelCarrito: function (req,res){
       let itemId = req.body.itemId;
 
